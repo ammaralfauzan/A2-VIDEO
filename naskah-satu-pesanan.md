@@ -1,6 +1,6 @@
 # Naskah Video: "Satu Pesanan, Tujuh Langkah"
 
-Format: 9:16 (1080×1920), ±50 detik · Gaya: explainer teks kinetik + diagram simpul + maskot Gigi (mengikuti referensi Bos)
+Format: 9:16 (1080×1920), 43,5 detik (VO 42,1 detik) · Gaya: explainer teks kinetik + diagram simpul + maskot Gigi (mengikuti referensi Bos)
 Tujuan: soft selling A2 Automation untuk pemilik usaha · Ajakan: Konsultasi gratis · a2automate.com
 Voiceover: ElevenLabs, suara "Jefri – Suara Penjelasan Lembut", "A2" diucapkan "A Dua"
 

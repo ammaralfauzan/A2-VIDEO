@@ -64,7 +64,7 @@ const estimate = () => {
   return out;
 };
 
-type Timing = {mulai: number; selesai: number}[];
+type Timing = {mulai: number; selesai: number; potongan?: {mulai: number; selesai: number}[]}[];
 const measured = (voTiming as {kalimat: Timing}).kalimat;
 export const HAS_AUDIO = measured.length === SENTENCES.length;
 export const SENTENCE_TIMES = HAS_AUDIO ? measured.map((k) => ({start: k.mulai, end: k.selesai})) : estimate();
@@ -77,23 +77,40 @@ export const TOTAL_FRAMES = Math.ceil((SENTENCE_TIMES[SENTENCE_TIMES.length - 1]
 export type Word = {text: string; bold: boolean; f: number};
 export type Chunk = {words: Word[]; from: number; to: number; sentence: number};
 
-// Kata per kata: waktu tiap kata dibagi rata menurut jumlah suku katanya di dalam kalimat.
+const weight = (w: string) => syllables(w.replace(/\*/g, '')) + (/,\*?$/.test(w) ? 0.8 : 0);
+
+// Kata per kata: waktu tiap kata dibagi menurut jumlah suku katanya. Bila timing VO punya
+// "potongan" (jeda koma), tiap potongan teks memakai batas waktunya sendiri.
+const spread = (words: string[], start: number, end: number): Word[] => {
+  const weights = words.map(weight);
+  const total = weights.reduce((a, b) => a + b, 0);
+  let acc = 0;
+  return words.map((w, k) => {
+    const f = Math.round((start + ((end - start) * acc) / total) * FPS);
+    acc += weights[k];
+    return {text: w.replace(/\*/g, ''), bold: w.startsWith('*'), f};
+  });
+};
+
 export const CHUNKS: Chunk[] = (() => {
   const chunks: Chunk[] = [];
   SENTENCES.forEach((s, si) => {
     const {start, end} = SENTENCE_TIMES[si];
     const parts = s.split('|').map((p) => p.split(/\s+/).filter(Boolean));
-    const all = parts.flat();
-    const weights = all.map((w) => syllables(w.replace(/\*/g, '')) + (/,\*?$/.test(w) ? 0.8 : 0));
-    const total = weights.reduce((a, b) => a + b, 0);
-    let acc = 0;
+    const pot = HAS_AUDIO ? measured[si].potongan : undefined;
+    if (pot && pot.length === parts.length) {
+      parts.forEach((p, k) => {
+        const words = spread(p, pot[k].mulai, pot[k].selesai);
+        chunks.push({words, from: words[0].f, to: 0, sentence: si});
+      });
+      return;
+    }
+    // Tanpa potongan: sebar seluruh kalimat, lalu potong per bagian teks.
+    const all = spread(parts.flat(), start, end);
     let k = 0;
     for (const p of parts) {
-      const words: Word[] = p.map((w) => {
-        const f = Math.round((start + ((end - start) * acc) / total) * FPS);
-        acc += weights[k++];
-        return {text: w.replace(/\*/g, ''), bold: w.startsWith('*'), f};
-      });
+      const words = all.slice(k, k + p.length);
+      k += p.length;
       chunks.push({words, from: words[0].f, to: 0, sentence: si});
     }
   });

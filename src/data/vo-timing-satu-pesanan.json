@@ -1,1 +1,141 @@
-{"audio": null, "catatan": "Belum ada voiceover. Isi kalimat (mulai/selesai dalam detik, 21 kalimat) setelah vo-satu-pesanan.mp3 tersedia.", "kalimat": []}
+{
+  "audio": "public/audio/vo-satu-pesanan.mp3",
+  "durasi": 42.11,
+  "suara": "Jefri - Suara Penjelasan Lembut (ElevenLabs, eleven_v4)",
+  "metode": "Deteksi jeda hening (ffmpeg silencedetect -35 dB/0,25 dtk dan -30 dB/0,12 dtk untuk jeda koma), dicocokkan dengan urutan 21 kalimat naskah-satu-pesanan.md. 'potongan' = batas potongan teks di dalam kalimat (jeda koma).",
+  "kalimat": [
+    {
+      "mulai": 0.0,
+      "selesai": 1.23,
+      "teks": "Satu pesanan masuk."
+    },
+    {
+      "mulai": 1.68,
+      "selesai": 4.14,
+      "teks": "Tim Anda mengerjakan... tujuh langkah."
+    },
+    {
+      "mulai": 4.46,
+      "selesai": 4.94,
+      "teks": "Balas chat."
+    },
+    {
+      "mulai": 5.27,
+      "selesai": 6.07,
+      "teks": "Catat di spreadsheet."
+    },
+    {
+      "mulai": 6.35,
+      "selesai": 7.15,
+      "teks": "Buat invoice."
+    },
+    {
+      "mulai": 7.34,
+      "selesai": 7.69,
+      "teks": "Kirim."
+    },
+    {
+      "mulai": 7.92,
+      "selesai": 8.9,
+      "teks": "Ingatkan pembayaran."
+    },
+    {
+      "mulai": 9.16,
+      "selesai": 9.48,
+      "teks": "Rekap."
+    },
+    {
+      "mulai": 9.76,
+      "selesai": 10.49,
+      "teks": "Susun laporan."
+    },
+    {
+      "mulai": 10.89,
+      "selesai": 15.04,
+      "teks": "Kalau sehari ada lima puluh pesanan, itu tiga ratus lima puluh langkah.",
+      "potongan": [
+        {
+          "mulai": 10.89,
+          "selesai": 12.87
+        },
+        {
+          "mulai": 13.11,
+          "selesai": 15.04
+        }
+      ]
+    },
+    {
+      "mulai": 15.42,
+      "selesai": 16.52,
+      "teks": "Setiap hari."
+    },
+    {
+      "mulai": 17.06,
+      "selesai": 19.33,
+      "teks": "Masalahnya bukan tim Anda kurang rajin."
+    },
+    {
+      "mulai": 19.7,
+      "selesai": 21.06,
+      "teks": "Langkahnya yang terlalu banyak."
+    },
+    {
+      "mulai": 21.52,
+      "selesai": 23.88,
+      "teks": "A Dua Automation menyambungkan semuanya."
+    },
+    {
+      "mulai": 24.23,
+      "selesai": 29.4,
+      "teks": "Pesanan masuk, invoice terbit sendiri, pengingat terkirim sendiri, laporan tersusun sendiri.",
+      "potongan": [
+        {
+          "mulai": 24.23,
+          "selesai": 24.93
+        },
+        {
+          "mulai": 25.18,
+          "selesai": 26.32
+        },
+        {
+          "mulai": 26.5,
+          "selesai": 27.72
+        },
+        {
+          "mulai": 27.9,
+          "selesai": 29.4
+        }
+      ]
+    },
+    {
+      "mulai": 29.68,
+      "selesai": 31.9,
+      "teks": "Tim Anda cukup mengurus yang butuh manusia."
+    },
+    {
+      "mulai": 32.19,
+      "selesai": 33.34,
+      "teks": "Menjawab pertanyaan sulit."
+    },
+    {
+      "mulai": 33.6,
+      "selesai": 34.52,
+      "teks": "Menjaga pelanggan."
+    },
+    {
+      "mulai": 34.83,
+      "selesai": 37.51,
+      "teks": "Mau tahu langkah mana di bisnis Anda yang bisa otomatis?"
+    },
+    {
+      "mulai": 37.89,
+      "selesai": 39.0,
+      "teks": "A Dua Automation."
+    },
+    {
+      "mulai": 39.27,
+      "selesai": 41.89,
+      "teks": "Konsultasi gratis di a dua automate dot com."
+    }
+  ]
+}

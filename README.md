@@ -22,6 +22,13 @@ Video konten motion UI A2 Automation, dibuat dengan [Remotion](https://www.remot
 - Stage 16:9 dirender di dalam kamera yang zoom dan menggeser mengikuti kursor (`src/Vertical916.tsx`). Caption, jam, island, teks empati, dan penutup ditata ulang di area aman.
 - Review area aman: `SAFE_GUIDE=1 STILLS_DIR=<folder> npm run stills:9x16` menandai zona terlarang dengan merah.
 
+## Video: "Satu Pesanan, Tujuh Langkah" (komposisi `SatuPesanan`, 9:16)
+- Naskah: `naskah-satu-pesanan.md`. Gaya explainer: teks kinetik kata per kata, diagram simpul yang terus bermorf, maskot Gigi
+- Hasil: `out/satu-pesanan-9x16.mp4` (1080×1920, 30 fps, 43,5 detik, dengan voiceover)
+- Voiceover: `public/audio/vo-satu-pesanan.mp3` (ElevenLabs, suara Jefri), timing per kalimat dan potongan di `src/data/vo-timing-satu-pesanan.json`
+- Maskot Gigi (`src/components/Gigi.tsx`): gear yang sama dengan gear di logo A2, ekspresi lewat mata; lembar ekspresi di komposisi `GigiSheet`
+- Frame kunci: `out/stills/satu-pesanan/` (frame dihitung otomatis dari timing kalimat)
+
 ## Struktur
 - `src/theme.ts`: token warna, huruf, radius, bayangan, dan spring dari DESIGN.md
 - `src/data/timeline.ts`: waktu adegan, caption, jalur kursor, dan klik (frame global)
@@ -41,6 +48,7 @@ npm run stills:a2-umum      # frame kunci A2Umum ke out/stills/a2-umum/
 npm run render:a2-umum      # MP4 A2Umum ke out/
 npm run stills:9x16 / npm run stills:a2-umum-9x16    # frame kunci 9:16
 npm run render:9x16 / npm run render:a2-umum-9x16    # MP4 9:16
+npm run stills:satu-pesanan / npm run render:satu-pesanan
 ```
 Jika Chromium tidak bisa diunduh otomatis, isi `REMOTION_BROWSER` dengan path Chromium lokal.
 
