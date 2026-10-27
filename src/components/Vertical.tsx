@@ -19,8 +19,13 @@ export const V_HEIGHT = 1920;
 
 // Area aman gabungan TikTok, Reels, dan Shorts (piksel 1080x1920).
 export const SAFE = {left: 60, right: 900, top: 220, bottom: 1500};
-const SAFE_W = SAFE.right - SAFE.left;
 const SAFE_CX = (SAFE.left + SAFE.right) / 2; // 480
+const SAFE_CY = (SAFE.top + SAFE.bottom) / 2; // 860
+
+// Teks dan logo diletakkan di tengah layar (x 540) agar terlihat seimbang, dengan lebar
+// maksimal 720 px sehingga sisi kanannya tetap berhenti di batas aman x 900.
+const TEXT = {cx: V_WIDTH / 2, w: 2 * (SAFE.right - V_WIDTH / 2)};
+const TEXT_LEFT = TEXT.cx - TEXT.w / 2; // 180
 
 // Titik di layar tempat pusat fokus kamera diletakkan (di atas area caption).
 const VIEW = {x: SAFE_CX, y: 830};
@@ -70,8 +75,8 @@ const VCaptions: React.FC<{cues: CaptionCue[]}> = ({cues}) => {
     <div
       style={{
         position: 'absolute',
-        left: SAFE.left,
-        width: SAFE_W,
+        left: TEXT_LEFT,
+        width: TEXT.w,
         bottom: V_HEIGHT - SAFE.bottom + 30,
         display: 'flex',
         justifyContent: 'center',
@@ -108,12 +113,14 @@ const VEmpati: React.FC<{t: EmpatiText}> = ({t}) => {
     <div
       style={{
         position: 'absolute',
-        left: SAFE.left,
-        width: SAFE_W,
-        top: 560,
+        left: TEXT_LEFT,
+        width: TEXT.w,
+        top: SAFE.top,
+        height: SAFE.bottom - SAFE.top,
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        justifyContent: 'center',
         gap: 32,
         textAlign: 'center',
         fontFamily: font.family,
@@ -121,8 +128,8 @@ const VEmpati: React.FC<{t: EmpatiText}> = ({t}) => {
         zIndex: 30,
       }}
     >
-      <div style={{fontSize: 48, fontWeight: 500, color: color.muted, ...textIn(f, t.smallAt)}}>{t.small}</div>
-      <div style={{fontSize: 88, lineHeight: 1.1, fontWeight: 600, color: color.navy, letterSpacing: '-0.02em', textWrap: 'balance', ...textIn(f, t.bigAt)}}>
+      <div style={{fontSize: 44, fontWeight: 500, color: color.muted, ...textIn(f, t.smallAt)}}>{t.small}</div>
+      <div style={{fontSize: 80, lineHeight: 1.1, fontWeight: 600, color: color.navy, letterSpacing: '-0.02em', textWrap: 'balance', ...textIn(f, t.bigAt)}}>
         {t.big}
       </div>
     </div>
@@ -136,16 +143,35 @@ const VOutro: React.FC<{timing: OutroTiming}> = ({timing}) => {
   const raw = interpolate(f, timing.tagline, [0, 1], {...clamp, easing: ease});
   const tagline = Math.round(raw * 40) / 40;
   const size = 1000;
+  // Isi logo ada di x 14,5–85,7% dan y 23,1–72,5% file. Logo + tombol (tinggi ±640 px)
+  // ditengahkan di area aman: isi logo jatuh di x 185–897, tombol di bawahnya.
+  const group = {h: 0.494 * size + 56 + 88};
+  const contentTop = SAFE_CY - group.h / 2;
   return (
     <>
-      {/* Isi logo (x 14,5–85,7% file) jatuh di 125–837 px, di dalam area aman. */}
       <Logo
         size={size}
         taglineReveal={tagline}
-        style={{position: 'absolute', left: SAFE_CX - size / 2, top: 170, opacity: s, transform: `scale(${0.96 + 0.04 * s})`}}
+        style={{
+          position: 'absolute',
+          left: TEXT.cx - size / 2,
+          top: contentTop - 0.231 * size,
+          opacity: s,
+          transform: `scale(${0.96 + 0.04 * s})`,
+        }}
       />
-      <div style={{position: 'absolute', left: SAFE.left, width: SAFE_W, top: 1000, display: 'flex', justifyContent: 'center', ...textIn(f, timing.pillIn)}}>
-        <Button label="Konsultasi gratis · a2automate.com" style={{height: 88, padding: '0 44px', fontSize: 34}} />
+      <div
+        style={{
+          position: 'absolute',
+          left: TEXT_LEFT,
+          width: TEXT.w,
+          top: contentTop + 0.494 * size + 56,
+          display: 'flex',
+          justifyContent: 'center',
+          ...textIn(f, timing.pillIn),
+        }}
+      >
+        <Button label="Konsultasi gratis · a2automate.com" style={{height: 88, padding: '0 40px', fontSize: 32}} />
       </div>
     </>
   );
@@ -187,7 +213,7 @@ export const VerticalVideo: React.FC<{config: VerticalConfig; safeGuide?: boolea
       </Camera>
       <Html5Audio src={staticFile(c.audio)} />
       <Clock schedule={c.clock} position={{top: SAFE.top + 30, left: SAFE.left, right: 'auto'}} />
-      <Island frame={frame} start={c.island.start} end={c.island.end} text={c.island.text} top={SAFE.top + 30} centerX={SAFE_CX} />
+      <Island frame={frame} start={c.island.start} end={c.island.end} text={c.island.text} top={SAFE.top + 30} centerX={TEXT.cx} />
       <VCaptions cues={c.captions} />
       <VEmpati t={c.empati} />
       <VOutro timing={c.outro} />
