@@ -29,7 +29,7 @@ const DEFAULT_SCHEDULE: ClockSchedule = {
 };
 
 // Jam pojok kanan atas.
-export const Clock: React.FC<{schedule?: ClockSchedule}> = ({schedule = DEFAULT_SCHEDULE}) => {
+export const Clock: React.FC<{schedule?: ClockSchedule; position?: React.CSSProperties}> = ({schedule = DEFAULT_SCHEDULE, position}) => {
   const frame = useCurrentFrame();
   const {night: n} = schedule;
   const night = interpolate(frame, [n.from, n.to], [n.start, n.end], {...clamp, easing: ease});
@@ -62,6 +62,7 @@ export const Clock: React.FC<{schedule?: ClockSchedule}> = ({schedule = DEFAULT_
         opacity,
         transform: isDay ? `translateY(${(1 - dayIn) * 8}px)` : undefined,
         zIndex: 40,
+        ...position,
       }}
     >
       <IconClock size={28} stroke={isDay ? color.success : color.navy} />

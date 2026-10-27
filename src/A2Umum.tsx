@@ -28,6 +28,18 @@ const ORDER = [
   ['ajakan', AjakanScene],
 ] as const;
 
+// Adegan + kursor, tanpa latar, suara, jam, dan caption. Dipakai juga oleh versi 9:16.
+export const A2UmumStage: React.FC = () => (
+  <>
+    {ORDER.map(([key, Scene]) => (
+      <Sequence key={key} name={key} from={U_SCENES[key].from} durationInFrames={U_SCENES[key].dur}>
+        <Scene />
+      </Sequence>
+    ))}
+    <Cursor path={U_CURSOR_PATH} clicks={U_CLICK_LIST} drags={U_DRAG_LIST} fadeOut={U_CURSOR_FADE} />
+  </>
+);
+
 // "Makin Tumbuh, Makin Sibuk": soft selling A2 Automation untuk usaha, klinik, sekolah, yayasan.
 export const A2Umum: React.FC = () => {
   const frame = useCurrentFrame();
@@ -36,15 +48,10 @@ export const A2Umum: React.FC = () => {
   return (
     <AbsoluteFill style={{background: color.canvas, fontFamily: font.family}}>
       <AbsoluteFill style={{background: color.surface, opacity: toWhite}} />
-      {ORDER.map(([key, Scene]) => (
-        <Sequence key={key} name={key} from={U_SCENES[key].from} durationInFrames={U_SCENES[key].dur}>
-          <Scene />
-        </Sequence>
-      ))}
+      <A2UmumStage />
       <Html5Audio src={staticFile('audio/vo-a2-umum.mp3')} />
       <Clock schedule={U_CLOCK} />
       <Captions cues={U_CAPTIONS} />
-      <Cursor path={U_CURSOR_PATH} clicks={U_CLICK_LIST} drags={U_DRAG_LIST} fadeOut={U_CURSOR_FADE} />
     </AbsoluteFill>
   );
 };

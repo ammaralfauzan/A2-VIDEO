@@ -28,6 +28,18 @@ const ORDER = [
   ['ajakan', AjakanScene],
 ] as const;
 
+// Adegan + kursor, tanpa latar, suara, jam, dan caption. Dipakai juga oleh versi 9:16.
+export const MainStage: React.FC = () => (
+  <>
+    {ORDER.map(([key, Scene]) => (
+      <Sequence key={key} name={key} from={SCENES[key].from} durationInFrames={SCENES[key].dur}>
+        <Scene />
+      </Sequence>
+    ))}
+    <Cursor />
+  </>
+);
+
 export const Main: React.FC = () => {
   const frame = useCurrentFrame();
   // Kanvas berubah ke putih permukaan menjelang logo (file logo berlatar putih).
@@ -35,15 +47,10 @@ export const Main: React.FC = () => {
   return (
     <AbsoluteFill style={{background: color.canvas, fontFamily: font.family}}>
       <AbsoluteFill style={{background: color.surface, opacity: toWhite}} />
-      {ORDER.map(([key, Scene]) => (
-        <Sequence key={key} name={key} from={SCENES[key].from} durationInFrames={SCENES[key].dur}>
-          <Scene />
-        </Sequence>
-      ))}
+      <MainStage />
       <Html5Audio src={staticFile('audio/vo.mp3')} />
       <Clock />
       <Captions />
-      <Cursor />
     </AbsoluteFill>
   );
 };

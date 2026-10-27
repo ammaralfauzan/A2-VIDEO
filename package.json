@@ -9,6 +9,10 @@
     "stills:a2-umum": "node scripts/render-stills.mjs A2Umum",
     "render": "remotion render JamSembilanMalam out/jam-9-malam-16x9.mp4",
     "render:a2-umum": "remotion render A2Umum out/a2-umum-16x9.mp4",
+    "stills:9x16": "node scripts/render-stills.mjs JamSembilanMalam916",
+    "stills:a2-umum-9x16": "node scripts/render-stills.mjs A2Umum916",
+    "render:9x16": "remotion render JamSembilanMalam916 out/jam-9-malam-9x16.mp4",
+    "render:a2-umum-9x16": "remotion render A2Umum916 out/a2-umum-9x16.mp4",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

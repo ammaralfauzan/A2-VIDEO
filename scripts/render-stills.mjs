@@ -1,5 +1,6 @@
 // Render frame kunci tiap adegan (bundle sekali, render banyak).
-// Pakai: node scripts/render-stills.mjs [JamSembilanMalam|A2Umum] [prefix-nama...]
+// Pakai: node scripts/render-stills.mjs [JamSembilanMalam|A2Umum|JamSembilanMalam916|A2Umum916] [prefix-nama...]
+// SAFE_GUIDE=1 menandai area aman 9:16 (untuk review); STILLS_DIR mengganti folder keluaran.
 import {bundle} from '@remotion/bundler';
 import {renderStill, selectComposition} from '@remotion/renderer';
 import path from 'node:path';
@@ -40,18 +41,28 @@ const SETS = {
     ],
   },
 };
+SETS.JamSembilanMalam916 = {
+  dir: 'out/stills/jam-9-malam-9x16',
+  stills: [...SETS.JamSembilanMalam.stills, ['10-ajakan-pill', 960]],
+};
+SETS.A2Umum916 = {
+  dir: 'out/stills/a2-umum-9x16',
+  stills: [...SETS.A2Umum.stills, ['10-ajakan-pill', 960]],
+};
 
 const [id = 'JamSembilanMalam', ...only] = process.argv.slice(2);
 const set = SETS[id];
 if (!set) throw new Error(`Komposisi tidak dikenal: ${id}`);
+const dir = process.env.STILLS_DIR || set.dir;
+const inputProps = process.env.SAFE_GUIDE ? {safeGuide: true} : {};
 // Pakai Chromium lokal jika REMOTION_BROWSER diisi (mis. lingkungan tanpa akses unduh).
 const browserExecutable = process.env.REMOTION_BROWSER || null;
 
 const serveUrl = await bundle({entryPoint: path.resolve('src/index.ts')});
-const composition = await selectComposition({serveUrl, id, browserExecutable});
+const composition = await selectComposition({serveUrl, id, browserExecutable, inputProps});
 for (const [name, frame] of set.stills) {
   if (only.length && !only.some((o) => name.startsWith(o))) continue;
-  const output = `${set.dir}/${name}-f${String(frame).padStart(3, '0')}.png`;
-  await renderStill({serveUrl, composition, frame, output, overwrite: true, browserExecutable});
+  const output = `${dir}/${name}-f${String(frame).padStart(3, '0')}.png`;
+  await renderStill({serveUrl, composition, frame, output, overwrite: true, browserExecutable, inputProps});
   console.log('rendered', output);
 }

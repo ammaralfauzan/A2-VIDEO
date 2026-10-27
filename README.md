@@ -15,6 +15,13 @@ Video konten motion UI A2 Automation, dibuat dengan [Remotion](https://www.remot
 - Timeline: `src/data/timeline-a2-umum.ts`, adegan di `src/scenes/a2-umum/`
 - Frame kunci yang direview: `out/stills/a2-umum/`
 
+## Versi 9:16 untuk media sosial (Reels, TikTok, Shorts)
+- `out/jam-9-malam-9x16.mp4` (komposisi `JamSembilanMalam916`) dan `out/a2-umum-9x16.mp4` (komposisi `A2Umum916`), 1080×1920
+- Frame kunci: `out/stills/jam-9-malam-9x16/` dan `out/stills/a2-umum-9x16/`
+- Area aman (`SAFE` di `src/components/Vertical.tsx`): x 60–900, y 220–1500. Kanan 180 px dikosongkan untuk tombol like/komentar/share, bawah 420 px untuk caption, nama akun, dan musik, atas 220 px untuk tab.
+- Stage 16:9 dirender di dalam kamera yang zoom dan menggeser mengikuti kursor (`src/Vertical916.tsx`). Caption, jam, island, teks empati, dan penutup ditata ulang di area aman.
+- Review area aman: `SAFE_GUIDE=1 STILLS_DIR=<folder> npm run stills:9x16` menandai zona terlarang dengan merah.
+
 ## Struktur
 - `src/theme.ts`: token warna, huruf, radius, bayangan, dan spring dari DESIGN.md
 - `src/data/timeline.ts`: waktu adegan, caption, jalur kursor, dan klik (frame global)
@@ -32,6 +39,8 @@ npm run stills              # frame kunci "Jam 9 Malam" ke out/stills/
 npm run render              # MP4 "Jam 9 Malam" ke out/
 npm run stills:a2-umum      # frame kunci A2Umum ke out/stills/a2-umum/
 npm run render:a2-umum      # MP4 A2Umum ke out/
+npm run stills:9x16 / npm run stills:a2-umum-9x16    # frame kunci 9:16
+npm run render:9x16 / npm run render:a2-umum-9x16    # MP4 9:16
 ```
 Jika Chromium tidak bisa diunduh otomatis, isi `REMOTION_BROWSER` dengan path Chromium lokal.
 
