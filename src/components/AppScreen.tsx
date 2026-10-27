@@ -1,7 +1,8 @@
 import React from 'react';
 import {interpolate} from 'remotion';
 import {APP, CLICKS, DRAG} from '../data/timeline';
-import {color, font, gradient, radius} from '../theme';
+import {color, font, radius} from '../theme';
+import {Card, Header, Row, Sidebar, Status, Tab} from './AppUI';
 import {Button} from './Button';
 import {Chart} from './Chart';
 import {pressAt} from './Cursor';
@@ -35,7 +36,7 @@ export const T = {
   recede: 722,
 };
 
-const TABS = [
+const TABS: Tab[] = [
   {label: 'Beranda', Icon: IconHome},
   {label: 'Rapor', Icon: IconFile},
   {label: 'Pengingat', Icon: IconBell},
@@ -47,101 +48,6 @@ const TAB_SWITCH = [
   {f: CLICKS.navPengingat + 2, i: 2},
   {f: CLICKS.navLaporan + 2, i: 3},
 ];
-const NAV_TOP = 120; // relatif ke badan jendela
-const NAV_STEP = 64;
-
-const Sidebar: React.FC<{f: number}> = ({f}) => {
-  let y = NAV_TOP + TAB_SWITCH[0].i * NAV_STEP;
-  for (let k = 1; k < TAB_SWITCH.length; k++) {
-    const prev = TAB_SWITCH[k - 1].i;
-    const s = sp(f, TAB_SWITCH[k].f);
-    if (f >= TAB_SWITCH[k].f) y = NAV_TOP + (prev + (TAB_SWITCH[k].i - prev) * s) * NAV_STEP;
-  }
-  const active = [...TAB_SWITCH].reverse().find((t) => f >= t.f)!.i;
-  return (
-    <div style={{position: 'absolute', left: 0, top: 0, bottom: 0, width: APP.sidebar, borderRight: `1px solid ${color.line}`, padding: 32, boxSizing: 'border-box'}}>
-      <div style={{fontSize: font.ui, fontWeight: 600, color: color.navy}}>A2 Sekolah</div>
-      <div style={{fontSize: font.label, color: color.muted, marginTop: 4}}>SMP Harapan Bangsa</div>
-      <div style={{position: 'absolute', left: 16, right: 16, top: y, height: 56, borderRadius: radius.input, background: color.canvas}}>
-        <div style={{position: 'absolute', left: 0, top: 14, width: 4, height: 28, borderRadius: 2, background: gradient}} />
-      </div>
-      {TABS.map(({label, Icon}, i) => (
-        <div
-          key={label}
-          style={{
-            position: 'absolute',
-            left: 40,
-            top: NAV_TOP + i * NAV_STEP,
-            height: 56,
-            display: 'flex',
-            alignItems: 'center',
-            gap: 16,
-            fontSize: font.label,
-            fontWeight: i === active ? 600 : 500,
-            color: i === active ? color.navy : color.muted,
-          }}
-        >
-          <Icon size={26} stroke={i === active ? color.navy : color.muted} />
-          {label}
-        </div>
-      ))}
-    </div>
-  );
-};
-
-const Header: React.FC<{title: string; sub: string; f: number; start: number; right?: React.ReactNode}> = ({title, sub, f, start, right}) => (
-  <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', ...textIn(f, start)}}>
-    <div>
-      <div style={{fontSize: font.title, fontWeight: 600, color: color.navy, letterSpacing: '-0.01em'}}>{title}</div>
-      <div style={{fontSize: font.label, color: color.muted, marginTop: 6}}>{sub}</div>
-    </div>
-    {right}
-  </div>
-);
-
-const Card: React.FC<{top: number; children: React.ReactNode; style?: React.CSSProperties}> = ({top, children, style}) => (
-  <div
-    style={{
-      position: 'absolute',
-      left: 0,
-      right: 0,
-      top,
-      border: `1px solid ${color.line}`,
-      borderRadius: radius.card,
-      padding: 32,
-      background: color.surface,
-      ...style,
-    }}
-  >
-    {children}
-  </div>
-);
-
-const Row: React.FC<{children: React.ReactNode; last?: boolean}> = ({children, last}) => (
-  <div
-    style={{
-      height: 48,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      borderBottom: last ? 'none' : `1px solid ${color.line}`,
-      fontSize: font.label,
-      color: color.navy,
-    }}
-  >
-    {children}
-  </div>
-);
-
-const Status: React.FC<{done: boolean; p?: number; doneText?: string; waitText?: string}> = ({done, p = 1, doneText = 'Selesai', waitText = 'Menunggu'}) =>
-  done ? (
-    <span style={{display: 'flex', alignItems: 'center', gap: 8, color: color.success, fontWeight: 500, opacity: p}}>
-      <IconCheck size={22} stroke={color.success} />
-      {doneText}
-    </span>
-  ) : (
-    <span style={{color: color.muted}}>{waitText}</span>
-  );
 
 // ---------- Panel Beranda (titik balik) ----------
 const HomePanel: React.FC<{f: number}> = ({f}) => {
@@ -329,7 +235,7 @@ export const AppScreen: React.FC<{f: number}> = ({f}) => {
       title="A2 Sekolah"
       style={{opacity, transform: `translateY(${-30 * recede}px) scale(${scale})`, transformOrigin: '50% 50%', zIndex: 20}}
     >
-      <Sidebar f={f} />
+      <Sidebar f={f} width={APP.sidebar} brand="A2 Sekolah" sub="SMP Harapan Bangsa" tabs={TABS} switches={TAB_SWITCH} />
       <div style={{position: 'absolute', left: APP.sidebar + 48, top: 48, right: 48, bottom: 48}}>
         {homeOp > 0 ? (
           <div style={{position: 'absolute', inset: 0, opacity: homeOp}}>

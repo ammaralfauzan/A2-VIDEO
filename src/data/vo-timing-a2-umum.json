@@ -1,0 +1,77 @@
+{
+  "audio": "public/audio/vo-a2-umum.mp3",
+  "durasi": 33.23,
+  "metode": "Deteksi jeda hening (ffmpeg silencedetect -35 dB/0,25 dtk; -30 dB/0,12 dtk untuk jeda koma), dicocokkan dengan urutan kalimat naskah-a2-umum.md. Belum diverifikasi dengan transkripsi.",
+  "kalimat": [
+    {
+      "mulai": 0.0,
+      "selesai": 1.4,
+      "teks": "Bisnis Anda tumbuh."
+    },
+    {
+      "mulai": 1.86,
+      "selesai": 3.41,
+      "teks": "Tapi kenapa Anda makin sibuk?"
+    },
+    {
+      "mulai": 3.76,
+      "selesai": 5.09,
+      "teks": "Chat pelanggan menumpuk."
+    },
+    {
+      "mulai": 5.38,
+      "selesai": 6.71,
+      "teks": "Tagihan dikirim manual."
+    },
+    {
+      "mulai": 6.96,
+      "selesai": 8.88,
+      "teks": "Laporan dikerjakan sampai malam."
+    },
+    {
+      "mulai": 9.26,
+      "selesai": 12.11,
+      "teks": "Bagaimana kalau pekerjaan berulang itu jalan sendiri?"
+    },
+    {
+      "mulai": 12.5,
+      "selesai": 15.33,
+      "teks": "Pesan pelanggan terbalas cepat, tidak ada yang terlewat."
+    },
+    {
+      "mulai": 15.62,
+      "selesai": 17.8,
+      "teks": "Tagihan dan pengingat terkirim tepat waktu."
+    },
+    {
+      "mulai": 18.08,
+      "selesai": 20.43,
+      "teks": "Laporan tersusun sendiri, setiap pagi."
+    },
+    {
+      "mulai": 20.71,
+      "selesai": 23.3,
+      "teks": "Untuk sekolah, klinik, sampai usaha Anda."
+    },
+    {
+      "mulai": 23.64,
+      "selesai": 25.24,
+      "teks": "Kami tidak mengganti tim Anda."
+    },
+    {
+      "mulai": 25.56,
+      "selesai": 28.46,
+      "teks": "Kami memberi mereka waktu untuk hal yang lebih penting."
+    },
+    {
+      "mulai": 28.76,
+      "selesai": 30.01,
+      "teks": "A2 Automation."
+    },
+    {
+      "mulai": 30.31,
+      "selesai": 33.23,
+      "teks": "Konsultasi gratis di a2automate.com."
+    }
+  ]
+}

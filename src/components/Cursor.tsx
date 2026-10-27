@@ -1,11 +1,12 @@
 import React from 'react';
 import {interpolate, useCurrentFrame} from 'remotion';
-import {CLICK_LIST, CURSOR_PATH, CURSOR_VISIBLE, DRAG} from '../data/timeline';
+import {CLICK_LIST, CURSOR_PATH, CURSOR_VISIBLE, CursorKey, DRAG} from '../data/timeline';
 import {color} from '../theme';
 import {clamp, ease} from './motion';
 
-const positionAt = (f: number) => {
-  const path = CURSOR_PATH;
+export type Drag = {from: number; to: number};
+
+export const positionAt = (f: number, path: CursorKey[] = CURSOR_PATH) => {
   if (f <= path[0].f) return path[0];
   for (let i = 0; i < path.length - 1; i++) {
     const a = path[i];
@@ -19,21 +20,35 @@ const positionAt = (f: number) => {
 };
 
 // Seberapa "ditekan" tombol mouse (0..1) pada frame f.
-export const pressAt = (f: number) => {
+export const pressAt = (f: number, clicks: number[] = CLICK_LIST, drags: Drag[] = [DRAG]) => {
   let p = 0;
-  for (const c of CLICK_LIST) {
+  for (const c of clicks) {
     p = Math.max(p, interpolate(f, [c - 2, c, c + 3, c + 6], [0, 1, 1, 0], clamp));
   }
-  p = Math.max(p, interpolate(f, [DRAG.from - 2, DRAG.from, DRAG.to, DRAG.to + 3], [0, 1, 1, 0], clamp));
+  for (const d of drags) {
+    p = Math.max(p, interpolate(f, [d.from - 2, d.from, d.to, d.to + 3], [0, 1, 1, 0], clamp));
+  }
   return p;
 };
 
+type Props = {
+  path?: CursorKey[];
+  clicks?: number[];
+  drags?: Drag[];
+  fadeOut?: [number, number];
+};
+
 // Kursor global: satu lapisan di atas semua adegan agar gerakannya tidak terputus.
-export const Cursor: React.FC = () => {
+export const Cursor: React.FC<Props> = ({
+  path = CURSOR_PATH,
+  clicks = CLICK_LIST,
+  drags = [DRAG],
+  fadeOut = [CURSOR_VISIBLE.fadeOutFrom, CURSOR_VISIBLE.fadeOutTo],
+}) => {
   const frame = useCurrentFrame();
-  const {x, y} = positionAt(frame);
-  const press = pressAt(frame);
-  const opacity = interpolate(frame, [CURSOR_VISIBLE.fadeOutFrom, CURSOR_VISIBLE.fadeOutTo], [1, 0], clamp);
+  const {x, y} = positionAt(frame, path);
+  const press = pressAt(frame, clicks, drags);
+  const opacity = interpolate(frame, fadeOut, [1, 0], clamp);
   if (opacity <= 0) return null;
   const scale = 1 - press * 0.14;
   return (

@@ -72,3 +72,28 @@ export const IconBolt: React.FC<P> = (p) => (
     <path d="M13 2 4 14h7l-1 8 9-12h-7z" />
   </Svg>
 );
+export const IconGear: React.FC<P> = (p) => (
+  <Svg {...p}>
+    <circle cx="12" cy="12" r="3.2" />
+    <path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1" />
+    <circle cx="12" cy="12" r="6.5" />
+  </Svg>
+);
+export const IconInbox: React.FC<P> = (p) => (
+  <Svg {...p}>
+    <path d="M3 13h5l1.5 3h5L16 13h5" />
+    <path d="M5.5 5h13L21 13v6H3v-6z" />
+  </Svg>
+);
+export const IconReceipt: React.FC<P> = (p) => (
+  <Svg {...p}>
+    <path d="M6 3h12v18l-3-2-3 2-3-2-3 2z" />
+    <path d="M9 8h6M9 12h6M9 16h3" />
+  </Svg>
+);
+export const IconDoc: React.FC<P> = (p) => (
+  <Svg {...p}>
+    <path d="M14 3H6v18h12V7z" />
+    <path d="M14 3v4h4" />
+  </Svg>
+);

@@ -5,8 +5,10 @@
   "description": "Video konten motion UI A2 Automation (Remotion)",
   "scripts": {
     "studio": "remotion studio",
-    "stills": "node scripts/render-stills.mjs",
+    "stills": "node scripts/render-stills.mjs JamSembilanMalam",
+    "stills:a2-umum": "node scripts/render-stills.mjs A2Umum",
     "render": "remotion render JamSembilanMalam out/jam-9-malam-16x9.mp4",
+    "render:a2-umum": "remotion render A2Umum out/a2-umum-16x9.mp4",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

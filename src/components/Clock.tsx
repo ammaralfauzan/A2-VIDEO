@@ -9,15 +9,35 @@ const fmt = (mins: number) => {
   return `${String(Math.floor(m / 60) % 24).padStart(2, '0')}.${String(m % 60).padStart(2, '0')}`;
 };
 
-// Jam pojok kanan atas. Malam: 21.07 -> 23.48 di adegan masalah. Setelah otomatis: 15.30.
-export const Clock: React.FC = () => {
+export type ClockSchedule = {
+  night: {from: number; to: number; start: number; end: number}; // menit sejak 00.00
+  nightFade: [number, number];
+  dayAt: number; // frame mulai mode siang/pagi
+  dayMinutes: number;
+  dayIn: number;
+  dayFade: [number, number];
+};
+
+// Jadwal "Jam 9 Malam": 21.07 -> 23.48 di adegan masalah, setelah otomatis 15.30.
+const DEFAULT_SCHEDULE: ClockSchedule = {
+  night: {from: 103, to: 302, start: 21 * 60 + 7, end: 23 * 60 + 48},
+  nightFade: [317, 332],
+  dayAt: 585,
+  dayMinutes: 15 * 60 + 30,
+  dayIn: 664,
+  dayFade: [724, 738],
+};
+
+// Jam pojok kanan atas.
+export const Clock: React.FC<{schedule?: ClockSchedule}> = ({schedule = DEFAULT_SCHEDULE}) => {
   const frame = useCurrentFrame();
-  const night = interpolate(frame, [103, 302], [21 * 60 + 7, 23 * 60 + 48], {...clamp, easing: ease});
-  const isDay = frame >= 585;
-  const mins = isDay ? 15 * 60 + 30 : night;
-  const nightOp = interpolate(frame, [317, 332], [1, 0], clamp);
-  const dayIn = sp(frame, 664);
-  const dayOut = interpolate(frame, [724, 738], [1, 0], clamp);
+  const {night: n} = schedule;
+  const night = interpolate(frame, [n.from, n.to], [n.start, n.end], {...clamp, easing: ease});
+  const isDay = frame >= schedule.dayAt;
+  const mins = isDay ? schedule.dayMinutes : night;
+  const nightOp = interpolate(frame, schedule.nightFade, [1, 0], clamp);
+  const dayIn = sp(frame, schedule.dayIn);
+  const dayOut = interpolate(frame, schedule.dayFade, [1, 0], clamp);
   const opacity = isDay ? dayIn * dayOut : nightOp;
   if (opacity <= 0) return null;
   return (

@@ -1,30 +1,57 @@
-// Render frame kunci tiap adegan ke out/stills/ (bundle sekali, render banyak).
+// Render frame kunci tiap adegan (bundle sekali, render banyak).
+// Pakai: node scripts/render-stills.mjs [JamSembilanMalam|A2Umum] [prefix-nama...]
 import {bundle} from '@remotion/bundler';
 import {renderStill, selectComposition} from '@remotion/renderer';
 import path from 'node:path';
 
-const STILLS = [
-  ['01-hook', 20],
-  ['01b-hook-badge', 74],
-  ['02-masalah', 130],
-  ['02b-masalah-ketik', 215],
-  ['03-titik-balik', 366],
-  ['04-rapor', 430],
-  ['05-kirim', 520],
-  ['06-spp', 625],
-  ['07-laporan', 712],
-  ['08-empati', 810],
-  ['09-ajakan', 1000],
-];
-const only = process.argv.slice(2);
+const SETS = {
+  JamSembilanMalam: {
+    dir: 'out/stills',
+    stills: [
+      ['01-hook', 20],
+      ['01b-hook-badge', 74],
+      ['02-masalah', 130],
+      ['02b-masalah-ketik', 215],
+      ['03-titik-balik', 366],
+      ['04-rapor', 430],
+      ['05-kirim', 520],
+      ['06-spp', 625],
+      ['07-laporan', 712],
+      ['08-empati', 810],
+      ['09-ajakan', 1000],
+    ],
+  },
+  A2Umum: {
+    dir: 'out/stills/a2-umum',
+    stills: [
+      ['01-hook', 20],
+      ['01b-hook-badge', 90],
+      ['02-masalah-chat', 150],
+      ['02b-masalah-seret-invoice', 192],
+      ['02c-masalah-spreadsheet', 262],
+      ['03-titik-balik', 336],
+      ['03b-gear-centang', 372],
+      ['04-inbox', 440],
+      ['05-tagihan', 525],
+      ['06-laporan', 600],
+      ['07-industri', 704],
+      ['08-empati', 820],
+      ['09-ajakan', 1000],
+    ],
+  },
+};
+
+const [id = 'JamSembilanMalam', ...only] = process.argv.slice(2);
+const set = SETS[id];
+if (!set) throw new Error(`Komposisi tidak dikenal: ${id}`);
 // Pakai Chromium lokal jika REMOTION_BROWSER diisi (mis. lingkungan tanpa akses unduh).
 const browserExecutable = process.env.REMOTION_BROWSER || null;
 
 const serveUrl = await bundle({entryPoint: path.resolve('src/index.ts')});
-const composition = await selectComposition({serveUrl, id: 'JamSembilanMalam', browserExecutable});
-for (const [name, frame] of STILLS) {
+const composition = await selectComposition({serveUrl, id, browserExecutable});
+for (const [name, frame] of set.stills) {
   if (only.length && !only.some((o) => name.startsWith(o))) continue;
-  const output = `out/stills/${name}-f${String(frame).padStart(3, '0')}.png`;
+  const output = `${set.dir}/${name}-f${String(frame).padStart(3, '0')}.png`;
   await renderStill({serveUrl, composition, frame, output, overwrite: true, browserExecutable});
   console.log('rendered', output);
 }
