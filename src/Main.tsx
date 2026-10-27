@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, interpolate, Sequence, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, Html5Audio, interpolate, Sequence, staticFile, useCurrentFrame} from 'remotion';
 import {Captions} from './components/Caption';
 import {Clock} from './components/Clock';
 import {Cursor} from './components/Cursor';
@@ -31,7 +31,7 @@ const ORDER = [
 export const Main: React.FC = () => {
   const frame = useCurrentFrame();
   // Kanvas berubah ke putih permukaan menjelang logo (file logo berlatar putih).
-  const toWhite = interpolate(frame, [820, 834], [0, 1], clamp);
+  const toWhite = interpolate(frame, [830, 844], [0, 1], clamp);
   return (
     <AbsoluteFill style={{background: color.canvas, fontFamily: font.family}}>
       <AbsoluteFill style={{background: color.surface, opacity: toWhite}} />
@@ -40,6 +40,7 @@ export const Main: React.FC = () => {
           <Scene />
         </Sequence>
       ))}
+      <Html5Audio src={staticFile('audio/vo.mp3')} />
       <Clock />
       <Captions />
       <Cursor />

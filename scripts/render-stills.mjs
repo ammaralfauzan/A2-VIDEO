@@ -5,16 +5,16 @@ import path from 'node:path';
 
 const STILLS = [
   ['01-hook', 20],
-  ['01b-hook-badge', 70],
-  ['02-masalah', 120],
-  ['02b-masalah-ketik', 190],
-  ['03-titik-balik', 314],
-  ['04-rapor', 390],
-  ['05-kirim', 525],
-  ['06-spp', 640],
+  ['01b-hook-badge', 74],
+  ['02-masalah', 130],
+  ['02b-masalah-ketik', 215],
+  ['03-titik-balik', 366],
+  ['04-rapor', 430],
+  ['05-kirim', 520],
+  ['06-spp', 625],
   ['07-laporan', 712],
-  ['08-empati', 800],
-  ['09-ajakan', 892],
+  ['08-empati', 810],
+  ['09-ajakan', 1000],
 ];
 const only = process.argv.slice(2);
 // Pakai Chromium lokal jika REMOTION_BROWSER diisi (mis. lingkungan tanpa akses unduh).

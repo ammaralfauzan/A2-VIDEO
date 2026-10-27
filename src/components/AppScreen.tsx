@@ -15,24 +15,24 @@ import {Window} from './Window';
 // sehingga perpindahan adegan terjadi di dalam jendela, bukan cut.
 
 export const T = {
-  bloom: 288,
+  bloom: 334,
   homeOut: CLICKS.otomatiskan + 4,
   raporIn: CLICKS.otomatiskan + 12,
-  progressFrom: 338,
-  progressTo: 428,
-  kirimBtnIn: 432,
+  progressFrom: 391,
+  progressTo: 451,
+  kirimBtnIn: 453,
   kirimDone: CLICKS.kirim + 4,
-  island: 480,
-  islandEnd: 540,
+  island: 488,
+  islandEnd: 533,
   reply: 512,
   raporOut: CLICKS.navPengingat + 2,
   sppIn: CLICKS.navPengingat + 10,
   scheduleIn: DRAG.to + 4,
   sppOut: CLICKS.navLaporan + 2,
   laporanIn: CLICKS.navLaporan + 8,
-  chartFrom: 674,
-  chartTo: 708,
-  recede: 720,
+  chartFrom: 661,
+  chartTo: 706,
+  recede: 722,
 };
 
 const TABS = [

@@ -102,7 +102,7 @@ const Bubble: React.FC<{text: string; out?: boolean; style?: React.CSSProperties
 
 const REPLY_1 = 'Baik Bu, rapornya sedang kami siapkan.';
 const REPLY_2 = 'Mohon ditunggu ya, Pak.';
-const SENT_1 = 206;
+const SENT_1 = 235;
 
 const ChatBody: React.FC<{f: number}> = ({f}) => {
   let input = '';
@@ -188,8 +188,8 @@ const SppBody: React.FC = () => (
 const Badge: React.FC<{f: number}> = ({f}) => {
   const steps = [
     {f: 0, n: 12},
-    {f: 30, n: 37},
-    {f: 60, n: 84},
+    {f: 32, n: 37},
+    {f: 64, n: 84},
   ];
   const cur = [...steps].reverse().find((s) => f >= s.f)!;
   const pop = cur.f === 0 ? 1 : sp(f, cur.f, 9);

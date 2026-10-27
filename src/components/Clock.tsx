@@ -12,12 +12,12 @@ const fmt = (mins: number) => {
 // Jam pojok kanan atas. Malam: 21.07 -> 23.48 di adegan masalah. Setelah otomatis: 15.30.
 export const Clock: React.FC = () => {
   const frame = useCurrentFrame();
-  const night = interpolate(frame, [96, 262], [21 * 60 + 7, 23 * 60 + 48], {...clamp, easing: ease});
-  const isDay = frame >= 600;
+  const night = interpolate(frame, [103, 302], [21 * 60 + 7, 23 * 60 + 48], {...clamp, easing: ease});
+  const isDay = frame >= 585;
   const mins = isDay ? 15 * 60 + 30 : night;
-  const nightOp = interpolate(frame, [274, 286], [1, 0], clamp);
-  const dayIn = sp(frame, 676);
-  const dayOut = interpolate(frame, [722, 736], [1, 0], clamp);
+  const nightOp = interpolate(frame, [317, 332], [1, 0], clamp);
+  const dayIn = sp(frame, 664);
+  const dayOut = interpolate(frame, [724, 738], [1, 0], clamp);
   const opacity = isDay ? dayIn * dayOut : nightOp;
   if (opacity <= 0) return null;
   return (

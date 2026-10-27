@@ -5,10 +5,10 @@ import {clamp, textIn} from '../components/motion';
 import {SCENES} from '../data/timeline';
 import {color, font} from '../theme';
 
-// 24–28 dtk: jendela menjauh dan memudar, kalimat empatik besar di tengah.
+// 24,1–28,2 dtk: jendela menjauh dan memudar, kalimat empatik besar di tengah.
 export const EmpatiScene: React.FC = () => {
   const f = useCurrentFrame() + SCENES.empati.from;
-  const out = interpolate(f, [822, 834], [1, 0], clamp);
+  const out = interpolate(f, [832, 844], [1, 0], clamp);
   return (
     <>
       <AppScreen f={f} />
@@ -26,10 +26,12 @@ export const EmpatiScene: React.FC = () => {
           zIndex: 30,
         }}
       >
-        <div style={{fontSize: font.caption, fontWeight: 500, color: color.muted, ...textIn(f, 738)}}>
+        {/* Muncul saat "Kami tidak mengganti tim Anda." (24,25 dtk) */}
+        <div style={{fontSize: font.caption, fontWeight: 500, color: color.muted, ...textIn(f, 727)}}>
           Kami tidak mengganti tim Anda.
         </div>
-        <div style={{fontSize: font.hook, fontWeight: 600, color: color.navy, letterSpacing: '-0.02em', ...textIn(f, 770)}}>
+        {/* Muncul saat "Kami memberi mereka waktu pulang." (26,2 dtk) */}
+        <div style={{fontSize: font.hook, fontWeight: 600, color: color.navy, letterSpacing: '-0.02em', ...textIn(f, 786)}}>
           Memberi mereka waktu pulang.
         </div>
       </div>
