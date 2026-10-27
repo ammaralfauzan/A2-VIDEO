@@ -7,6 +7,7 @@ import {U_TOTAL_FRAMES} from './data/timeline-a2-umum';
 import {V_HEIGHT, V_WIDTH} from './components/Vertical';
 import {A2Umum916, JamSembilanMalam916} from './Vertical916';
 import {SatuPesanan} from './SatuPesanan';
+import {GigiSheet} from './dev/GigiSheet';
 import {TOTAL_FRAMES as SP_TOTAL_FRAMES} from './data/timeline-satu-pesanan';
 import {TOTAL_FRAMES} from './data/timeline';
 import {FPS, HEIGHT, WIDTH} from './theme';
@@ -38,6 +39,8 @@ export const Root: React.FC = () => (
       height={V_HEIGHT}
       defaultProps={{safeGuide: false}}
     />
+    {/* Lembar ekspresi maskot untuk review. */}
+    <Composition id="GigiSheet" component={GigiSheet} durationInFrames={1} fps={FPS} width={1400} height={820} />
     {/* "Satu Pesanan, Tujuh Langkah": explainer 9:16 dengan maskot Gigi. */}
     <Composition id="SatuPesanan" component={SatuPesanan} durationInFrames={SP_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} />
   </>
