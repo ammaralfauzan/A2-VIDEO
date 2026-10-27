@@ -18,6 +18,8 @@ type Props = {
   sweatPhase?: number; // 0..1, posisi tetes saat menetes turun
   tilt?: number; // derajat kemiringan seluruh badan
   squash?: {x: number; y: number}; // regang/pipih badan (1 = normal)
+  eyesOpacity?: number; // 0 = wajah kosong (lubang putih seperti gear di logo)
+  shadow?: number; // opasitas bayangan lantai
 };
 
 // Proporsi diukur dari gear di file logo: ujung gigi 70, badan 58, lubang 39, lebar gigi ±20°.
@@ -99,6 +101,8 @@ export const Gigi: React.FC<Props> = ({
   sweatPhase = 0,
   tilt = 0,
   squash = {x: 1, y: 1},
+  eyesOpacity = 1,
+  shadow = 1,
 }) => {
   // Satu tetes keringat besar yang menetes turun lalu memudar (minimalis).
   const dropY = -58 + sweatPhase * 16;
@@ -106,7 +110,7 @@ export const Gigi: React.FC<Props> = ({
   return (
     <svg width={size} height={size * 1.18} viewBox="-80 -80 160 189" style={{overflow: 'visible'}}>
       {/* bayangan lembut di lantai: mengecil saat Gigi terangkat */}
-      <ellipse cx={0} cy={100} rx={42 * squash.x} ry={6} fill={color.navyInk} opacity={0.1} />
+      <ellipse cx={0} cy={100} rx={42 * squash.x} ry={6} fill={color.navyInk} opacity={0.1 * shadow} />
       <g transform={`translate(0 ${70 * (1 - squash.y)}) rotate(${tilt}) scale(${squash.x} ${squash.y})`}>
         <g transform={`rotate(${spin})`}>
           {Array.from({length: 8}, (_, i) => (
@@ -124,7 +128,9 @@ export const Gigi: React.FC<Props> = ({
           <circle r={R_BODY} fill={color.navy} />
         </g>
         <circle r={R_HOLE} fill={color.surface} />
-        <Eyes mood={mood} blink={blink} look={look} open={eyeOpen} />
+        <g opacity={eyesOpacity}>
+          <Eyes mood={mood} blink={blink} look={look} open={eyeOpen} />
+        </g>
         {sweat > 0 ? (
           <path
             d={`M60,${dropY} c0,0 9,12 9,18 a9,9 0 0,1 -18,0 c0,-6 9,-18 9,-18z`}

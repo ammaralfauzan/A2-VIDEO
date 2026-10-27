@@ -121,9 +121,11 @@ export const IconHeart: React.FC<P> = (p) => (
     <path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.6 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z" />
   </Svg>
 );
+// Gelembung bicara bulat dengan tanda tanya di tengah.
 export const IconHelp: React.FC<P> = (p) => (
   <Svg {...p}>
-    <path d="M4 5h16v11H9l-5 4z" />
-    <path d="M10 9a2 2 0 1 1 2.8 1.8c-.5.3-.8.7-.8 1.2M12 14.3v.2" />
+    <path d="M12 3.5c4.7 0 8.5 3.3 8.5 7.4s-3.8 7.4-8.5 7.4c-1 0-2-.1-2.9-.4L5 19.8l1.2-3.6C4.6 14.9 3.5 13 3.5 10.9c0-4.1 3.8-7.4 8.5-7.4z" />
+    <path d="M9.9 9.1a2.2 2.2 0 1 1 3.1 2c-.6.3-1 .8-1 1.4v.4" />
+    <path d="M12 15.4v.1" />
   </Svg>
 );

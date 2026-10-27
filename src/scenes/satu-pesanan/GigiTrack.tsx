@@ -3,7 +3,7 @@ import {interpolate} from 'remotion';
 import {Gigi, Mood} from '../../components/Gigi';
 import {clamp, ease} from '../../components/motion';
 import {S, sf, TOTAL_FRAMES, wf} from '../../data/timeline-satu-pesanan';
-import {PILL_TOP} from './Ajakan';
+import {GEAR_TARGET, OUTRO} from './Ajakan';
 import {P, TREE} from './layout';
 
 // Gigi sepanjang video: satu lapisan agar gerak dan ekspresinya tidak terputus.
@@ -31,8 +31,6 @@ const keys = (): Key[] => {
     {f: sf(S.manusia) + 28, x: 540, y: 905, size: 170},
     {f: sf(S.tanya), x: 540, y: 905, size: 170},
     {f: sf(S.tanya) + 16, x: 540, y: 660, size: 300},
-    {f: sf(S.logo), x: 540, y: 660, size: 300},
-    {f: sf(S.logo) + 18, x: 540, y: PILL_TOP + 230, size: 140},
   ];
 };
 
@@ -62,8 +60,8 @@ const lastLanding = (f: number, ks: Key[]) => {
 };
 
 const moodRaw = (f: number): Mood => {
-  if (f >= wf(S.ajakan, 0)) return 'kedip';
-  if (f >= sf(S.logo)) return 'senang';
+  if (f >= OUTRO.mergeFrom) return 'puas';
+  if (f >= OUTRO.start) return 'senang';
   if (f >= sf(S.tanya)) return 'mikir';
   if (f >= sf(S.manusia)) return 'senang';
   if (f >= P.ring() + 30) return 'puas'; // gear berputar, alur jalan sendiri
@@ -136,7 +134,44 @@ const lookTarget = (f: number, pos: {x: number; y: number}, mood: Mood) => {
 const hump = (t: number, len: number) => (t >= 0 && t <= len ? Math.sin((Math.PI * t) / len) : 0);
 const settle = (t: number, amt: number) => (t >= 0 ? amt * Math.exp(-t / 4) * Math.cos(t * 0.8) : 0);
 
+// Penutup: ancang-ancang, melompat, turun mendarat di posisi gear huruf A, menutup mata,
+// berputar pas ke kelipatan 45 derajat, lalu digantikan gear asli logo.
+const Outro: React.FC<{f: number}> = ({f}) => {
+  const o = OUTRO;
+  const tr = track();
+  if (f > o.swap[1] + 2) return null;
+  const from = {x: 540, y: 660, size: 300};
+  const to = GEAR_TARGET;
+  // lintasan: naik (melompat) lalu turun ke posisi gear
+  const u = interpolate(f, [o.hop, o.land], [0, 1], {...clamp, easing: ease});
+  const x = from.x + (to.x - from.x) * u;
+  const arc = Math.sin(Math.PI * u) * 230;
+  const y = from.y + (to.y - from.y) * u - arc;
+  const size = from.size + (to.size - from.size) * interpolate(f, [o.hop, o.land - 6], [0, 1], {...clamp, easing: ease});
+  // ancang-ancang memipih, meregang saat melayang, pipih saat mendarat
+  let sy = 1;
+  if (f < o.hop) sy = 1 - 0.1 * interpolate(f, [o.start, o.hop], [0, 1], clamp);
+  else if (f < o.land) sy = 1 + 0.08 * Math.sin(Math.PI * u);
+  else sy = 1 - settle(f - o.land, 0.1);
+  const sx = 1 / sy;
+  // berputar pas: dari sudut terakhir ke kelipatan 45 derajat berikutnya (+45)
+  const base = at(tr.spin, o.start);
+  const target = Math.ceil(base / 45) * 45 + 45;
+  const spin = base + (target - base) * interpolate(f, [o.mergeFrom, o.mergeTo], [0, 1], {...clamp, easing: ease});
+  const mood: Mood = f >= o.mergeFrom ? 'puas' : 'senang';
+  const eyesOpacity = interpolate(f, [o.mergeFrom + 6, o.mergeTo - 2], [1, 0], clamp);
+  const opacity = interpolate(f, o.swap, [1, 0], clamp);
+  const shadow = interpolate(f, [o.land - 4, o.land + 4], [1, 0], clamp);
+  const tilt = f < o.land ? (to.x - from.x) * 0.012 * Math.sin(Math.PI * u) : 0;
+  return (
+    <div style={{position: 'absolute', left: x - size / 2, top: y - size / 2, width: size, zIndex: 20, opacity}}>
+      <Gigi size={size} mood={mood} spin={spin} squash={{x: sx, y: sy}} eyesOpacity={eyesOpacity} shadow={shadow} tilt={tilt} />
+    </div>
+  );
+};
+
 export const GigiTrack: React.FC<{f: number}> = ({f}) => {
+  if (f >= OUTRO.start + 1) return <Outro f={f} />;
   const ks = keys();
   const tr = track();
   const pos = posAt(f, ks);

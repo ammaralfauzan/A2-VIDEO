@@ -28,6 +28,7 @@ Video konten motion UI A2 Automation, dibuat dengan [Remotion](https://www.remot
 - Voiceover: `public/audio/vo-satu-pesanan.mp3` (ElevenLabs, suara Jefri), timing per kalimat dan potongan di `src/data/vo-timing-satu-pesanan.json`
 - Maskot Gigi (`src/components/Gigi.tsx`): gear yang sama dengan gear di logo A2, ekspresi lewat mata; lembar ekspresi di komposisi `GigiSheet`
 - Efek suara: disintesis sendiri lewat `python3 scripts/make-sfx.py` ke `public/sfx/` (motif 7 langkah = tangga nada D mayor, terselesaikan jadi akor saat hub tersambung); jadwal bunyi di `src/scenes/satu-pesanan/Sfx.tsx`
+- Penutup: Gigi turun ke posisi gear huruf A lalu menjadi gear logo. Logo dipisah per bagian dari file asli lewat `python3 scripts/split-logo.py` ke `public/logo/parts/` (tagline tanpa dua garis strip)
 - Frame kunci: `out/stills/satu-pesanan/` (frame dihitung otomatis dari timing kalimat)
 
 ## Struktur

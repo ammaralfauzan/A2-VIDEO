@@ -7,9 +7,10 @@ import {color, font, shadow} from '../../theme';
 // "Mau tahu langkah mana di bisnis Anda yang bisa otomatis?" Gelembung tanya di atas Gigi.
 export const Tanya: React.FC<{f: number}> = ({f}) => {
   const start = sf(S.tanya);
-  if (f < start || f > sf(S.logo) + 10) return null;
+  if (f < start || f > sf(S.logo)) return null;
   const p = sp(f, wf(S.tanya, 2) - 4, 12); // "langkah"
-  const out = interpolate(f, [sf(S.logo) - 4, sf(S.logo) + 6], [1, 0], clamp);
+  // Pudar sebelum Gigi melompat ke logo agar tidak menumpuk dengan logo.
+  const out = interpolate(f, [sf(S.logo) - 20, sf(S.logo) - 12], [1, 0], clamp);
   return (
     <div
       style={{

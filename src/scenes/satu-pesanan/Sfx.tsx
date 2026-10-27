@@ -1,6 +1,7 @@
 import React from 'react';
 import {Html5Audio, Sequence, staticFile} from 'remotion';
 import {CHUNKS, S, sf, wf} from '../../data/timeline-satu-pesanan';
+import {OUTRO} from './Ajakan';
 import {P} from './layout';
 
 // Efek suara khas hasil sintesis sendiri (scripts/make-sfx.py), tiap bunyi menempel pada kejadian visual.
@@ -29,8 +30,11 @@ export const sfxEvents = (): Ev[] => {
     {f: sf(S.sulit), src: 'human-2'},
     {f: sf(S.pelanggan), src: 'human-3'},
     {f: wf(S.tanya, 2) - 4, src: 'tanya'},
-    {f: sf(S.logo) - 6, src: 'outro'},
-    {f: wf(S.ajakan, 0), src: 'ting'},
+    // penutup: lompat, mendarat di huruf A, logo mengembang, Gigi menjadi gear
+    {f: OUTRO.hop, src: 'whoosh', v: 0.7},
+    {f: OUTRO.land, src: 'chip', v: 0.8},
+    {f: OUTRO.aIn, src: 'outro'},
+    {f: OUTRO.swap[0] - 2, src: 'ting'},
   ];
   return ev.sort((a, b) => a.f - b.f);
 };

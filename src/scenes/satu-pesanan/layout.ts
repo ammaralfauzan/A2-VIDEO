@@ -4,7 +4,6 @@ import {S, sf, wf} from '../../data/timeline-satu-pesanan';
 // Area visual 9:16 (di atas teks kinetik), di dalam area aman x 180–900.
 export const VIS = {cx: 540, top: 260, bottom: 1060};
 export const TEXT_BOX = {left: 180, width: 720, top: 1110};
-export const WATERMARK_Y = 1440;
 
 export const STEPS = [
   {Icon: IconChat, label: 'Balas chat'},
