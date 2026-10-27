@@ -19,7 +19,7 @@ type Props = {
   tilt?: number; // derajat kemiringan seluruh badan
   squash?: {x: number; y: number}; // regang/pipih badan (1 = normal)
   eyesOpacity?: number; // 0 = wajah kosong (lubang putih seperti gear di logo)
-  shadow?: number; // opasitas bayangan lantai
+  shadow?: number; // kekuatan bayangan lembut di belakang badan (0..1)
 };
 
 // Proporsi diukur dari gear di file logo: ujung gigi 70, badan 58, lubang 39, lebar gigi ±20°.
@@ -52,23 +52,31 @@ const Eyes: React.FC<{mood: Mood; blink: boolean; look: {x: number; y: number}; 
     senang: <path d="M-20,3 Q-13.5,-9 -7,3 M7,3 Q13.5,-9 20,3" {...line} />,
     // ‿ ‿
     puas: <path d="M-20,-1 Q-13.5,8 -7,-1 M7,-1 Q13.5,8 20,-1" {...line} />,
-    // | |  (membesar)
+    // alis melonjak + mata bulat lebar + mulut "o"
     kaget: (
       <>
-        <rect x={-16} y={-11} width={6} height={20} rx={3} fill={ink} />
-        <rect x={10} y={-11} width={6} height={20} rx={3} fill={ink} />
+        <path d="M-21,-17 Q-14,-23 -7,-17 M7,-17 Q14,-23 21,-17" {...line} strokeWidth={3.5} />
+        <ellipse cx={-13} cy={-3} rx={5.5} ry={8.5} fill={ink} />
+        <ellipse cx={13} cy={-3} rx={5.5} ry={8.5} fill={ink} />
+        <ellipse cx={0} cy={14} rx={3.4} ry={4.2} fill={ink} />
       </>
     ),
-    // alis naik + mata batang
+    // khawatir: alis miring (ujung dalam terangkat), mata kecil, mulut bergelombang
     cemas: (
       <>
-        <path d="M-21,-14 Q-14,-19 -7,-14 M7,-14 Q14,-19 21,-14" {...line} strokeWidth={3.5} />
-        <rect x={-16} y={-7} width={5.5} height={15} rx={2.75} fill={ink} />
-        <rect x={10.5} y={-7} width={5.5} height={15} rx={2.75} fill={ink} />
+        <path d="M-22,-11 L-8,-17 M8,-17 L22,-11" {...line} strokeWidth={4} />
+        <ellipse cx={-13} cy={-2} rx={4} ry={6} fill={ink} />
+        <ellipse cx={13} cy={-2} rx={4} ry={6} fill={ink} />
+        <path d="M-9,14 q2.25,-3 4.5,0 q2.25,3 4.5,0 q2.25,-3 4.5,0 q2.25,3 4.5,0" {...line} strokeWidth={3} />
       </>
     ),
-    // > <
-    lelah: <path d="M-19,-8 L-8,-1 L-19,6 M19,-8 L8,-1 L19,6" {...line} />,
+    // > <  + mulut cemberut
+    lelah: (
+      <>
+        <path d="M-19,-8 L-8,-1 L-19,6 M19,-8 L8,-1 L19,6" {...line} />
+        <path d="M-6,16 Q0,10.5 6,16" {...line} strokeWidth={3.2} />
+      </>
+    ),
     // melirik ke atas, satu alis naik
     mikir: (
       <>
@@ -108,9 +116,13 @@ export const Gigi: React.FC<Props> = ({
   const dropY = -58 + sweatPhase * 16;
   const dropO = sweat * Math.min(1, (1 - sweatPhase) * 3) * Math.min(1, sweatPhase * 6 + 0.2);
   return (
-    <svg width={size} height={size * 1.18} viewBox="-80 -80 160 189" style={{overflow: 'visible'}}>
-      {/* bayangan lembut di lantai: mengecil saat Gigi terangkat */}
-      <ellipse cx={0} cy={100} rx={42 * squash.x} ry={6} fill={color.navyInk} opacity={0.1 * shadow} />
+    // Bayangan lembut di belakang badan (bukan di lantai), mengikuti bentuk gear.
+    <svg
+      width={size}
+      height={size * 1.18}
+      viewBox="-80 -80 160 189"
+      style={{overflow: 'visible', filter: shadow > 0 ? `drop-shadow(0 ${size * 0.06}px ${size * 0.1}px rgba(11,22,48,${0.2 * shadow}))` : undefined}}
+    >
       <g transform={`translate(0 ${70 * (1 - squash.y)}) rotate(${tilt}) scale(${squash.x} ${squash.y})`}>
         <g transform={`rotate(${spin})`}>
           {Array.from({length: 8}, (_, i) => (

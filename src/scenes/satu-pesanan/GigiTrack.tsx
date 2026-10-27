@@ -199,6 +199,12 @@ export const GigiTrack: React.FC<{f: number}> = ({f}) => {
     ly += g.y / 8;
   }
 
+  // Cemas: mata melirik kiri-kanan dengan gelisah.
+  if (mood === 'cemas') {
+    lx = Math.tanh(Math.sin(f / 7) * 3) * 0.75;
+    ly = 0.1;
+  }
+
   // --- Bahasa tubuh per emosi ---
   let dy = 0;
   let dx = 0;
