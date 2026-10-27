@@ -97,3 +97,33 @@ export const IconDoc: React.FC<P> = (p) => (
     <path d="M14 3v4h4" />
   </Svg>
 );
+export const IconChat: React.FC<P> = (p) => (
+  <Svg {...p}>
+    <path d="M4 5h16v11H9l-5 4z" />
+    <path d="M8 9.5h8M8 12.5h5" />
+  </Svg>
+);
+export const IconTable: React.FC<P> = (p) => (
+  <Svg {...p}>
+    <rect x="3.5" y="4.5" width="17" height="15" rx="2" />
+    <path d="M3.5 9.5h17M3.5 14.5h17M9.5 9.5v10" />
+  </Svg>
+);
+export const IconClipboard: React.FC<P> = (p) => (
+  <Svg {...p}>
+    <path d="M9 4.5H6v16h12v-16h-3" />
+    <rect x="9" y="3" width="6" height="3" rx="1" />
+    <path d="M9 11h6M9 15h4" />
+  </Svg>
+);
+export const IconHeart: React.FC<P> = (p) => (
+  <Svg {...p}>
+    <path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.6 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z" />
+  </Svg>
+);
+export const IconHelp: React.FC<P> = (p) => (
+  <Svg {...p}>
+    <path d="M4 5h16v11H9l-5 4z" />
+    <path d="M10 9a2 2 0 1 1 2.8 1.8c-.5.3-.8.7-.8 1.2M12 14.3v.2" />
+  </Svg>
+);

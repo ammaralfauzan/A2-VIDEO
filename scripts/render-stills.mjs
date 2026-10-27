@@ -4,6 +4,7 @@
 import {bundle} from '@remotion/bundler';
 import {renderStill, selectComposition} from '@remotion/renderer';
 import path from 'node:path';
+import {execSync} from 'node:child_process';
 
 const SETS = {
   JamSembilanMalam: {
@@ -48,6 +49,14 @@ SETS.JamSembilanMalam916 = {
 SETS.A2Umum916 = {
   dir: 'out/stills/a2-umum-9x16',
   stills: [...SETS.A2Umum.stills, ['10-ajakan-pill', 960]],
+};
+
+// Frame kunci SatuPesanan dihitung dari timing kalimat (berubah saat VO diganti).
+SETS.SatuPesanan = {
+  dir: 'out/stills/satu-pesanan',
+  get stills() {
+    return JSON.parse(execSync('npx tsx scripts/satu-pesanan-frames.ts', {encoding: 'utf8'}));
+  },
 };
 
 const [id = 'JamSembilanMalam', ...only] = process.argv.slice(2);
