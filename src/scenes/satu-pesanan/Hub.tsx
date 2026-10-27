@@ -79,16 +79,28 @@ export const Hub: React.FC<{f: number}> = ({f}) => {
           left: c.x - 200,
           width: 400,
           top: c.y + hubSize / 2 + 14,
-          textAlign: 'center',
-          fontFamily: font.family,
-          fontSize: 30 * c.s + 6 * (1 - c.s),
-          fontWeight: 600,
-          color: color.navy,
+          display: 'flex',
+          justifyContent: 'center',
           opacity: pop * (1 - compact),
           zIndex: 11,
         }}
       >
-        Alur otomatis
+        {/* Kapsul berbingkai: garis gradasi lewat di belakang label. */}
+        <span
+          style={{
+            padding: '6px 18px',
+            borderRadius: radius.pill,
+            background: color.surface,
+            border: `1px solid ${color.line}`,
+            boxShadow: '0 6px 16px rgba(11,22,48,0.08)',
+            fontFamily: font.family,
+            fontSize: 28,
+            fontWeight: 600,
+            color: color.navy,
+          }}
+        >
+          Alur otomatis
+        </span>
       </div>
       {CARDS.map((card, i) => {
         const at = cardChunks[i]?.from ?? P.compact() + i * 20;

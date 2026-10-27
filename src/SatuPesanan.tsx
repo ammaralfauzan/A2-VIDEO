@@ -11,6 +11,7 @@ import {LangkahGraph} from './scenes/satu-pesanan/LangkahGraph';
 import {TEXT_BOX, WATERMARK_Y} from './scenes/satu-pesanan/layout';
 import {Manusia} from './scenes/satu-pesanan/Manusia';
 import {Pembuka} from './scenes/satu-pesanan/Pembuka';
+import {Sfx} from './scenes/satu-pesanan/Sfx';
 import {Tanya} from './scenes/satu-pesanan/Tanya';
 import {color, font} from './theme';
 
@@ -49,6 +50,7 @@ export const SatuPesanan: React.FC = () => {
         a2automate.com
       </div>
       {HAS_AUDIO ? <Html5Audio src={staticFile('audio/vo-satu-pesanan.mp3')} /> : null}
+      <Sfx />
     </AbsoluteFill>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import {color, font, shadow} from '../theme';
+import {color, font, radius, shadow} from '../theme';
 
 // Simpul diagram: ikon garis di lingkaran putih berbayang lembut, label kecil di bawahnya.
 export const StepNode: React.FC<{
@@ -28,22 +28,33 @@ export const StepNode: React.FC<{
       <Icon size={size * 0.44} stroke={dark ? color.surface : color.navy} strokeWidth={2} />
     </div>
     {label ? (
+      // Label dalam kapsul berbingkai agar garis penghubung lewat di belakangnya, tidak menimpa teks.
       <div
         style={{
           position: 'absolute',
-          top: size + 12,
-          left: -80,
-          width: size + 160,
-          textAlign: 'center',
-          fontFamily: font.family,
-          fontSize: 28,
-          fontWeight: 500,
-          color: color.navy,
+          top: size + 10,
+          left: -100,
+          width: size + 200,
+          display: 'flex',
+          justifyContent: 'center',
           opacity: labelOpacity,
-          whiteSpace: 'nowrap',
         }}
       >
-        {label}
+        <span
+          style={{
+            padding: '5px 16px',
+            borderRadius: radius.pill,
+            background: color.surface,
+            border: `1px solid ${color.line}`,
+            fontFamily: font.family,
+            fontSize: 26,
+            fontWeight: 500,
+            color: color.navy,
+            whiteSpace: 'nowrap',
+          }}
+        >
+          {label}
+        </span>
       </div>
     ) : null}
   </div>
