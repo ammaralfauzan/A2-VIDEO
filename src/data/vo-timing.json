@@ -1,0 +1,17 @@
+{
+  "audio": null,
+  "catatan": "Belum ada public/audio/vo.mp3. Waktu di bawah adalah estimasi dari naskah (detik). Ganti dengan hasil transkripsi saat audio tersedia.",
+  "kalimat": [
+    {"mulai": 0.0, "selesai": 3.0, "teks": "Rapor dibagi besok. Admin Anda masih di sekolah?"},
+    {"mulai": 3.0, "selesai": 5.7, "teks": "Rekap nilai satu per satu. Balas chat wali murid satu per satu."},
+    {"mulai": 5.9, "selesai": 8.8, "teks": "Setiap semester, cerita yang sama."},
+    {"mulai": 9.0, "selesai": 11.0, "teks": "Bagaimana kalau semua itu jalan sendiri?"},
+    {"mulai": 11.0, "selesai": 15.0, "teks": "Rapor tersusun otomatis dari data nilai."},
+    {"mulai": 15.0, "selesai": 19.0, "teks": "Terkirim langsung ke wali murid, tanpa salin-tempel."},
+    {"mulai": 19.0, "selesai": 22.0, "teks": "Pengingat SPP pun berjalan tanpa diingatkan."},
+    {"mulai": 22.0, "selesai": 24.0, "teks": "Waktu kerja admin kembali, setiap bulan."},
+    {"mulai": 24.4, "selesai": 25.6, "teks": "Kami tidak mengganti tim Anda."},
+    {"mulai": 25.6, "selesai": 28.0, "teks": "Kami memberi mereka waktu pulang."},
+    {"mulai": 28.0, "selesai": 30.0, "teks": "A2 Automation. Konsultasi gratis di a2automate.com."}
+  ]
+}

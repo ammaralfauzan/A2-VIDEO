@@ -12,7 +12,6 @@ desktop.ini
 node_modules/
 dist/
 build/
-out/
 
 # Env
 .env
@@ -23,3 +22,6 @@ out/
 *.log
 tmp/
 temp/
+
+# Remotion
+.remotion/
