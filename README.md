@@ -38,8 +38,9 @@ Video konten motion UI A2 Automation, dibuat dengan [Remotion](https://www.remot
 - Transkrip dan timing per kata (ElevenLabs Scribe): `src/data/tips-umroh-words.json`; grafis menempel pada kata yang diucapkan (`src/tips-umroh/timeline.ts`)
 - Tata letak: kartu di y 1050–1480, strip progres di y 236; wajah pembicara (y 460–860) tidak tertutup, kanan 180 px dan bawah 420 px bebas untuk tombol sosmed
 - Pembuka: aerial Masjidil Haram + judul "Sebelum daftar umroh", lalu lingkaran berbingkai emas membuka dari wajah pembicara (`src/tips-umroh/Intro.tsx`)
-- B-roll: foto asli dari web umroh H2C (`public/broll/`, dipotong dari `h2c-umroh/public/img`): makan saat "fasilitas", pembimbing saat "pendampingan". Latar foto diburamkan, foto tajam dibingkai emas di y 370–900 (`src/tips-umroh/Broll.tsx`)
-- Efek suara foley di `public/sfx/umroh/` lewat `python3 scripts/make-sfx-umroh.py <folder-mp3>`: kartu bergeser, goresan spidol, buku (ElevenLabs Sound Effects) + angin, dentum felt, centang pensil, halaman, pesawat jauh, sobekan struk, klik kayu, desir foto (sintesis noise)
+- Hook: dua zoom punch-in ke wajah (setelah bukaan dan di kata "harganya"), kembali halus sebelum poin 1
+- B-roll: video asli H2C dari rekaman layar Bos, dipotong ke adegan bersih (tanpa ikon UI dan kursor) di `public/broll/`: fasilitas (nampan makanan), manasik (meja pendaftaran), pembimbing (Ustadz Ammikus). Layar penuh dengan whip-zoom, digeser ke atas agar bagian penting berada di atas kartu (`src/tips-umroh/Broll.tsx`)
+- Efek suara di `public/sfx/umroh/` lewat `python3 scripts/make-sfx-umroh.py`: wush (kartu/B-roll masuk), ssset (zoom, coretan), ting naik nada (centang), plus angin dan dentum di pembuka
 - Ajakan: tombol emas `umroh.h2c.or.id`. Kartu tanpa `backdrop-filter` (di render paralel Chromium kadang menghasilkan frame glitch kotak blur)
 - Hasil: `out/tips-umroh-9x16.mp4` (1080×1920, 30 fps, 24,8 detik). Frame kunci: `out/stills/tips-umroh/`
 

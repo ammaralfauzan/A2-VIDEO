@@ -76,8 +76,18 @@ export const BEAT = {
   hubungi: w(K.hubungi),
 } as const;
 
-// B-roll foto asli H2C (dari web umroh) yang menyela pembicara; suara tetap jalan.
+// B-roll video asli H2C (rekaman Bos) yang menyela pembicara layar penuh; suara pembicara tetap jalan.
+// Klip sudah dipotong ke adegan bersih di public/broll/ (lihat README).
 export const BROLL = {
-  makan: [BEAT.fasilitas - 2, CARD.p4 - 6] as [number, number],
-  pembimbing: [BEAT.pendampingan, CARD.cta - 4] as [number, number],
+  fasilitas: [BEAT.fasilitas - 2, CARD.p4 - 6] as [number, number],
+  // berakhir setelah klip pembimbing (di atasnya) selesai masuk, agar tidak sempat kembali ke pembicara
+  manasik: [BEAT.manasik, BEAT.pendampingan + 3] as [number, number],
+  pembimbing: [BEAT.pendampingan - 2, CARD.cta - 4] as [number, number],
+} as const;
+
+// Zoom hook: punch-in ke wajah setelah bukaan, punch lagi di "harganya", lalu kembali sebelum poin 1.
+export const ZOOM = {
+  punch1: INTRO.reveal[1] + 2,
+  punch2: w(K.aja) - 12, // "harganya"
+  back: [CARD.p1 - 14, CARD.p1 + 2] as [number, number],
 } as const;

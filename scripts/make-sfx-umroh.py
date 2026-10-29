@@ -1,14 +1,10 @@
-"""Efek suara foley untuk TipsUmroh (public/sfx/umroh/).
+"""Efek suara TipsUmroh (public/sfx/umroh/), disintesis dari noise dan parsial bel.
 
-Tiga bunyi rekaman-gaya dari ElevenLabs Sound Effects (kartu bergeser, goresan spidol, buku dibuka)
-dirapikan dari scratchpad; sisanya disintesis dari noise berbentuk (tanpa nada "ding" sintetis):
-angin pembuka, dentum felt saat transisi, centang pensil, halaman kalender, gemuruh pesawat jauh,
-sobekan struk, klik tombol kayu, desir foto keluar dari amplop.
+angin (pembuka), dentum (bukaan lingkaran), wush / wush-besar (kartu dan B-roll masuk),
+sset (coretan, zoom), ting dan ting-1..5 (centang, naik nada).
 
-Pakai: python3 scripts/make-sfx-umroh.py [folder-mp3-elevenlabs]
+Pakai: python3 scripts/make-sfx-umroh.py
 """
-import subprocess
-import sys
 import wave
 from pathlib import Path
 
@@ -85,57 +81,54 @@ body = np.sin(2 * np.pi * np.cumsum(f0) / SR) * np.exp(-t * 7)
 felt = band(noise(0.7), 200, 1200) * np.exp(-t * 60) * 0.5
 save('dentum', body + felt, -4)
 
-# --- centang pensil: goresan turun pendek lalu naik lebih panjang (grafit di kertas)
-def pencil(seed):
+# --- wush: udara lewat cepat; pita naik lalu turun (kartu dan B-roll masuk)
+def wush(sec, peak_at, lo, hi, seed):
     r = np.random.default_rng(seed)
-    def stroke(sec, lo, hi):
-        s = r.standard_normal(int(sec * SR))
-        s = band(s, lo, hi)
-        grain = 1 + 0.6 * band(r.standard_normal(len(s)), 20, 90) / 3
-        return s * grain * env(len(s), 0.006, sec * 0.6, 1.2)
-    gap = np.zeros(int(0.025 * SR))
-    return np.concatenate([stroke(0.045, 2200, 7000), gap, stroke(0.11, 1800, 6500), np.zeros(int(0.05 * SR))])
-for i in range(4):
-    save(f'centang-{i + 1}', pencil(100 + i), -6)
+    n = int(sec * SR)
+    x = r.standard_normal(n)
+    steps = 32
+    seg = n // steps
+    y = np.zeros(n)
+    win = np.hanning(seg * 2)
+    for i in range(steps):
+        a = max(0, i * seg - seg // 2)
+        b = min(n, a + seg * 2)
+        k = i / (steps - 1)
+        c = lo + (hi - lo) * np.exp(-((k - peak_at) / 0.28) ** 2)  # pusat pita mengikuti kurva lonceng
+        y[a:b] += band(x[a:b], c * 0.55, c * 1.6) * win[: b - a]
+    t = np.arange(n) / SR
+    e = np.where(t < peak_at * sec, (t / (peak_at * sec)) ** 2.2, np.exp(-(t - peak_at * sec) / (sec * 0.16)))
+    return y * e
+save('wush', wush(0.55, 0.55, 350, 2600, 7), -4)
+save('wush-besar', wush(0.8, 0.5, 220, 3200, 8) + 0.4 * band(noise(0.8), 50, 160) * env(int(0.8 * SR), 0.35, 0.4, 2), -3)
 
-# --- halaman kalender dibalik: desir kertas bergetar + tepukan kecil di akhir
-n = noise(0.42)
-flutter = 1 + 0.8 * np.sin(2 * np.pi * np.cumsum(np.linspace(38, 12, len(n))) / SR)
-x = band(n, 900, 7000) * flutter * env(len(n), 0.05, 0.12, 1.4)
-slap = band(noise(0.06), 300, 3000) * env(int(0.06 * SR), 0.002, 0.05, 2)
-x[-len(slap):] += slap * 1.8
-save('halaman', x, -5)
+# --- ssset: desis tipis yang cepat naik (coretan, zoom)
+n = int(0.22 * SR)
+x = np.zeros(n)
+steps = 12
+seg = n // steps
+win = np.hanning(seg * 2)
+src_n = noise(0.22)
+for i in range(steps):
+    a = max(0, i * seg - seg // 2)
+    b = min(n, a + seg * 2)
+    c = 3000 + 6000 * i / (steps - 1)
+    x[a:b] += band(src_n[a:b], c * 0.6, min(c * 1.5, 16000)) * win[: b - a]
+save('sset', x * env(n, 0.03, 0.12, 1.3), -5)
 
-# --- pesawat melintas jauh: gemuruh rendah dengan pita yang turun (doppler halus)
-n = noise(1.8)
-x = sweep_band(n, 90, 60, 700, 380) * env(len(n), 0.6, 0.9, 1.6)
-save('pesawat', x, -8)
 
-# --- sobekan struk: kresek granular pendek
-n = int(0.32 * SR)
-clicks = np.zeros(n)
-pos = np.sort(rng.integers(0, n, 140))
-clicks[pos] = rng.uniform(0.3, 1.0, len(pos))
-x = band(clicks + 0.25 * rng.standard_normal(n), 1500, 9000) * env(n, 0.01, 0.12, 1.2)
-save('sobek', x, -5)
+# --- ting: bel kecil yang jernih (parsial tak harmonis seperti bel logam), cepat padam
+def ting(f0, sec=0.9):
+    t = np.arange(int(sec * SR)) / SR
+    parts = [(1.0, 1.0, 3.2), (2.76, 0.42, 6.0), (5.4, 0.18, 10.0), (8.93, 0.07, 16.0)]
+    y = sum(a * np.sin(2 * np.pi * f0 * m * t) * np.exp(-t * d) for m, a, d in parts)
+    y += 0.25 * band(noise(sec), 4000, 12000) * np.exp(-t * 90)  # ketukan awal
+    return y * np.clip(t / 0.002, 0, 1)
 
-# --- klik tombol kayu: transien + dua resonansi pendek (bukan nada lonceng)
-t = np.arange(int(0.12 * SR)) / SR
-x = band(noise(0.12), 800, 6000) * np.exp(-t * 180)
-x += 0.5 * np.sin(2 * np.pi * 1350 * t) * np.exp(-t * 90) + 0.25 * np.sin(2 * np.pi * 2900 * t) * np.exp(-t * 140)
-save('klik', x, -5)
 
-# --- desir foto keluar dari amplop
-n = noise(0.5)
-x = sweep_band(n, 1500, 700, 8000, 4000, 12) * env(len(n), 0.12, 0.25, 1.5)
-save('foto', x, -6)
+save('ting', ting(1760), -4)
+# rangkaian centang naik nada (pentatonik mayor dari E6)
+for i, semi in enumerate([0, 2, 4, 7, 9]):
+    save(f'ting-{i + 1}', ting(1318.5 * 2 ** (semi / 12), 0.6), -5)
 
-# --- rapikan bunyi ElevenLabs: potong ke bagian inti, normalkan
-src = Path(sys.argv[1]) if len(sys.argv) > 1 else None
-TRIM = {'card': ('kartu', 0.70, 1.75), 'marker': ('coret', 0.0, 0.98), 'book': ('buku', 0.0, 0.46)}
-if src:
-    for stem, (name, a, b) in TRIM.items():
-        p = src / f'{stem}.mp3'
-        raw = subprocess.run(['ffmpeg', '-v', 'error', '-ss', str(a), '-to', str(b), '-i', str(p), '-ac', '1', '-ar', str(SR), '-f', 'f32le', '-'], capture_output=True).stdout
-        save(name, np.frombuffer(raw, np.float32).copy(), -3)
 print('ok', sorted(f.name for f in OUT.iterdir()))

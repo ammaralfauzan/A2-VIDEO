@@ -56,7 +56,8 @@ SETS.TipsUmroh = {
   stills: [
     ['00-pembuka', 14],
     ['00b-pembuka-buka', 33],
-    ['01-hook', 50],
+    ['01-hook-zoom1', 50],
+    ['01a-hook-zoom2', 70],
     ['01b-hook-coret', 84],
     ['02-poin1-tanggal', 135],
     ['02b-poin1-durasi', 182],
@@ -64,8 +65,8 @@ SETS.TipsUmroh = {
     ['04-poin3', 330],
     ['04b-poin3-broll', 345],
     ['05-poin4', 470],
-    ['06-poin5', 550],
-    ['06b-poin5-broll', 600],
+    ['06-poin5-broll-manasik', 545],
+    ['06b-poin5-broll-pembimbing', 600],
     ['07-ajakan', 735],
   ],
 };
