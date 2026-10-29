@@ -35,10 +35,18 @@ const K = {
   hubungi: 49,
 } as const;
 
+// Pembuka: aerial Masjidil Haram dengan judul "Sebelum daftar umroh" (diucapkan 0,18–1,02 dtk),
+// lalu lingkaran emas membuka ke pembicara tepat sebelum "jangan".
+export const INTRO = {
+  title: 2,
+  reveal: [26, 42] as [number, number],
+  center: {x: 560, y: 660}, // wajah pembicara
+} as const;
+
 // Kartu berganti tepat sebelum pembicara menyebut poin berikutnya.
 const LEAD = 4;
 export const CARD = {
-  hook: 4,
+  hook: INTRO.reveal[0] + 10,
   p1: w(K.pertama) - LEAD,
   p2: w(K.kedua) - LEAD,
   p3: w(K.ketiga) - LEAD,
@@ -66,4 +74,10 @@ export const BEAT = {
   pendampingan: w(K.pendampingan),
   perjalanan: w(K.perjalanan),
   hubungi: w(K.hubungi),
+} as const;
+
+// B-roll foto asli H2C (dari web umroh) yang menyela pembicara; suara tetap jalan.
+export const BROLL = {
+  makan: [BEAT.fasilitas - 2, CARD.p4 - 6] as [number, number],
+  pembimbing: [BEAT.pendampingan, CARD.cta - 4] as [number, number],
 } as const;

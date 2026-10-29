@@ -10,12 +10,9 @@ import {BEAT, CARD, POINT_ENDS, POINT_STARTS} from './timeline';
 export const Hook: React.FC<{f: number}> = ({f}) => (
   <GlassCard f={f} from={CARD.hook} to={CARD.p1}>
     <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 30}}>
-      <div style={textIn(f, CARD.hook + 2)}>
-        <Eyebrow text="Tips umroh" />
-      </div>
       <Title
         f={f}
-        at={CARD.hook + 6}
+        at={CARD.hook + 2}
         size={76}
         align="center"
         lines={[[{t: 'Jangan cuma lihat'}], [{t: 'harganya', hl: true}]]}
@@ -254,7 +251,7 @@ const BillRow: React.FC<{f: number; at: number; pre?: number; icon: React.ReactN
 export const Point5: React.FC<{f: number}> = ({f}) => (
   <PointCard f={f} i={4} lines={[[{t: 'Manasik &'}], [{t: 'pendampingan', hl: true}]]}>
     <div style={{display: 'flex', gap: 18}}>
-      <Tile f={f} at={BEAT.manasik} pre={POINT_STARTS[4] + 12} icon={<IcBook size={40} />} title="Manasik" note="Bekal tata cara ibadah" />
+      <Tile f={f} at={BEAT.manasik} pre={POINT_STARTS[4] + 12} icon={<IcBook size={40} />} title="Manasik" note="Tata cara ibadah" />
       <Tile f={f} at={BEAT.pendampingan} pre={POINT_STARTS[4] + 14} icon={<IcUsers size={40} />} title="Pendamping" note="Selama perjalanan" />
     </div>
   </PointCard>

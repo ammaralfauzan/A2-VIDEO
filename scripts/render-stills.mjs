@@ -54,14 +54,18 @@ SETS.A2Umum916 = {
 SETS.TipsUmroh = {
   dir: 'out/stills/tips-umroh',
   stills: [
+    ['00-pembuka', 14],
+    ['00b-pembuka-buka', 33],
     ['01-hook', 50],
     ['01b-hook-coret', 84],
     ['02-poin1-tanggal', 135],
     ['02b-poin1-durasi', 182],
     ['03-poin2', 270],
-    ['04-poin3', 365],
+    ['04-poin3', 330],
+    ['04b-poin3-broll', 345],
     ['05-poin4', 470],
-    ['06-poin5', 600],
+    ['06-poin5', 550],
+    ['06b-poin5-broll', 600],
     ['07-ajakan', 735],
   ],
 };

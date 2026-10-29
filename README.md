@@ -37,6 +37,9 @@ Video konten motion UI A2 Automation, dibuat dengan [Remotion](https://www.remot
 - Gaya visual mengikuti situs Wakaf H2C: hijau hutan, emas, krem; judul Fraunces dengan sorotan italic emas, kartu kaca, nomor `01` italic, tombol emas berkilau. Token di `src/tips-umroh/theme.ts`
 - Transkrip dan timing per kata (ElevenLabs Scribe): `src/data/tips-umroh-words.json`; grafis menempel pada kata yang diucapkan (`src/tips-umroh/timeline.ts`)
 - Tata letak: kartu di y 1050–1480, strip progres di y 236; wajah pembicara (y 460–860) tidak tertutup, kanan 180 px dan bawah 420 px bebas untuk tombol sosmed
+- Pembuka: aerial Masjidil Haram + judul "Sebelum daftar umroh", lalu lingkaran berbingkai emas membuka dari wajah pembicara (`src/tips-umroh/Intro.tsx`)
+- B-roll: foto asli dari web umroh H2C (`public/broll/`, dipotong dari `h2c-umroh/public/img`): makan saat "fasilitas", pembimbing saat "pendampingan". Latar foto diburamkan, foto tajam dibingkai emas di y 370–900 (`src/tips-umroh/Broll.tsx`)
+- Efek suara foley di `public/sfx/umroh/` lewat `python3 scripts/make-sfx-umroh.py <folder-mp3>`: kartu bergeser, goresan spidol, buku (ElevenLabs Sound Effects) + angin, dentum felt, centang pensil, halaman, pesawat jauh, sobekan struk, klik kayu, desir foto (sintesis noise)
 - Ajakan: tombol emas `umroh.h2c.or.id`. Kartu tanpa `backdrop-filter` (di render paralel Chromium kadang menghasilkan frame glitch kotak blur)
 - Hasil: `out/tips-umroh-9x16.mp4` (1080×1920, 30 fps, 24,8 detik). Frame kunci: `out/stills/tips-umroh/`
 
