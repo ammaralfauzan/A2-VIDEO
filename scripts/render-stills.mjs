@@ -51,6 +51,21 @@ SETS.A2Umum916 = {
   stills: [...SETS.A2Umum.stills, ['10-ajakan-pill', 960]],
 };
 
+SETS.TipsUmroh = {
+  dir: 'out/stills/tips-umroh',
+  stills: [
+    ['01-hook', 50],
+    ['01b-hook-coret', 84],
+    ['02-poin1-tanggal', 135],
+    ['02b-poin1-durasi', 182],
+    ['03-poin2', 270],
+    ['04-poin3', 365],
+    ['05-poin4', 470],
+    ['06-poin5', 600],
+    ['07-ajakan', 735],
+  ],
+};
+
 // Frame kunci SatuPesanan dihitung dari timing kalimat (berubah saat VO diganti).
 SETS.SatuPesanan = {
   dir: 'out/stills/satu-pesanan',

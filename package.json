@@ -15,6 +15,8 @@
     "render:a2-umum-9x16": "remotion render A2Umum916 out/a2-umum-9x16.mp4",
     "stills:satu-pesanan": "node scripts/render-stills.mjs SatuPesanan",
     "render:satu-pesanan": "remotion render SatuPesanan out/satu-pesanan-9x16.mp4",
+    "stills:tips-umroh": "node scripts/render-stills.mjs TipsUmroh",
+    "render:tips-umroh": "remotion render TipsUmroh out/tips-umroh-9x16.mp4 --concurrency=4",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
