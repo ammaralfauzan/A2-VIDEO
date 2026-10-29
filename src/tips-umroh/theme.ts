@@ -28,10 +28,10 @@ export const HL_GRADIENT = `linear-gradient(100deg, #FFE3A6 0%, ${W.gold} 45%, #
 // Tombol aksen (.btn--accent).
 export const BTN_GRADIENT = `linear-gradient(180deg, #F9CF7C 0%, ${W.gold2} 100%)`;
 // Kartu kaca (.pillar/.callout), dibuat lebih pekat agar terbaca di atas video.
+// Tanpa backdrop-filter: saat render paralel Chromium kadang menggambar kartu hanya sebagai kotak blur
+// tanpa isi (glitch satu frame), jadi kesan kaca dibuat dari warna semi-pekat saja.
 export const GLASS = {
-  background: 'linear-gradient(160deg, rgba(16, 42, 25, .82) 0%, rgba(6, 20, 12, .88) 100%)',
+  background: 'linear-gradient(160deg, rgba(16, 42, 25, .9) 0%, rgba(6, 20, 12, .94) 100%)',
   border: `2px solid ${W.line}`,
   boxShadow: '0 60px 120px -60px rgba(0, 0, 0, .9), inset 0 2px 0 rgba(255, 240, 210, .10)',
-  backdropFilter: 'blur(22px) saturate(130%)',
-  WebkitBackdropFilter: 'blur(22px) saturate(130%)',
 } as const;

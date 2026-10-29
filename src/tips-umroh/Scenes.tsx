@@ -1,7 +1,7 @@
 import React from 'react';
 import {interpolate} from 'remotion';
 import {clamp, ease, sp, textIn} from '../components/motion';
-import {IcBook, IcCalendar, IcChat, IcCheck, IcHotel, IcPlane, IcReceipt, IcUsers} from './Icons';
+import {IcArrow, IcBook, IcCalendar, IcCheck, IcHotel, IcPlane, IcReceipt, IcUsers} from './Icons';
 import {CheckChip, Divider, Eyebrow, GlassCard, GoldButton, NumBadge, Pill, reveal, Spark, Tile, Title, type Seg} from './parts';
 import {BTN_GRADIENT, W, WF} from './theme';
 import {BEAT, CARD, POINT_ENDS, POINT_STARTS} from './timeline';
@@ -282,12 +282,12 @@ export const Cta: React.FC<{f: number}> = ({f}) => {
             transform: `translateY(${(1 - pb) * 20}px) scale(${0.9 + 0.1 * pb})`,
           }}
         >
-          <GoldButton label="Hubungi Sekarang" icon={<IcChat size={46} stroke={W.btnInk} strokeWidth={2} />} shine={shine} />
+          <GoldButton label="umroh.h2c.or.id" icon={<IcArrow size={44} stroke={W.btnInk} strokeWidth={2.2} />} iconAfter shine={shine} />
           {f > btnAt + 8 ? (
             <>
               <Spark x={-14} y={6} s={34} t={sparkT(0)} />
-              <Spark x={540} y={-8} s={28} t={sparkT(14)} />
-              <Spark x={500} y={118} s={22} t={sparkT(26)} />
+              <Spark x="100%" y={-8} s={28} t={sparkT(14)} />
+              <Spark x="92%" y={118} s={22} t={sparkT(26)} />
             </>
           ) : null}
         </div>
@@ -303,7 +303,8 @@ export const TopProgress: React.FC<{f: number}> = ({f}) => {
   const done = f >= CARD.cta;
   return (
     <div style={{position: 'absolute', top: 236, left: 180, width: 720, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 22, ...textIn(f, at)}}>
-      <Pill text={done ? 'Sudah dicek semua' : 'Cek sebelum daftar umroh'} dotPulse={done ? pulse(f, CARD.cta) : 0} />
+      {/* teks pil tetap sama agar lebarnya tidak melompat; di akhir titiknya berdenyut */}
+      <Pill text="Cek sebelum daftar umroh" dotPulse={done ? pulse(f, CARD.cta) : 0} />
       <div style={{display: 'flex', gap: 12}}>
         {POINT_STARTS.map((s, i) => {
           const p = interpolate(f, [s, POINT_ENDS[i] - 4], [0, 1], clamp);

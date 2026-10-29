@@ -37,6 +37,7 @@ Video konten motion UI A2 Automation, dibuat dengan [Remotion](https://www.remot
 - Gaya visual mengikuti situs Wakaf H2C: hijau hutan, emas, krem; judul Fraunces dengan sorotan italic emas, kartu kaca, nomor `01` italic, tombol emas berkilau. Token di `src/tips-umroh/theme.ts`
 - Transkrip dan timing per kata (ElevenLabs Scribe): `src/data/tips-umroh-words.json`; grafis menempel pada kata yang diucapkan (`src/tips-umroh/timeline.ts`)
 - Tata letak: kartu di y 1050–1480, strip progres di y 236; wajah pembicara (y 460–860) tidak tertutup, kanan 180 px dan bawah 420 px bebas untuk tombol sosmed
+- Ajakan: tombol emas `umroh.h2c.or.id`. Kartu tanpa `backdrop-filter` (di render paralel Chromium kadang menghasilkan frame glitch kotak blur)
 - Hasil: `out/tips-umroh-9x16.mp4` (1080×1920, 30 fps, 24,8 detik). Frame kunci: `out/stills/tips-umroh/`
 
 ## Struktur

@@ -175,10 +175,8 @@ export const Pill: React.FC<{text: string; style?: React.CSSProperties; dotPulse
       fontSize: 30,
       letterSpacing: '0.02em',
       color: W.cream,
-      background: 'rgba(10, 28, 17, .62)',
+      background: 'rgba(10, 28, 17, .82)',
       border: `2px solid ${W.line2}`,
-      backdropFilter: 'blur(14px)',
-      WebkitBackdropFilter: 'blur(14px)',
       ...style,
     }}
   >
@@ -196,7 +194,13 @@ export const Pill: React.FC<{text: string; style?: React.CSSProperties; dotPulse
 );
 
 // Tombol aksen emas (.btn--accent) dengan sapuan kilau ([data-sparkle]).
-export const GoldButton: React.FC<{label: string; icon?: React.ReactNode; shine: number; style?: React.CSSProperties}> = ({label, icon, shine, style}) => (
+export const GoldButton: React.FC<{label: string; icon?: React.ReactNode; iconAfter?: boolean; shine: number; style?: React.CSSProperties}> = ({
+  label,
+  icon,
+  iconAfter,
+  shine,
+  style,
+}) => (
   <div
     style={{
       position: 'relative',
@@ -218,8 +222,9 @@ export const GoldButton: React.FC<{label: string; icon?: React.ReactNode; shine:
       ...style,
     }}
   >
-    {icon}
+    {iconAfter ? null : icon}
     {label}
+    {iconAfter ? icon : null}
     <div
       style={{
         position: 'absolute',
@@ -235,13 +240,14 @@ export const GoldButton: React.FC<{label: string; icon?: React.ReactNode; shine:
 );
 
 // Kilau bintang empat sudut (.spark), berkedip pada fase t (0..1).
-export const Spark: React.FC<{x: number; y: number; s: number; t: number}> = ({x, y, s, t}) => {
+// x boleh berupa persen lebar induk (mis. '100%') agar mengikuti lebar tombol.
+export const Spark: React.FC<{x: number | string; y: number; s: number; t: number}> = ({x, y, s, t}) => {
   const k = t <= 0 || t >= 1 ? 0 : Math.sin(Math.PI * t);
   return (
     <div
       style={{
         position: 'absolute',
-        left: x - s / 2,
+        left: typeof x === 'number' ? x - s / 2 : `calc(${x} - ${s / 2}px)`,
         top: y - s / 2,
         width: s,
         height: s,
