@@ -41,6 +41,13 @@ Skill untuk membuat video konten A2 Automation: mockup aplikasi desktop dengan k
 - Logo memakai file asli tanpa diubah.
 - Teks terbaca di layar ponsel.
 
+## Skill pendukung (wajib dibaca saat relevan)
+- `a2-anti-tabrakan`: cegah elemen saling menimpa; menjalankan `scripts/check-collisions.mjs` sebelum render penuh.
+- `a2-komposisi-proximity`: pengelompokan, penengahan, ajakan dua tingkat.
+- `a2-safe-area-sosmed`: area aman 9:16 (x 60–900, y 220–1500).
+- `a2-maskot-gigi`: bentuk, ekspresi, dan gerak maskot.
+Hook penjaga di `.claude/settings.json` menahan `remotion render` bila pemeriksa tabrakan menemukan masalah dan menjalankan typecheck setelah file `src/` diubah.
+
 ## Aturan
 - Jangan percepat suara agar muat durasi; perpanjang adegan.
 - Angka di video adalah ilustrasi kecuali pengguna memberi data nyata.

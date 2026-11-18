@@ -13,6 +13,15 @@ import {GigiSheet} from './dev/GigiSheet';
 import {TOTAL_FRAMES as SP_TOTAL_FRAMES} from './data/timeline-satu-pesanan';
 import {TOTAL_FRAMES} from './data/timeline';
 import {FPS, HEIGHT, WIDTH} from './theme';
+import {withProbe} from './dev/CollisionProbe';
+
+// Dibungkus probe pemeriksa tabrakan (aktif hanya lewat scripts/check-collisions.mjs).
+const PMain = withProbe(Main);
+const PA2Umum = withProbe(A2Umum);
+const PJam916 = withProbe(JamSembilanMalam916);
+const PA2Umum916 = withProbe(A2Umum916);
+const PSatuPesanan = withProbe(SatuPesanan);
+const PTipsUmroh = withProbe(TipsUmroh);
 
 for (const weight of ['400', '500', '600']) {
   loadFont({family: 'Geist', url: staticFile(`fonts/geist-sans-latin-${weight}-normal.woff2`), weight});
@@ -25,12 +34,12 @@ loadFont({family: 'Plus Jakarta Sans', url: staticFile('fonts/plus-jakarta-sans-
 
 export const Root: React.FC = () => (
   <>
-    <Composition id="JamSembilanMalam" component={Main} durationInFrames={TOTAL_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
-    <Composition id="A2Umum" component={A2Umum} durationInFrames={U_TOTAL_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
+    <Composition id="JamSembilanMalam" component={PMain} durationInFrames={TOTAL_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
+    <Composition id="A2Umum" component={PA2Umum} durationInFrames={U_TOTAL_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
     {/* Versi 9:16 untuk Reels/TikTok/Shorts (safeGuide: tampilkan area aman saat review). */}
     <Composition
       id="JamSembilanMalam916"
-      component={JamSembilanMalam916}
+      component={PJam916}
       durationInFrames={TOTAL_FRAMES}
       fps={FPS}
       width={V_WIDTH}
@@ -39,7 +48,7 @@ export const Root: React.FC = () => (
     />
     <Composition
       id="A2Umum916"
-      component={A2Umum916}
+      component={PA2Umum916}
       durationInFrames={U_TOTAL_FRAMES}
       fps={FPS}
       width={V_WIDTH}
@@ -49,8 +58,8 @@ export const Root: React.FC = () => (
     {/* Lembar ekspresi maskot untuk review. */}
     <Composition id="GigiSheet" component={GigiSheet} durationInFrames={1} fps={FPS} width={1400} height={820} />
     {/* "Satu Pesanan, Tujuh Langkah": explainer 9:16 dengan maskot Gigi. */}
-    <Composition id="SatuPesanan" component={SatuPesanan} durationInFrames={SP_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} />
+    <Composition id="SatuPesanan" component={PSatuPesanan} durationInFrames={SP_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} />
     {/* "5 Hal Sebelum Daftar Umroh": video bicara + motion graphic gaya situs Wakaf H2C. */}
-    <Composition id="TipsUmroh" component={TipsUmroh} durationInFrames={TU_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} />
+    <Composition id="TipsUmroh" component={PTipsUmroh} durationInFrames={TU_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} />
   </>
 );

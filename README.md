@@ -44,6 +44,12 @@ Video konten motion UI A2 Automation, dibuat dengan [Remotion](https://www.remot
 - Ajakan: tombol emas `umroh.h2c.or.id`. Kartu tanpa `backdrop-filter` (di render paralel Chromium kadang menghasilkan frame glitch kotak blur)
 - Hasil: `out/tips-umroh-9x16.mp4` (1080×1920, 30 fps, 24,8 detik). Frame kunci: `out/stills/tips-umroh/`
 
+## Skill, pemeriksa tabrakan, dan hook penjaga (Fase 1)
+
+- Skill di `.claude/skills/`: `a2-motion-video` (alur umum), `a2-anti-tabrakan`, `a2-komposisi-proximity`, `a2-safe-area-sosmed`, `a2-maskot-gigi`
+- Pemeriksa tabrakan: `node scripts/check-collisions.mjs <IdKomposisi> [--every=15] [--frames=..] [--safe=off|x,y,w,h] [--protect=nama:x,y,w,h]`. Mengukur kotak teks sungguhan di Chromium lewat probe `src/dev/CollisionProbe.tsx` (aktif hanya lewat input props, render biasa tidak berubah). Melaporkan teks menimpa teks, teks di luar area aman 9:16, dan teks menutup area terlindungi (bawaan per komposisi di `scripts/collision-config.json`, mis. wajah pembicara). Komposisi baru wajib dibungkus `withProbe` di `src/Root.tsx`.
+- Hook penjaga (`.claude/settings.json`, aktif saat sesi Claude Code dibuka di repo ini): menahan `remotion render` / `npm run render:*` bila pemeriksa menemukan masalah (lewati dengan `SKIP_CC=1`), memblokir `rm` pada `00-gigi-ekspresi.png` dan `out/stills/satu-pesanan/*`, dan menjalankan typecheck setelah file `src/` diubah.
+
 ## Struktur
 - `src/theme.ts`: token warna, huruf, radius, bayangan, dan spring dari DESIGN.md
 - `src/data/timeline.ts`: waktu adegan, caption, jalur kursor, dan klik (frame global)
