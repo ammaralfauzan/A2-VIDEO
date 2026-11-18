@@ -46,6 +46,13 @@ Skill untuk membuat video konten A2 Automation: mockup aplikasi desktop dengan k
 - `a2-komposisi-proximity`: pengelompokan, penengahan, ajakan dua tingkat.
 - `a2-safe-area-sosmed`: area aman 9:16 (x 60–900, y 220–1500).
 - `a2-maskot-gigi`: bentuk, ekspresi, dan gerak maskot.
+- `a2-logo-animasi`: penutup dengan lapisan logo asli dan Gigi menjadi gear.
+- `a2-voiceover-sinkron`: naskah untuk suara, ElevenLabs, timing, adegan mengikuti suara.
+- `a2-sfx-signature`: efek suara sintesis dan jadwalnya.
+- `a2-explainer-kinetik`: format explainer 9:16 teks kinetik dan kerangka cerita.
+- `a2-mockup-desktop-kursor`: demo aplikasi desktop 16:9 dengan kursor.
+- `a2-render-rilis`: stills → review → render → regresi → commit → kirim.
+Agen di `.claude/agents/`: `penulis-naskah`, `pengulas-visual`, `pengulas-audio`, `perender`. Perintah: `/video-baru`, `/review-frame`, `/versi-916`, `/render-semua`.
 Hook penjaga di `.claude/settings.json` menahan `remotion render` bila pemeriksa tabrakan menemukan masalah dan menjalankan typecheck setelah file `src/` diubah.
 
 ## Aturan

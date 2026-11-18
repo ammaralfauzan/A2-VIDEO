@@ -50,6 +50,14 @@ Video konten motion UI A2 Automation, dibuat dengan [Remotion](https://www.remot
 - Pemeriksa tabrakan: `node scripts/check-collisions.mjs <IdKomposisi> [--every=15] [--frames=..] [--safe=off|x,y,w,h] [--protect=nama:x,y,w,h]`. Mengukur kotak teks sungguhan di Chromium lewat probe `src/dev/CollisionProbe.tsx` (aktif hanya lewat input props, render biasa tidak berubah). Melaporkan teks menimpa teks, teks di luar area aman 9:16, dan teks menutup area terlindungi (bawaan per komposisi di `scripts/collision-config.json`, mis. wajah pembicara). Komposisi baru wajib dibungkus `withProbe` di `src/Root.tsx`.
 - Hook penjaga (`.claude/settings.json`, aktif saat sesi Claude Code dibuka di repo ini): menahan `remotion render` / `npm run render:*` bila pemeriksa menemukan masalah (lewati dengan `SKIP_CC=1`), memblokir `rm` pada `00-gigi-ekspresi.png` dan `out/stills/satu-pesanan/*`, dan menjalankan typecheck setelah file `src/` diubah.
 
+## Otomatisasi (Fase 2)
+
+- 6 skill tambahan: `a2-logo-animasi`, `a2-voiceover-sinkron`, `a2-sfx-signature`, `a2-explainer-kinetik`, `a2-mockup-desktop-kursor`, `a2-render-rilis` (total 11 skill di `.claude/skills/`).
+- 4 subagent di `.claude/agents/`: `penulis-naskah` (konsep dan naskah, berhenti untuk persetujuan Bos), `pengulas-visual`, `pengulas-audio` (hanya melapor), `perender`.
+- 4 slash command di `.claude/commands/`: `/video-baru <ide>`, `/review-frame <Id>`, `/versi-916 <Id>`, `/render-semua <Id ...>`.
+- `node scripts/cek-regresi.mjs [Id ...]`: render ulang frame kunci video lama dan pastikan identik dengan yang di-commit (keluar 1 bila ada yang berubah).
+- Agen dan perintah baru terbaca saat sesi Claude Code berikutnya dibuka di repo ini.
+
 ## Struktur
 - `src/theme.ts`: token warna, huruf, radius, bayangan, dan spring dari DESIGN.md
 - `src/data/timeline.ts`: waktu adegan, caption, jalur kursor, dan klik (frame global)
