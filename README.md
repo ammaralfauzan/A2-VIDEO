@@ -58,6 +58,12 @@ Video konten motion UI A2 Automation, dibuat dengan [Remotion](https://www.remot
 - `node scripts/cek-regresi.mjs [Id ...]`: render ulang frame kunci video lama dan pastikan identik dengan yang di-commit (keluar 1 bila ada yang berubah).
 - Agen dan perintah baru terbaca saat sesi Claude Code berikutnya dibuka di repo ini.
 
+## Produksi berulang (Fase 3)
+
+- `antrean-ide.md`: antrean ide video (status siap/tahan/selesai), diurus Bos. `/ide-mingguan [nomor]` mengambil satu ide, membuat konsep dan naskah lewat `penulis-naskah`, lalu berhenti menunggu persetujuan Bos.
+- Tugas terjadwal mingguan menjalankan alur itu otomatis; tidak pernah merender, membuat suara, atau memposting sendiri.
+- Skill `a2-jadwal-posting`: jadwal posting dan analitik via Metricool, **selalu minta persetujuan Bos** dan memakai jalur draf untuk ditinjau. Butuh konektor Metricool yang diotorisasi Bos (saat ini perlu sign-in ulang).
+
 ## Struktur
 - `src/theme.ts`: token warna, huruf, radius, bayangan, dan spring dari DESIGN.md
 - `src/data/timeline.ts`: waktu adegan, caption, jalur kursor, dan klik (frame global)

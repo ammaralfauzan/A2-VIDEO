@@ -1,0 +1,19 @@
+# Antrean ide video
+
+Dipakai tugas terjadwal mingguan dan perintah `/ide-mingguan`: ambil satu ide berstatus **siap** dari atas, buat konsep dan naskah, lalu **berhenti menunggu persetujuan Bos**. Ide yang dipakai dipindah ke "Sedang berjalan/selesai". Bos boleh menambah, mengurutkan ulang, atau mencoret ide kapan saja.
+
+Status: `siap` (boleh diambil) · `tahan` (belum, ada pertanyaan untuk Bos) · `selesai`.
+
+## Antrean
+| # | Status | Brand | Ide | Format | Catatan |
+|---|---|---|---|---|---|
+| 1 | siap | H2C Umroh | Seri "Kesalahan yang sering terjadi saat memilih paket umroh" (satu kesalahan per video, gaya TipsUmroh) | 9:16 ±25 dtk, video bicara + motion graphic Wakaf | Butuh rekaman bicara baru dari pembimbing; tanpa klaim harga/izin |
+| 2 | siap | A2 Automation | "Satu hari tanpa rekap manual": pagi sampai sore, tiap tugas hilang satu per satu | 9:16 ±40 dtk, explainer kinetik, maskot Gigi | Angka contoh berlabel "contoh" |
+| 3 | tahan | H2C Wakaf | Penjelasan singkat alur wakaf dan laporan penggunaannya | 9:16 ±30 dtk, gaya Wakaf | Perlu data/laporan nyata dari yayasan; jangan mengarang angka |
+| 4 | siap | A2 Automation | "Tiga tanda bisnis Anda siap diotomatisasi" | 9:16 ±35 dtk, explainer kinetik | Ajakan konsultasi gratis a2automate.com |
+
+## Sedang berjalan / selesai
+- Jam 9 Malam di Ruang TU (selesai, 16:9 dan 9:16)
+- Makin Tumbuh, Makin Sibuk (selesai, 16:9 dan 9:16)
+- Satu Pesanan, Tujuh Langkah (selesai, 9:16)
+- 5 Hal Sebelum Daftar Umroh (selesai, 9:16)

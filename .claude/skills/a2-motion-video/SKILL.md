@@ -52,7 +52,8 @@ Skill untuk membuat video konten A2 Automation: mockup aplikasi desktop dengan k
 - `a2-explainer-kinetik`: format explainer 9:16 teks kinetik dan kerangka cerita.
 - `a2-mockup-desktop-kursor`: demo aplikasi desktop 16:9 dengan kursor.
 - `a2-render-rilis`: stills → review → render → regresi → commit → kirim.
-Agen di `.claude/agents/`: `penulis-naskah`, `pengulas-visual`, `pengulas-audio`, `perender`. Perintah: `/video-baru`, `/review-frame`, `/versi-916`, `/render-semua`.
+- `a2-jadwal-posting`: jadwal posting dan analitik via Metricool (selalu minta persetujuan Bos).
+Agen di `.claude/agents/`: `penulis-naskah`, `pengulas-visual`, `pengulas-audio`, `perender`. Perintah: `/video-baru`, `/review-frame`, `/versi-916`, `/render-semua`, `/ide-mingguan`.
 Hook penjaga di `.claude/settings.json` menahan `remotion render` bila pemeriksa tabrakan menemukan masalah dan menjalankan typecheck setelah file `src/` diubah.
 
 ## Aturan
