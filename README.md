@@ -69,8 +69,8 @@ Skrip rilis memeriksa durasi klip, merender frame kunci dan video, lalu menormal
 ## Video: "Alasan Saya Bikin A2" (komposisi `AlasanSayaBikinA2`, 9:16)
 
 - Naskah: `naskah-alasan-saya-bikin-a2.md`. Cerita asal orang pertama: panggung ilustrasi animasi, satu garis waktu pelan dengan tiga titik cerita (yang dilihat, yang disadari, keputusan), teks kinetik, Gigi menemani di atas garis. Tanpa mockup, kursor, angka, atau ajakan
-- Hasil: `out/alasan-saya-bikin-a2-9x16.mp4` (1080×1920, 30 fps, 48,2 detik: suara 43,55 dtk + logo diam)
-- Voiceover: `public/audio/vo-alasan-saya-bikin-a2.mp3` (ElevenLabs Eleven v3, suara Jefri, dibuat Bos), timing per kalimat dan potongan di `src/data/vo-timing-alasan-saya-bikin-a2.json` (ffmpeg silencedetect)
+- Hasil: `out/alasan-saya-bikin-a2-9x16.mp4` (1080×1920, 30 fps, 48,0 detik: suara 43,42 dtk + logo diam)
+- Voiceover: `public/audio/vo-alasan-saya-bikin-a2.mp3` (ElevenLabs Eleven v3, suara Bowo, dibuat Bos; kalimat 9 dibuat ulang dengan Bowo), timing per kalimat dan potongan di `src/data/vo-timing-alasan-saya-bikin-a2.json` (ffmpeg silencedetect)
 - Ilustrasi animasi per bagian cerita (revisi 1): toko malam, mengetik ulang, tenaga habis, keluarga menunggu, mesin, fokus ke pelanggan, pulang tepat waktu (`Ilustrasi.tsx`)
 - Kode: `src/AlasanSayaBikinA2.tsx`, adegan di `src/scenes/alasan-saya-bikin-a2/` (`Ilustrasi`, `GarisWaktu`, `GigiJalan`, `Judul`, `Penutup`, `Sfx`), timeline di `src/data/timeline-alasan-saya-bikin-a2.ts`
 - Penutup: garis memudar, Gigi melompat menjadi gear di huruf A logo asli (tanpa ajakan, keputusan Bos). Revisi 2: kalimat 9 jadi "…kebersamaan keluarga", Gigi menggeleng ala 3D (prop `turn`) dan punya ekspresi `sedih`

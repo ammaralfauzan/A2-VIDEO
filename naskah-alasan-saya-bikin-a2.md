@@ -2,7 +2,7 @@
 
 Format: Reels 9:16 (1080×1920), ±36 detik · Gaya: teks kinetik pelan + maskot Gigi, tanpa mockup, tanpa kursor · Brand: A2 Automation
 Pola: satu garis waktu tunggal yang pelan; tiga titik cerita muncul bergantian, tiap titik dengan teks kinetik. Suara orang pertama (Bos). Tanpa angka dan klaim.
-Suara: ElevenLabs, Jefri, model Eleven v3 (tag audio); "A2" diucapkan "A Dua". Tanpa musik, efek suara halus saja.
+Suara: ElevenLabs, Bowo (`LxiqOV1uxBCgYTeitAHf`, dipakai Bos di MP3; sebelumnya tertulis Jefri), model Eleven v3 (tag audio); "A2" diucapkan "A Dua". Tanpa musik, efek suara halus saja.
 
 **CATATAN (Bos setuju rancangan dipakai apa adanya, 19 Nov 2026): tiga titik cerita di bawah adalah RANCANGAN penulis (Bos meminta dibuatkan), bukan fakta dari Bos. Ditulis umum, tanpa nama, angka, atau klaim. Sebelum diposting, Bos wajib memastikan isinya benar-benar sesuai pengalaman Bos; bila tidak, ganti dengan cerita asli (cukup ganti kalimat titik 1–3).**
 
@@ -19,7 +19,7 @@ Satu garis waktu tipis berjalan pelan dari kiri ke kanan. Tiga titik muncul berg
 | 26–32 pesan | Jadi ini bukan sekadar jualan alat. Ada alasan di baliknya, dan alasan itu kebersamaan keluarga. | Tiga titik menyatu jadi satu garis terang; teks kinetik (revisi 2: "…dan alasan itu kebersamaan keluarga") | tersenyum |
 | 32–36 penutup | Itu sebabnya A Dua Automation ada. | Garis memudar (revisi 2, bukan lingkaran); Gigi menjadi gear di huruf A logo; logo asli | puas |
 
-Revisi 2 (19 Nov 2026, permintaan Bos): "dan alasan itu manusia" diganti "dan alasan itu kebersamaan keluarga"; kalimat ini dibuat ulang di ElevenLabs (Jefri, Eleven v3) dan disambung ke MP3 Bos.
+Revisi 2 (19 Nov 2026, permintaan Bos): "dan alasan itu manusia" diganti "dan alasan itu kebersamaan keluarga"; kalimat ini dibuat ulang di ElevenLabs dengan suara Bowo (sama dengan MP3 Bos, Eleven v3) dan disambung ke MP3 Bos.
 
 Total ±70 kata, ±36 dtk (suara tidak dipercepat; adegan mengikuti suara asli).
 
@@ -32,7 +32,7 @@ Tanpa ajakan keras: penutup halus menyebut A2, lalu logo. (Opsi: teks kecil `a2a
 - Suara Jefri bukan suara Bos. Bos boleh memilih Alif atau merekam sendiri.
 
 ## Prompt suara ElevenLabs (siap salin)
-Suara: Jefri (Suara Penjelasan Lembut) · Model: Eleven v3 (mendukung tag audio) · Nada: tenang, hangat, orang pertama · Target: ±36 dtk
+Suara: Bowo (Intimidating and Hoarse, `LxiqOV1uxBCgYTeitAHf`) · Model: Eleven v3 (mendukung tag audio) · Nada: tenang, hangat, orang pertama · Target: ±36 dtk
 
 ```
 [warmly] Ini alasan saya mulai A Dua.

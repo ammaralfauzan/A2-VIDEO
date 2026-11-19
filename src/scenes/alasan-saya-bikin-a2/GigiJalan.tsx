@@ -31,33 +31,51 @@ const keys = (): Key[] => [
   {f: P.merge()[1], x: 540, y: GY, size: SIZE},
 ];
 
-const posAt = (f: number, ks: Key[]) => {
-  if (f <= ks[0].f) return ks[0];
-  for (let i = 0; i < ks.length - 1; i++) {
-    const a = ks[i];
-    const b = ks[i + 1];
-    if (f >= a.f && f <= b.f) {
-      const t = interpolate(f, [a.f, b.f], [0, 1], {...clamp, easing: ease});
-      return {f, x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t, size: a.size + (b.size - a.size) * t};
-    }
-  }
-  return ks[ks.length - 1];
-};
-
-const lastLanding = (f: number, ks: Key[]) => {
-  let end = -999;
+// Fisika melayang (revisi 3 Bos): Gigi selalu mengambang, tidak pernah mendarat atau memantul.
+// Posisi mengikuti titik tujuan lewat pegas teredam kritis (tanpa lewat batas, tanpa pantulan):
+// mulai pelan, meluncur halus, lalu melambat sampai diam. Tujuan berganti di awal tiap perpindahan.
+const OMEGA = 0.16; // kekakuan pegas per frame (sekitar 30 frame sampai diam)
+type Pos = {f: number; x: number; y: number; size: number};
+let simCache: Pos[] | null = null;
+const targetAt = (f: number, ks: Key[]) => {
+  let t = ks[0];
   for (let i = 0; i < ks.length - 1; i++) {
     const a = ks[i];
     const b = ks[i + 1];
     const moved = a.x !== b.x || a.y !== b.y || a.size !== b.size;
-    if (moved && b.f <= f) end = b.f;
+    if (moved && f >= a.f) t = b;
   }
-  return end;
+  return t;
+};
+const simulate = (ks: Key[]): Pos[] => {
+  if (simCache) return simCache;
+  const out: Pos[] = [];
+  const p = {x: ks[0].x, y: ks[0].y, size: ks[0].size};
+  const v = {x: 0, y: 0, size: 0};
+  for (let f = 0; f <= TOTAL_FRAMES + 2; f++) {
+    const tg = targetAt(f, ks);
+    // integrasi semi-implisit, 4 sub-langkah per frame agar stabil dan halus
+    for (let k = 0; k < 4; k++) {
+      const dt = 0.25;
+      for (const key of ['x', 'y', 'size'] as const) {
+        const acc = OMEGA * OMEGA * (tg[key] - p[key]) - 2 * OMEGA * v[key];
+        v[key] += acc * dt;
+        p[key] += v[key] * dt;
+      }
+    }
+    out.push({f, x: p.x, y: p.y, size: p.size});
+  }
+  simCache = out;
+  return out;
+};
+const posAt = (f: number, ks: Key[]): Pos => {
+  const sim = simulate(ks);
+  return sim[Math.max(0, Math.min(sim.length - 1, Math.round(f)))];
 };
 
 const moodRaw = (f: number): Mood => {
   if (f >= OUTRO.mergeFrom) return 'puas';
-  if (f >= OUTRO.start) return 'senang';
+  if (f >= OUTRO.start - 12) return 'senang'; // ganti ekspresi selesai sebelum melayang ke logo
   if (f >= wf(S.alasan, 7) - 2) return 'puas'; // "kebersamaan keluarga": hangat
   if (f >= sf(S.bukan)) return 'senang'; // tersenyum
   if (f >= sf(S.manusia)) return 'puas'; // lega
@@ -146,10 +164,8 @@ const lookTarget = (f: number, pos: {x: number; y: number}, mood: Mood) => {
   return {x: 0, y: 0};
 };
 
-const hump = (t: number, len: number) => (t >= 0 && t <= len ? Math.sin((Math.PI * t) / len) : 0);
 
-// Penutup: dari atas garis, ancang-ancang (menunduk sedikit), melompat ke posisi gear huruf A sambil
-// menoleh ke arah lompatan, menutup mata, berputar pas ke kelipatan 45 derajat, lalu digantikan gear asli.
+// Penutup: dari atas garis, melayang ke posisi gear huruf A sambil menoleh ke arah gerak, menutup mata, berputar pas ke kelipatan 45 derajat, lalu digantikan gear asli.
 const Outro: React.FC<{f: number}> = ({f}) => {
   const o = OUTRO;
   const tr = track();
@@ -157,10 +173,12 @@ const Outro: React.FC<{f: number}> = ({f}) => {
   const from = {x: 540, y: GY, size: SIZE};
   const to = GEAR_TARGET;
   const u = interpolate(f, [o.hop, o.land], [0, 1], {...clamp, easing: ease});
-  const x = from.x + (to.x - from.x) * u;
-  const arc = Math.sin(Math.PI * u) * 200;
-  const crouch = f < o.hop ? 6 * interpolate(f, [o.start, o.hop], [0, 1], clamp) : 0;
-  const y = from.y + (to.y - from.y) * u - arc + crouch;
+  // Melayang (bukan melompat): lengkung landai, sampai dengan kecepatan nol, tanpa pantulan.
+  // Ayunan mengambang dari jalur utama ikut diteruskan lalu mereda, agar tidak ada loncatan posisi.
+  const keep = 1 - u;
+  const arc = Math.sin(Math.PI * u) * 70;
+  const x = from.x + (to.x - from.x) * u + Math.sin(f / 41 + 1) * 2.5 * keep;
+  const y = from.y + (to.y - from.y) * u - arc + (Math.sin(f / 28) * 5 + Math.sin(f / 16) * 3) * keep;
   const size = from.size + (to.size - from.size) * interpolate(f, [o.hop, o.land - 6], [0, 1], {...clamp, easing: ease});
   const base = at(tr.spin, o.start);
   const target = Math.ceil(base / 45) * 45 + 45;
@@ -169,9 +187,9 @@ const Outro: React.FC<{f: number}> = ({f}) => {
   const eyesOpacity = interpolate(f, [o.mergeFrom + 6, o.mergeTo - 2], [1, 0], clamp);
   const opacity = interpolate(f, o.swap, [1, 0], clamp);
   const shadow = interpolate(f, [o.land - 4, o.land + 4], [1, 0], clamp);
-  const tilt = f < o.land ? (to.x - from.x) * 0.012 * Math.sin(Math.PI * u) : 0;
+  const tilt = (f < o.land ? (to.x - from.x) * 0.012 * Math.sin(Math.PI * u) : 0) + Math.sin(f / 20) * 3 * keep;
   // menoleh ke arah lompatan, kembali menghadap depan saat mendarat
-  const turn = f < o.mergeFrom ? Math.sign(to.x - from.x) * 0.45 * Math.sin(Math.PI * u) : 0;
+  const turn = (f < o.mergeFrom ? Math.sign(to.x - from.x) * 0.45 * Math.sin(Math.PI * u) : 0) + Math.sin(f / 16) * 0.12 * keep;
   return (
     <div style={{position: 'absolute', left: x - size / 2, top: y - size / 2, width: size, zIndex: 20, opacity}}>
       <Gigi size={size} mood={mood} spin={spin} eyesOpacity={eyesOpacity} shadow={shadow} tilt={tilt} turn={turn} />
@@ -216,15 +234,14 @@ export const GigiJalan: React.FC<{f: number}> = ({f}) => {
   const breathe = Math.sin(f / 14);
   switch (mood) {
     case 'biasa':
-      dy = breathe * 5;
+      dy = breathe * 1.5;
       break;
     case 'kaget':
-      dy = -38 * (pos.size / 240) * hump(t, 14);
+      dy = -6 * Math.sin(Math.min(1, t / 10) * Math.PI * 0.5);
       break;
     case 'senang': {
-      const hop = Math.abs(Math.sin((t * Math.PI) / 9)) * 14 * interpolate(t, [0, 36], [1, 0], clamp);
-      dy = -hop + Math.sin(f / 10) * 4;
-      tilt = Math.sin(f / 10) * 3;
+      dy = Math.sin(f / 16) * 3;
+      tilt = Math.sin(f / 20) * 3;
       turn += Math.sin(f / 16) * 0.12;
       break;
     }
@@ -268,11 +285,11 @@ export const GigiJalan: React.FC<{f: number}> = ({f}) => {
       break;
   }
 
-  // Mendarat: memantul kecil (naik-turun), bukan dipipihkan.
-  const land = f - lastLanding(f, ks);
-  if (land >= 0 && land < 14) dy += -5 * Math.sin((Math.PI * land) / 14);
   tilt += Math.max(-10, Math.min(10, vx * 0.7));
 
+  // Mengambang terus: naik-turun pelan dan sedikit melayang ke samping, tanpa hentakan.
+  dy += Math.sin(f / 28) * 5;
+  dx += Math.sin(f / 41 + 1) * 2.5;
   const sweaty = mood === 'cemas' || mood === 'lelah';
   const sweat = sweaty ? interpolate(t, [0, 10], [0, 1], clamp) : 0;
   const sweatPhase = (((f % 50) + 50) % 50) / 50;

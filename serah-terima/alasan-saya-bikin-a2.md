@@ -1,7 +1,7 @@
 # Serah-terima: alasan-saya-bikin-a2
 
 - Judul / brand / format / durasi target: Alasan Saya Bikin A2 / A2 Automation / Reels 9:16 / prompt BANGUN menyebut 50 dtk; hasil 46 dtk (suara asli 41,4 dtk, tidak dipercepat, + logo diam 4,6 dtk)
-- Tahap terakhir selesai: REVISI 2 (19 Nov 2026). MP4 baru (48,2 dtk) dikirim ke Bos. Berikutnya: Bos menonton; bila ada revisi → room REVISI (satu daftar), bila puas → room RILIS
+- Tahap terakhir selesai: REVISI 3 (19 Nov 2026). MP4 baru (48,0 dtk) dikirim ke Bos. Berikutnya: Bos menonton; bila ada revisi → room REVISI (satu daftar), bila puas → room RILIS
 - Keputusan Bos (disetujui, jangan diubah): ide "Alasan Saya Bikin A2" (dipilih di room IDE, v003-1911); hook "Ini alasan saya mulai A2."; pesan inti: ada alasan manusiawi di balik A2; pola garis waktu tunggal + tiga titik + teks kinetik + Gigi; tanpa mockup/kursor; penutup halus menyebut A2 lalu logo; tanpa angka dan klaim
 - Keputusan Bos: naskah dan konsep disetujui, jangan diubah. Masih menunggu: (2) pastikan tiga titik cerita (rancangan penulis atas permintaan Bos) sesuai kenyataan atau ganti dengan cerita asli; (3) ajakan: tanpa ajakan (default) atau teks kecil a2automate.com; (4) suara Jefri (default)
 - File penting: `naskah-alasan-saya-bikin-a2.md`, `public/audio/vo-alasan-saya-bikin-a2.mp3`, `src/data/vo-timing-alasan-saya-bikin-a2.json`, `src/AlasanSayaBikinA2.tsx` (Id `AlasanSayaBikinA2`), `src/scenes/alasan-saya-bikin-a2/`, `src/data/timeline-alasan-saya-bikin-a2.ts`, `out/alasan-saya-bikin-a2-9x16.mp4`, frame kunci `out/stills/alasan-saya-bikin-a2/`
@@ -33,3 +33,8 @@
   7. Kalimat diganti: "dan alasan itu manusia" → "dan alasan itu kebersamaan keluarga". Kalimat ini dibuat ulang di ElevenLabs (Jefri, Eleven v3, 1 take, 69 kredit) dan disambung ke MP3 Bos tanpa dipercepat (jeda dramatis sebelum "kebersamaan keluarga"). Naskah dan prompt suara ikut diperbarui. Host elevenlabsusercontent.com ditambahkan ke lingkungan AMMAAR (disetujui Bos) untuk mengunduh suara.
   - Durasi kini 48,2 dtk (suara 43,55 + logo).
   - Belum dicek: sambungan suara belum didengar manusia (dicek lewat volume dan jeda saja); bila nada kalimat baru terasa beda, Bos bisa generate ulang seluruh MP3 dengan prompt di naskah.
+- Revisi 3 (19 Nov 2026, Opus):
+  1. Suara video ternyata Bowo (bukan Jefri). Kalimat 9 dibuat ulang dengan Bowo (`LxiqOV1uxBCgYTeitAHf`, Eleven v3, 1 take, 69 kredit, +2 dB agar setara) dan disambung ke MP3 Bos tanpa dipercepat; take Jefri dibuang. Naskah dan prompt suara diperbarui ke Bowo.
+  2. Fisika gerak Gigi: mengambang sejak awal, tanpa pantulan. Perpindahan memakai pegas teredam kritis (mulai pelan, meluncur, melambat sampai diam, tidak lewat batas); naik-turun mengambang pelan terus-menerus; lompatan senang/kaget dan pantulan mendarat dihapus; ke logo melayang dengan lengkung landai, bukan melompat.
+  - Durasi 48,0 dtk (suara 43,42 + logo). Pemeriksaan: tsc, tabrakan bersih, tanpa klip, tanpa frame meloncat, peralihan ke logo mulus. Komponen bersama tidak diubah di revisi ini.
+  - Belum dicek: sambungan suara belum didengar manusia.

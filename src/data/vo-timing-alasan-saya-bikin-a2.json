@@ -1,8 +1,8 @@
 {
   "audio": "public/audio/vo-alasan-saya-bikin-a2.mp3",
-  "durasi": 43.55,
-  "suara": "Jefri - Suara Penjelasan Lembut (ElevenLabs, Eleven v3 bertag), dibuat Bos; kalimat 9 dibuat ulang 19 Nov 2026 (revisi 2, kata 'manusia' diganti 'kebersamaan keluarga') dan disambung tanpa dipercepat",
-  "metode": "Deteksi jeda hening (ffmpeg silencedetect -35 dB/0,25 dtk; -30 dB/0,12 dtk untuk jeda koma), dicocokkan dengan urutan 10 kalimat naskah-alasan-saya-bikin-a2.md. 'potongan' = batas potongan teks di dalam kalimat. Batas potongan tanpa jeda (11,20 di kalimat 'Bukan karena sepi'; 24,77 di kalimat 'Saya pikir') diperkirakan dari jumlah suku kata karena tidak ada jeda. Revisi 2: kalimat 9 diganti take baru (jeda dramatis sebelum 'kebersamaan keluarga'); kalimat 10 bergeser +2,10 dtk.",
+  "durasi": 43.42,
+  "suara": "Bowo (ElevenLabs, Eleven v3 bertag), MP3 dari Bos; kalimat 9 dibuat ulang 19 Nov 2026 dengan suara Bowo (revisi 2-3, 'manusia' diganti 'kebersamaan keluarga'), +2 dB agar setara, disambung tanpa dipercepat",
+  "metode": "Deteksi jeda hening (ffmpeg silencedetect -35 dB/0,25 dtk; -30 dB/0,12 dtk untuk jeda koma), dicocokkan dengan urutan 10 kalimat naskah-alasan-saya-bikin-a2.md. 'potongan' = batas potongan teks di dalam kalimat. Batas potongan tanpa jeda (11,20 di kalimat 'Bukan karena sepi'; 24,77 di kalimat 'Saya pikir') diperkirakan dari jumlah suku kata karena tidak ada jeda. Revisi 3: kalimat 9 diganti take Bowo (jeda dramatis sebelum 'kebersamaan keluarga'); kalimat 10 bergeser +2,02 dtk.",
   "kalimat": [
     {
       "mulai": 0.15,
@@ -93,27 +93,27 @@
       "teks": "Jadi ini bukan sekadar jualan alat."
     },
     {
-      "mulai": 32.9,
-      "selesai": 39.23,
+      "mulai": 32.89,
+      "selesai": 39.12,
       "teks": "Ada alasan di baliknya, dan alasan itu kebersamaan keluarga.",
       "potongan": [
         {
-          "mulai": 32.9,
-          "selesai": 34.19
+          "mulai": 32.89,
+          "selesai": 34.42
         },
         {
-          "mulai": 35.08,
-          "selesai": 36.2
+          "mulai": 35.52,
+          "selesai": 36.62
         },
         {
-          "mulai": 37.25,
-          "selesai": 39.23
+          "mulai": 37.62,
+          "selesai": 39.12
         }
       ]
     },
     {
-      "mulai": 40.24,
-      "selesai": 43.2,
+      "mulai": 40.15,
+      "selesai": 43.12,
       "teks": "Itu sebabnya A Dua Automation ada."
     }
   ]
