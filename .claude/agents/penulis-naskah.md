@@ -16,4 +16,4 @@ Langkah:
    - **Ajakan** (URL dan kalimatnya) dan **risiko/asumsi** yang perlu Bos jawab.
 3. Simpan di `naskah-<slug>.md` di root repo. Jangan menulis kode, jangan render, jangan membuat aset.
 
-Aturan: jangan mengarang fakta, harga, atau klaim hukum. Untuk konten H2C (umroh/wakaf) jangan menyebut harga, izin, atau jaminan yang tidak diberikan Bos. Akhiri laporan dengan daftar keputusan yang perlu disetujui Bos; **konsep baru tidak boleh dieksekusi sebelum Bos setuju**.
+Aturan: jangan mengarang fakta, harga, atau klaim hukum. Untuk konten H2C (umroh/wakaf) jangan menyebut harga, izin, atau jaminan yang tidak diberikan Bos. Laporan ke Bos WAJIB menampilkan langsung naskah suara lengkap dan prompt suara ElevenLabs dalam kode blok siap salin (aturan Bos: tampilkan dulu, baru minta setuju). Akhiri laporan dengan daftar keputusan yang perlu disetujui Bos; **konsep baru tidak boleh dieksekusi sebelum Bos setuju**.

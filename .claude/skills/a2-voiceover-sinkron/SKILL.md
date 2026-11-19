@@ -10,6 +10,7 @@ description: Membuat voiceover ElevenLabs untuk video A2/H2C dan menyinkronkanny
 - **"A2" ditulis "A Dua"** di teks yang dikirim ke TTS ("A2 Automation" → "A Dua Automation"). Di layar tetap "A2".
 - Angka dieja bila perlu ("lima puluh", "tiga ratus lima puluh").
 - Suara: **cek dulu suara MP3 Bos sebelum membuat kalimat pengganti** (video "Alasan Saya Bikin A2" memakai Bowo `LxiqOV1uxBCgYTeitAHf` di konektor ElevenLabs utama Bos, padahal naskah menulis Jefri; Bos merevisi). Kalimat pengganti disambung ke MP3 Bos: potong di jeda, fade 20–30 ms, samakan volume (volumedetect), jangan dipercepat; unduhan butuh host `elevenlabsusercontent.com`. Pilihan lain: Jefri (`1ijzBXcD3AIVH8RGMcQd`, "Suara Penjelasan Lembut", dipakai Satu Pesanan) atau Alif (`R2tdno8o9nwUiDvfnMIJ`). Model `eleven_v4` dipakai untuk Satu Pesanan. Sejak 2026-11-19 prompt suara memakai Eleven v3 dengan tag audio dalam kurung siku (mis. `[curious]`, `[laugh]`) agar nada lebih hidup; tag tidak diucapkan. Tag nada (dalam kurung siku) hanya dipakai bila Bos meminta, dan contohnya diambil dari prompt yang sudah berhasil di akun Bos; jangan mengarang nama tag. Cek `creative_get_model_guide` untuk model yang dipakai.
+- **Prompt suara selalu ditampilkan di chat** (baris pengaturan + satu kode blok siap salin), tidak hanya disimpan di file; di KONSEP ditampilkan sebelum minta persetujuan (aturan Bos 19 Nov 2026).
 - Naskah disimpan di `naskah-<video>.md` (tabel: nomor, voiceover, visual), angka contoh ditandai "contoh".
 
 ## Menghasilkan suara

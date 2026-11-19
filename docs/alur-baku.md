@@ -11,6 +11,7 @@ Satu video = lima room pendek (IDE → KONSEP → BANGUN → REVISI bila perlu �
 | 4 | **RILIS** | Sonnet | Caption, jam posting, catat ke vault | caption di serah-terima, catatan Obsidian | Bos posting |
 
 ## Aturan baku
+- **Tampilkan dulu, baru minta setuju (aturan Bos, 19 Nov 2026).** Di room KONSEP, sebelum meminta persetujuan, dialog/naskah suara lengkap dan prompt suara ElevenLabs (siap salin) wajib sudah tampil di chat. Setiap prompt untuk langkah berikutnya (suara, sampul, caption) selalu ditampilkan di chat dalam kode blok siap salin, bukan hanya disebut lokasi filenya.
 - **Prompt inti** (`docs/prompt-inti.md`) disalin apa adanya ke setiap room. Hanya blok TAHAP dan isian `<slug>`/brief yang berbeda.
 - **Serah-terima** (`serah-terima/<slug>.md`, dari `_template.md`) adalah satu-satunya jembatan antar room: status, keputusan Bos, file penting, revisi, yang belum dicek. Setiap room membacanya di awal dan memperbaruinya di akhir.
 - **Revisi dikumpulkan satu daftar**, bukan dikirim satu-satu: satu room revisi, satu kali render.
