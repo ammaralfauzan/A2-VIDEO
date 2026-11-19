@@ -33,6 +33,9 @@ Untuk cerita orang pertama, Bos meminta **ilustrasi animasi tiap bagian cerita**
 - Di latar gelap, kepala/kaki orang jangan navy (tak terlihat): pakai `ink` terang.
 - Orang duduk di belakang meja: panel depan meja menutup sampai dasar panggung, dan dasar kaki dinaikkan agar badan terlihat di atas meja.
 - Simbol yang muncul belakangan (hati, bohlam) jangan menimpa jam/jendela; cek di frame kunci.
+- Revisi 2 (Bos): ilustrasi harus **dramatis dan mengundang perasaan**: suasana dari lapisan token beropasitas (hujan, lampu jalan, kerucut cahaya lampu meja, ruangan meredup, makanan mendingin vs hangat, berkas cahaya senja), wajah tokoh ikut merasakan (senang/sedih/lelah/pejam), kamera mendorong pelan (`Push`), benda kunci digambar detail (`Bulb`, `DeskLamp`).
+- Antar-adegan pakai **pudar silang** (adegan baru di atas masuk 8 frame, lama tetap penuh di bawah); pudar-keluar lalu pudar-masuk menimbulkan kedip putih di antara dua adegan gelap (tertangkap pemeriksa frame meloncat).
+- Garis waktu di akhir cerita cukup memudar; Bos tidak mau garis berubah jadi lingkaran.
 
 ## Aturan
 - Angka ilustratif selalu berlabel "contoh". Tanpa emoji, merek pihak ketiga, gradasi ungu.

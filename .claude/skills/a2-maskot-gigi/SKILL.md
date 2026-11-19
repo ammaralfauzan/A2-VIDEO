@@ -16,9 +16,10 @@ Gigi adalah **gear yang sama dengan gear di logo A2** (huruf A). Komponen: `src/
 - Logo tidak digambar ulang: lapisan piksel asli ada di `public/logo/parts/` (dibuat `scripts/split-logo.py`).
 
 ## Ekspresi (`mood`)
-`biasa` (■ ■) · `senang` (^ ^) · `puas` (‿ ‿) · `kaget` (alis naik, mata bulat, mulut "o") · `cemas` (alis miring ujung dalam naik, mata kecil, mulut bergelombang, keringat) · `lelah` (> <, cemberut, keringat) · `mikir` (lirik atas, satu alis naik) · `kedip` (satu mata terpejam). `cemas`, `kaget`, `lelah` harus tegas; Bos pernah meminta diperkuat.
+`biasa` (■ ■) · `sedih` (alis miring ujung dalam naik, mulut melengkung turun tipis; untuk momen haru, misalnya "waktu untuk keluarga") · `senang` (^ ^) · `puas` (‿ ‿) · `kaget` (alis naik, mata bulat, mulut "o") · `cemas` (alis miring ujung dalam naik, mata kecil, mulut bergelombang, keringat) · `lelah` (> <, cemberut, keringat) · `mikir` (lirik atas, satu alis naik) · `kedip` (satu mata terpejam). `cemas`, `kaget`, `lelah` harus tegas; Bos pernah meminta diperkuat.
 
 ## Aturan gerak
+0. **Jangan gepeng (revisi Bos, 19 Nov 2026).** Gigi 2D tetapi harus terasa 3D: badan tidak dipipihkan/diregangkan untuk emosi atau perpindahan. Pakai prop `turn` (-1..1): wajah bergeser dan menyempit di permukaan bulat, gigi gear ikut berputar sedikit, badan tetap bulat. Cemas = **menggeleng** (kunci sudut ±0,72 dengan ease masuk-keluar per ayunan, ayunan mengecil, jeda, ulang lebih pelan; contoh `SHAKE` di `src/scenes/alasan-saya-bikin-a2/GigiJalan.tsx`). Berpindah = menoleh ke arah tujuan. Ganti ekspresi = menoleh sekejap, ekspresi ditukar saat wajah paling menyamping (bukan memencet mata). Ekspresi yang punya alis/mulut jangan dikedipkan dengan `eyeOpen` (wajah jadi gepeng). `turn` 0 menghasilkan tampilan lama yang identik (video lama tidak berubah). Aturan regang-pipih di bawah hanya berlaku untuk video lama.
 1. **Ekspresif dan halus:** ganti ekspresi dengan kelopak menutup lalu membuka (`eyeOpen`), bukan pindah mendadak.
 2. **Bahasa badan mengikuti ekspresi:** `tilt` (miring), `squash` (regang/pipih; pipih saat mendarat), `spin` (cincin gear berputar, wajah tetap tegak).
 3. **Kedip** berkala dengan jeda bergantian (`BLINK_GAPS` di `GigiTrack.tsx`), hanya pada ekspresi yang mata terbuka.

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Img, interpolate, staticFile} from 'remotion';
 import {clamp, ease, sp, textIn} from '../../components/motion';
-import {ef, S} from '../../data/timeline-alasan-saya-bikin-a2';
+import {S, sf} from '../../data/timeline-alasan-saya-bikin-a2';
 
 // Penutup halus tanpa ajakan (keputusan Bos): Gigi turun ke posisi gear di huruf A,
 // huruf A dan angka 2 masuk mengelilinginya, Gigi menjadi gear logo, wordmark dan tagline menyusul.
@@ -19,7 +19,7 @@ const LOGO_TOP = LOGO_CONTENT_TOP - 0.231 * LOGO_SIZE;
 export const GEAR_TARGET = {x: LOGO_LEFT + 520 * K, y: LOGO_TOP + 641 * K, size: (160 / SRC) * LOGO_SIZE};
 
 export const OUTRO = (() => {
-  const start = ef(S.alasan) + 40; // Gigi sudah di dalam lingkaran, ancang-ancang
+  const start = sf(S.penutup) + 10; // Gigi ancang-ancang dari atas garis yang sudah pudar
   return {
     start,
     hop: start + 8,

@@ -15,10 +15,6 @@ export const POINTS = [
 ];
 export const LABEL_TOP = LINE.y + 44;
 
-// Lingkaran penutup: panjang garis berubah jadi lingkaran seukuran ujung gigi Gigi.
-export const RING = {cx: 540, cy: LINE.y, r: 115};
-// Lebar Gigi saat ujung giginya pas di lingkaran (viewBox 160 untuk jari-jari 70).
-export const RING_GIGI = Math.round((RING.r * 160) / 70);
 
 // Fase tata letak, semua dari timing suara.
 export const P = {
@@ -28,9 +24,9 @@ export const P = {
   mesin: () => wf(S.pikir, 8) - 2,
   connect: () => sf(S.manusia) - 2,
   merge: () => [sf(S.bukan) - 4, sf(S.bukan) + 22] as [number, number],
-  ring: () => [ef(S.alasan) + 2, ef(S.alasan) + 28] as [number, number],
+  // Penutup cerita: garis terang cukup memudar (permintaan Bos, tidak jadi lingkaran).
+  lineOut: () => [ef(S.alasan) + 4, ef(S.alasan) + 20] as [number, number],
   // Panggung ilustrasi muncul setelah Gigi turun ke garis, hilang sebelum garis melingkar.
   stageIn: () => sf(S.lihat) + 6,
   stageOut: () => ef(S.alasan) + 8,
-  gigiIn: () => [ef(S.alasan) + 18, ef(S.alasan) + 38] as [number, number],
 };

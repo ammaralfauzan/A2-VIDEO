@@ -2,38 +2,14 @@ import React from 'react';
 import {interpolate} from 'remotion';
 import {clamp, ease, sp} from '../../components/motion';
 import {color, font, radius} from '../../theme';
-import {LABEL_TOP, LINE, P, POINTS, RING} from './layout';
+import {LABEL_TOP, LINE, P, POINTS} from './layout';
 
 // Satu garis waktu tipis: tumbuh dari kiri saat hook, tiga titik cerita muncul bergantian
 // (titik lama meredup, tidak hilang), lalu tersambung, menyatu jadi satu garis terang,
 // dan akhirnya melingkar menjadi lingkaran gear yang diisi Gigi.
 
-const N = 72;
-const L = LINE.x1 - LINE.x0; // = keliling lingkaran (2 pi r)
-
-// Garis melengkung dengan kelengkungan tetap yang naik pelan (panjang tetap), sehingga garis lurus
-// melingkar rapi menjadi lingkaran. Titik tengah garis turun ke dasar lingkaran.
-const morphPath = (len: number, t: number) => {
-  const k = (t * 2 * Math.PI) / L; // kelengkungan
-  const midY = LINE.y + RING.r * t;
-  const pts: string[] = [];
-  const steps = Math.max(1, Math.round(N * len));
-  for (let i = 0; i <= steps; i++) {
-    const s = -L / 2 + (L * i) / N;
-    let x: number;
-    let y: number;
-    if (k < 1e-6) {
-      x = RING.cx + s;
-      y = midY;
-    } else {
-      const rho = 1 / k;
-      x = RING.cx + rho * Math.sin(s * k);
-      y = midY - rho * (1 - Math.cos(s * k));
-    }
-    pts.push(`${x.toFixed(1)},${y.toFixed(1)}`);
-  }
-  return `M${pts.join(' L')}`;
-};
+// Garis lurus dari kiri sepanjang `len` (0..1) dari panjang garis.
+const linePath = (len: number) => `M${LINE.x0},${LINE.y} L${(LINE.x0 + (LINE.x1 - LINE.x0) * len).toFixed(1)},${LINE.y}`;
 
 // Panjang isian biru (0..1 dari panjang garis) mengikuti titik yang sedang diceritakan.
 const fillAt = (f: number) => {
@@ -57,23 +33,21 @@ const pointAlpha = (f: number, i: number) => {
 export const GarisWaktu: React.FC<{f: number}> = ({f}) => {
   const [g0, g1] = P.grow();
   if (f < g0) return null;
-  const [r0, r1] = P.ring();
   const [m0, m1] = P.merge();
-  const [gi0, gi1] = P.gigiIn();
-  if (f > gi1 + 2) return null;
+  const [o0, o1] = P.lineOut();
+  if (f > o1 + 2) return null;
 
   const grow = interpolate(f, [g0, g1], [0, 1], {...clamp, easing: ease});
   const fill = fillAt(f);
   const merge = interpolate(f, [m0, m1], [0, 1], {...clamp, easing: ease});
-  const ring = interpolate(f, [r0, r1], [0, 1], {...clamp, easing: ease});
-  const ringFade = interpolate(f, [gi1 - 6, gi1], [1, 0], clamp);
+  const lineFade = interpolate(f, [o0, o1], [1, 0], {...clamp, easing: ease});
   const stroke = 6 + 4 * merge;
   const pointsGone = merge >= 1;
   const labelsOut = interpolate(f, [m0 - 2, m0 + 8], [1, 0], clamp);
 
   return (
     <>
-      <svg width={1080} height={1920} style={{position: 'absolute', left: 0, top: 0, opacity: ringFade}}>
+      <svg width={1080} height={1920} style={{position: 'absolute', left: 0, top: 0, opacity: lineFade}}>
         <defs>
           <linearGradient id="gw-terang" gradientUnits="userSpaceOnUse" x1={LINE.x0} y1={0} x2={LINE.x1} y2={0}>
             <stop offset="0%" stopColor={color.blue1} />
@@ -81,13 +55,13 @@ export const GarisWaktu: React.FC<{f: number}> = ({f}) => {
           </linearGradient>
         </defs>
         {/* garis dasar abu */}
-        {ring <= 0 ? (
+        {merge < 1 ? (
           <line x1={LINE.x0} y1={LINE.y} x2={LINE.x0 + (LINE.x1 - LINE.x0) * grow} y2={LINE.y} stroke={color.line} strokeWidth={stroke} strokeLinecap="round" />
         ) : null}
         {/* isian biru yang berjalan; menjadi garis terang bergradasi saat menyatu, lalu melingkar */}
         {fill > 0.001 || merge > 0 ? (
           <path
-            d={morphPath(Math.max(fill, merge), ring)}
+            d={linePath(Math.max(fill, merge))}
             fill="none"
             stroke={merge > 0 ? 'url(#gw-terang)' : color.blue1}
             strokeWidth={stroke}

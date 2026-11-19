@@ -5,7 +5,7 @@ import {color} from '../theme';
 // cincin navy tebal, lubang putih di tengah). Lubang putih itu jadi "layar wajah";
 // ekspresi hanya lewat mata, mengikuti referensi mata dari Bos. Tanpa kaki, melayang.
 
-export type Mood = 'biasa' | 'senang' | 'puas' | 'kaget' | 'cemas' | 'lelah' | 'mikir' | 'kedip';
+export type Mood = 'biasa' | 'senang' | 'puas' | 'kaget' | 'cemas' | 'lelah' | 'mikir' | 'kedip' | 'sedih';
 
 type Props = {
   size?: number; // lebar gear
@@ -20,6 +20,9 @@ type Props = {
   squash?: {x: number; y: number}; // regang/pipih badan (1 = normal)
   eyesOpacity?: number; // 0 = wajah kosong (lubang putih seperti gear di logo)
   shadow?: number; // kekuatan bayangan lembut di belakang badan (0..1)
+  // Putar kepala ala 3D (-1..1 = sinus sudut hadap ke kiri/kanan): wajah bergeser dan menyempit di
+  // permukaan, badan gear tetap bulat (tidak gepeng). 0 = menghadap depan (tampilan lama, identik).
+  turn?: number;
 };
 
 // Proporsi diukur dari gear di file logo: ujung gigi 70, badan 58, lubang 39, lebar gigi ±20°.
@@ -85,6 +88,15 @@ const Eyes: React.FC<{mood: Mood; blink: boolean; look: {x: number; y: number}; 
         <path d="M7,-17 L21,-21" {...line} strokeWidth={4} />
       </>
     ),
+    // sedih: alis miring (ujung dalam naik), mata agak sayu, mulut melengkung turun tipis
+    sedih: (
+      <>
+        <path d="M-21,-12 L-9,-17 M9,-17 L21,-12" {...line} strokeWidth={3.2} />
+        <rect x={-18} y={-7} width={10} height={11} rx={4} fill={ink} />
+        <rect x={8} y={-7} width={10} height={11} rx={4} fill={ink} />
+        <path d="M-6,15.5 Q0,11 6,15.5" {...line} strokeWidth={2.4} />
+      </>
+    ),
     // ▬ ■  (kedip)
     kedip: (
       <>
@@ -111,7 +123,9 @@ export const Gigi: React.FC<Props> = ({
   squash = {x: 1, y: 1},
   eyesOpacity = 1,
   shadow = 1,
+  turn = 0,
 }) => {
+  const clipId = React.useId().replace(/:/g, '');
   // Satu tetes keringat besar yang menetes turun lalu memudar (minimalis).
   const dropY = -58 + sweatPhase * 16;
   const dropO = sweat * Math.min(1, (1 - sweatPhase) * 3) * Math.min(1, sweatPhase * 6 + 0.2);
@@ -124,7 +138,7 @@ export const Gigi: React.FC<Props> = ({
       style={{overflow: 'visible', filter: shadow > 0 ? `drop-shadow(0 ${size * 0.06}px ${size * 0.1}px rgba(11,22,48,${0.2 * shadow}))` : undefined}}
     >
       <g transform={`translate(0 ${70 * (1 - squash.y)}) rotate(${tilt}) scale(${squash.x} ${squash.y})`}>
-        <g transform={`rotate(${spin})`}>
+        <g transform={`rotate(${spin + turn * 12})`}>
           {Array.from({length: 8}, (_, i) => (
             <rect
               key={i}
@@ -139,10 +153,27 @@ export const Gigi: React.FC<Props> = ({
           ))}
           <circle r={R_BODY} fill={color.navy} />
         </g>
-        <circle r={R_HOLE} fill={color.surface} />
-        <g opacity={eyesOpacity}>
-          <Eyes mood={mood} blink={blink} look={look} open={eyeOpen} />
-        </g>
+        {turn === 0 ? (
+          <>
+            <circle r={R_HOLE} fill={color.surface} />
+            <g opacity={eyesOpacity}>
+              <Eyes mood={mood} blink={blink} look={look} open={eyeOpen} />
+            </g>
+          </>
+        ) : (
+          <>
+            {/* layar wajah ikut berputar sedikit; mata menempel di permukaan bulat */}
+            <clipPath id={clipId}>
+              <ellipse cx={turn * 7} rx={R_HOLE * (1 - 0.1 * Math.abs(turn))} ry={R_HOLE} />
+            </clipPath>
+            <ellipse cx={turn * 7} rx={R_HOLE * (1 - 0.1 * Math.abs(turn))} ry={R_HOLE} fill={color.surface} />
+            <g opacity={eyesOpacity} clipPath={`url(#${clipId})`}>
+              <g transform={`translate(${turn * 21} 0) scale(${1 - 0.3 * Math.abs(turn)} 1)`}>
+                <Eyes mood={mood} blink={blink} look={look} open={eyeOpen} />
+              </g>
+            </g>
+          </>
+        )}
         {sweat > 0 ? (
           <path
             d={`M60,${dropY} c0,0 9,12 9,18 a9,9 0 0,1 -18,0 c0,-6 9,-18 9,-18z`}

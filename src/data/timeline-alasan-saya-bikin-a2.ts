@@ -16,7 +16,7 @@ export const SENTENCES = [
   'Saya *pikir,*|pekerjaan yang *berulang* ini|biar dikerjakan *mesin.*',
   'Orangnya fokus ke yang butuh *manusia.*',
   'Jadi ini bukan sekadar *jualan* *alat.*',
-  'Ada *alasan* di *baliknya,*|dan alasan itu *manusia.*',
+  'Ada *alasan* di *baliknya,*|dan alasan itu|*kebersamaan* *keluarga.*',
   'Itu sebabnya A2 Automation ada.',
 ] as const;
 
@@ -42,7 +42,7 @@ export const AUDIO_END = (voTiming as {durasi: number}).durasi;
 export const sf = (i: number) => Math.round(SENTENCE_TIMES[i].start * FPS);
 export const ef = (i: number) => Math.round(SENTENCE_TIMES[i].end * FPS);
 
-// Suara 41,4 dtk + logo diam ±4,6 dtk.
+// Suara 43,55 dtk + logo diam ±4,6 dtk.
 export const TOTAL_FRAMES = Math.ceil((AUDIO_END + 4.6) * FPS);
 
 const syllables = (w: string) => Math.max(1, (w.toLowerCase().match(/[aiueo]+/g) || []).length);
