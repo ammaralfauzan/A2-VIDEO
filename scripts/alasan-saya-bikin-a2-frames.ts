@@ -29,7 +29,7 @@ const frames: [string, number][] = [
   ['08-menyatu-tengah', mid(P.merge()[0], P.merge()[1])],
   ['08a-pulang-duduk', sf(S.bukan) + 60],
   ['08b-bukan-jualan', ef(S.bukan)],
-  ['09-jeda-dramatis', Math.round(36.7 * 30)],
+  ['09-dan-alasan-itu', wf(S.alasan, 6) + 4],
   ['09a-kebersamaan-keluarga', ef(S.alasan) - 4],
   ['09b-panggung-keluar', ef(S.alasan) + 14],
   ['10-garis-pudar', mid(P.lineOut()[0], P.lineOut()[1])],

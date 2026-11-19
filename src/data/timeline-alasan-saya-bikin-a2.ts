@@ -42,7 +42,7 @@ export const AUDIO_END = (voTiming as {durasi: number}).durasi;
 export const sf = (i: number) => Math.round(SENTENCE_TIMES[i].start * FPS);
 export const ef = (i: number) => Math.round(SENTENCE_TIMES[i].end * FPS);
 
-// Suara 43,55 dtk + logo diam ±4,6 dtk.
+// Suara 35,63 dtk (MP3 Jefri v4 dari Bos) + logo diam ±4,6 dtk.
 export const TOTAL_FRAMES = Math.ceil((AUDIO_END + 4.6) * FPS);
 
 const syllables = (w: string) => Math.max(1, (w.toLowerCase().match(/[aiueo]+/g) || []).length);

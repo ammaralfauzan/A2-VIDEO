@@ -1,119 +1,119 @@
 {
   "audio": "public/audio/vo-alasan-saya-bikin-a2.mp3",
-  "durasi": 43.42,
-  "suara": "Bowo (ElevenLabs, Eleven v3 bertag), MP3 dari Bos; kalimat 9 dibuat ulang 19 Nov 2026 dengan suara Bowo (revisi 2-3, 'manusia' diganti 'kebersamaan keluarga'), +2 dB agar setara, disambung tanpa dipercepat",
-  "metode": "Deteksi jeda hening (ffmpeg silencedetect -35 dB/0,25 dtk; -30 dB/0,12 dtk untuk jeda koma), dicocokkan dengan urutan 10 kalimat naskah-alasan-saya-bikin-a2.md. 'potongan' = batas potongan teks di dalam kalimat. Batas potongan tanpa jeda (11,20 di kalimat 'Bukan karena sepi'; 24,77 di kalimat 'Saya pikir') diperkirakan dari jumlah suku kata karena tidak ada jeda. Revisi 3: kalimat 9 diganti take Bowo (jeda dramatis sebelum 'kebersamaan keluarga'); kalimat 10 bergeser +2,02 dtk.",
+  "durasi": 35.63,
+  "suara": "Jefri - Soft Explanatory Voice (ElevenLabs Eleven v4, s50 sim75), MP3 penuh dari Bos 19 Nov 2026 (revisi 4), tidak dipercepat",
+  "metode": "Deteksi jeda hening (ffmpeg silencedetect -35 dB/0,25 dtk dan -30 dB/0,12 dtk), dicocokkan dengan 10 kalimat naskah. Kata akhir kalimat 9 dipastikan 'kebersamaan keluarga' lewat pencocokan MFCC-DTW (lebih mirip rekaman 'kebersamaan keluarga' daripada 'manusia'). Batas potongan tanpa jeda diperkirakan dari jumlah suku kata.",
   "kalimat": [
     {
-      "mulai": 0.15,
-      "selesai": 2.83,
+      "mulai": 0.06,
+      "selesai": 2.0,
       "teks": "Ini alasan saya mulai A Dua."
     },
     {
-      "mulai": 4.25,
-      "selesai": 7.22,
+      "mulai": 2.51,
+      "selesai": 5.69,
       "teks": "Dulu saya sering lihat pemilik usaha pulang larut."
     },
     {
-      "mulai": 8.02,
-      "selesai": 11.89,
+      "mulai": 6.27,
+      "selesai": 9.61,
       "teks": "Bukan karena sepi, tapi karena mengetik ulang hal yang sama.",
       "potongan": [
         {
-          "mulai": 8.02,
-          "selesai": 9.04
+          "mulai": 6.27,
+          "selesai": 7.34
         },
         {
-          "mulai": 9.49,
-          "selesai": 11.2
+          "mulai": 7.7,
+          "selesai": 9.06
         },
         {
-          "mulai": 11.2,
-          "selesai": 11.89
+          "mulai": 9.06,
+          "selesai": 9.61
         }
       ]
     },
     {
-      "mulai": 12.91,
-      "selesai": 16.45,
+      "mulai": 10.14,
+      "selesai": 13.91,
       "teks": "Lama-lama saya sadar, yang habis bukan cuma tenaga.",
       "potongan": [
         {
-          "mulai": 12.91,
-          "selesai": 14.06
+          "mulai": 10.14,
+          "selesai": 11.68
         },
         {
-          "mulai": 14.43,
-          "selesai": 16.45
+          "mulai": 12.11,
+          "selesai": 13.91
         }
       ]
     },
     {
-      "mulai": 17.12,
-      "selesai": 20.84,
+      "mulai": 14.43,
+      "selesai": 17.71,
       "teks": "Waktu untuk keluarga dan untuk berpikir ikut habis.",
       "potongan": [
         {
-          "mulai": 17.12,
-          "selesai": 18.59
+          "mulai": 14.43,
+          "selesai": 16.56
         },
         {
-          "mulai": 18.78,
-          "selesai": 20.84
+          "mulai": 16.77,
+          "selesai": 17.71
         }
       ]
     },
     {
-      "mulai": 21.85,
-      "selesai": 26.09,
+      "mulai": 18.1,
+      "selesai": 21.66,
       "teks": "Saya pikir, pekerjaan yang berulang ini biar dikerjakan mesin.",
       "potongan": [
         {
-          "mulai": 21.85,
-          "selesai": 22.67
+          "mulai": 18.1,
+          "selesai": 18.94
         },
         {
-          "mulai": 23.08,
-          "selesai": 24.77
+          "mulai": 19.08,
+          "selesai": 20.53
         },
         {
-          "mulai": 24.77,
-          "selesai": 26.09
+          "mulai": 20.53,
+          "selesai": 21.66
         }
       ]
     },
     {
-      "mulai": 26.71,
-      "selesai": 29.2,
+      "mulai": 22.04,
+      "selesai": 23.98,
       "teks": "Orangnya fokus ke yang butuh manusia."
     },
     {
-      "mulai": 30.33,
-      "selesai": 32.55,
+      "mulai": 24.47,
+      "selesai": 27.04,
       "teks": "Jadi ini bukan sekadar jualan alat."
     },
     {
-      "mulai": 32.89,
-      "selesai": 39.12,
+      "mulai": 27.44,
+      "selesai": 31.34,
       "teks": "Ada alasan di baliknya, dan alasan itu kebersamaan keluarga.",
       "potongan": [
         {
-          "mulai": 32.89,
-          "selesai": 34.42
+          "mulai": 27.44,
+          "selesai": 28.7
         },
         {
-          "mulai": 35.52,
-          "selesai": 36.62
+          "mulai": 29.02,
+          "selesai": 30.02
         },
         {
-          "mulai": 37.62,
-          "selesai": 39.12
+          "mulai": 30.18,
+          "selesai": 31.34
         }
       ]
     },
     {
-      "mulai": 40.15,
-      "selesai": 43.12,
+      "mulai": 31.73,
+      "selesai": 35.38,
       "teks": "Itu sebabnya A Dua Automation ada."
     }
   ]

@@ -18,6 +18,8 @@ description: Membuat voiceover ElevenLabs untuk video A2/H2C dan menyinkronkanny
 3. Simpan MP3 di `public/audio/vo-<video>.mp3`, **jangan menimpa VO video lain**.
 
 ## Timing
+- **Tanpa alat transkripsi** (konektor tak punya alat unggah, huggingface diblokir): pastikan kata yang ragu dengan pencocokan MFCC-DTW (`pip install librosa`): bandingkan potongan kata dengan rekaman pembanding kata yang sama (mis. take lama) dan kata lain sebagai kontrol; jarak terkecil = kata yang diucapkan. Dipakai di revisi 4 "Alasan Saya Bikin A2".
+- Bila Bos mengirim MP3 penuh baru, ganti seluruh VO (jangan disambung), ukur ulang timing; adegan ikut bergeser karena semua fase dihitung dari `sf/ef/wf`.
 - Ada transkrip: `creative_transcribe_audio` (model `eleven_scribe_v1`) memberi timing per kata (dipakai TipsUmroh: `src/data/tips-umroh-words.json`). Biayanya kecil (±344 kredit untuk 25 dtk).
 - Tanpa transkrip: `ffmpeg -i vo.mp3 -af silencedetect=noise=-35dB:d=0.25` untuk jeda antarkalimat, dan `-30dB:d=0.12` untuk jeda koma; petakan manual ke urutan kalimat naskah. Simpan di `src/data/vo-timing-<video>.json` (mulai, selesai, teks, `potongan`). Cek pemetaan dengan mendengar atau membandingkan jumlah kalimat.
 - **Adegan mengikuti suara.** Jangan mempercepat suara agar muat; perpanjang adegan. Grafis muncul sekitar 4 frame **sebelum** kata yang menjadi pemicunya.
