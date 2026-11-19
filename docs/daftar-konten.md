@@ -9,7 +9,7 @@ Setiap ide dan konsep baru **wajib dicek di sini dulu**. Tolak atau ubah sudut p
 | 3 | satu-pesanan | Satu Pesanan, Tujuh Langkah | A2 Automation | Satu pesanan = 7 langkah manual, A2 menyambung semuanya | "Satu pesanan masuk." | Explainer kinetik + Gigi, diagram simpul | selesai (9:16) |
 | 4 | tips-umroh | 5 Hal Sebelum Daftar Umroh | H2C Umroh | Lima hal dicek sebelum daftar umroh | "Jangan cuma lihat harganya" | Video bicara + motion graphic Wakaf + B-roll | selesai (9:16) |
 | 5 | bisa-nggak | Bisa nggak diotomatisasi? | A2 Automation | Empat pertanyaan "bisa nggak?" dijawab dan diperagakan (chat, invoice, pengingat, laporan) | "Empat pertanyaan dari pemilik usaha" | Tanya-jawab berulang + stempel "BISA." + Gigi | dalam pengerjaan |
-| 6 | alasan-saya-bikin-a2 | Alasan Saya Bikin A2 | A2 Automation | Ada alasan manusiawi di balik A2, bukan sekadar jualan alat (cerita asal) | "Ini alasan saya mulai A2." | Garis waktu tunggal + tiga titik cerita, teks kinetik + Gigi, suara orang pertama | revisi 2 (9:16, 48 dtk), menunggu Bos menonton |
+| 6 | alasan-saya-bikin-a2 | Alasan Saya Bikin A2 | A2 Automation | Ada alasan manusiawi di balik A2, bukan sekadar jualan alat (cerita asal) | "Ini alasan saya mulai A2." | Garis waktu tunggal + tiga titik cerita, teks kinetik + Gigi, suara orang pertama | selesai (9:16, 40 dtk; belum diposting) |
 
 ## Aturan anti-kembar
 - Satu brand tidak boleh memakai topik inti yang sama dua kali berturut-turut; beri jarak minimal dua video dengan topik lain.

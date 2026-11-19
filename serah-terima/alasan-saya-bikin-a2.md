@@ -1,7 +1,7 @@
 # Serah-terima: alasan-saya-bikin-a2
 
 - Judul / brand / format / durasi target: Alasan Saya Bikin A2 / A2 Automation / Reels 9:16 / prompt BANGUN menyebut 50 dtk; hasil 46 dtk (suara asli 41,4 dtk, tidak dipercepat, + logo diam 4,6 dtk)
-- Tahap terakhir selesai: REVISI 6 (19 Nov 2026): Gigi tampil 3D, kalimat 8 "optimasi bisnis"; video 40,2 dtk dikirim ke Bos. Berikutnya: Bos menonton; bila ada revisi → room REVISI, bila puas → room RILIS
+- Tahap terakhir selesai: RILIS (19 Nov 2026): caption, jam posting, dan prompt sampul siap; belum diposting (menunggu Bos). Video final: revisi 6, 40,2 dtk
 - Keputusan Bos (disetujui, jangan diubah): ide "Alasan Saya Bikin A2" (dipilih di room IDE, v003-1911); hook "Ini alasan saya mulai A2."; pesan inti: ada alasan manusiawi di balik A2; pola garis waktu tunggal + tiga titik + teks kinetik + Gigi; tanpa mockup/kursor; penutup halus menyebut A2 lalu logo; tanpa angka dan klaim
 - Keputusan Bos: naskah dan konsep disetujui, jangan diubah. Masih menunggu: (2) pastikan tiga titik cerita (rancangan penulis atas permintaan Bos) sesuai kenyataan atau ganti dengan cerita asli; (3) ajakan: tanpa ajakan (default) atau teks kecil a2automate.com; (4) suara Jefri (default)
 - File penting: `naskah-alasan-saya-bikin-a2.md`, `public/audio/vo-alasan-saya-bikin-a2.mp3`, `src/data/vo-timing-alasan-saya-bikin-a2.json`, `src/AlasanSayaBikinA2.tsx` (Id `AlasanSayaBikinA2`), `src/scenes/alasan-saya-bikin-a2/`, `src/data/timeline-alasan-saya-bikin-a2.ts`, `out/alasan-saya-bikin-a2-9x16.mp4`, frame kunci `out/stills/alasan-saya-bikin-a2/`
@@ -11,7 +11,30 @@
 - Keputusan Bos FINAL (19 Nov 2026): naskah rancangan dipakai apa adanya (dianggap sesuai kenyataan); tanpa ajakan; suara Jefri. Tidak ada yang menunggu Bos selain generate MP3
 - Room KONSEP diulang (R2): konsep, naskah, baris #6 sudah ada dan tidak diubah; hanya format prompt suara dirapikan (satu baris pengaturan + satu kode blok berisi teks saja; isi kalimat identik). Cerita rancangan sudah dikonfirmasi Bos
 - Belum diperiksa / risiko: isi cerita dari rancangan penulis, sudah disetujui Bos; durasi ±36 dtk perkiraan, final mengikuti suara asli
-- Caption dan jam posting usulan: (diisi tahap RILIS)
+- Caption dan jam posting usulan (RILIS, 19 Nov 2026; Metricool belum tersambung, jam tidak berbasis data):
+  - Caption:
+    ```
+    Dulu saya sering lihat pemilik usaha pulang larut. Bukan karena sepi, tapi karena mengetik ulang hal yang sama setiap hari.
+
+    Lama-lama saya sadar, yang habis bukan cuma tenaga. Waktu untuk keluarga ikut habis.
+
+    Itu sebabnya A2 Automation ada: pekerjaan yang berulang biar dikerjakan sistem, orangnya kembali ke hal yang butuh manusia.
+
+    Kalau cerita ini terasa dekat, bagikan ke teman yang masih sering pulang larut.
+
+    #A2Automation #OtomasiBisnis #PemilikUsaha #UMKM #CeritaUsaha
+    ```
+  - Jam posting: Jumat, 20 Nov 2026, 19.30 WIB (Instagram Reels dan TikTok), jam santai setelah kerja saat orang sedang bersama keluarga, cocok dengan pesan video.
+  - Prompt desain sampul:
+    ```
+    Vertical cover for a short video, 9:16, 1080x1920 px. Clean flat illustration with soft depth, light background #F4F6FA, primary color navy #13254A, small accent gradient from #00A6F4 to #0A3FD6 used only on one highlight. Font: Geist.
+    Centered large title text (bold, navy, max 2 lines), placed fully inside the area x 90 to 990 and y 480 to 1440: "Alasan Saya Bikin A2"
+    Small subtitle under the title, regular weight, muted navy: "Ada alasan manusiawi di baliknya"
+    Illustration above the title: a friendly gear-shaped mascot (navy gear with 8 square teeth, round white face screen in the exact center, simple dark eyes, gentle smile), floating, slightly 3D look but still a perfect circle, thin precise gear thickness like a machine gear, soft shadow. Below the title: a small warm scene of a family at a dining table at dusk with one empty chair now filled, soft light from a window.
+    Calm, warm, sincere mood. Generous white space, minimalist composition.
+    Do not include: emoji, purple gradients, third-party logos or brands, any redrawn A2 logo, numbers or claims, extra text besides the two lines above.
+    ```
+  - Catatan: tempel logo A2 asli secara manual di desain.
 - Catatan untuk room berikutnya: jangan ubah naskah tanpa persetujuan Bos. Bila Bos mengganti cerita, ubah naskah dan prompt suara bersama-sama
 - Room KONSEP diulang lagi (19 Nov 2026): prompt suara diganti ke Eleven v3 dengan tag audio ([warmly], [tired], [softly]; tag tidak diucapkan, daftar sesuai panduan model). Isi kalimat identik; konsep, naskah, baris #6 tidak diubah. Anti-kembar dicek: aman
 - Bos menyetujui prompt suara Eleven v3 bertag (19 Nov 2026). Room KONSEP selesai. Berikutnya: Bos generate MP3 (Jefri) lalu kirim, simpan sebagai public/audio/vo-alasan-saya-bikin-a2.mp3, lalu room BANGUN (Opus)
