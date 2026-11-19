@@ -4,7 +4,7 @@ Format: Reels 9:16 (1080×1920), target ±40 detik · Gaya: explainer kinetik + 
 Pola: tiga kartu "MITOS" muncul satu per satu di zona visual, dicap, lalu dibalik (putar 3D datar) menjadi kartu "FAKTA". Teks kinetik kata per kata di bawah kartu. Tanpa harga, angka, atau klaim hemat.
 Suara: ElevenLabs, Jefri (Suara Penjelasan Lembut), Eleven v3 dengan tag audio; "A2" diucapkan "A Dua". Tanpa musik, efek suara halus (cap, kartu dibalik).
 
-**STATUS: menunggu persetujuan Bos. Belum boleh dieksekusi.**
+**STATUS: disetujui Bos (19 Nov 2026): konsep, naskah, durasi 40 dtk, suara Jefri. Jangan diubah.**
 
 ## Konsep
 Video edukasi mitos-fakta yang menenangkan orang yang ragu memulai otomatisasi. Tiga anggapan umum (harus jago teknis, menggantikan karyawan, harus sekaligus) muncul sebagai kartu "MITOS", dicap, lalu dibalik menjadi kartu "FAKTA" dengan satu kalimat jawaban. Gigi mulai ragu dan cemas, makin lega di tiap kartu yang terbalik, dan puas di akhir. Pesan tunggal: otomatisasi bisa dimulai dari satu pekerjaan kecil, oleh siapa saja, tanpa menyingkirkan orang. Penutup halus: pertanyaan untuk penonton, lalu Gigi menjadi gear di logo A2 dan ajakan konsultasi gratis a2automate.com.
