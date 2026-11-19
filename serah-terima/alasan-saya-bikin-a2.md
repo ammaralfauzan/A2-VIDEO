@@ -14,3 +14,4 @@
 - Caption dan jam posting usulan: (diisi tahap RILIS)
 - Catatan untuk room berikutnya: jangan ubah naskah tanpa persetujuan Bos. Bila Bos mengganti cerita, ubah naskah dan prompt suara bersama-sama
 - Room KONSEP diulang lagi (19 Nov 2026): prompt suara diganti ke Eleven v3 dengan tag audio ([warmly], [tired], [softly]; tag tidak diucapkan, daftar sesuai panduan model). Isi kalimat identik; konsep, naskah, baris #6 tidak diubah. Anti-kembar dicek: aman
+- Bos menyetujui prompt suara Eleven v3 bertag (19 Nov 2026). Room KONSEP selesai. Berikutnya: Bos generate MP3 (Jefri) lalu kirim, simpan sebagai public/audio/vo-alasan-saya-bikin-a2.mp3, lalu room BANGUN (Opus)
