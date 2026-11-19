@@ -9,7 +9,7 @@ import {A2Umum916, JamSembilanMalam916} from './Vertical916';
 import {SatuPesanan} from './SatuPesanan';
 import {TipsUmroh} from './TipsUmroh';
 import {TOTAL_FRAMES as TU_TOTAL_FRAMES} from './tips-umroh/timeline';
-import {GigiSheet} from './dev/GigiSheet';
+import {GigiSheet, GigiSheet3D} from './dev/GigiSheet';
 import {TOTAL_FRAMES as SP_TOTAL_FRAMES} from './data/timeline-satu-pesanan';
 import {TOTAL_FRAMES} from './data/timeline';
 import {FPS, HEIGHT, WIDTH} from './theme';
@@ -63,6 +63,7 @@ export const Root: React.FC = () => (
     />
     {/* Lembar ekspresi maskot untuk review. */}
     <Composition id="GigiSheet" component={GigiSheet} durationInFrames={1} fps={FPS} width={1400} height={820} />
+    <Composition id="GigiSheet3D" component={GigiSheet3D} durationInFrames={1} fps={FPS} width={1400} height={820} />
     {/* "Satu Pesanan, Tujuh Langkah": explainer 9:16 dengan maskot Gigi. */}
     <Composition id="SatuPesanan" component={PSatuPesanan} durationInFrames={SP_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} />
     {/* "5 Hal Sebelum Daftar Umroh": video bicara + motion graphic gaya situs Wakaf H2C. */}

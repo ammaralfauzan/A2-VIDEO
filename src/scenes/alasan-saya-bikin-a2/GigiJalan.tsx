@@ -190,13 +190,15 @@ const Outro: React.FC<{f: number}> = ({f}) => {
   const mood: Mood = f >= o.mergeFrom ? 'puas' : 'senang';
   const eyesOpacity = interpolate(f, [o.mergeFrom + 6, o.mergeTo - 2], [1, 0], clamp);
   const opacity = interpolate(f, o.swap, [1, 0], clamp);
+  // tampilan 3D memudar ke datar saat menyatu dengan gear logo (logo asli datar)
+  const volume = interpolate(f, [o.mergeFrom, o.mergeTo], [1, 0.001], clamp);
   const shadow = interpolate(f, [o.land - 4, o.land + 4], [1, 0], clamp);
   const tilt = (f < o.land ? (to.x - from.x) * 0.012 * Math.sin(Math.PI * u) : 0) + Math.sin(f / 20) * 3 * keep;
   // menoleh ke arah lompatan, kembali menghadap depan saat mendarat
   const turn = (f < o.mergeFrom ? Math.sign(to.x - from.x) * 0.45 * Math.sin(Math.PI * u) : 0) + Math.sin(f / 16) * 0.12 * keep;
   return (
     <div style={{position: 'absolute', left: x - size / 2, top: y - size / 2, width: size, zIndex: 20, opacity}}>
-      <Gigi size={size} mood={mood} spin={spin} eyesOpacity={eyesOpacity} shadow={shadow} tilt={tilt} turn={turn} />
+      <Gigi size={size} mood={mood} spin={spin} eyesOpacity={eyesOpacity} shadow={shadow} tilt={tilt} turn={turn} volume={volume} />
     </div>
   );
 };
@@ -323,6 +325,7 @@ export const GigiJalan: React.FC<{f: number}> = ({f}) => {
       }}
     >
       <Gigi
+        volume={1}
         size={w}
         mood={mood}
         look={{x: lx + shakeEye, y: ly}}

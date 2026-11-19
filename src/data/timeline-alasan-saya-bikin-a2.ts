@@ -15,7 +15,7 @@ export const SENTENCES = [
   '*Waktu* untuk keluarga|dan untuk berpikir ikut *habis.*',
   'Saya *pikir,*|pekerjaan yang *berulang* ini|biar dikerjakan *mesin.*',
   'Orangnya fokus ke yang butuh *manusia.*',
-  'Jadi ini bukan sekadar *jualan* *alat.*',
+  'Jadi ini bukan sekadar *optimasi* *bisnis.*',
   'Ada *alasan* di *baliknya,*|dan alasan itu|*kebersamaan* *keluarga.*',
   'Itu sebabnya A2 Automation hadir untuk membantu Anda.',
 ] as const;
