@@ -76,6 +76,16 @@ Skrip rilis memeriksa durasi klip, merender frame kunci dan video, lalu menormal
 - Penutup: garis memudar, Gigi melompat menjadi gear di huruf A logo asli (tanpa ajakan, keputusan Bos). Revisi 2: kalimat 9 jadi "…kebersamaan keluarga", Gigi menggeleng ala 3D (prop `turn`) dan punya ekspresi `sedih`. Revisi 4: menoleh/mendongak (`turn`, `pitch`) tanpa skala, lewat paralaks + sisi tebal gear; ilustrasi dengan cahaya, vinyet, dan lampu gantung
 - Frame kunci: `out/stills/alasan-saya-bikin-a2/` (dihitung dari timing suara, `scripts/alasan-saya-bikin-a2-frames.ts`). Perintah: `npm run stills:alasan`, `npm run render:alasan`
 
+## Video: "Tiga Salah Kaprah soal Otomatisasi" (komposisi `TigaSalahKaprah`, 9:16)
+
+- Naskah: `naskah-tiga-salah-kaprah-otomatisasi.md`. Explainer kinetik: tiga kartu tertutup bertumpuk, satu per satu maju, dibuka (MITOS), dicap, lalu dibalik datar (FAKTA) dan kembali ke baris atas; teks kinetik di bawah; penutup logo + ajakan dua tingkat
+- Hasil: `out/tiga-salah-kaprah-otomatisasi-9x16.mp4` (1080×1920, 30 fps, 46,5 detik: suara 44,51 dtk + logo diam ±2 dtk)
+- Voiceover: `public/audio/vo-tiga-salah-kaprah-otomatisasi.mp3` (ElevenLabs, suara Jefri - Soft Explanatory Voice, MP3 dari Bos, tidak dipercepat). Timing per kalimat dan segmen jeda di `src/data/vo-timing-tiga-salah-kaprah-otomatisasi.json` (ffmpeg silencedetect; kata disebar per suku kata di dalam segmennya)
+- Maskot: `GigiPresisi` (`src/components/GigiPresisi.tsx`) mengikuti arahan Bos 19 Nov 2026: siluet tetap bulat (ketebalan tipis, arah tetap), layar wajah selalu di tengah, ekspresi bermorf (silang-pudar + kelopak menyempit), lirikan mengikuti kartu/kartu tugas yang aktif. `Gigi.tsx` lama tidak berubah tampilannya
+- Efek suara: cap dan kartu dibalik disintesis `python3 -I scripts/make-sfx-tiga.py` ke `public/sfx/tiga/`; sisanya palet A2. Jadwal di `src/scenes/tiga-salah-kaprah-otomatisasi/Sfx.tsx`
+- Kode: `src/TigaSalahKaprah.tsx`, adegan di `src/scenes/tiga-salah-kaprah-otomatisasi/` (`Kartu`, `GigiMelayang`, `Judul`, `Penutup`, `Sfx`, `layout`), timeline di `src/data/timeline-tiga-salah-kaprah-otomatisasi.ts`
+- Frame kunci: `out/stills/tiga-salah-kaprah-otomatisasi/` (dihitung dari timing suara, `scripts/tiga-salah-kaprah-otomatisasi-frames.ts`). Perintah: `npm run stills:tiga-salah-kaprah`, `npm run render:tiga-salah-kaprah`
+
 ## Skill, pemeriksa tabrakan, dan hook penjaga (Fase 1)
 
 - Skill di `.claude/skills/`: `a2-motion-video` (alur umum), `a2-anti-tabrakan`, `a2-komposisi-proximity`, `a2-safe-area-sosmed`, `a2-maskot-gigi`

@@ -1,0 +1,203 @@
+{
+  "audio": "public/audio/vo-tiga-salah-kaprah-otomatisasi.mp3",
+  "durasi": 44.51,
+  "suara": "Jefri - Soft Explanatory Voice (ElevenLabs, MP3 dari Bos 19 Nov 2026, nama file menyebut v4, s50 sim75), tidak dipercepat",
+  "metode": "Konektor ElevenLabs tidak punya alat unggah berkas lokal dan MP3 belum ada di pustaka aset, jadi creative_transcribe_audio tidak bisa dipakai. Timing dari ffmpeg silencedetect (-35 dB/0,25 dtk untuk jeda kalimat = 12 jeda, cocok dengan 13 kalimat ucapan naskah; -30 dB/0,12 dtk untuk jeda koma). 'segmen' = potongan ucapan di antara jeda beserta jumlah kata layar di dalamnya; waktu per kata di dalam segmen diperkirakan dari jumlah suku kata.",
+  "kalimat": [
+    {
+      "mulai": 0.08,
+      "selesai": 2.94,
+      "teks": "Tiga hal ini bikin orang takut otomatisasi.",
+      "segmen": [
+        {
+          "mulai": 0.08,
+          "selesai": 2.94,
+          "kata": 7
+        }
+      ]
+    },
+    {
+      "mulai": 3.53,
+      "selesai": 5.57,
+      "teks": "Padahal, belum tentu benar.",
+      "segmen": [
+        {
+          "mulai": 3.53,
+          "selesai": 5.57,
+          "kata": 4
+        }
+      ]
+    },
+    {
+      "mulai": 5.97,
+      "selesai": 8.68,
+      "teks": "Pertama, katanya harus jago teknis.",
+      "segmen": [
+        {
+          "mulai": 5.97,
+          "selesai": 6.63,
+          "kata": 1
+        },
+        {
+          "mulai": 6.88,
+          "selesai": 8.68,
+          "kata": 4
+        }
+      ]
+    },
+    {
+      "mulai": 8.96,
+      "selesai": 14.52,
+      "teks": "Faktanya, tidak. Cukup paham alur kerja Anda sendiri. Bagian teknisnya bisa dibantu.",
+      "segmen": [
+        {
+          "mulai": 8.96,
+          "selesai": 9.72,
+          "kata": 1
+        },
+        {
+          "mulai": 9.89,
+          "selesai": 10.43,
+          "kata": 1
+        },
+        {
+          "mulai": 10.73,
+          "selesai": 12.5,
+          "kata": 6
+        },
+        {
+          "mulai": 12.8,
+          "selesai": 14.52,
+          "kata": 4
+        }
+      ]
+    },
+    {
+      "mulai": 14.9,
+      "selesai": 18.45,
+      "teks": "Kedua, katanya otomatisasi menggantikan karyawan.",
+      "segmen": [
+        {
+          "mulai": 14.9,
+          "selesai": 15.47,
+          "kata": 1
+        },
+        {
+          "mulai": 15.72,
+          "selesai": 18.45,
+          "kata": 4
+        }
+      ]
+    },
+    {
+      "mulai": 18.81,
+      "selesai": 24.96,
+      "teks": "Faktanya, yang diganti pekerjaan berulangnya, bukan orangnya. Tim jadi punya waktu untuk pelanggan.",
+      "segmen": [
+        {
+          "mulai": 18.81,
+          "selesai": 19.68,
+          "kata": 1
+        },
+        {
+          "mulai": 19.82,
+          "selesai": 21.86,
+          "kata": 4
+        },
+        {
+          "mulai": 21.98,
+          "selesai": 22.82,
+          "kata": 2
+        },
+        {
+          "mulai": 23.3,
+          "selesai": 24.96,
+          "kata": 6
+        }
+      ]
+    },
+    {
+      "mulai": 25.31,
+      "selesai": 28.45,
+      "teks": "Ketiga, katanya harus diubah semua sekaligus.",
+      "segmen": [
+        {
+          "mulai": 25.31,
+          "selesai": 25.87,
+          "kata": 1
+        },
+        {
+          "mulai": 26.13,
+          "selesai": 28.45,
+          "kata": 5
+        }
+      ]
+    },
+    {
+      "mulai": 28.84,
+      "selesai": 35.12,
+      "teks": "Faktanya, bisa mulai dari satu pekerjaan kecil dulu. Setelah terasa ringan, baru tambah pelan-pelan.",
+      "segmen": [
+        {
+          "mulai": 28.84,
+          "selesai": 29.67,
+          "kata": 1
+        },
+        {
+          "mulai": 29.91,
+          "selesai": 32.22,
+          "kata": 7
+        },
+        {
+          "mulai": 32.52,
+          "selesai": 33.82,
+          "kata": 3
+        },
+        {
+          "mulai": 34.05,
+          "selesai": 35.12,
+          "kata": 3
+        }
+      ]
+    },
+    {
+      "mulai": 35.64,
+      "selesai": 39.63,
+      "teks": "Jadi, kalau boleh pilih satu, pekerjaan apa yang ingin Anda lepas duluan?",
+      "segmen": [
+        {
+          "mulai": 35.64,
+          "selesai": 36.22,
+          "kata": 1
+        },
+        {
+          "mulai": 36.3,
+          "selesai": 37.48,
+          "kata": 4
+        },
+        {
+          "mulai": 37.64,
+          "selesai": 39.63,
+          "kata": 7
+        }
+      ]
+    },
+    {
+      "mulai": 39.99,
+      "selesai": 44.33,
+      "teks": "A Dua Automation. Konsultasi gratis di a dua automate titik com.",
+      "segmen": [
+        {
+          "mulai": 39.99,
+          "selesai": 41.15,
+          "kata": 2
+        },
+        {
+          "mulai": 41.51,
+          "selesai": 44.33,
+          "kata": 4
+        }
+      ]
+    }
+  ]
+}

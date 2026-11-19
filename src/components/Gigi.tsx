@@ -32,12 +32,12 @@ type Props = {
 };
 
 // Proporsi diukur dari gear di file logo: ujung gigi 70, badan 58, lubang 39, lebar gigi ±20°.
-const R_TOOTH = 70;
-const R_BODY = 58;
-const R_HOLE = 39;
-const TOOTH_W = 2 * R_TOOTH * Math.sin((10 * Math.PI) / 180);
+export const R_TOOTH = 70;
+export const R_BODY = 58;
+export const R_HOLE = 39;
+export const TOOTH_W = 2 * R_TOOTH * Math.sin((10 * Math.PI) / 180);
 
-const Eyes: React.FC<{mood: Mood; blink: boolean; look: {x: number; y: number}; open: number}> = ({mood, blink, look, open}) => {
+export const Eyes: React.FC<{mood: Mood; blink: boolean; look: {x: number; y: number}; open: number}> = ({mood, blink, look, open}) => {
   const dx = look.x * 3;
   const dy = look.y * 3;
   const ink = color.navy;

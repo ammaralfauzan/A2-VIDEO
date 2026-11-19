@@ -17,6 +17,8 @@ import {withProbe} from './dev/CollisionProbe';
 import {Konveksi3D, KONVEKSI_FRAMES} from './Konveksi3D';
 import {AlasanSayaBikinA2} from './AlasanSayaBikinA2';
 import {TOTAL_FRAMES as ASB_TOTAL_FRAMES} from './data/timeline-alasan-saya-bikin-a2';
+import {TigaSalahKaprah} from './TigaSalahKaprah';
+import {TOTAL_FRAMES as TSK_TOTAL_FRAMES} from './data/timeline-tiga-salah-kaprah-otomatisasi';
 
 // Dibungkus probe pemeriksa tabrakan (aktif hanya lewat scripts/check-collisions.mjs).
 const PMain = withProbe(Main);
@@ -27,6 +29,7 @@ const PSatuPesanan = withProbe(SatuPesanan);
 const PTipsUmroh = withProbe(TipsUmroh);
 const PKonveksi3D = withProbe(Konveksi3D);
 const PAlasanSayaBikinA2 = withProbe(AlasanSayaBikinA2);
+const PTigaSalahKaprah = withProbe(TigaSalahKaprah);
 
 for (const weight of ['400', '500', '600']) {
   loadFont({family: 'Geist', url: staticFile(`fonts/geist-sans-latin-${weight}-normal.woff2`), weight});
@@ -70,5 +73,7 @@ export const Root: React.FC = () => (
     <Composition id="TipsUmroh" component={PTipsUmroh} durationInFrames={TU_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} />
     {/* "Alasan Saya Bikin A2": cerita asal 9:16, garis waktu + teks kinetik + Gigi, tanpa ajakan. */}
     <Composition id="AlasanSayaBikinA2" component={PAlasanSayaBikinA2} durationInFrames={ASB_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} defaultProps={{safeGuide: false}} />
+    {/* "Tiga Salah Kaprah soal Otomatisasi": kartu MITOS dibalik jadi FAKTA, teks kinetik, Gigi presisi, ajakan halus. */}
+    <Composition id="TigaSalahKaprah" component={PTigaSalahKaprah} durationInFrames={TSK_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} defaultProps={{safeGuide: false}} />
   </>
 );

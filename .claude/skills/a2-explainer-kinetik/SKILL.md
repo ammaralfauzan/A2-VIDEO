@@ -38,6 +38,13 @@ Untuk cerita orang pertama, Bos meminta **ilustrasi animasi tiap bagian cerita**
 - Antar-adegan pakai **pudar silang** (adegan baru di atas masuk 8 frame, lama tetap penuh di bawah); pudar-keluar lalu pudar-masuk menimbulkan kedip putih di antara dua adegan gelap (tertangkap pemeriksa frame meloncat).
 - Garis waktu di akhir cerita cukup memudar; Bos tidak mau garis berubah jadi lingkaran.
 
+## Kartu dibalik (pelajaran "Tiga Salah Kaprah")
+- Mekanik mitos-fakta: kartu (`Kartu.tsx`) bergerak antar keadaan lewat daftar kunci posisi (tumpukan → merenggang → tengah → slot kecil di baris atas), dibalik datar dengan `rotateY` (wajah ditukar di 90°). Contoh `src/scenes/tiga-salah-kaprah-otomatisasi/`.
+- **Cap tidak boleh menyentuh teks kartu**: cap diputar sehingga kotaknya lebih tinggi; taruh di kanan bawah dengan jarak, dan uji isi kartu terpanjang (2 baris). Pemeriksa tabrakan menangkapnya.
+- Kartu yang kembali ke baris jangan melintasi kartu kecil lain: kecilkan dulu di tempat/ke samping, baru naik.
+- Tanda tanya di punggung kartu digambar (path SVG), bukan teks, agar kartu bertumpuk tidak dianggap teks bertabrakan.
+- Timing tanpa transkrip: simpan `segmen` (ucapan di antara jeda + jumlah kata) per kalimat; kata disebar hanya di dalam segmennya (`timeline-tiga-salah-kaprah-otomatisasi.ts`).
+
 ## Aturan
 - Angka ilustratif selalu berlabel "contoh". Tanpa emoji, merek pihak ketiga, gradasi ungu.
 - Setiap elemen pakai gerak masuk yang sama (spring, blur→tajam, geser kecil).

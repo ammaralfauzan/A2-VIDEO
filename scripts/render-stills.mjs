@@ -91,6 +91,14 @@ SETS.AlasanSayaBikinA2 = {
   },
 };
 
+// Frame kunci "Tiga Salah Kaprah soal Otomatisasi" dihitung dari timing suara.
+SETS.TigaSalahKaprah = {
+  dir: 'out/stills/tiga-salah-kaprah-otomatisasi',
+  get stills() {
+    return JSON.parse(execSync('npx tsx scripts/tiga-salah-kaprah-otomatisasi-frames.ts', {encoding: 'utf8'}));
+  },
+};
+
 const [id = 'JamSembilanMalam', ...only] = process.argv.slice(2);
 const set = SETS[id];
 if (!set) throw new Error(`Komposisi tidak dikenal: ${id}`);
