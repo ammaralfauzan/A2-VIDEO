@@ -30,8 +30,8 @@ Tanpa ajakan keras: penutup halus menyebut A2, lalu logo. (Opsi: teks kecil `a2a
 - Suara Jefri bukan suara Bos. Bos boleh memilih Alif atau merekam sendiri.
 
 ## Prompt suara ElevenLabs (siap salin)
-Pengaturan: suara **Jefri** (`1ijzBXcD3AIVH8RGMcQd`), model **Eleven v4**, tanpa tag nada, satu kali generate, simpan sebagai `vo-alasan-saya-bikin-a2.mp3`.
-Teks dieja untuk TTS ("A2" → "A Dua"):
+Suara: Jefri (Suara Penjelasan Lembut) · Model: Eleven v4 · Nada: tenang, hangat, orang pertama · Target: ±36 dtk
+
 ```
 Ini alasan saya mulai A Dua.
 

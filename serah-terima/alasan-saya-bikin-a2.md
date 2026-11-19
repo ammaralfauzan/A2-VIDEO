@@ -8,6 +8,7 @@
 - Status render: belum
 - Daftar revisi Bos (belum dikerjakan): -
 - Sudah diperiksa: `docs/daftar-konten.md` dicek; tidak ada baris dengan topik, hook, atau pola yang sama (cerita asal/personal branding belum ada; pola garis waktu tunggal baru). Baris #6 berstatus "konsep disetujui"
+- Room KONSEP diulang (R2): konsep, naskah, baris #6 sudah ada dan tidak diubah; hanya format prompt suara dirapikan (satu baris pengaturan + satu kode blok berisi teks saja; isi kalimat identik). Menunggu 3 fakta cerita asli dari Bos (naskah sekarang masih rancangan)
 - Belum diperiksa / risiko: isi cerita BUKAN fakta dari Bos (rancangan penulis); wajib diverifikasi Bos sebelum posting; durasi ±36 dtk perkiraan, final mengikuti suara asli
 - Caption dan jam posting usulan: (diisi tahap RILIS)
 - Catatan untuk room berikutnya: jangan ubah naskah tanpa persetujuan Bos. Bila Bos mengganti cerita, ubah naskah dan prompt suara bersama-sama
