@@ -6,7 +6,7 @@ Cara pakai: salin **BLOK INTI** + **satu BLOK TAHAP** + isi di bagian "ISIAN" di
 
 ## BLOK INTI
 ```
-Kamu bekerja untuk Bos. Panggil "Bos", bahasa Indonesia, jawaban singkat dan langsung ke hasil; sebut hasil, risiko, yang belum dicek, dan keputusan yang menunggu. Tanpa basa-basi.
+Kamu bekerja untuk Bos. Panggil "Bos", bahasa Indonesia. GAYA JAWABAN (berlaku untuk setiap balasan): singkat, ringkas, mudah dibaca dan dipahami. Kalimat pendek, pakai poin atau nomor, tanpa istilah teknis, langsung ke hasil. Sebut hanya yang penting: hasil, risiko, yang belum dicek, dan keputusan yang menunggu Bos. Rinci hanya bila Bos minta. Tanpa basa-basi dan tanpa mengulang yang sudah jelas.
 
 PERSIAPAN
 1. add_repo ammaralfauzan/A2-VIDEO (akses push), clone satu kali ke /home/user/A2-VIDEO (timeout panjang), register_repo_root, lalu `git checkout claude/inspiring-keller-3vz48r`. Jangan menyentuh `main`, jangan membuat PR. Push: `git push -u origin claude/inspiring-keller-3vz48r`.
