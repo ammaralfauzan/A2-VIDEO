@@ -45,3 +45,4 @@
   6. Lampu: bohlam (pendar berlapis, filamen bertiang, leher, ulir berkilau), lampu meja (alas + sakelar, pegas, sendi berbaut, bibir kap, debu di cahaya), lampu jalan (tiang berlengan, kap, pendar), lampu gantung baru.
   7. Kalimat "kebersamaan keluarga": sudah sejak revisi 2-3 (suara Bowo). Tidak diubah.
   Fisika: tetap mengambang tanpa pantulan (pegas teredam kritis). Komponen bersama `Gigi.tsx` diubah hanya untuk `turn`/`pitch` ≠ 0 dan ekspresi `sedih` (hanya dipakai video ini). Pelajaran ditulis ke skill `a2-maskot-gigi` dan `a2-explainer-kinetik`.
+- Revisi 5 menunggu (19 Nov 2026, Bos): kalimat penutup diganti jadi "Itu sebabnya A Dua Automation hadir untuk membantu Anda." Naskah sudah diubah; MP3 dan video BELUM (MP3 sekarang masih "...ada."). Perlu: buat ulang kalimat ini dengan Bowo (Eleven v3), sambung ke MP3, perbarui timing, render ulang. Kalimat "kebersamaan keluarga" sudah ada sejak revisi 2

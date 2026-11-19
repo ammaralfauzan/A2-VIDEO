@@ -17,7 +17,7 @@ Satu garis waktu tipis berjalan pelan dari kiri ke kanan. Tiga titik muncul berg
 | 12–19 titik 2 | Lama-lama saya sadar, yang habis bukan cuma tenaga. Waktu untuk keluarga dan untuk berpikir ikut habis. | Titik kedua muncul, titik pertama meredup (tidak hilang); kata "waktu" ditebalkan | mikir, lalu tersentak |
 | 19–26 titik 3 | Saya pikir, pekerjaan yang berulang ini biar dikerjakan mesin. Orangnya fokus ke yang butuh manusia. | Titik ketiga muncul, ketiganya tersambung; kata "manusia" ditebalkan | lega |
 | 26–32 pesan | Jadi ini bukan sekadar jualan alat. Ada alasan di baliknya, dan alasan itu kebersamaan keluarga. | Tiga titik menyatu jadi satu garis terang; teks kinetik (revisi 2: "…dan alasan itu kebersamaan keluarga") | tersenyum |
-| 32–36 penutup | Itu sebabnya A Dua Automation ada. | Garis memudar (revisi 2, bukan lingkaran); Gigi menjadi gear di huruf A logo; logo asli | puas |
+| 32–36 penutup | Itu sebabnya A Dua Automation hadir untuk membantu Anda. | Garis memudar (revisi 2, bukan lingkaran); Gigi menjadi gear di huruf A logo; logo asli | puas |
 
 Revisi 2 (19 Nov 2026, permintaan Bos): "dan alasan itu manusia" diganti "dan alasan itu kebersamaan keluarga"; kalimat ini dibuat ulang di ElevenLabs dengan suara Bowo (sama dengan MP3 Bos, Eleven v3) dan disambung ke MP3 Bos.
 
@@ -45,5 +45,5 @@ Suara: Bowo (Intimidating and Hoarse, `LxiqOV1uxBCgYTeitAHf`) · Model: Eleven v
 
 [softly] Jadi ini bukan sekadar jualan alat. Ada alasan di baliknya, dan alasan itu kebersamaan keluarga.
 
-[warmly] Itu sebabnya A Dua Automation ada.
+[warmly] Itu sebabnya A Dua Automation hadir untuk membantu Anda.
 ```
