@@ -2,6 +2,28 @@
 
 Video konten motion UI A2 Automation, dibuat dengan [Remotion](https://www.remotion.dev/) mengikuti `DESIGN.md`.
 
+## Video: "Pesanan Sudah Sampai Mana?" — Konveksi 3D
+
+- Komposisi `Konveksi3D`: Reels 1080×1920, 30 fps, sekitar 51 detik; naskah dan caption di `naskah-konveksi-3d.md`.
+- Bengkel konveksi dimodelkan khusus dengan Blender 4.3.2: mesin jahit, jarum, jalur benang, kain, gunting, lembar order, lipatan kaus, rak bahan, serta laptop. Lima lintasan kamera asli, render Cycles, denoise Intel OIDN, dan interpolasi gerak kamera ke 30 fps. Grafis serta subtitle dikomposisikan dengan Remotion.
+- Audio `public/konveksi/narration.wav`: bahasa Indonesia, suara standar Ardi Neural; suara bengkel dan efek konfirmasi asli di `workshop-sfx.wav`, tanpa musik. Timing kata: `src/data/konveksi-timing.json`.
+- Simulasi pesanan K-021. Progres berubah setelah aksi petugas; bukan klaim sistem konveksi klien yang sudah berjalan.
+- Hasil: `out/konveksi-3d-9x16.mp4`; model sumber: `public/konveksi/konveksi-workshop.blend`; klip 3D: `public/konveksi/clips/`; frame review: `out/stills/konveksi/`.
+
+Urutan produksi ulang (Python dengan `edge-tts`, `Pillow`, `numpy`, `scipy`; Blender, FFmpeg, dan Intel OIDN tersedia):
+
+```bash
+python scripts/konveksi-props.py
+python scripts/konveksi-audio.py
+blender -b -t 3 -P scripts/konveksi-blender.py -- --render
+A2_OIDN=/path/to/oidnDenoise python scripts/konveksi-denoise.py
+REMOTION_BROWSER=/usr/bin/chromium node scripts/check-collisions.mjs Konveksi3D --every=15
+python scripts/konveksi-release.py
+```
+
+Frame 3D antara tidak di-commit; skrip dapat melanjutkan render tanpa menimpa frame yang selesai. Suara dan hasil video lain tetap memakai aset masing-masing.
+Skrip rilis memeriksa durasi klip, merender frame kunci dan video, lalu menormalkan audio ke sasaran −16 LUFS / true peak −1,5 dB dengan AAC stereo 48 kHz.
+
 ## Video: "Jam 9 Malam di Ruang TU"
 - Naskah: `naskah-jam-9-malam.md`
 - Hasil: `out/jam-9-malam-16x9.mp4` (1920×1080, 30 fps, 34 detik, dengan voiceover)

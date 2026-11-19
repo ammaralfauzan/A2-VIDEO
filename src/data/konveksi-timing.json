@@ -1,0 +1,531 @@
+{
+  "fps": 30,
+  "duration": 51.078,
+  "frames": 1533,
+  "voice": "id-ID-ArdiNeural",
+  "music": false,
+  "segments": [
+    {
+      "id": 1,
+      "text": "Pesanan sudah sampai mana?",
+      "start": 0.2,
+      "end": 2.648,
+      "words": [
+        {
+          "text": "Pesanan",
+          "start": 0.30079100000000003,
+          "end": 0.764707
+        },
+        {
+          "text": "sudah",
+          "start": 0.7647079999999999,
+          "end": 0.996666
+        },
+        {
+          "text": "sampai",
+          "start": 0.996666,
+          "end": 1.2672489999999998
+        },
+        {
+          "text": "mana",
+          "start": 1.26725,
+          "end": 1.769833
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Di konveksi, pertanyaan ini bisa membuat admin mencari chat dan menanyakan ulang ke produksi.",
+      "start": 2.8080000000000003,
+      "end": 8.736,
+      "words": [
+        {
+          "text": "Di",
+          "start": 2.922416,
+          "end": 3.0512910000000004
+        },
+        {
+          "text": "konveksi",
+          "start": 3.0512910000000004,
+          "end": 3.7987070000000003
+        },
+        {
+          "text": "pertanyaan",
+          "start": 4.120875,
+          "end": 4.571916
+        },
+        {
+          "text": "ini",
+          "start": 4.571916,
+          "end": 4.803874
+        },
+        {
+          "text": "bisa",
+          "start": 4.803875000000001,
+          "end": 5.035833
+        },
+        {
+          "text": "membuat",
+          "start": 5.035833,
+          "end": 5.319333
+        },
+        {
+          "text": "admin",
+          "start": 5.319333,
+          "end": 5.615708
+        },
+        {
+          "text": "mencari",
+          "start": 5.61575,
+          "end": 5.963666
+        },
+        {
+          "text": "chat",
+          "start": 5.963666,
+          "end": 6.234291000000001
+        },
+        {
+          "text": "dan",
+          "start": 6.234291000000001,
+          "end": 6.401832000000001
+        },
+        {
+          "text": "menanyakan",
+          "start": 6.401833,
+          "end": 6.852833
+        },
+        {
+          "text": "ulang",
+          "start": 6.852833,
+          "end": 7.123457999999999
+        },
+        {
+          "text": "ke",
+          "start": 7.123457999999999,
+          "end": 7.187874000000001
+        },
+        {
+          "text": "produksi",
+          "start": 7.1879159999999995,
+          "end": 7.870916000000001
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Ukuran, revisi desain, tenggat, dan catatan uang muka perlu terhubung.",
+      "start": 8.896,
+      "end": 14.848,
+      "words": [
+        {
+          "text": "Ukuran",
+          "start": 9.010416000000001,
+          "end": 9.616082
+        },
+        {
+          "text": "revisi",
+          "start": 9.899625,
+          "end": 10.312000000000001
+        },
+        {
+          "text": "desain",
+          "start": 10.312000000000001,
+          "end": 10.891916
+        },
+        {
+          "text": "tenggat",
+          "start": 11.162500000000001,
+          "end": 11.729500000000002
+        },
+        {
+          "text": "dan",
+          "start": 12.000125,
+          "end": 12.244958
+        },
+        {
+          "text": "catatan",
+          "start": 12.244958,
+          "end": 12.618666000000001
+        },
+        {
+          "text": "uang",
+          "start": 12.618666000000001,
+          "end": 12.824832
+        },
+        {
+          "text": "muka",
+          "start": 12.824875,
+          "end": 13.056833000000001
+        },
+        {
+          "text": "perlu",
+          "start": 13.056833000000001,
+          "end": 13.314541000000002
+        },
+        {
+          "text": "terhubung",
+          "start": 13.314541000000002,
+          "end": 13.984624
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Kalau saya merapikan alurnya, saya mulai dari satu nomor pesanan.",
+      "start": 15.008000000000001,
+      "end": 19.616,
+      "words": [
+        {
+          "text": "Kalau",
+          "start": 15.122416000000001,
+          "end": 15.315707000000002
+        },
+        {
+          "text": "saya",
+          "start": 15.315750000000001,
+          "end": 15.573458
+        },
+        {
+          "text": "merapikan",
+          "start": 15.573458,
+          "end": 15.960041
+        },
+        {
+          "text": "alurnya",
+          "start": 15.960041,
+          "end": 16.604374
+        },
+        {
+          "text": "saya",
+          "start": 16.887916,
+          "end": 17.171416
+        },
+        {
+          "text": "mulai",
+          "start": 17.171416,
+          "end": 17.441999000000003
+        },
+        {
+          "text": "dari",
+          "start": 17.442,
+          "end": 17.622416
+        },
+        {
+          "text": "satu",
+          "start": 17.622416,
+          "end": 17.893041
+        },
+        {
+          "text": "nomor",
+          "start": 17.893041,
+          "end": 18.099207
+        },
+        {
+          "text": "pesanan",
+          "start": 18.09925,
+          "end": 18.743583
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "A Dua Automation dapat membantu menyusun detail order dan papan progres produksi.",
+      "start": 19.776,
+      "end": 25.032,
+      "words": [
+        {
+          "text": "A",
+          "start": 19.876791,
+          "end": 20.070082
+        },
+        {
+          "text": "Dua",
+          "start": 20.070083,
+          "end": 20.289124
+        },
+        {
+          "text": "Automation",
+          "start": 20.289125,
+          "end": 20.997875
+        },
+        {
+          "text": "dapat",
+          "start": 20.997916,
+          "end": 21.255624
+        },
+        {
+          "text": "membantu",
+          "start": 21.255625,
+          "end": 21.603583
+        },
+        {
+          "text": "menyusun",
+          "start": 21.603583,
+          "end": 21.977291
+        },
+        {
+          "text": "detail",
+          "start": 21.977291,
+          "end": 22.234999
+        },
+        {
+          "text": "order",
+          "start": 22.235,
+          "end": 22.621583
+        },
+        {
+          "text": "dan",
+          "start": 22.621625,
+          "end": 22.840708
+        },
+        {
+          "text": "papan",
+          "start": 22.840708,
+          "end": 23.124208
+        },
+        {
+          "text": "progres",
+          "start": 23.124208,
+          "end": 23.497916
+        },
+        {
+          "text": "produksi",
+          "start": 23.497916,
+          "end": 24.167999000000002
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Dari desain disetujui, potong, jahit, pemeriksaan, sampai siap kirim.",
+      "start": 25.192,
+      "end": 31.816,
+      "words": [
+        {
+          "text": "Dari",
+          "start": 25.306416,
+          "end": 25.551249
+        },
+        {
+          "text": "desain",
+          "start": 25.551291,
+          "end": 25.886332
+        },
+        {
+          "text": "disetujui",
+          "start": 25.886333,
+          "end": 26.723958
+        },
+        {
+          "text": "potong",
+          "start": 27.007458,
+          "end": 27.600249
+        },
+        {
+          "text": "jahit",
+          "start": 27.857958,
+          "end": 28.489416
+        },
+        {
+          "text": "pemeriksaan",
+          "start": 28.721375000000002,
+          "end": 29.584791
+        },
+        {
+          "text": "sampai",
+          "start": 29.829625,
+          "end": 30.216208
+        },
+        {
+          "text": "siap",
+          "start": 30.216208,
+          "end": 30.473958
+        },
+        {
+          "text": "kirim",
+          "start": 30.473958,
+          "end": 30.950749000000002
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "Petugas memperbarui tahap yang selesai. Admin kemudian melihat status terakhir, dan pemilik memeriksa tenggat.",
+      "start": 31.976,
+      "end": 39.896,
+      "words": [
+        {
+          "text": "Petugas",
+          "start": 32.076791,
+          "end": 32.579332
+        },
+        {
+          "text": "memperbarui",
+          "start": 32.579333,
+          "end": 33.056124
+        },
+        {
+          "text": "tahap",
+          "start": 33.056166,
+          "end": 33.416999
+        },
+        {
+          "text": "yang",
+          "start": 33.417,
+          "end": 33.558749999999996
+        },
+        {
+          "text": "selesai",
+          "start": 33.558749999999996,
+          "end": 34.228833
+        },
+        {
+          "text": "Admin",
+          "start": 35.107458,
+          "end": 35.494040999999996
+        },
+        {
+          "text": "kemudian",
+          "start": 35.494040999999996,
+          "end": 35.906416
+        },
+        {
+          "text": "melihat",
+          "start": 35.906416,
+          "end": 36.215707
+        },
+        {
+          "text": "status",
+          "start": 36.215708,
+          "end": 36.550748999999996
+        },
+        {
+          "text": "terakhir",
+          "start": 36.55075,
+          "end": 37.143541
+        },
+        {
+          "text": "dan",
+          "start": 37.439916,
+          "end": 37.684749
+        },
+        {
+          "text": "pemilik",
+          "start": 37.68475,
+          "end": 38.058458
+        },
+        {
+          "text": "memeriksa",
+          "start": 38.058458,
+          "end": 38.470833
+        },
+        {
+          "text": "tenggat",
+          "start": 38.470833,
+          "end": 39.012083
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "Di konveksimu, informasi apa yang paling sering ditanyakan ulang?",
+      "start": 40.056,
+      "end": 44.592,
+      "words": [
+        {
+          "text": "Di",
+          "start": 40.156791,
+          "end": 40.337165999999996
+        },
+        {
+          "text": "konveksimu",
+          "start": 40.337165999999996,
+          "end": 41.200582
+        },
+        {
+          "text": "informasi",
+          "start": 41.509874999999994,
+          "end": 42.051083
+        },
+        {
+          "text": "apa",
+          "start": 42.051083,
+          "end": 42.244374
+        },
+        {
+          "text": "yang",
+          "start": 42.244416,
+          "end": 42.386165999999996
+        },
+        {
+          "text": "paling",
+          "start": 42.386165999999996,
+          "end": 42.592332
+        },
+        {
+          "text": "sering",
+          "start": 42.592332999999996,
+          "end": 42.824290999999995
+        },
+        {
+          "text": "ditanyakan",
+          "start": 42.824290999999995,
+          "end": 43.262415999999995
+        },
+        {
+          "text": "ulang",
+          "start": 43.262457999999995,
+          "end": 43.713499
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "text": "A Dua Automation. Kita mulai dari alur kerjamu.",
+      "start": 44.751999999999995,
+      "end": 49.767999999999994,
+      "words": [
+        {
+          "text": "A",
+          "start": 44.852374999999995,
+          "end": 45.110125
+        },
+        {
+          "text": "Dua",
+          "start": 45.110125,
+          "end": 45.39362499999999
+        },
+        {
+          "text": "Automation",
+          "start": 45.39362499999999,
+          "end": 46.32145799999999
+        },
+        {
+          "text": "Kita",
+          "start": 47.18679099999999,
+          "end": 47.483166
+        },
+        {
+          "text": "mulai",
+          "start": 47.483166,
+          "end": 47.766665999999994
+        },
+        {
+          "text": "dari",
+          "start": 47.766707999999994,
+          "end": 47.94708299999999
+        },
+        {
+          "text": "alur",
+          "start": 47.94708299999999,
+          "end": 48.19191599999999
+        },
+        {
+          "text": "kerjamu",
+          "start": 48.19195799999999,
+          "end": 48.88783299999999
+        }
+      ]
+    }
+  ]
+}

@@ -17,6 +17,8 @@
     "render:satu-pesanan": "remotion render SatuPesanan out/satu-pesanan-9x16.mp4",
     "stills:tips-umroh": "node scripts/render-stills.mjs TipsUmroh",
     "render:tips-umroh": "remotion render TipsUmroh out/tips-umroh-9x16.mp4 --concurrency=4",
+    "stills:konveksi": "node scripts/render-stills.mjs Konveksi3D",
+    "render:konveksi": "remotion render Konveksi3D out/konveksi-3d-9x16.mp4 --concurrency=2",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

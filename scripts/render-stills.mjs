@@ -7,6 +7,10 @@ import path from 'node:path';
 import {execSync} from 'node:child_process';
 
 const SETS = {
+  Konveksi3D: {
+    dir: 'out/stills/konveksi',
+    stills: [['01-hook',45],['02-order',350],['03-nomor',520],['04-laptop',660],['05-workflow',945],['05b-update',1100],['06-tanya',1260],['07-ajakan',1450]],
+  },
   JamSembilanMalam: {
     dir: 'out/stills',
     stills: [

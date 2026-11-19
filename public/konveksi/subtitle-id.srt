@@ -1,0 +1,79 @@
+1
+00:00:00,301 --> 00:00:01,770
+Pesanan sudah sampai mana
+
+2
+00:00:02,922 --> 00:00:05,036
+Di konveksi pertanyaan ini bisa
+
+3
+00:00:05,036 --> 00:00:06,402
+membuat admin mencari chat dan
+
+4
+00:00:06,402 --> 00:00:07,871
+menanyakan ulang ke produksi
+
+5
+00:00:09,010 --> 00:00:12,245
+Ukuran revisi desain tenggat dan
+
+6
+00:00:12,245 --> 00:00:13,985
+catatan uang muka perlu terhubung
+
+7
+00:00:15,122 --> 00:00:17,171
+Kalau saya merapikan alurnya saya
+
+8
+00:00:17,171 --> 00:00:18,744
+mulai dari satu nomor pesanan
+
+9
+00:00:19,877 --> 00:00:21,604
+A2 Automation dapat membantu
+
+10
+00:00:21,604 --> 00:00:23,124
+menyusun detail order dan papan
+
+11
+00:00:23,124 --> 00:00:24,168
+progres produksi
+
+12
+00:00:25,306 --> 00:00:28,489
+Dari desain disetujui potong jahit
+
+13
+00:00:28,721 --> 00:00:30,951
+pemeriksaan sampai siap kirim
+
+14
+00:00:32,077 --> 00:00:34,229
+Petugas memperbarui tahap yang selesai
+
+15
+00:00:35,107 --> 00:00:37,144
+Admin kemudian melihat status terakhir
+
+16
+00:00:37,440 --> 00:00:39,012
+dan pemilik memeriksa tenggat
+
+17
+00:00:40,157 --> 00:00:42,386
+Di konveksimu informasi apa yang
+
+18
+00:00:42,386 --> 00:00:43,713
+paling sering ditanyakan ulang
+
+19
+00:00:44,852 --> 00:00:47,767
+A2 Automation Kita mulai
+
+20
+00:00:47,767 --> 00:00:48,888
+dari alur kerjamu

@@ -14,6 +14,7 @@ import {TOTAL_FRAMES as SP_TOTAL_FRAMES} from './data/timeline-satu-pesanan';
 import {TOTAL_FRAMES} from './data/timeline';
 import {FPS, HEIGHT, WIDTH} from './theme';
 import {withProbe} from './dev/CollisionProbe';
+import {Konveksi3D, KONVEKSI_FRAMES} from './Konveksi3D';
 
 // Dibungkus probe pemeriksa tabrakan (aktif hanya lewat scripts/check-collisions.mjs).
 const PMain = withProbe(Main);
@@ -22,6 +23,7 @@ const PJam916 = withProbe(JamSembilanMalam916);
 const PA2Umum916 = withProbe(A2Umum916);
 const PSatuPesanan = withProbe(SatuPesanan);
 const PTipsUmroh = withProbe(TipsUmroh);
+const PKonveksi3D = withProbe(Konveksi3D);
 
 for (const weight of ['400', '500', '600']) {
   loadFont({family: 'Geist', url: staticFile(`fonts/geist-sans-latin-${weight}-normal.woff2`), weight});
@@ -34,6 +36,7 @@ loadFont({family: 'Plus Jakarta Sans', url: staticFile('fonts/plus-jakarta-sans-
 
 export const Root: React.FC = () => (
   <>
+    <Composition id="Konveksi3D" component={PKonveksi3D} durationInFrames={KONVEKSI_FRAMES} fps={30} width={1080} height={1920} defaultProps={{preview:false,safeGuide:false}} />
     <Composition id="JamSembilanMalam" component={PMain} durationInFrames={TOTAL_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
     <Composition id="A2Umum" component={PA2Umum} durationInFrames={U_TOTAL_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
     {/* Versi 9:16 untuk Reels/TikTok/Shorts (safeGuide: tampilkan area aman saat review). */}
