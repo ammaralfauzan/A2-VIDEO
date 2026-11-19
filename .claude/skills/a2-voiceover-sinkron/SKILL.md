@@ -9,7 +9,7 @@ description: Membuat voiceover ElevenLabs untuk video A2/H2C dan menyinkronkanny
 - Target ±2,3 kata per detik. Tulis seperti orang bicara: kalimat pendek, satu ide per kalimat.
 - **"A2" ditulis "A Dua"** di teks yang dikirim ke TTS ("A2 Automation" → "A Dua Automation"). Di layar tetap "A2".
 - Angka dieja bila perlu ("lima puluh", "tiga ratus lima puluh").
-- Suara: Jefri (`1ijzBXcD3AIVH8RGMcQd`, "Suara Penjelasan Lembut", dipakai Satu Pesanan) atau Alif (`R2tdno8o9nwUiDvfnMIJ`). Model `eleven_v4` dipakai untuk Satu Pesanan. Tag nada (dalam kurung siku) hanya dipakai bila Bos meminta, dan contohnya diambil dari prompt yang sudah berhasil di akun Bos; jangan mengarang nama tag. Cek `creative_get_model_guide` untuk model yang dipakai.
+- Suara: Jefri (`1ijzBXcD3AIVH8RGMcQd`, "Suara Penjelasan Lembut", dipakai Satu Pesanan) atau Alif (`R2tdno8o9nwUiDvfnMIJ`). Model `eleven_v4` dipakai untuk Satu Pesanan. Sejak 2026-11-19 prompt suara memakai Eleven v3 dengan tag audio dalam kurung siku (mis. `[curious]`, `[laugh]`) agar nada lebih hidup; tag tidak diucapkan. Tag nada (dalam kurung siku) hanya dipakai bila Bos meminta, dan contohnya diambil dari prompt yang sudah berhasil di akun Bos; jangan mengarang nama tag. Cek `creative_get_model_guide` untuk model yang dipakai.
 - Naskah disimpan di `naskah-<video>.md` (tabel: nomor, voiceover, visual), angka contoh ditandai "contoh".
 
 ## Menghasilkan suara
