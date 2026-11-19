@@ -13,6 +13,7 @@ Status: `siap` (boleh diambil) · `tahan` (belum, ada pertanyaan untuk Bos) · `
 | 4 | siap | A2 Automation | "Tiga tanda bisnis Anda siap diotomatisasi" | 9:16 ±35 dtk, explainer kinetik | Ajakan konsultasi gratis a2automate.com |
 | 5 | siap | A2 Automation | "Serahkan yang Mana Dulu?" (soft skill delegasi dan prioritas): papan dua kolom, kartu tugas digeser ke "harus saya" atau "bisa diserahkan"; hook "Semua kamu pegang sendiri? Itu bukan rajin." | 9:16 ±35 dtk, explainer kinetik, tanpa mockup/kursor | Contoh tugas generik berlabel "contoh"; tanpa angka/klaim; penutup halus menyebut A2. Dipilih Bos di tahap IDE |
 | 6 | siap | A2 Automation | "Alasan Saya Bikin A2" (personal branding, cerita asal): garis waktu tunggal, suara orang pertama; hook "Ini alasan saya mulai A2." Slug: alasan-saya-bikin-a2 | 9:16 ±35 dtk, teks kinetik pelan + Gigi, tanpa mockup/kursor | Butuh 3 fakta cerita asli dari Bos; tanpa angka/klaim; penutup halus menyebut A2. Dipilih Bos di tahap IDE (v003-1911) |
+| 7 | siap | A2 Automation | "Tiga Salah Kaprah soal Otomatisasi" (edukasi, mitos-fakta): kartu "mitos" dicap lalu dibalik jadi "fakta" (tidak harus jago teknis, tidak menggantikan karyawan, tidak harus sekaligus); hook "Tiga hal ini bikin orang takut otomatisasi." Slug: tiga-salah-kaprah-otomatisasi | 9:16 ±35 dtk, explainer kinetik + Gigi, tanpa mockup/kursor | Tanpa harga/angka/klaim hemat; penutup halus menyebut A2. Dipilih Bos di tahap IDE (v002-2011) |
 
 ## Sedang berjalan / selesai
 - Jam 9 Malam di Ruang TU (selesai, 16:9 dan 9:16)
