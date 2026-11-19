@@ -24,12 +24,12 @@ ATURAN KERAS
 
 ## BLOK TAHAP 0: IDE (minta ide baru, room Sonnet)
 ```
-TAHAP: IDE. Baca docs/daftar-konten.md (semua konten yang sudah ada) dan antrean-ide.md. Usulkan 5 ide BARU untuk brand di ISIAN, masing-masing: judul kerja, brand, hook (1 kalimat), pesan inti, pola/gaya visual, format/durasi, bahan yang dibutuhkan (rekaman, data, suara), dan risiko klaim. Setiap ide WAJIB berbeda jelas dari semua baris di daftar-konten.md (topik, hook, pola); tulis satu kalimat per ide yang menyebut ide lama terdekat dan apa bedanya. Jangan mengarang data, harga, atau klaim hukum. Tambahkan ide yang Bos pilih ke antrean-ide.md berstatus "siap" setelah ia memilih (jangan sebelum). Commit dan push. JANGAN menulis naskah panjang atau membuat video. Berhenti dan minta Bos memilih satu.
+TAHAP: IDE. Baca docs/daftar-konten.md (semua konten yang sudah ada) dan antrean-ide.md. Usulkan 5 ide BARU untuk brand di ISIAN, masing-masing: judul kerja, brand, hook (1 kalimat), pesan inti, pola/gaya visual, format/durasi, bahan yang dibutuhkan (rekaman, data, suara), dan risiko klaim. Setiap ide WAJIB berbeda jelas dari semua baris di daftar-konten.md (topik, hook, pola); tulis satu kalimat per ide yang menyebut ide lama terdekat dan apa bedanya. Jangan mengarang data, harga, atau klaim hukum. Tambahkan ide yang Bos pilih ke antrean-ide.md berstatus "siap" setelah ia memilih (jangan sebelum). Commit dan push. JANGAN menulis naskah panjang atau membuat video. Berhenti dan minta Bos memilih satu. Setelah Bos memilih: tambahkan ide itu ke antrean-ide.md (status siap), commit dan push, lalu tulis blok isian siap tempel dalam SATU kode blok dengan format tetap: baris `ISIAN UNTUK KONSEP`, lalu `slug:` (huruf kecil dan tanda hubung, unik, belum ada di daftar-konten.md), `brand: A2 Automation` (default; ganti hanya bila brand lain), `format:` (mis. Reels 9:16), `durasi:` (mis. 35 dtk), `ide:` (satu paragraf: judul, hook, pesan inti, pola visual, bahan; tanpa angka klaim). Minta Bos menyalin blok itu dan menempelkannya ke kolom Ide yang dipilih di halaman Putaran Video A2.
 ```
 
 ## BLOK TAHAP 1: KONSEP
 ```
-TAHAP: KONSEP. Sebelum menulis, cek docs/daftar-konten.md; bila ide terlalu mirip baris yang ada (topik, hook, atau pola), jangan lanjut: beri tahu Bos dan usulkan sudut berbeda. Dari brief di ISIAN, panggil agen penulis-naskah (atau ikuti .claude/agents/penulis-naskah.md). Hasilkan konsep (3–5 kalimat), tambahkan baris baru ke docs/daftar-konten.md berstatus "konsep disetujui" setelah Bos setuju, naskah tabel waktu/suara/visual di naskah-<slug>.md ("A2" ditulis "A Dua" di kolom suara), prompt suara ElevenLabs siap salin (suara Jefri, model Eleven v4, teks dieja untuk TTS), dan serah-terima/<slug>.md dari _template.md. JANGAN membangun video, merender, atau membuat suara. Berhenti dan minta persetujuan Bos dengan ringkasan keputusan yang ia perlu jawab. Konsep baru tidak dieksekusi sebelum disetujui.
+TAHAP: KONSEP. Sebelum menulis, cek docs/daftar-konten.md; bila ide terlalu mirip baris yang ada (topik, hook, atau pola), jangan lanjut: beri tahu Bos dan usulkan sudut berbeda. Dari ISIAN (slug, brand, format, durasi, ide), panggil agen penulis-naskah (atau ikuti .claude/agents/penulis-naskah.md). Hasilkan konsep (3–5 kalimat), tambahkan baris baru ke docs/daftar-konten.md berstatus "konsep disetujui" setelah Bos setuju, naskah tabel waktu/suara/visual di naskah-<slug>.md ("A2" ditulis "A Dua" di kolom suara), prompt suara ElevenLabs siap salin (suara Jefri, model Eleven v4, teks dieja untuk TTS), dan serah-terima/<slug>.md dari _template.md. JANGAN membangun video, merender, atau membuat suara. Berhenti dan minta persetujuan Bos dengan ringkasan keputusan yang ia perlu jawab. Konsep baru tidak dieksekusi sebelum disetujui.
 ```
 
 ## BLOK TAHAP 2: BANGUN
@@ -50,6 +50,8 @@ TAHAP: RILIS. Video final sudah disetujui Bos. Buat usulan caption (singkat, aja
 ## ISIAN (diisi Bos per video)
 ```
 slug: <huruf-kecil-tanda-hubung>
-brand/format/durasi: 
-brief atau daftar revisi: 
+brand: A2 Automation
+format: <mis. Reels 9:16>
+durasi: <mis. 35 dtk>
+ide atau daftar revisi: 
 ```
