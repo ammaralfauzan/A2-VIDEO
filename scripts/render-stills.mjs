@@ -83,6 +83,14 @@ SETS.SatuPesanan = {
   },
 };
 
+// Frame kunci "Alasan Saya Bikin A2" juga dihitung dari timing suara.
+SETS.AlasanSayaBikinA2 = {
+  dir: 'out/stills/alasan-saya-bikin-a2',
+  get stills() {
+    return JSON.parse(execSync('npx tsx scripts/alasan-saya-bikin-a2-frames.ts', {encoding: 'utf8'}));
+  },
+};
+
 const [id = 'JamSembilanMalam', ...only] = process.argv.slice(2);
 const set = SETS[id];
 if (!set) throw new Error(`Komposisi tidak dikenal: ${id}`);

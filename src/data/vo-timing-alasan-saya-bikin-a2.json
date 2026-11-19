@@ -1,0 +1,23 @@
+{
+  "audio": "public/audio/vo-alasan-saya-bikin-a2.mp3",
+  "durasi": 41.40,
+  "suara": "Jefri - Suara Penjelasan Lembut (ElevenLabs, Eleven v3 bertag), dibuat Bos",
+  "metode": "Deteksi jeda hening (ffmpeg silencedetect -35 dB/0,25 dtk; -30 dB/0,12 dtk untuk jeda koma), dicocokkan dengan urutan 10 kalimat naskah-alasan-saya-bikin-a2.md. 'potongan' = batas potongan teks di dalam kalimat. Batas potongan tanpa jeda (11,20 di kalimat 'Bukan karena sepi'; 24,77 di kalimat 'Saya pikir') diperkirakan dari jumlah suku kata karena tidak ada jeda.",
+  "kalimat": [
+    {"mulai": 0.15, "selesai": 2.83, "teks": "Ini alasan saya mulai A Dua."},
+    {"mulai": 4.25, "selesai": 7.22, "teks": "Dulu saya sering lihat pemilik usaha pulang larut."},
+    {"mulai": 8.02, "selesai": 11.89, "teks": "Bukan karena sepi, tapi karena mengetik ulang hal yang sama.",
+      "potongan": [{"mulai": 8.02, "selesai": 9.04}, {"mulai": 9.49, "selesai": 11.20}, {"mulai": 11.20, "selesai": 11.89}]},
+    {"mulai": 12.91, "selesai": 16.45, "teks": "Lama-lama saya sadar, yang habis bukan cuma tenaga.",
+      "potongan": [{"mulai": 12.91, "selesai": 14.06}, {"mulai": 14.43, "selesai": 16.45}]},
+    {"mulai": 17.12, "selesai": 20.84, "teks": "Waktu untuk keluarga dan untuk berpikir ikut habis.",
+      "potongan": [{"mulai": 17.12, "selesai": 18.59}, {"mulai": 18.78, "selesai": 20.84}]},
+    {"mulai": 21.85, "selesai": 26.09, "teks": "Saya pikir, pekerjaan yang berulang ini biar dikerjakan mesin.",
+      "potongan": [{"mulai": 21.85, "selesai": 22.67}, {"mulai": 23.08, "selesai": 24.77}, {"mulai": 24.77, "selesai": 26.09}]},
+    {"mulai": 26.71, "selesai": 29.20, "teks": "Orangnya fokus ke yang butuh manusia."},
+    {"mulai": 30.33, "selesai": 32.55, "teks": "Jadi ini bukan sekadar jualan alat."},
+    {"mulai": 32.95, "selesai": 37.12, "teks": "Ada alasan di baliknya, dan alasan itu manusia.",
+      "potongan": [{"mulai": 32.95, "selesai": 34.59}, {"mulai": 34.93, "selesai": 37.12}]},
+    {"mulai": 38.13, "selesai": 41.10, "teks": "Itu sebabnya A Dua Automation ada."}
+  ]
+}

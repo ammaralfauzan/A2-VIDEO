@@ -18,6 +18,7 @@ description: Alur render dan rilis video A2/H2C: stills → review → pemeriksa
    - `ffprobe` durasi dan resolusi; `ffmpeg -af volumedetect` (tidak ada klip, SFX di bawah narator).
    - **Kedipan/frame meloncat** (lihat pelajaran glitch di vault: bandingkan beda antarframe; tidak boleh ada frame yang beda jauh dari kedua tetangganya).
 5. **Regresi**: setelah mengubah komponen bersama, `node scripts/cek-regresi.mjs` (semua video) atau dengan Id video lama; harus "Identik".
+   - Di container cloud (19 Nov 2026) tiga frame selalu sedikit beda walau kodenya asli: `a2-umum-9x16/06-laporan-f600`, `jam-9-malam-9x16/07-laporan-f712`, `tips-umroh/00b-pembuka-buka-f033` (beda <60/255 pada beberapa puluh piksel). Buktikan dengan merender ulang frame itu memakai kode `HEAD`; bila tetap beda, itu derau lingkungan: kembalikan dengan `git checkout HEAD -- out/stills/...` dan jangan di-commit.
 6. Commit pesan jelas + atribusi sesi; `git push -u origin <cabang kerja>`. Cabang kerja repo: `claude/inspiring-keller-3vz48r`. **Tidak ada PR** kecuali diminta; jangan menyentuh `main`.
 7. Kirim MP4 ke Bos (`SendUserFile`) dan jelaskan perubahan singkat, risiko, dan yang belum dicek.
 8. Perbarui README dan catat pekerjaan besar ke vault Obsidian-SB (aturan di `CLAUDE.md`).

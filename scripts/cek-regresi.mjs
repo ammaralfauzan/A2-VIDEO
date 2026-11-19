@@ -12,6 +12,7 @@ const DIRS = {
   A2Umum916: 'out/stills/a2-umum-9x16',
   SatuPesanan: 'out/stills/satu-pesanan',
   TipsUmroh: 'out/stills/tips-umroh',
+  AlasanSayaBikinA2: 'out/stills/alasan-saya-bikin-a2',
 };
 const ids = process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(DIRS);
 const bad = [];

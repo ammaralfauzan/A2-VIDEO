@@ -25,6 +25,9 @@ Konsep baru wajib disetujui Bos dulu (aturan Bos), jangan langsung dieksekusi. G
 ## Morf, bukan cut
 Node dan elemen berpindah bentuk lewat `nodeState` (pohon → ubin → tumpukan → cincin hub). Bila perlu elemen baru, ubah dari elemen yang ada dulu ("ubah yang sudah ada sebelum menambah"). Fase tata letak dikumpulkan di satu objek `P` (frame dari timing kalimat), bukan angka di tiap komponen.
 
+## Garis menjadi lingkaran (pelajaran "Alasan Saya Bikin A2")
+Jangan menggeser tiap titik garis lurus ke titik lingkaran (lerp titik per titik): hasil tengahnya berpilin aneh. Pakai lengkung **berkelengkungan tetap dengan panjang tetap** (panjang garis = keliling lingkaran, kelengkungan naik 0 → 2π/panjang). Contoh `morphPath` di `src/scenes/alasan-saya-bikin-a2/GarisWaktu.tsx`. Teks kinetik juga bisa dipakai ulang tanpa mengubah komponen bersama: buat timeline sendiri dengan tipe `Chunk` yang sama.
+
 ## Aturan
 - Angka ilustratif selalu berlabel "contoh". Tanpa emoji, merek pihak ketiga, gradasi ungu.
 - Setiap elemen pakai gerak masuk yang sama (spring, blur→tajam, geser kecil).

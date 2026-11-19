@@ -19,6 +19,8 @@
     "render:tips-umroh": "remotion render TipsUmroh out/tips-umroh-9x16.mp4 --concurrency=4",
     "stills:konveksi": "node scripts/render-stills.mjs Konveksi3D",
     "render:konveksi": "remotion render Konveksi3D out/konveksi-3d-9x16.mp4 --concurrency=2",
+    "stills:alasan": "node scripts/render-stills.mjs AlasanSayaBikinA2",
+    "render:alasan": "remotion render AlasanSayaBikinA2 out/alasan-saya-bikin-a2-9x16.mp4 --concurrency=4",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

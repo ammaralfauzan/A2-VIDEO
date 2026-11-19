@@ -15,6 +15,8 @@ import {TOTAL_FRAMES} from './data/timeline';
 import {FPS, HEIGHT, WIDTH} from './theme';
 import {withProbe} from './dev/CollisionProbe';
 import {Konveksi3D, KONVEKSI_FRAMES} from './Konveksi3D';
+import {AlasanSayaBikinA2} from './AlasanSayaBikinA2';
+import {TOTAL_FRAMES as ASB_TOTAL_FRAMES} from './data/timeline-alasan-saya-bikin-a2';
 
 // Dibungkus probe pemeriksa tabrakan (aktif hanya lewat scripts/check-collisions.mjs).
 const PMain = withProbe(Main);
@@ -24,6 +26,7 @@ const PA2Umum916 = withProbe(A2Umum916);
 const PSatuPesanan = withProbe(SatuPesanan);
 const PTipsUmroh = withProbe(TipsUmroh);
 const PKonveksi3D = withProbe(Konveksi3D);
+const PAlasanSayaBikinA2 = withProbe(AlasanSayaBikinA2);
 
 for (const weight of ['400', '500', '600']) {
   loadFont({family: 'Geist', url: staticFile(`fonts/geist-sans-latin-${weight}-normal.woff2`), weight});
@@ -64,5 +67,7 @@ export const Root: React.FC = () => (
     <Composition id="SatuPesanan" component={PSatuPesanan} durationInFrames={SP_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} />
     {/* "5 Hal Sebelum Daftar Umroh": video bicara + motion graphic gaya situs Wakaf H2C. */}
     <Composition id="TipsUmroh" component={PTipsUmroh} durationInFrames={TU_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} />
+    {/* "Alasan Saya Bikin A2": cerita asal 9:16, garis waktu + teks kinetik + Gigi, tanpa ajakan. */}
+    <Composition id="AlasanSayaBikinA2" component={PAlasanSayaBikinA2} durationInFrames={ASB_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} defaultProps={{safeGuide: false}} />
   </>
 );

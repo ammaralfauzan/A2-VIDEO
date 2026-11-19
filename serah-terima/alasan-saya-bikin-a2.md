@@ -1,11 +1,11 @@
 # Serah-terima: alasan-saya-bikin-a2
 
-- Judul / brand / format / durasi target: Alasan Saya Bikin A2 / A2 Automation / Reels 9:16 / ±35 dtk
-- Tahap terakhir selesai: konsep DISETUJUI Bos (naskah, kerangka, ajakan tanpa CTA, suara Jefri). Berikutnya: Bos generate MP3 (prompt di naskah), lalu BANGUN
+- Judul / brand / format / durasi target: Alasan Saya Bikin A2 / A2 Automation / Reels 9:16 / prompt BANGUN menyebut 50 dtk; hasil 46 dtk (suara asli 41,4 dtk, tidak dipercepat, + logo diam 4,6 dtk)
+- Tahap terakhir selesai: BANGUN (19 Nov 2026). MP4 dikirim ke Bos. Berikutnya: Bos menonton; bila ada revisi → room REVISI (satu daftar), bila puas → room RILIS
 - Keputusan Bos (disetujui, jangan diubah): ide "Alasan Saya Bikin A2" (dipilih di room IDE, v003-1911); hook "Ini alasan saya mulai A2."; pesan inti: ada alasan manusiawi di balik A2; pola garis waktu tunggal + tiga titik + teks kinetik + Gigi; tanpa mockup/kursor; penutup halus menyebut A2 lalu logo; tanpa angka dan klaim
 - Keputusan Bos: naskah dan konsep disetujui, jangan diubah. Masih menunggu: (2) pastikan tiga titik cerita (rancangan penulis atas permintaan Bos) sesuai kenyataan atau ganti dengan cerita asli; (3) ajakan: tanpa ajakan (default) atau teks kecil a2automate.com; (4) suara Jefri (default)
-- File penting: `naskah-alasan-saya-bikin-a2.md`, `public/audio/vo-alasan-saya-bikin-a2.mp3` (belum ada), `src/data/vo-timing-alasan-saya-bikin-a2.json` (belum), komposisi (belum), `out/alasan-saya-bikin-a2-9x16.mp4` (belum)
-- Status render: belum
+- File penting: `naskah-alasan-saya-bikin-a2.md`, `public/audio/vo-alasan-saya-bikin-a2.mp3`, `src/data/vo-timing-alasan-saya-bikin-a2.json`, `src/AlasanSayaBikinA2.tsx` (Id `AlasanSayaBikinA2`), `src/scenes/alasan-saya-bikin-a2/`, `src/data/timeline-alasan-saya-bikin-a2.ts`, `out/alasan-saya-bikin-a2-9x16.mp4`, frame kunci `out/stills/alasan-saya-bikin-a2/`
+- Status render: selesai. 1080×1920, 30 fps, 1380 frame, 46,0 dtk; volume puncak -3,8 dB (tanpa klip), rata-rata -22,7 dB; tidak ada frame meloncat; pemeriksa tabrakan bersih (92 frame); tsc bersih; regresi video lain identik (3 frame beda kecil terbukti derau lingkungan, sama pada kode asli)
 - Daftar revisi Bos (belum dikerjakan): -
 - Sudah diperiksa: `docs/daftar-konten.md` dicek; tidak ada baris dengan topik, hook, atau pola yang sama (cerita asal/personal branding belum ada; pola garis waktu tunggal baru). Baris #6 berstatus "konsep disetujui"
 - Keputusan Bos FINAL (19 Nov 2026): naskah rancangan dipakai apa adanya (dianggap sesuai kenyataan); tanpa ajakan; suara Jefri. Tidak ada yang menunggu Bos selain generate MP3
@@ -15,3 +15,10 @@
 - Catatan untuk room berikutnya: jangan ubah naskah tanpa persetujuan Bos. Bila Bos mengganti cerita, ubah naskah dan prompt suara bersama-sama
 - Room KONSEP diulang lagi (19 Nov 2026): prompt suara diganti ke Eleven v3 dengan tag audio ([warmly], [tired], [softly]; tag tidak diucapkan, daftar sesuai panduan model). Isi kalimat identik; konsep, naskah, baris #6 tidak diubah. Anti-kembar dicek: aman
 - Bos menyetujui prompt suara Eleven v3 bertag (19 Nov 2026). Room KONSEP selesai. Berikutnya: Bos generate MP3 (Jefri) lalu kirim, simpan sebagai public/audio/vo-alasan-saya-bikin-a2.mp3, lalu room BANGUN (Opus)
+- Room BANGUN (19 Nov 2026, Opus):
+  - Timing: konektor transkripsi ElevenLabs tidak dipakai (butuh unggah file ke flow); dipakai ffmpeg silencedetect. 10 kalimat cocok dengan naskah. Dua batas potongan tanpa jeda diperkirakan dari suku kata.
+  - Tata letak: judul kecil "Alasan saya bikin A2" (y 268), Gigi di atas garis (pusat y 600), garis waktu y 820 dengan label kecil "Yang saya lihat / Yang saya sadari / Keputusan" (tambahan visual, bukan teks naskah), teks kinetik y 1110. Kalimat penutup tidak ditulis di layar; logo yang "mengucapkannya".
+  - Gigi: biasa → lelah (titik 1) → mikir → kaget di "Waktu" lalu cemas → mikir → senang + gear berputar di "mesin" → puas (lega) → senang (tersenyum) → masuk lingkaran → gear logo.
+  - Efek suara halus dari palet A2 yang sudah ada (tanpa musik).
+  - Keputusan menunggu Bos: (1) durasi 46 dtk vs 50 dtk di prompt (memanjangkan ke 50 berarti logo diam ±8 dtk atau jeda kosong; tidak disarankan); (2) label kecil di bawah titik: pertahankan atau hapus.
+  - Belum dicek: didengar langsung oleh manusia (sinkron dicek lewat timing dan frame, bukan telinga).
