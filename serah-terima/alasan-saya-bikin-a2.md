@@ -1,7 +1,7 @@
 # Serah-terima: alasan-saya-bikin-a2
 
 - Judul / brand / format / durasi target: Alasan Saya Bikin A2 / A2 Automation / Reels 9:16 / prompt BANGUN menyebut 50 dtk; hasil 46 dtk (suara asli 41,4 dtk, tidak dipercepat, + logo diam 4,6 dtk)
-- Tahap terakhir selesai: REVISI 3 (19 Nov 2026). MP4 baru (48,0 dtk) dikirim ke Bos. Berikutnya: Bos menonton; bila ada revisi → room REVISI (satu daftar), bila puas → room RILIS
+- Tahap terakhir selesai: REVISI 4 (19 Nov 2026). MP4 baru (48,0 dtk) dikirim ke Bos. Berikutnya: Bos menonton; bila ada revisi → room REVISI (satu daftar), bila puas → room RILIS
 - Keputusan Bos (disetujui, jangan diubah): ide "Alasan Saya Bikin A2" (dipilih di room IDE, v003-1911); hook "Ini alasan saya mulai A2."; pesan inti: ada alasan manusiawi di balik A2; pola garis waktu tunggal + tiga titik + teks kinetik + Gigi; tanpa mockup/kursor; penutup halus menyebut A2 lalu logo; tanpa angka dan klaim
 - Keputusan Bos: naskah dan konsep disetujui, jangan diubah. Masih menunggu: (2) pastikan tiga titik cerita (rancangan penulis atas permintaan Bos) sesuai kenyataan atau ganti dengan cerita asli; (3) ajakan: tanpa ajakan (default) atau teks kecil a2automate.com; (4) suara Jefri (default)
 - File penting: `naskah-alasan-saya-bikin-a2.md`, `public/audio/vo-alasan-saya-bikin-a2.mp3`, `src/data/vo-timing-alasan-saya-bikin-a2.json`, `src/AlasanSayaBikinA2.tsx` (Id `AlasanSayaBikinA2`), `src/scenes/alasan-saya-bikin-a2/`, `src/data/timeline-alasan-saya-bikin-a2.ts`, `out/alasan-saya-bikin-a2-9x16.mp4`, frame kunci `out/stills/alasan-saya-bikin-a2/`
@@ -38,3 +38,10 @@
   2. Fisika gerak Gigi: mengambang sejak awal, tanpa pantulan. Perpindahan memakai pegas teredam kritis (mulai pelan, meluncur, melambat sampai diam, tidak lewat batas); naik-turun mengambang pelan terus-menerus; lompatan senang/kaget dan pantulan mendarat dihapus; ke logo melayang dengan lengkung landai, bukan melompat.
   - Durasi 48,0 dtk (suara 43,42 + logo). Pemeriksaan: tsc, tabrakan bersih, tanpa klip, tanpa frame meloncat, peralihan ke logo mulus. Komponen bersama tidak diubah di revisi ini.
   - Belum dicek: sambungan suara belum didengar manusia.
+- Revisi 4 (19 Nov 2026, Opus). Daftar Bos sama dengan revisi 2 + fisika revisi 3, artinya hasil sebelumnya belum cukup. Dicek ulang satu per satu:
+  1. Garis di akhir: sudah memudar saja sejak revisi 2 (dicek frame 1150–1245, tidak ada lingkaran). Tidak diubah.
+  2-5. Gigi 3D tanpa gepeng: penyebab "gepeng" ditemukan, yaitu wajah dan mata menyempit saat menoleh. Kini tanpa skala sama sekali: layar wajah dan mata bergeser dengan paralaks, sisi tebal gear (navyInk) mengintip di sisi berlawanan, tambah `pitch` (mendongak menatap ilustrasi). Menggeleng ditulis ulang: ancang-ancang, ease sinus per ayunan, mereda seperti bandul teredam, badan menyusul terlambat, mata tetap menatap depan. Ekspresi `sedih` dipertegas (alis melengkung, mata sayu, mulut tipis melengkung) sambil mendongak ke ilustrasi.
+  3. Ilustrasi lebih dramatis: pendar cahaya bergradasi lembut, kerucut cahaya memudar, vinyet tepi, lampu gantung menyorot kursi kosong di ruang makan gelap, air mata anak, awan pikiran tetap terang di ruang gelap, adegan pulang: lampu gantung menyala penuh merangkul keluarga, pipi merona, bayangan kaki, kilau rambut.
+  6. Lampu: bohlam (pendar berlapis, filamen bertiang, leher, ulir berkilau), lampu meja (alas + sakelar, pegas, sendi berbaut, bibir kap, debu di cahaya), lampu jalan (tiang berlengan, kap, pendar), lampu gantung baru.
+  7. Kalimat "kebersamaan keluarga": sudah sejak revisi 2-3 (suara Bowo). Tidak diubah.
+  Fisika: tetap mengambang tanpa pantulan (pegas teredam kritis). Komponen bersama `Gigi.tsx` diubah hanya untuk `turn`/`pitch` ≠ 0 dan ekspresi `sedih` (hanya dipakai video ini). Pelajaran ditulis ke skill `a2-maskot-gigi` dan `a2-explainer-kinetik`.

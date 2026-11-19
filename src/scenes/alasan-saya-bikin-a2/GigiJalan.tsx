@@ -122,24 +122,28 @@ const blinkOpen = (f: number) => {
   return interpolate(d, [0, 3, 4, 7], [1, 0.08, 0.08, 1], clamp);
 };
 
-// Menggeleng: kunci sudut kepala dengan ease masuk-keluar per ayunan (cepat di tengah, melambat di ujung),
-// ayunan mengecil, lalu jeda sebelum mengulang lebih pelan. Nilai = sinus sudut hadap.
+// Menggeleng (revisi 4 Bos: realistis, main kecepatan ease). Seperti kepala orang sungguhan:
+// ancang-ancang kecil ke arah berlawanan, ayunan pertama paling lebar dan paling cepat, tiap ayunan
+// berhenti sesaat di ujung (ease masuk-keluar sinus: cepat di tengah, melambat di ujung), amplitudo dan
+// tempo mereda seperti bandul teredam, lalu diam sejenak sebelum mengulang lebih pelan dan lebih kecil.
+// Badan menyusul 4 frame terlambat (follow-through) dan mata tetap menatap ke depan (berlawanan arah kepala).
 const SHAKE: [number, number][] = [
   [0, 0],
-  [5, -0.72],
-  [12, 0.72],
-  [19, -0.6],
-  [25, 0.42],
-  [30, -0.18],
-  [34, 0],
+  [5, 0.14],
+  [11, -0.78],
+  [18, 0.74],
+  [25, -0.6],
+  [32, 0.42],
+  [39, -0.2],
+  [45, 0],
 ];
-const swing = Easing.bezier(0.42, 0, 0.3, 1);
+const swing = Easing.bezier(0.45, 0, 0.55, 1);
 const shakeTurn = (t: number) => {
-  const cycle = 58;
+  const cycle = 70;
   if (t < 0) return 0;
   const k = Math.floor(t / cycle);
-  const u = t % cycle;
-  const amp = k === 0 ? 1 : 0.6;
+  const u = (t % cycle) / (k === 0 ? 1 : 1.15); // ulangan lebih pelan
+  const amp = k === 0 ? 1 : 0.55;
   for (let i = 0; i < SHAKE.length - 1; i++) {
     const [t0, v0] = SHAKE[i];
     const [t1, v1] = SHAKE[i + 1];
@@ -227,10 +231,19 @@ export const GigiJalan: React.FC<{f: number}> = ({f}) => {
     lx += g.x / 8;
     ly += g.y / 8;
   }
+  // Mendongak/menunduk ala 3D tanpa gepeng: menonton ilustrasi di atas = mendongak; sedih = mendongak haru.
+  // Dirata-rata 12 frame agar perubahan arah selalu halus.
+  let pitch = 0;
+  for (let k = 0; k < 12; k++) {
+    const m = at(tr.mood, f - k);
+    const g = lookTarget(f - k, posAt(f - k, ks), m);
+    pitch += (m === 'sedih' ? -0.5 : Math.max(-0.4, Math.min(0.3, g.y * 0.45))) / 12;
+  }
 
   let dy = 0;
   let dx = 0;
   let tilt = 0;
+  let shakeEye = 0;
   const breathe = Math.sin(f / 14);
   switch (mood) {
     case 'biasa':
@@ -250,12 +263,14 @@ export const GigiJalan: React.FC<{f: number}> = ({f}) => {
       tilt = Math.sin(f / 18) * 5;
       break;
     case 'cemas': {
-      // menggeleng: wajah berputar kiri-kanan di permukaan bulat; kepala ikut condong sedikit
+      // menggeleng: wajah berputar kiri-kanan di permukaan bulat; badan menyusul sedikit terlambat
       const s = shakeTurn(t - 2);
+      const lag = shakeTurn(t - 6);
       turn += s;
-      tilt = -s * 5;
-      dx = s * 4;
-      dy = Math.sin(f / 6) * 1.5;
+      tilt = -lag * 4;
+      dx = lag * 5;
+      dy = Math.abs(s) * 2;
+      shakeEye = -s * 0.55;
       break;
     }
     case 'lelah': {
@@ -310,13 +325,14 @@ export const GigiJalan: React.FC<{f: number}> = ({f}) => {
       <Gigi
         size={w}
         mood={mood}
-        look={{x: lx, y: ly}}
+        look={{x: lx + shakeEye, y: ly}}
         eyeOpen={eyeOpen}
         sweat={sweat}
         sweatPhase={sweatPhase}
         spin={at(tr.spin, f)}
         tilt={tilt}
         turn={Math.max(-0.85, Math.min(0.85, turn))}
+        pitch={pitch}
       />
     </div>
   );

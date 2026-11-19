@@ -23,6 +23,8 @@ type Props = {
   // Putar kepala ala 3D (-1..1 = sinus sudut hadap ke kiri/kanan): wajah bergeser dan menyempit di
   // permukaan, badan gear tetap bulat (tidak gepeng). 0 = menghadap depan (tampilan lama, identik).
   turn?: number;
+  // Angguk/dongak ala 3D (-1..1, negatif = mendongak): sama seperti `turn` tetapi arah atas-bawah.
+  pitch?: number;
 };
 
 // Proporsi diukur dari gear di file logo: ujung gigi 70, badan 58, lubang 39, lebar gigi ±20°.
@@ -88,13 +90,13 @@ const Eyes: React.FC<{mood: Mood; blink: boolean; look: {x: number; y: number}; 
         <path d="M7,-17 L21,-21" {...line} strokeWidth={4} />
       </>
     ),
-    // sedih: alis miring (ujung dalam naik), mata agak sayu, mulut melengkung turun tipis
+    // sedih: alis miring tegas (ujung dalam naik), mata sayu (sudut luar turun), mulut melengkung turun tipis
     sedih: (
       <>
-        <path d="M-21,-12 L-9,-17 M9,-17 L21,-12" {...line} strokeWidth={3.2} />
-        <rect x={-18} y={-7} width={10} height={11} rx={4} fill={ink} />
-        <rect x={8} y={-7} width={10} height={11} rx={4} fill={ink} />
-        <path d="M-6,15.5 Q0,11 6,15.5" {...line} strokeWidth={2.4} />
+        <path d="M-22,-10 Q-16,-12 -9,-18 M9,-18 Q16,-12 22,-10" {...line} strokeWidth={3} />
+        <path d="M-19,-3 L-8,-7 L-8,4 Q-13.5,8.5 -19,4 Z" fill={ink} stroke={ink} strokeWidth={1.5} strokeLinejoin="round" />
+        <path d="M19,-3 L8,-7 L8,4 Q13.5,8.5 19,4 Z" fill={ink} stroke={ink} strokeWidth={1.5} strokeLinejoin="round" />
+        <path d="M-6.5,16.5 Q0,11.5 6.5,16.5" {...line} strokeWidth={2.2} />
       </>
     ),
     // ▬ ■  (kedip)
@@ -124,6 +126,7 @@ export const Gigi: React.FC<Props> = ({
   eyesOpacity = 1,
   shadow = 1,
   turn = 0,
+  pitch = 0,
 }) => {
   const clipId = React.useId().replace(/:/g, '');
   // Satu tetes keringat besar yang menetes turun lalu memudar (minimalis).
@@ -138,6 +141,15 @@ export const Gigi: React.FC<Props> = ({
       style={{overflow: 'visible', filter: shadow > 0 ? `drop-shadow(0 ${size * 0.06}px ${size * 0.1}px rgba(11,22,48,${0.2 * shadow}))` : undefined}}
     >
       <g transform={`translate(0 ${70 * (1 - squash.y)}) rotate(${tilt}) scale(${squash.x} ${squash.y})`}>
+        {turn !== 0 || pitch !== 0 ? (
+          // sisi tebal gear: salinan gelap di belakang, bergeser berlawanan arah hadap
+          <g transform={`translate(${-turn * 8} ${-pitch * 8}) rotate(${spin + turn * 12})`}>
+            {Array.from({length: 8}, (_, i) => (
+              <rect key={i} x={-TOOTH_W / 2} y={-R_TOOTH} width={TOOTH_W} height={R_TOOTH - R_BODY + 8} rx={3} fill={color.navyInk} transform={`rotate(${i * 45})`} />
+            ))}
+            <circle r={R_BODY} fill={color.navyInk} />
+          </g>
+        ) : null}
         <g transform={`rotate(${spin + turn * 12})`}>
           {Array.from({length: 8}, (_, i) => (
             <rect
@@ -153,7 +165,7 @@ export const Gigi: React.FC<Props> = ({
           ))}
           <circle r={R_BODY} fill={color.navy} />
         </g>
-        {turn === 0 ? (
+        {turn === 0 && pitch === 0 ? (
           <>
             <circle r={R_HOLE} fill={color.surface} />
             <g opacity={eyesOpacity}>
@@ -162,13 +174,15 @@ export const Gigi: React.FC<Props> = ({
           </>
         ) : (
           <>
-            {/* layar wajah ikut berputar sedikit; mata menempel di permukaan bulat */}
+            {/* 2D yang terasa 3D tanpa gepeng (revisi 4 Bos): tidak ada skala menyamping. Layar wajah dan mata
+                bergeser dengan paralaks (mata lebih jauh dari layar = terasa di permukaan bulat), dan sisi tebal
+                gear (navyInk) mengintip di sisi yang berlawanan, seperti koin yang berputar sedikit. */}
             <clipPath id={clipId}>
-              <ellipse cx={turn * 7} rx={R_HOLE * (1 - 0.1 * Math.abs(turn))} ry={R_HOLE} />
+              <circle cx={turn * 9} cy={pitch * 9} r={R_HOLE} />
             </clipPath>
-            <ellipse cx={turn * 7} rx={R_HOLE * (1 - 0.1 * Math.abs(turn))} ry={R_HOLE} fill={color.surface} />
+            <circle cx={turn * 9} cy={pitch * 9} r={R_HOLE} fill={color.surface} />
             <g opacity={eyesOpacity} clipPath={`url(#${clipId})`}>
-              <g transform={`translate(${turn * 21} 0) scale(${1 - 0.3 * Math.abs(turn)} 1)`}>
+              <g transform={`translate(${turn * 20} ${pitch * 14})`}>
                 <Eyes mood={mood} blink={blink} look={look} open={eyeOpen} />
               </g>
             </g>

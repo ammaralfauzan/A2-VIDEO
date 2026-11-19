@@ -151,6 +151,7 @@ const Person: React.FC<PersonProps> = ({
   const torsoH = -56 - top + 8;
   return (
     <g transform={`translate(${x} ${y - hop}) scale(${s})`}>
+      <ellipse cx={4} cy={2 + hop / s} rx={30 - Math.min(10, hop)} ry={5} fill={color.navyInk} opacity={0.22} />
       {leg(legA, -9)}
       {leg(-legA, 9)}
       <line x1={-16} y1={shoulderY} x2={hl.x} y2={hl.y} stroke={body} strokeWidth={11} strokeLinecap="round" />
@@ -168,6 +169,13 @@ const Person: React.FC<PersonProps> = ({
       {hair === 'panjang' ? <path d={`M${hx - 20},${hy + 14} C${hx - 24},${hy - 24} ${hx + 24},${hy - 24} ${hx + 20},${hy + 14} L${hx + 14},${hy - 4} Q${hx},${hy - 12} ${hx - 14},${hy - 4} Z`} fill={color.navy} /> : null}
       <path d={`M${hx - 19},${hy - 2} C${hx - 20},${hy - 26} ${hx + 20},${hy - 26} ${hx + 19},${hy - 2} Q${hx + 6},${hy - 12} ${hx - 19},${hy - 2} Z`} fill={color.navy} />
       {hair === 'anak' ? <circle cx={hx + 2} cy={hy - 22} r={5} fill={color.navy} /> : null}
+      <path d={`M${hx - 11},${hy - 13} Q${hx - 4},${hy - 19} ${hx + 4},${hy - 18}`} stroke={color.surface} strokeWidth={2.4} fill="none" strokeLinecap="round" opacity={0.3} />
+      {face === 'senang' || face === 'pejam' ? (
+        <>
+          <ellipse cx={hx + look * 6 - 11} cy={hy + 6} rx={4} ry={2.6} fill={color.alert} opacity={0.3} />
+          <ellipse cx={hx + look * 6 + 11} cy={hy + 6} rx={4} ry={2.6} fill={color.alert} opacity={0.3} />
+        </>
+      ) : null}
       <FaceMarks face={face} cx={hx + look * 6} cy={hy} />
     </g>
   );
@@ -254,41 +262,102 @@ const Clock: React.FC<{x: number; y: number; r: number; min: number; hour: numbe
   );
 };
 
-// Bohlam detail: kaca, filamen, ulir; menyala (sinar + pendar) atau padam.
-const Bulb: React.FC<{x: number; y: number; s?: number; on: number}> = ({x, y, s = 1, on}) => (
-  <g transform={`translate(${x} ${y}) scale(${s})`}>
-    <circle cy={-8} r={40} fill={color.blue1} opacity={0.16 * on} />
-    {Array.from({length: 8}, (_, i) => {
-      const a = ((i * 45 - 90) * Math.PI) / 180;
-      return <line key={i} x1={Math.cos(a) * 28} y1={-8 + Math.sin(a) * 28} x2={Math.cos(a) * 36} y2={-8 + Math.sin(a) * 36} stroke={color.blue1} strokeWidth={3} strokeLinecap="round" opacity={on} />;
+// Bohlam detail (revisi 4): pendar lembut berlapis, kaca dengan kilau dan pantulan tepi, filamen berpijar
+// di atas tiang penyangga, leher kaca, ulir logam bertingkat dengan kilau, dan kontak dasar.
+const Bulb: React.FC<{x: number; y: number; s?: number; on: number}> = ({x, y, s = 1, on}) => {
+  const lit = on > 0.5;
+  return (
+    <g transform={`translate(${x} ${y}) scale(${s})`}>
+      <circle cy={-9} r={50} fill="url(#il-glow-b)" opacity={0.9 * on} />
+      <circle cy={-9} r={30} fill="url(#il-glow-w)" opacity={on} />
+      {Array.from({length: 10}, (_, i) => {
+        const a = ((i * 36 - 90) * Math.PI) / 180;
+        const long = i % 2 === 0;
+        return <line key={i} x1={Math.cos(a) * 29} y1={-9 + Math.sin(a) * 29} x2={Math.cos(a) * (long ? 40 : 35)} y2={-9 + Math.sin(a) * (long ? 40 : 35)} stroke={color.blue1} strokeWidth={long ? 3 : 2} strokeLinecap="round" opacity={on} />;
+      })}
+      {/* kaca */}
+      <path d="M-8,12 C-8,5 -19,1 -19,-9 A19,19 0 1 1 19,-9 C19,1 8,5 8,12 Z" fill={lit ? color.surface : color.line} stroke={color.navy} strokeWidth={2.6} />
+      <path d="M-14,-6 A14,14 0 0 1 -4,-22" stroke={color.blue1} strokeWidth={2} fill="none" strokeLinecap="round" opacity={lit ? 0.35 : 0.2} />
+      <path d="M-9,-14 A9,9 0 0 1 -1,-21" stroke={color.surface} strokeWidth={3.2} fill="none" strokeLinecap="round" />
+      <circle cx={10} cy={-15} r={1.8} fill={color.surface} opacity={0.9} />
+      {/* tiang penyangga dan filamen */}
+      <path d="M-3.5,11 L-3.5,0 M3.5,11 L3.5,0" stroke={color.muted} strokeWidth={1.4} />
+      <path d="M-3.5,0 L-6,-6 q1.5,-3 3,0 q1.5,-3 3,0 q1.5,-3 3,0 q1.5,-3 3,0 L3.5,0" stroke={lit ? color.blue2 : color.muted} strokeWidth={1.8} fill="none" strokeLinejoin="round" strokeLinecap="round" />
+      {lit ? <ellipse cy={-6} rx={9} ry={5} fill={color.blue1} opacity={0.25 * on} /> : null}
+      {/* leher dan ulir */}
+      <rect x={-8.5} y={11} width={17} height={4} rx={1.5} fill={color.muted} />
+      {[0, 1, 2].map((i) => (
+        <g key={i}>
+          <rect x={-9 + i * 0.6} y={15 + i * 4.5} width={18 - i * 1.2} height={4} rx={2} fill={color.navy} />
+          <rect x={-6 + i * 0.6} y={15.6 + i * 4.5} width={5} height={1.2} rx={0.6} fill={color.surface} opacity={0.35} />
+        </g>
+      ))}
+      <path d="M-5,28.5 h10 l-2.5,4 h-5 z" fill={color.navyInk} />
+    </g>
+  );
+};
+
+// Lampu meja detail (revisi 4): alas berbobot dengan sakelar, lengan dua ruas berpegas, sendi berbaut,
+// kap logam dengan bibir dan kilau, bohlam berpijar, kerucut cahaya bergradasi lembut dan genangan cahaya
+// di meja, debu melayang di dalam cahaya.
+const DeskLamp: React.FC<{on: number; f: number}> = ({on, f}) => (
+  <g>
+    <polygon points="146,168 204,166 330,238 84,238" fill="url(#il-cone)" opacity={0.75 * on} />
+    <polygon points="160,170 192,168 270,238 124,238" fill="url(#il-cone)" opacity={0.6 * on} />
+    <ellipse cx={200} cy={236} rx={128} ry={12} fill="url(#il-glow-w)" opacity={0.55 * on} />
+    {Array.from({length: 7}, (_, i) => {
+      const ph = ((f * 0.35 + rnd(i) * 70) % 70) / 70;
+      return <circle key={i} cx={150 + rnd(i + 4) * 90 + Math.sin(f / 20 + i) * 6} cy={226 - ph * 52} r={1.4} fill={color.surface} opacity={on * 0.7 * Math.sin(ph * Math.PI)} />;
     })}
-    <path d="M-8,12 C-8,5 -18,1 -18,-9 A18,18 0 1 1 18,-9 C18,1 8,5 8,12 Z" fill={on > 0.5 ? color.surface : color.line} stroke={color.navy} strokeWidth={3} />
-    <path d="M-7,-14 A10,10 0 0 1 2,-22" stroke={color.surface} strokeWidth={3} fill="none" strokeLinecap="round" opacity={0.9} />
-    <path d="M-4,11 L-4,2 L-2,-5 L1,1 L3,-5 L4,2 L4,11" stroke={on > 0.5 ? color.blue2 : color.muted} strokeWidth={2} fill="none" strokeLinejoin="round" />
-    <rect x={-9} y={12} width={18} height={5} rx={2} fill={color.navy} />
-    <rect x={-8} y={18} width={16} height={4} rx={2} fill={color.navy} />
-    <rect x={-7} y={23} width={14} height={4} rx={2} fill={color.navy} />
-    <path d="M-4,28 h8 l-2,4 h-4 z" fill={color.navy} />
+    {/* alas */}
+    <path d="M92,236 Q94,222 120,220 Q146,222 148,236 Z" fill={color.muted} />
+    <rect x={90} y={233} width={60} height={5} rx={2.5} fill={color.navyInk} />
+    <circle cx={136} cy={228} r={3} fill={on > 0.5 ? color.blue1 : color.navy} />
+    {/* lengan dan pegas */}
+    <line x1={120} y1={222} x2={104} y2={186} stroke={color.line} strokeWidth={6} strokeLinecap="round" />
+    <line x1={104} y1={186} x2={158} y2={150} stroke={color.line} strokeWidth={6} strokeLinecap="round" />
+    <path d="M113,212 l6,-3 l-2,-5 l6,-3 l-2,-5 l6,-3 l-2,-5 l6,-3" stroke={color.muted} strokeWidth={1.6} fill="none" />
+    <path d="M114,178 l4,4 l5,-5 l4,4 l5,-5 l4,4 l5,-5" stroke={color.muted} strokeWidth={1.6} fill="none" />
+    <circle cx={104} cy={186} r={7} fill={color.muted} />
+    <circle cx={104} cy={186} r={2.5} fill={color.navyInk} />
+    <circle cx={158} cy={150} r={6} fill={color.muted} />
+    <circle cx={158} cy={150} r={2} fill={color.navyInk} />
+    {/* kap */}
+    <path d="M146,146 L172,138 L206,166 L144,172 Z" fill={color.blue2} />
+    <path d="M146,146 L172,138 L180,145 L152,152 Z" fill={color.surface} opacity={0.28} />
+    <path d="M144,172 L206,166" stroke={color.navyInk} strokeWidth={3} strokeLinecap="round" />
+    <path d="M150,166 L196,162" stroke={color.blue1} strokeWidth={1.5} strokeLinecap="round" opacity={0.6} />
+    {/* bohlam berpijar di bawah kap */}
+    <circle cx={176} cy={170} r={22} fill="url(#il-glow-w)" opacity={on} />
+    <ellipse cx={176} cy={170} rx={10} ry={6} fill={on > 0.5 ? color.surface : color.muted} />
   </g>
 );
 
-// Lampu meja detail: alas, lengan dua ruas dengan sendi, kap, bohlam berpendar, kerucut cahaya.
-const DeskLamp: React.FC<{on: number}> = ({on}) => (
-  <g>
-    <polygon points="150,170 198,170 318,236 96,236" fill={color.surface} opacity={0.07 * on} />
-    <polygon points="158,170 192,170 268,236 122,236" fill={color.surface} opacity={0.1 * on} />
-    <ellipse cx={196} cy={235} rx={120} ry={9} fill={color.surface} opacity={0.22 * on} />
-    <ellipse cx={120} cy={232} rx={26} ry={6} fill={color.line} />
-    <line x1={120} y1={228} x2={104} y2={188} stroke={color.line} strokeWidth={6} strokeLinecap="round" />
-    <line x1={104} y1={188} x2={160} y2={152} stroke={color.line} strokeWidth={6} strokeLinecap="round" />
-    <line x1={110} y1={206} x2={128} y2={172} stroke={color.muted} strokeWidth={2} strokeDasharray="3 3" />
-    <circle cx={104} cy={188} r={6} fill={color.muted} />
-    <circle cx={160} cy={152} r={5} fill={color.muted} />
-    <path d="M150,144 L172,140 L200,168 L148,172 Z" fill={color.blue2} />
-    <path d="M150,144 L172,140 L178,146 L154,150 Z" fill={color.surface} opacity={0.25} />
-    <circle cx={174} cy={170} r={9} fill={color.surface} opacity={on} />
-    <circle cx={174} cy={170} r={16} fill={color.surface} opacity={0.25 * on} />
-  </g>
+// Lampu gantung di atas meja makan: kabel, tudung logam dengan kilau dan bibir, bohlam berpijar,
+// kerucut cahaya bergradasi dan genangan cahaya di meja. `on` 0..1, `sway` derajat ayunan.
+const PendantLamp: React.FC<{x: number; on: number; sway?: number; len?: number; spread?: number}> = ({x, on, sway = 0, len = 70, spread = 1}) => {
+  const y = len;
+  return (
+    <g>
+      <g transform={`rotate(${sway} ${x} 0)`}>
+        <polygon points={`${x - 22},${y + 22} ${x + 22},${y + 22} ${x + 190 * spread},300 ${x - 190 * spread},300`} fill="url(#il-cone)" opacity={0.8 * on} />
+        <polygon points={`${x - 14},${y + 22} ${x + 14},${y + 22} ${x + 100 * spread},300 ${x - 100 * spread},300`} fill="url(#il-cone)" opacity={0.5 * on} />
+        <line x1={x} y1={-10} x2={x} y2={y - 12} stroke={color.navyInk} strokeWidth={2.5} />
+        <rect x={x - 5} y={y - 14} width={10} height={8} rx={2} fill={color.navy} />
+        <path d={`M${x - 8},${y - 6} L${x + 8},${y - 6} L${x + 30},${y + 20} L${x - 30},${y + 20} Z`} fill={color.navy} />
+        <path d={`M${x - 6},${y - 4} L${x - 1},${y - 4} L${x - 16},${y + 17} L${x - 25},${y + 17} Z`} fill={color.surface} opacity={0.18} />
+        <rect x={x - 31} y={y + 18} width={62} height={4} rx={2} fill={color.navyInk} />
+        <circle cx={x} cy={y + 24} r={26} fill="url(#il-glow-w)" opacity={on} />
+        <ellipse cx={x} cy={y + 23} rx={9} ry={5} fill={on > 0.3 ? color.surface : color.muted} />
+      </g>
+      <ellipse cx={x + sway * 3} cy={230} rx={170 * spread} ry={14} fill="url(#il-glow-w)" opacity={0.45 * on} />
+    </g>
+  );
+};
+
+// Vinyet sinematik: tepi panggung menggelap lembut (dramatis), pusat tetap terang.
+const Vignette: React.FC<{k: number}> = ({k}) => (
+  <rect x={-70} y={-70} width={W + 140} height={H + 140} fill="none" stroke={color.navyInk} strokeWidth={170} filter="url(#il-vig)" opacity={k} />
 );
 
 const Cog: React.FC<{x: number; y: number; r: number; a: number; fill: string; hole: string}> = ({x, y, r, a, fill, hole}) => (
@@ -426,18 +495,24 @@ const SceneA: React.FC<{f: number; t0: number}> = ({f, t0}) => {
       <rect x={258} y={198} width={56} height={102} fill={color.surface} opacity={0.32 * lightOn} />
       {/* cahaya toko di tanah basah */}
       <polygon points="96,300 214,300 250,340 70,340" fill={color.surface} opacity={0.1 * lightOn} />
-      {/* lampu jalan */}
-      <polygon points="640,92 664,92 720,300 584,300" fill={color.surface} opacity={0.08} />
-      <ellipse cx={652} cy={302} rx={74} ry={9} fill={color.surface} opacity={0.14} />
-      <rect x={648} y={86} width={8} height={214} fill={color.navyInk} />
-      <path d="M630,92 h44 l-6,-14 h-32 z" fill={color.muted} />
-      <ellipse cx={652} cy={93} rx={14} ry={4} fill={color.surface} />
+      {/* lampu jalan: tiang berlengan, kepala lampu berkap, pendar dan kerucut cahaya menembus hujan */}
+      <polygon points="618,96 662,96 736,300 548,300" fill="url(#il-cone)" opacity={0.7} />
+      <ellipse cx={640} cy={302} rx={96} ry={11} fill="url(#il-glow-w)" opacity={0.5} />
+      <rect x={672} y={70} width={8} height={230} fill={color.navyInk} />
+      <rect x={666} y={292} width={20} height={10} rx={3} fill={color.navyInk} />
+      <path d="M676,74 Q676,64 664,64 L644,64" stroke={color.navyInk} strokeWidth={6} fill="none" strokeLinecap="round" />
+      <path d="M622,90 L630,74 L652,74 L660,90 Z" fill={color.muted} />
+      <path d="M626,86 L632,76 L640,76 L636,86 Z" fill={color.surface} opacity={0.25} />
+      <rect x={620} y={88} width={42} height={4} rx={2} fill={color.navyInk} />
+      <circle cx={641} cy={96} r={30} fill="url(#il-glow-w)" />
+      <ellipse cx={641} cy={95} rx={11} ry={4} fill={color.surface} />
       {/* pantulan di genangan */}
       <ellipse cx={420} cy={322} rx={60} ry={5} fill={color.surface} opacity={0.08} />
       {/* pemilik usaha pulang: lesu, wajah lelah, membawa tas */}
       <ellipse cx={px + 6} cy={FLOOR + 3} rx={30} ry={5} fill={color.navy} opacity={0.6} />
       <Person x={px} y={FLOOR} s={1.1} body={color.blue1} face="lelah" legs={color.muted} walk={walkU < 1 && walkU > 0 ? t * 0.3 : undefined} slump={0.4} bag />
       <Rain f={f} n={46} x0={0} x1={W + 60} y0={0} y1={H} />
+      <Vignette k={0.6} />
     </Push>
   );
 };
@@ -470,7 +545,7 @@ const SceneB: React.FC<{f: number; t0: number}> = ({f, t0}) => {
         <HomeWindow f={f} x={250} y={26} night rain id="jendela-b" />
         <Clock x={190} y={64} r={28} min={270} hour={-10} dark />
         <Floor fill={color.navyInk} op={1} />
-        <DeskLamp on={lamp} />
+        <DeskLamp on={lamp} f={f} />
         {/* layar menerangi wajah */}
         <circle cx={330} cy={150} r={70} fill={color.blue1} opacity={0.1 * (1 - slump * 0.6)} />
         <Person
@@ -491,7 +566,10 @@ const SceneB: React.FC<{f: number; t0: number}> = ({f, t0}) => {
         <rect x={218} y={202} width={44} height={8} rx={2} fill={color.surface} />
         <rect x={212} y={194} width={46} height={8} rx={2} fill={color.line} />
         <Table x={110} w={360} top={color.muted} panel={color.navyInk} />
+        {/* cahaya lampu jatuh di tepi meja */}
+        <rect x={110} y={226} width={240} height={4} rx={2} fill={color.surface} opacity={0.35 * lamp} />
       </Push>
+      <Vignette k={0.55 + 0.25 * slump} />
       {bubbleOut > 0
         ? bubbles.map((b, i) => {
             const p = pop(f, wf(S.ketik, i) - 4);
@@ -558,13 +636,16 @@ const SceneD: React.FC<{f: number; t0: number}> = ({f, t0}) => {
   const fl = f > wf(S.waktu, 6) && f < wf(S.waktu, 7) + 2 ? (Math.sin(f * 2.4) > 0 ? 1 : 0.3) : 1;
   const bulbOn = (1 - fade) * fl;
   const warm = 1 - lin(t, 20, 110);
-  const dim = 0.18 + 0.3 * fade;
+  const dim = 0.34 + 0.3 * fade;
+  // lampu gantung menyorot kursi kosong di ruangan gelap, meredup saat "ikut habis"
+  const pend = (1 - 0.7 * fade) * fl;
+  const tear = lin(t, 30, 90);
   const k = 1 + 0.05 * lin(t, 0, 140);
   return (
     <Push k={k} cx={330} cy={210}>
       <rect x={-40} y={-40} width={W + 80} height={H + 80} fill={color.canvas} />
       <HomeWindow f={f} x={540} y={26} night id="jendela-d" />
-      <Clock x={450} y={62} r={30} min={t * 16} hour={300 + t * 1.3} />
+      <Clock x={120} y={66} r={30} min={t * 16} hour={300 + t * 1.3} />
       <Floor />
       <Person x={210} y={FLOOR + 8} body={color.blue1} hair="panjang" face="sedih" look={0.3} handR={{x: 6, y: -118}} />
       <Person x={322} y={FLOOR - 14} s={0.72} body={color.success} hair="anak" face="sedih" look={0.9} />
@@ -573,6 +654,10 @@ const SceneD: React.FC<{f: number; t0: number}> = ({f, t0}) => {
       <Bowl x={210} f={f} warm={warm} />
       <Bowl x={322} f={f} warm={warm} />
       <Bowl x={438} f={f} warm={warm} />
+      {/* ruangan meredup; hanya lampu gantung yang menyorot kursi kosong */}
+      <rect x={-40} y={-40} width={W + 80} height={H + 80} fill={color.navy} opacity={dim} />
+      <PendantLamp x={438} on={pend} sway={Math.sin(t / 30) * 1.2} len={40} spread={0.75} />
+      {/* awan pikiran di atas gelap agar bohlam yang padam terasa */}
       {thinkIn > 0.001 ? (
         <g style={popStyle(thinkIn, 300, 70)}>
           <circle cx={236} cy={120} r={6} fill={color.surface} stroke={color.line} strokeWidth={3} />
@@ -581,8 +666,9 @@ const SceneD: React.FC<{f: number; t0: number}> = ({f, t0}) => {
           <Bulb x={310} y={60} s={0.95} on={bulbOn} />
         </g>
       ) : null}
-      {/* ruangan meredup */}
-      <rect x={-40} y={-40} width={W + 80} height={H + 80} fill={color.navy} opacity={dim} />
+      {/* air mata anak, menetes pelan */}
+      {tear > 0 && tear < 1 ? <path d={`M333,${184 + tear * 14} c0,0 3,4 3,6 a3,3 0 0,1 -6,0 c0,-2 3,-6 3,-6z`} fill={color.blue1} opacity={Math.sin(tear * Math.PI)} /> : null}
+      <Vignette k={0.45 + 0.3 * fade} />
     </Push>
   );
 };
@@ -718,6 +804,9 @@ const SceneG: React.FC<{f: number; t0: number}> = ({f, t0}) => {
       <Bowl x={210} f={f} warm={1} />
       <Bowl x={322} f={f} warm={1} />
       <Bowl x={438} f={f} warm={1} />
+      {/* lampu gantung yang tadi redup kini menyala penuh dan cahayanya merangkul ketiganya */}
+      <PendantLamp x={324} on={0.55 + 0.45 * lin(f, heartAt - 6, heartAt + 10)} len={34} spread={1.25} />
+      <circle cx={610} cy={110} r={120} fill="url(#il-glow-w)" opacity={0.6} />
       {heart > 0.001 ? (
         <g style={popStyle(heart, 324, 120)}>
           <circle cx={324} cy={120} r={38 * heart} fill={color.alert} opacity={0.08} />
@@ -726,6 +815,7 @@ const SceneG: React.FC<{f: number; t0: number}> = ({f, t0}) => {
           <Sparkle x={372} y={108} s={0.55 * heart} fill={color.blue1} />
         </g>
       ) : null}
+      <Vignette k={0.16} />
     </Push>
   );
 };
@@ -767,6 +857,25 @@ export const Ilustrasi: React.FC<{f: number}> = ({f}) => {
       }}
     >
       <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} style={{display: 'block'}}>
+        {/* Cahaya (aksen, bukan latar): pendar putih/biru dan kerucut cahaya yang memudar. */}
+        <defs>
+          <radialGradient id="il-glow-w">
+            <stop offset="0%" stopColor={color.surface} stopOpacity={0.95} />
+            <stop offset="45%" stopColor={color.surface} stopOpacity={0.35} />
+            <stop offset="100%" stopColor={color.surface} stopOpacity={0} />
+          </radialGradient>
+          <radialGradient id="il-glow-b">
+            <stop offset="0%" stopColor={color.blue1} stopOpacity={0.55} />
+            <stop offset="100%" stopColor={color.blue1} stopOpacity={0} />
+          </radialGradient>
+          <linearGradient id="il-cone" x1={0} y1={0} x2={0} y2={1}>
+            <stop offset="0%" stopColor={color.surface} stopOpacity={0.5} />
+            <stop offset="100%" stopColor={color.surface} stopOpacity={0.04} />
+          </linearGradient>
+          <filter id="il-vig" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation={34} />
+          </filter>
+        </defs>
         {scenes.map(([k, node]) => {
           const win = SC[k]();
           if (f < win[0] - (k === 'A' ? 0 : FADE) || f > win[1]) return null;

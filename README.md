@@ -73,7 +73,7 @@ Skrip rilis memeriksa durasi klip, merender frame kunci dan video, lalu menormal
 - Voiceover: `public/audio/vo-alasan-saya-bikin-a2.mp3` (ElevenLabs Eleven v3, suara Bowo, dibuat Bos; kalimat 9 dibuat ulang dengan Bowo), timing per kalimat dan potongan di `src/data/vo-timing-alasan-saya-bikin-a2.json` (ffmpeg silencedetect)
 - Ilustrasi animasi per bagian cerita (revisi 1): toko malam, mengetik ulang, tenaga habis, keluarga menunggu, mesin, fokus ke pelanggan, pulang tepat waktu (`Ilustrasi.tsx`)
 - Kode: `src/AlasanSayaBikinA2.tsx`, adegan di `src/scenes/alasan-saya-bikin-a2/` (`Ilustrasi`, `GarisWaktu`, `GigiJalan`, `Judul`, `Penutup`, `Sfx`), timeline di `src/data/timeline-alasan-saya-bikin-a2.ts`
-- Penutup: garis memudar, Gigi melompat menjadi gear di huruf A logo asli (tanpa ajakan, keputusan Bos). Revisi 2: kalimat 9 jadi "…kebersamaan keluarga", Gigi menggeleng ala 3D (prop `turn`) dan punya ekspresi `sedih`
+- Penutup: garis memudar, Gigi melompat menjadi gear di huruf A logo asli (tanpa ajakan, keputusan Bos). Revisi 2: kalimat 9 jadi "…kebersamaan keluarga", Gigi menggeleng ala 3D (prop `turn`) dan punya ekspresi `sedih`. Revisi 4: menoleh/mendongak (`turn`, `pitch`) tanpa skala, lewat paralaks + sisi tebal gear; ilustrasi dengan cahaya, vinyet, dan lampu gantung
 - Frame kunci: `out/stills/alasan-saya-bikin-a2/` (dihitung dari timing suara, `scripts/alasan-saya-bikin-a2-frames.ts`). Perintah: `npm run stills:alasan`, `npm run render:alasan`
 
 ## Skill, pemeriksa tabrakan, dan hook penjaga (Fase 1)
