@@ -1,5 +1,5 @@
 // Frame kunci "Alasan Saya Bikin A2" dihitung dari timing suara (termasuk frame di tengah transisi).
-import {S, sf, ef, TOTAL_FRAMES} from '../src/data/timeline-alasan-saya-bikin-a2';
+import {S, sf, ef, wf, TOTAL_FRAMES} from '../src/data/timeline-alasan-saya-bikin-a2';
 import {P} from '../src/scenes/alasan-saya-bikin-a2/layout';
 import {OUTRO} from '../src/scenes/alasan-saya-bikin-a2/Penutup';
 
@@ -9,6 +9,10 @@ const frames: [string, number][] = [
   ['01b-hook', ef(S.hook) + 6],
   ['02-titik1-pindah', P.pointIn(0) + 8],
   ['02b-titik1-larut', ef(S.lihat)],
+  ['02c-ilustrasi-pulang-larut', sf(S.lihat) + 60],
+  ['02d-transisi-ke-meja', sf(S.ketik) - 4],
+  ['02e-ramai-pesanan', wf(S.ketik, 2) + 6],
+  ['02f-mengetik-ulang', wf(S.ketik, 4) + 30],
   ['03-mengetik-ulang', ef(S.ketik)],
   ['04-titik2-pindah', P.pointIn(1) + 10],
   ['04b-sadar', ef(S.sadar)],
@@ -16,10 +20,14 @@ const frames: [string, number][] = [
   ['05b-waktu-habis', ef(S.waktu)],
   ['06-titik3-pindah', P.pointIn(2) + 10],
   ['06b-mesin', ef(S.pikir)],
+  ['06c-transisi-ke-mesin', sf(S.pikir) + 2],
   ['07-tersambung', ef(S.manusia)],
+  ['07b-jabat-tangan', wf(S.manusia, 5) + 8],
   ['08-menyatu-tengah', mid(P.merge()[0], P.merge()[1])],
+  ['08a-pulang-duduk', sf(S.bukan) + 60],
   ['08b-bukan-jualan', ef(S.bukan)],
   ['09-alasan-manusia', ef(S.alasan) - 4],
+  ['09b-panggung-keluar', ef(S.alasan) + 14],
   ['10-melingkar-awal', P.ring()[0] + 8],
   ['10a-melingkar-tengah', mid(P.ring()[0], P.ring()[1])],
   ['10b-gigi-masuk', mid(P.gigiIn()[0], P.gigiIn()[1])],

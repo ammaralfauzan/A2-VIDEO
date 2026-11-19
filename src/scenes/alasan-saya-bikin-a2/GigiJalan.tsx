@@ -12,14 +12,15 @@ import {LINE, P, POINTS, RING, RING_GIGI} from './layout';
 // regang-pipih, condong ke arah gerak).
 
 type Key = {f: number; x: number; y: number; size: number};
-const GY = 600; // pusat Gigi; badan berakhir ±120 px di atas garis
-const SIZE = 240;
+const GY = 795; // pusat Gigi kecil, duduk di atas garis waktu (di bawah panggung ilustrasi)
+const SIZE = 150;
+const HOOK = {x: 540, y: 540, size: 240}; // saat hook Gigi besar di tengah, panggung belum ada
 const gx = (i: number) => Math.max(250, Math.min(780, POINTS[i].x));
 
 const keys = (): Key[] => [
-  {f: 0, x: 540, y: GY, size: SIZE},
-  {f: P.pointIn(0) - 6, x: 540, y: GY, size: SIZE},
-  {f: P.pointIn(0) + 16, x: gx(0), y: GY, size: SIZE},
+  {f: 0, ...HOOK},
+  {f: P.pointIn(0) - 10, ...HOOK},
+  {f: P.pointIn(0) + 10, x: gx(0), y: GY, size: SIZE},
   {f: P.pointIn(1) - 2, x: gx(0), y: GY, size: SIZE},
   {f: P.pointIn(1) + 20, x: gx(1), y: GY, size: SIZE},
   {f: P.pointIn(2) - 2, x: gx(1), y: GY, size: SIZE},
@@ -114,7 +115,7 @@ const lookTarget = (f: number, pos: {x: number; y: number}, mood: Mood) => {
   }
   if (mood === 'mikir') return {x: 0.7, y: -0.7};
   if (mood === 'lelah') return {x: 0, y: 0.6};
-  if (f < sf(S.bukan)) return {x: 0, y: 0.55}; // menatap titik di bawahnya
+  if (f < P.gigiIn()[0]) return {x: 0.1, y: -0.85}; // menonton ilustrasi cerita di atasnya
   return {x: 0, y: 0};
 };
 
@@ -201,7 +202,7 @@ export const GigiJalan: React.FC<{f: number}> = ({f}) => {
       sy = 1 + breathe * 0.015;
       break;
     case 'kaget': {
-      dy = -38 * hump(t, 14);
+      dy = -38 * (pos.size / 240) * hump(t, 14);
       sy = t < 7 ? 1 + 0.12 * hump(t, 14) : 1 - settle(t - 14, 0.1);
       sx = 1 / sy;
       break;

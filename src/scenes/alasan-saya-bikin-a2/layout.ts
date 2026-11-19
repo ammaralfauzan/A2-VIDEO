@@ -1,11 +1,13 @@
 import {ef, S, sf, wf} from '../../data/timeline-alasan-saya-bikin-a2';
 
-// Zona 9:16 (area aman x 60–900, y 220–1500): judul kecil di atas, Gigi + garis waktu di tengah,
-// teks kinetik di bawah. Zona tidak saling menimpa.
+// Zona 9:16 (area aman x 60–900, y 220–1500), dari atas ke bawah: judul kecil, panggung ilustrasi
+// cerita, Gigi duduk di atas garis waktu, label titik, teks kinetik. Zona tidak saling menimpa.
 export const TITLE_TOP = 268;
+// Panggung ilustrasi (koordinat dalam SVG 720 x 340).
+export const STAGE = {left: 180, top: 360, w: 720, h: 340};
 export const TEXT_BOX = {left: 180, width: 720, top: 1110};
 
-export const LINE = {x0: 180, x1: 900, y: 820};
+export const LINE = {x0: 180, x1: 900, y: 900};
 export const POINTS = [
   {x: 280, label: 'Yang saya lihat'},
   {x: 540, label: 'Yang saya sadari'},
@@ -27,5 +29,8 @@ export const P = {
   connect: () => sf(S.manusia) - 2,
   merge: () => [sf(S.bukan) - 4, sf(S.bukan) + 22] as [number, number],
   ring: () => [ef(S.alasan) + 2, ef(S.alasan) + 28] as [number, number],
+  // Panggung ilustrasi muncul setelah Gigi turun ke garis, hilang sebelum garis melingkar.
+  stageIn: () => sf(S.lihat) + 6,
+  stageOut: () => ef(S.alasan) + 8,
   gigiIn: () => [ef(S.alasan) + 18, ef(S.alasan) + 38] as [number, number],
 };

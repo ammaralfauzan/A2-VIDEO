@@ -68,10 +68,11 @@ Skrip rilis memeriksa durasi klip, merender frame kunci dan video, lalu menormal
 
 ## Video: "Alasan Saya Bikin A2" (komposisi `AlasanSayaBikinA2`, 9:16)
 
-- Naskah: `naskah-alasan-saya-bikin-a2.md`. Cerita asal orang pertama: satu garis waktu pelan, tiga titik cerita (yang dilihat, yang disadari, keputusan), teks kinetik, Gigi menemani di atas garis. Tanpa mockup, kursor, angka, atau ajakan
+- Naskah: `naskah-alasan-saya-bikin-a2.md`. Cerita asal orang pertama: panggung ilustrasi animasi, satu garis waktu pelan dengan tiga titik cerita (yang dilihat, yang disadari, keputusan), teks kinetik, Gigi menemani di atas garis. Tanpa mockup, kursor, angka, atau ajakan
 - Hasil: `out/alasan-saya-bikin-a2-9x16.mp4` (1080×1920, 30 fps, 46 detik: suara 41,4 dtk + logo diam)
 - Voiceover: `public/audio/vo-alasan-saya-bikin-a2.mp3` (ElevenLabs Eleven v3, suara Jefri, dibuat Bos), timing per kalimat dan potongan di `src/data/vo-timing-alasan-saya-bikin-a2.json` (ffmpeg silencedetect)
-- Kode: `src/AlasanSayaBikinA2.tsx`, adegan di `src/scenes/alasan-saya-bikin-a2/` (`GarisWaktu`, `GigiJalan`, `Judul`, `Penutup`, `Sfx`), timeline di `src/data/timeline-alasan-saya-bikin-a2.ts`
+- Ilustrasi animasi per bagian cerita (revisi 1): toko malam, mengetik ulang, tenaga habis, keluarga menunggu, mesin, fokus ke pelanggan, pulang tepat waktu (`Ilustrasi.tsx`)
+- Kode: `src/AlasanSayaBikinA2.tsx`, adegan di `src/scenes/alasan-saya-bikin-a2/` (`Ilustrasi`, `GarisWaktu`, `GigiJalan`, `Judul`, `Penutup`, `Sfx`), timeline di `src/data/timeline-alasan-saya-bikin-a2.ts`
 - Penutup: garis melengkung dengan kelengkungan tetap jadi lingkaran, Gigi masuk ke lingkaran, lalu menjadi gear di huruf A logo asli (tanpa ajakan, keputusan Bos)
 - Frame kunci: `out/stills/alasan-saya-bikin-a2/` (dihitung dari timing suara, `scripts/alasan-saya-bikin-a2-frames.ts`). Perintah: `npm run stills:alasan`, `npm run render:alasan`
 
