@@ -1,9 +1,10 @@
 # Alur baku produksi video
 
-Satu video = empat room pendek. Room tidak saling ingat; yang menyambung hanya **berkas di repo**. Konteks pendek = murah. Satu model per room, jangan diganti di tengah.
+Satu video = lima room pendek (IDE → KONSEP → BANGUN → REVISI bila perlu → RILIS), lalu siklus mulai lagi dari IDE. Semua ide dan konsep dicek ke `docs/daftar-konten.md` agar tidak kembar. Room tidak saling ingat; yang menyambung hanya **berkas di repo**. Konteks pendek = murah. Satu model per room, jangan diganti di tengah.
 
 | # | Room | Model | Isi | Keluaran (di repo) | Setelah itu |
 |---|---|---|---|---|---|
+| 0 | **IDE** | Sonnet | Usul 5 ide baru yang beda dari semua konten lama | ide terpilih di `antrean-ide.md` | Bos memilih satu |
 | 1 | **KONSEP** | Sonnet | Brief → konsep + naskah + prompt suara | `naskah-<slug>.md`, `serah-terima/<slug>.md` | **Bos setujui**, lalu generate MP3 di ElevenLabs |
 | 2 | **BANGUN** | Opus | Naskah + MP3 → komposisi, review, render, kirim MP4 | kode, `out/<slug>-9x16.mp4`, serah-terima diperbarui | Bos menonton |
 | 3 | **REVISI** (bila perlu) | Sonnet (kecil) / Opus (tata letak, animasi) | Satu daftar revisi dari Bos, selesaikan, render ulang | MP4 baru, **skill diperbarui bila ada pelajaran** | ulangi sampai Bos puas |
