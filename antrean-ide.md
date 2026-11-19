@@ -11,6 +11,7 @@ Status: `siap` (boleh diambil) · `tahan` (belum, ada pertanyaan untuk Bos) · `
 | 2 | siap | A2 Automation | "Satu hari tanpa rekap manual": pagi sampai sore, tiap tugas hilang satu per satu | 9:16 ±40 dtk, explainer kinetik, maskot Gigi | Angka contoh berlabel "contoh" |
 | 3 | tahan | H2C Wakaf | Penjelasan singkat alur wakaf dan laporan penggunaannya | 9:16 ±30 dtk, gaya Wakaf | Perlu data/laporan nyata dari yayasan; jangan mengarang angka |
 | 4 | siap | A2 Automation | "Tiga tanda bisnis Anda siap diotomatisasi" | 9:16 ±35 dtk, explainer kinetik | Ajakan konsultasi gratis a2automate.com |
+| 5 | siap | A2 Automation | "Serahkan yang Mana Dulu?" (soft skill delegasi dan prioritas): papan dua kolom, kartu tugas digeser ke "harus saya" atau "bisa diserahkan"; hook "Semua kamu pegang sendiri? Itu bukan rajin." | 9:16 ±35 dtk, explainer kinetik, tanpa mockup/kursor | Contoh tugas generik berlabel "contoh"; tanpa angka/klaim; penutup halus menyebut A2. Dipilih Bos di tahap IDE |
 
 ## Sedang berjalan / selesai
 - Jam 9 Malam di Ruang TU (selesai, 16:9 dan 9:16)
