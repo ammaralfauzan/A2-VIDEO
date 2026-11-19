@@ -2,7 +2,7 @@
   "audio": "public/audio/vo-alasan-saya-bikin-a2.mp3",
   "durasi": 35.63,
   "suara": "Jefri - Soft Explanatory Voice (ElevenLabs Eleven v4, s50 sim75), MP3 penuh dari Bos 19 Nov 2026 (revisi 4), tidak dipercepat",
-  "metode": "Deteksi jeda hening (ffmpeg silencedetect -35 dB/0,25 dtk dan -30 dB/0,12 dtk), dicocokkan dengan 10 kalimat naskah. Kata akhir kalimat 9 dipastikan 'kebersamaan keluarga' lewat pencocokan MFCC-DTW (lebih mirip rekaman 'kebersamaan keluarga' daripada 'manusia'). Batas potongan tanpa jeda diperkirakan dari jumlah suku kata.",
+  "metode": "Deteksi jeda hening (ffmpeg silencedetect -35 dB/0,25 dtk dan -30 dB/0,12 dtk), dicocokkan dengan 10 kalimat naskah. Kata akhir kalimat 9 dipastikan 'kebersamaan keluarga' lewat pencocokan MFCC-DTW (lebih mirip rekaman 'kebersamaan keluarga' daripada 'manusia'). Batas potongan tanpa jeda diperkirakan dari jumlah suku kata. Kalimat 10 = versi baru \"...hadir untuk membantu Anda\" (revisi 5), dipastikan dari durasi 3,65 dtk dan jumlah suku kata.",
   "kalimat": [
     {
       "mulai": 0.06,
@@ -114,7 +114,7 @@
     {
       "mulai": 31.73,
       "selesai": 35.38,
-      "teks": "Itu sebabnya A Dua Automation ada."
+      "teks": "Itu sebabnya A Dua Automation hadir untuk membantu Anda."
     }
   ]
 }
