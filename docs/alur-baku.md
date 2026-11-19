@@ -10,6 +10,12 @@ Satu video = lima room pendek (IDE → KONSEP → BANGUN → REVISI bila perlu �
 | 3 | **REVISI** (bila perlu) | Sonnet (kecil) / Opus (tata letak, animasi) | Satu daftar revisi dari Bos, selesaikan, render ulang | MP4 baru, **skill diperbarui bila ada pelajaran** | ulangi sampai Bos puas |
 | 4 | **RILIS** | Sonnet | Caption, jam posting, catat ke vault | caption di serah-terima, catatan Obsidian | Bos posting |
 
+## Aturan tampil dan serah-terima (diperbarui 2026-11-19)
+- **Tampil di chat, bukan tautan.** Naskah, prompt suara, blok isian, caption, prompt sampul: semuanya tertulis di chat; yang perlu disalin ada dalam kode blok siap salin. Berkas repo hanya arsip.
+- **Tampilkan dulu, baru minta setuju.** Room KONSEP menampilkan naskah dan prompt suara lebih dulu, baru bertanya persetujuan.
+- **Isian untuk langkah berikutnya** keluar di akhir tiap room sebagai blok siap tempel: IDE menulis `ISIAN UNTUK KONSEP`, KONSEP menulis `ISIAN UNTUK BANGUN`, BANGUN menulis `ISIAN UNTUK RILIS`. Bos menempelkannya di halaman Putaran Video A2 dan kolom lain terisi sendiri.
+- **Durasi di isian adalah target wajib** dan menimpa durasi lain.
+
 ## Aturan baku
 - **Tampilkan dulu, baru minta setuju (aturan Bos, 19 Nov 2026).** Di room KONSEP, sebelum meminta persetujuan, dialog/naskah suara lengkap dan prompt suara ElevenLabs (siap salin) wajib sudah tampil di chat. Setiap prompt untuk langkah berikutnya (suara, sampul, caption) selalu ditampilkan di chat dalam kode blok siap salin, bukan hanya disebut lokasi filenya.
 - **Prompt inti** (`docs/prompt-inti.md`) disalin apa adanya ke setiap room. Hanya blok TAHAP dan isian `<slug>`/brief yang berbeda.
