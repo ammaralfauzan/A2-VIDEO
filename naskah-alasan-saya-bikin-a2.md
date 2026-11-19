@@ -2,7 +2,7 @@
 
 Format: Reels 9:16 (1080×1920), ±36 detik · Gaya: teks kinetik pelan + maskot Gigi, tanpa mockup, tanpa kursor · Brand: A2 Automation
 Pola: satu garis waktu tunggal yang pelan; tiga titik cerita muncul bergantian, tiap titik dengan teks kinetik. Suara orang pertama (Bos). Tanpa angka dan klaim.
-Suara: ElevenLabs, Jefri, model Eleven v4; "A2" diucapkan "A Dua". Tanpa musik, efek suara halus saja.
+Suara: ElevenLabs, Jefri, model Eleven v3 (tag audio); "A2" diucapkan "A Dua". Tanpa musik, efek suara halus saja.
 
 **CATATAN (Bos setuju rancangan dipakai apa adanya, 19 Nov 2026): tiga titik cerita di bawah adalah RANCANGAN penulis (Bos meminta dibuatkan), bukan fakta dari Bos. Ditulis umum, tanpa nama, angka, atau klaim. Sebelum diposting, Bos wajib memastikan isinya benar-benar sesuai pengalaman Bos; bila tidak, ganti dengan cerita asli (cukup ganti kalimat titik 1–3).**
 
@@ -30,18 +30,18 @@ Tanpa ajakan keras: penutup halus menyebut A2, lalu logo. (Opsi: teks kecil `a2a
 - Suara Jefri bukan suara Bos. Bos boleh memilih Alif atau merekam sendiri.
 
 ## Prompt suara ElevenLabs (siap salin)
-Suara: Jefri (Suara Penjelasan Lembut) · Model: Eleven v4 · Nada: tenang, hangat, orang pertama · Target: ±36 dtk
+Suara: Jefri (Suara Penjelasan Lembut) · Model: Eleven v3 (mendukung tag audio) · Nada: tenang, hangat, orang pertama · Target: ±36 dtk
 
 ```
-Ini alasan saya mulai A Dua.
+[warmly] Ini alasan saya mulai A Dua.
 
-Dulu saya sering lihat pemilik usaha pulang larut. Bukan karena sepi, tapi karena mengetik ulang hal yang sama.
+[tired] Dulu saya sering lihat pemilik usaha pulang larut. Bukan karena sepi, tapi karena mengetik ulang hal yang sama.
 
-Lama-lama saya sadar, yang habis bukan cuma tenaga. Waktu untuk keluarga dan untuk berpikir ikut habis.
+[softly] Lama-lama saya sadar, yang habis bukan cuma tenaga. Waktu untuk keluarga dan untuk berpikir ikut habis.
 
-Saya pikir, pekerjaan yang berulang ini biar dikerjakan mesin. Orangnya fokus ke yang butuh manusia.
+[warmly] Saya pikir, pekerjaan yang berulang ini biar dikerjakan mesin. Orangnya fokus ke yang butuh manusia.
 
-Jadi ini bukan sekadar jualan alat. Ada alasan di baliknya, dan alasan itu manusia.
+[softly] Jadi ini bukan sekadar jualan alat. Ada alasan di baliknya, dan alasan itu manusia.
 
-Itu sebabnya A Dua Automation ada.
+[warmly] Itu sebabnya A Dua Automation ada.
 ```

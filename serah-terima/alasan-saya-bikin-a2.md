@@ -13,3 +13,4 @@
 - Belum diperiksa / risiko: isi cerita dari rancangan penulis, sudah disetujui Bos; durasi ±36 dtk perkiraan, final mengikuti suara asli
 - Caption dan jam posting usulan: (diisi tahap RILIS)
 - Catatan untuk room berikutnya: jangan ubah naskah tanpa persetujuan Bos. Bila Bos mengganti cerita, ubah naskah dan prompt suara bersama-sama
+- Room KONSEP diulang lagi (19 Nov 2026): prompt suara diganti ke Eleven v3 dengan tag audio ([warmly], [tired], [softly]; tag tidak diucapkan, daftar sesuai panduan model). Isi kalimat identik; konsep, naskah, baris #6 tidak diubah. Anti-kembar dicek: aman
