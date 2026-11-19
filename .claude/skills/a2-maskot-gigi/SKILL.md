@@ -5,6 +5,8 @@ description: Spesifikasi dan cara menganimasikan maskot Gigi (gear A2) di video 
 
 # Maskot Gigi
 
+**Khusus brand A2.** Brand lain tidak memakai Gigi kecuali Brand Kit-nya menyebutkannya.
+
 Gigi adalah **gear yang sama dengan gear di logo A2** (huruf A). Komponen: `src/components/Gigi.tsx`. Lembar ekspresi untuk review: komposisi `GigiSheet` (`00-gigi-ekspresi.png`).
 
 ## Bentuk (jangan diubah)

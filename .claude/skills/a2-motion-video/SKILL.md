@@ -7,6 +7,9 @@ description: Buat video konten motion UI A2 Automation (soft selling, voiceover,
 
 Skill untuk membuat video konten A2 Automation: mockup aplikasi desktop dengan kursor nyata, voiceover bahasa Indonesia, caption, dan penutup logo. Output MP4.
 
+## Catatan brand
+Skill ini dan skill `a2-*` lain khusus **brand A2**. Untuk brand lain (mis. H2C) baca `brands/<kode>/BRAND.md` dan jangan memakai warna, huruf, atau maskot A2. Lihat skill `brand-kit`.
+
 ## Sebelum mulai
 1. Baca `DESIGN.md` di root project. Itu kontrak visual; semua keputusan warna, font, grid, gerak, dan larangan diambil dari sana.
 2. Cek folder `references/` (jika ada) untuk contoh gaya. Tiru kualitas dan ritmenya, bukan isinya.
