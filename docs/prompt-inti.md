@@ -25,7 +25,15 @@ ATURAN KERAS
 
 ## BLOK TAHAP 0: IDE (minta ide baru, room Sonnet)
 ```
-TAHAP: IDE. Baca docs/daftar-konten.md (semua konten yang sudah ada) dan antrean-ide.md. Usulkan 5 ide BARU untuk brand di ISIAN, masing-masing: judul kerja, brand, hook (1 kalimat), pesan inti, pola/gaya visual, format/durasi, bahan yang dibutuhkan (rekaman, data, suara), dan risiko klaim. Setiap ide WAJIB berbeda jelas dari semua baris di daftar-konten.md (topik, hook, pola); tulis satu kalimat per ide yang menyebut ide lama terdekat dan apa bedanya. Jangan mengarang data, harga, atau klaim hukum. Tambahkan ide yang Bos pilih ke antrean-ide.md berstatus "siap" setelah ia memilih (jangan sebelum). Commit dan push. JANGAN menulis naskah panjang atau membuat video. Berhenti dan minta Bos memilih satu. Setelah Bos memilih: tambahkan ide itu ke antrean-ide.md (status siap), commit dan push, lalu tulis blok isian siap tempel dalam SATU kode blok dengan format tetap: baris `ISIAN UNTUK KONSEP`, lalu `slug:` (huruf kecil dan tanda hubung, unik, belum ada di daftar-konten.md), `brand: A2 Automation` (default; ganti hanya bila brand lain), `format:` (mis. Reels 9:16), `durasi:` (mis. 35 dtk), `ide:` (satu paragraf: judul, hook, pesan inti, pola visual, bahan; tanpa angka klaim). Minta Bos menyalin blok itu dan menempelkannya ke kolom Ide yang dipilih di halaman Putaran Video A2.
+TAHAP: IDE. Baca docs/daftar-konten.md (semua konten yang sudah ada) dan antrean-ide.md. Usulkan 5 ide BARU untuk brand di ISIAN. Setiap ide WAJIB berbeda jelas dari semua baris di daftar-konten.md (topik, hook, pola). Jangan mengarang data, harga, atau klaim hukum.
+
+FORMAT JAWABAN
+1. Satu TABEL singkat di chat dengan kolom: No | Judul | Hook | Beda dari konten lama. Satu kalimat pendek per sel.
+2. Lalu buat satu Artifact (halaman HTML) berjudul "Pilih Ide" berisi tabel yang sama. Tiap baris bisa dibuka (dropdown) untuk menampilkan: pesan inti, pola visual, durasi, bahan yang dibutuhkan, risiko klaim. Tiap ide punya tombol "Salin ISIAN" yang menyalin blok isian siap tempel (format di bawah). Bila alat Artifact tidak tersedia, cukup tabel di chat.
+
+BLOK ISIAN siap tempel per ide, dalam SATU kode blok: baris `ISIAN UNTUK KONSEP`, lalu `slug:` (huruf kecil dan tanda hubung, unik, belum ada di daftar-konten.md), `brand: A2 Automation` (default; ganti hanya bila brand lain), `format:` (mis. Reels 9:16), `durasi:` (mis. 35 dtk), `ide:` (satu paragraf: judul, hook, pesan inti, pola visual, bahan; tanpa angka klaim). Bos menyalin blok itu lalu menempelkannya ke kolom Ide yang dipilih di halaman Putaran Video A2. Bila Bos malah membalas nomor di chat, tulis blok itu di chat dan tambahkan ide ke antrean-ide.md (status siap), commit dan push.
+
+JANGAN menulis naskah panjang atau membuat video. Berhenti dan minta Bos memilih satu.
 ```
 
 ## BLOK TAHAP 1: KONSEP
