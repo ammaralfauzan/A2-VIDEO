@@ -4,13 +4,14 @@ import {T, TF} from './brands/tams-consulting/theme';
 import {BrollLayer} from './scenes/tiga-hal-sebelum-waris-dibagi/Broll';
 import {Caption} from './scenes/tiga-hal-sebelum-waris-dibagi/Caption';
 import {Daftar} from './scenes/tiga-hal-sebelum-waris-dibagi/Daftar';
+import {Ilustrasi} from './scenes/tiga-hal-sebelum-waris-dibagi/Ilustrasi';
 import {Penutup} from './scenes/tiga-hal-sebelum-waris-dibagi/Penutup';
 import {Sfx} from './scenes/tiga-hal-sebelum-waris-dibagi/Sfx';
 import {Stage} from './scenes/tiga-hal-sebelum-waris-dibagi/Stage';
 
 // "Tiga Hal Sebelum Waris Dibagi" (Tams Consulting): satu blok harta mengalir turun melewati tiga gerbang
 // (perawatan jenazah, utang, wasiat); sisanya baru sampai ke kotak ahli waris. Bidang rata arang + oranye di
-// latar putih, tanpa orang/tangan, tanpa angka, tanpa ajakan. Sisipan B-roll klip Bos (slot di layout.ts).
+// latar putih, kartu ilustrasi benda per penjelasan (revisi 1), semua ditengahkan di x 540, tanpa orang/tangan, tanpa angka, tanpa ajakan. Sisipan B-roll klip Bos (slot di layout.ts).
 export const TigaHalSebelumWaris: React.FC<{safeGuide?: boolean}> = ({safeGuide = false}) => {
   const f = useCurrentFrame();
   return (
@@ -18,6 +19,7 @@ export const TigaHalSebelumWaris: React.FC<{safeGuide?: boolean}> = ({safeGuide 
       {/* dekor lengkung pudar di sudut (dari lingkaran logo) */}
       <div style={{position: 'absolute', right: -190, top: -140, width: 520, height: 520, borderRadius: '50%', border: `2px solid ${T.line}`}} />
       <div style={{position: 'absolute', left: -210, bottom: -170, width: 480, height: 480, borderRadius: '50%', background: T.orangeSoft, opacity: 0.6}} />
+      <Ilustrasi f={f} />
       <Stage f={f} />
       <Daftar f={f} />
       <Penutup f={f} />

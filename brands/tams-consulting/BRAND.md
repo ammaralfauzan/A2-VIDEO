@@ -34,6 +34,7 @@ Latar terang (keputusan Bos). Tanpa gradasi: warna logo rata, jadi video juga ra
 - Variasi: palet dan logo tetap, tetapi warna dominan dan susunan antar konten boleh berganti (putih, ivory, oranye, arang) agar feed tidak seragam.
 - Ilustrasi: bidang rata arang dan oranye (mis. bagan pewaris ke ahli waris), sorotan memakai sudut daun.
 - Gerak: belum ditentukan.
+- **Revisi Bos 20 Nov 2026 (video waris):** ilustrasi dan elemen video memakai sudut membulat penuh agar modern (kartu, label kapsul, baris daftar); sudut daun tetap untuk materi statis/posting bila tidak diminta lain. Gaya ilustrasi: lihat skill `brand-kit` bagian Gaya ilustrasi.
 
 ## Maskot
 - Tidak ada (belum ditentukan Bos). Jangan meminjam maskot brand lain.

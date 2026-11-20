@@ -1,15 +1,16 @@
 import React from 'react';
 import {interpolate} from 'remotion';
 import {clamp, ease} from '../../components/motion';
-import {leafRadius, T, TF} from '../../brands/tams-consulting/theme';
-import {Ikon, IkonNama} from './Ikon';
+import {T, TF} from '../../brands/tams-consulting/theme';
 import {CX, P} from './layout';
+import {IconKind, MiniIcon} from './Ilustrasi';
 
 const ITEMS = ['1 · PERAWATAN JENAZAH', '2 · UTANG', '3 · WASIAT', '4 · WARIS'];
 const TOPS = [440, 580, 720, 860];
-const IKON: IkonNama[] = ['kain', 'tagihan', 'amplop', 'rumah'];
+const ICONS: IconKind[] = ['kafan', 'utang', 'wasiat', 'rumah'];
+const ROW_W = 680;
 
-// Empat label berurutan, tiga arang lalu satu oranye; tampil saat kata-katanya diucapkan.
+// Empat label berurutan, tiga arang lalu satu oranye, masing-masing dengan ikon bendanya; ditengahkan di x 540.
 export const Daftar: React.FC<{f: number}> = ({f}) => {
   const out = interpolate(f, [P.listOut, P.listOut + 10], [1, 0], {...clamp, easing: ease});
   if (f < P.list[0] - 2 || out <= 0) return null;
@@ -25,11 +26,11 @@ export const Daftar: React.FC<{f: number}> = ({f}) => {
             <div
               style={{
                 position: 'absolute',
-                left: CX - 330,
+                left: CX - ROW_W / 2,
                 top: TOPS[i],
-                width: 660,
+                width: ROW_W,
                 height: 96,
-                borderRadius: leafRadius(40),
+                borderRadius: 48,
                 background: last ? T.orange : T.charcoal,
                 color: T.onDark,
                 fontFamily: TF.head,
@@ -44,8 +45,13 @@ export const Daftar: React.FC<{f: number}> = ({f}) => {
                 transform: `translateY(${(1 - p) * 22}px)`,
               }}
             >
-              <Ikon nama={IKON[i]} size={76} a={last ? T.charcoal : '#848484'} />
-              <span>{txt}</span>
+              <svg width={64} height={64} viewBox="0 0 100 100" style={{position: 'absolute', left: 22, top: 16}}>
+                <circle cx={50} cy={50} r={50} fill={T.bg} />
+                <g transform="translate(12 12) scale(0.76)">
+                  <MiniIcon kind={ICONS[i]} />
+                </g>
+              </svg>
+              <span style={{paddingLeft: 60}}>{txt}</span>
             </div>
           </React.Fragment>
         );

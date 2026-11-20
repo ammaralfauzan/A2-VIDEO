@@ -1,20 +1,19 @@
 import {ef, S, sf, wf} from '../../data/timeline-tiga-hal-sebelum-waris-dibagi';
 
-// Zona 9:16 (area aman x 60–900, y 220–1500), atas ke bawah:
-// panggung (blok, gerbang, kotak ahli waris) y 380–1160, teks bawah y 1240+.
-export const CX = 540; // tengah bingkai 1080 (revisi: semua isi ditengahkan di sini, bukan di tengah area aman)
-export const TEXT_BOX = {left: CX - 360, width: 720, top: 1250};
+// Zona 9:16 (area aman x 60–900, y 220–1500). Semua ditengahkan di x 540, lebar maks 720 (x 180–900):
+// kartu ilustrasi y 250–760, alur blok + tiga gerbang y 790–1190, teks bawah y 1250+ (revisi 1 Bos: ilustrasi + tengah).
+export const CX = 540;
+export const TEXT_BOX = {left: 180, width: 720, top: 1250};
+export const ILLU = {x: 180, y: 250, w: 720, h: 510}; // kartu ilustrasi
+export const ILLU_SVG = {y: 350, h: 390}; // area gambar di dalam kartu (viewBox 720x390)
 
 export const LANE_X = CX; // pusat jalur blok
-export const BLOCK_W = 200;
-export const BIG = {cx: CX, w: 600}; // blok pembuka (lebar)
-export const GATES = [650, 800, 950];
-export const ICON = {x: 180, size: 128}; // ilustrasi tiap gerbang di kiri jalur // garis gerbang (y)
-export const SLICE = 36; // tinggi potongan yang dilepas di tiap gerbang
-export const HEIR = {x: CX - 230, y: 1030, w: 460, h: 120};
-export const BLOCK0 = {top: 320, bottom: 530}; // blok awal
-export const PILL = {x: LANE_X + 110, w: 250, h: 72};
-export const CARD = {x: CX - 220, y: 1170, w: 440, h: 64};
+export const BLOCK_W = 160;
+export const GATES = [920, 1000, 1080]; // garis gerbang (y)
+export const SLICE = 16; // tinggi potongan yang dilepas di tiap gerbang
+export const HEIR = {x: 380, y: 1110, w: 320, h: 80};
+export const BLOCK0 = {top: 800, bottom: 880}; // blok awal
+export const BAR = {left: 236, right: 724, gap: 96}; // batang gerbang: kiri 236..CX-gap, kanan CX+gap..724; nomor di kiri, nama di kanan
 
 // Fase tiap adegan, semua dari timing suara.
 export const P = {
@@ -27,6 +26,12 @@ export const P = {
   land: sf(S.baru) - 8,
   fill: sf(S.baru) + 14,
   ayatCard: wf(S.ayat, 3),
+  // sorotan di ilustrasi
+  belum: wf(S.harta, 2),
+  lunas: wf(S.utang, 3),
+  hak: wf(S.hak, 1),
+  sah: wf(S.wasiat, 2),
+  ayat: sf(S.ayat),
   stageOut: sf(S.urutan) - 8,
   list: [wf(S.urutan, 1), wf(S.urutan, 3), wf(S.urutan, 4), wf(S.urutan, 6)],
   listOut: sf(S.bukan) - 6,

@@ -22,9 +22,6 @@ Prinsip dari revisi penutup "Satu Pesanan": ruang kosong dibereskan dengan **men
 - Jalankan `a2-anti-tabrakan` (pemeriksa tabrakan) lalu `a2-safe-area-sosmed`.
 - Untuk video bergaya Wakaf (TipsUmroh): kartu di y 1050–1480, strip progres di y 236, wajah pembicara y 460–860 bebas.
 
-
-## Pelajaran revisi (Tams, 20 Nov 2026)
-- **Tengah = tengah bingkai (x 540), bukan tengah area aman (x 480).** Menengahkan di x 480 terlihat condong ke kiri. Pusatkan di x 540 dan jaga isi tetap di x 180-900 (lebar 720, simetris), jadi tidak masuk kolom tombol kanan. Satu konstanta `CX = 540` di `layout.ts`, semua posisi dihitung darinya.
-- **Diagram abstrak butuh ilustrasi benda.** Kotak dan garis saja kurang jelas bagi penonton awam: beri tiap konsep satu benda sederhana (ubin terang bersudut-daun berisi gambar SVG rata). Contoh: `src/scenes/tiga-hal-sebelum-waris-dibagi/Ikon.tsx` (rumah, koin, kunci, kain + sekop, tagihan, amplop). Brand tanpa orang: tanpa wajah, figur, atau siluet; kain kafan digambar sebagai lipatan kain, bukan sosok terbungkus.
-- Ikon redup abu saat belum aktif, berwarna hanya saat gilirannya (tetap satu sorotan oranye per layar). Ikon di atas blok arang pakai aksen abu, bukan oranye.
-- Ukuran: ikon di panggung >= 128 px, label >= 22 px; gambar kecil (<100 px) terbaca seperti simbol UI, bukan ilustrasi.
+## Pelajaran revisi (20 Nov 2026, Tiga Hal Sebelum Waris)
+- **Tengah = x 540, bukan x 480.** Pusat area aman (x 480) terlihat "agak ke kiri" di layar. Tata letak, kartu, judul, logo, dan teks bawah ditengahkan di x 540 dengan lebar maks 720 (x 180–900). Pakai satu konstanta `CX = 540` di `layout.ts` dan turunkan semua posisi darinya; jangan menulis 480 atau `left: 60, width: 840` untuk teks tengah.
+- **Diagram abstrak saja kurang.** Bos minta ilustrasi benda yang jelas menggambarkan tiap penjelasan. Pola: kartu ilustrasi di atas (x 180–900, y 250–760) yang berganti adegan mengikuti kalimat, diagram ringkas di bawahnya, teks bawah y 1250+. Lihat `src/scenes/tiga-hal-sebelum-waris-dibagi/Ilustrasi.tsx`.

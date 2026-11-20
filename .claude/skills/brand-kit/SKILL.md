@@ -23,3 +23,8 @@ Satu folder per brand: `brands/<kode>/BRAND.md`. Daftar dan aturan: `brands/READ
 - Warna dan huruf utama tidak boleh sama dengan brand lain tanpa alasan.
 - Satu brand, satu gaya gerak dan satu bentuk khas; jangan menyalin pola visual video brand lain kecuali Bos memintanya.
 - Maskot milik satu brand tidak dipinjam brand lain.
+
+## Gaya ilustrasi (arahan Bos 20 Nov 2026, berlaku semua brand kecuali kit menulis lain)
+- **Modern dan bulat:** semua sudut membulat (kartu 44, kapsul/label `border-radius: 999`, baris daftar 48, ikon `rx` 8–24, poligon atap/emas lewat garis tebal warna sama `strokeLinejoin="round"`). Tanpa garis hitam tebal; tepi lembut `rgba(ink,.12)`, bidang rata + rona (tint) dari token, bayangan elips lembut di bawah benda, lingkaran latar pudar.
+- **Detail kecil yang menjelaskan** (ikatan kain, cap, segel, pita buku, label "LUNAS"/"SAH") lebih penting daripada banyak benda.
+- **Wajah:** hindari. Bila sosok benar-benar perlu (dan Brand Kit mengizinkan), muka dibuat rata tanpa mata/mulut. Brand tanpa makhluk bernyawa (mis. Tams) tetap memakai benda saja.
