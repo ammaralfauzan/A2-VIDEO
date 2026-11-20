@@ -30,7 +30,8 @@ Latar terang (keputusan Bos). Tanpa gradasi: warna logo rata, jadi video juga ra
 - Bentuk khas "sudut daun": satu sudut kiri atas membulat besar (56 px untuk kartu, 32 px tombol), sudut lain hampir siku (4 px). Diambil dari bidang oranye logo.
 - Kartu: panel arang rata untuk judul, kartu abu terang dengan garis tipis untuk ilustrasi. Tanpa bayangan berat, tanpa blur.
 - Susunan dari posting Bos: logo di atas tengah, judul di tengah (baris pembuka hitam, kata kunci oranye), teks isi abu tengah, garis oranye pendek di bawah judul ajakan, dekor lingkaran atau seperempat lingkaran pudar di sudut. Di video, "tengah" berarti tengah area aman (x 480).
-- Foto: foto asli suasana konsultasi keluarga, sudut membulat. Wajah klien disamarkan bila perlu (seperti di posting Bos).
+- **Tanpa makhluk bernyawa** (arahan Bos 18 Nov 2026, dari vault `proyek/tams-consulting.md`): tanpa orang, tangan, siluet, figur, atau ikon manusia. Visual hanya benda: dokumen, map, kalkulator, miniatur rumah, kunci, emas, buku tabungan, diagram kotak. Foto lama berisi orang tidak dipakai.
+- Variasi: palet dan logo tetap, tetapi warna dominan dan susunan antar konten boleh berganti (putih, ivory, oranye, arang) agar feed tidak seragam.
 - Ilustrasi: bidang rata arang dan oranye (mis. bagan pewaris ke ahli waris), sorotan memakai sudut daun.
 - Gerak: belum ditentukan.
 
@@ -43,14 +44,14 @@ Latar terang (keputusan Bos). Tanpa gradasi: warna logo rata, jadi video juga ra
 - Tidak digambar ulang, diputar, diregangkan, atau diwarnai ulang. Area kosong minimal setinggi huruf T di ikon.
 
 ## Suara dan ajakan
-- Pengisi suara, model, nada: belum ditentukan.
+- Pengisi suara: belum ditentukan. Nada narasi dari draf lama di vault: hangat, jelas, natural, tidak seperti iklan; model dengan tag ekspresi (Eleven v3). Uji pelafalan "TAMS"; bila meleset pakai alias "Tam(s)" hanya di teks suara.
 - Kalimat ajakan dan URL: belum ada (jawaban Bos). Posting lama memakai "Jadwalkan Konsultasi" lewat WhatsApp; jangan dipakai di video sebelum Bos menentukan.
 
 ## Larangan khas brand
-- Tanpa warna di luar token (tanpa biru navy A2, tanpa hijau dan emas H2C). Tanpa gradasi pada logo atau tombol. Tanpa emoji, merek pihak ketiga, backdrop-filter. Angka contoh berlabel "contoh". Tanpa klaim hasil atau jaminan yang tidak diberikan Bos. Tanpa hitungan bagian waris nyata kecuali dari Bos; angka bagian selalu berlabel "contoh". Tanpa nomor telepon di video sebelum Bos menentukan ajakan.
+- Tanpa warna di luar token (tanpa biru navy A2, tanpa hijau dan emas H2C). Tanpa gradasi pada logo atau tombol. Tanpa emoji, merek pihak ketiga, backdrop-filter. Angka contoh berlabel "contoh". Tanpa klaim hasil atau jaminan yang tidak diberikan Bos. Tanpa hitungan bagian waris nyata kecuali dari Bos; angka bagian selalu berlabel "contoh". Tanpa nomor telepon di video sebelum Bos menentukan ajakan. Konten utamanya edukasi, bukan jualan; tidak semua video diakhiri ajakan WhatsApp (draf lama memakai "Ikuti @tams.consulting"). Cerita rekaan diberi label kecil "Cerita ilustrasi", bukan kasus klien. Materi hukum (mis. KHI) tidak ditampilkan sebagai kepastian tanpa telaah TAMS; tanpa persentase bagian umum tanpa konteks.
 
 ## Sumber dan contoh
-- Bahan Bos: logo (2 gambar) dan contoh posting "Konsultasi Waris" (20 Nov 2026), "hitam-oren". Situs: tidak ditemukan saat dicari.
+- Bahan Bos: logo (2 gambar) dan contoh posting "Konsultasi Waris" (20 Nov 2026), "hitam-oren". Situs: tidak ditemukan saat dicari. Instagram: `@tams.consulting`. Arahan lama Bos: vault Obsidian-SB `proyek/tams-consulting.md`. Pesan brand awal: "Warisan tertata. Keluarga terjaga."
 - Token di kode: `src/brands/tams-consulting/theme.ts`. Frame contoh: komposisi `TamsBrandSample`, `out/brand-tams-consulting-sample.png`.
 
 ## Belum ditentukan
