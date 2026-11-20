@@ -25,3 +25,5 @@ Prinsip dari revisi penutup "Satu Pesanan": ruang kosong dibereskan dengan **men
 ## Pelajaran revisi (20 Nov 2026, Tiga Hal Sebelum Waris)
 - **Tengah = x 540, bukan x 480.** Pusat area aman (x 480) terlihat "agak ke kiri" di layar. Tata letak, kartu, judul, logo, dan teks bawah ditengahkan di x 540 dengan lebar maks 720 (x 180–900). Pakai satu konstanta `CX = 540` di `layout.ts` dan turunkan semua posisi darinya; jangan menulis 480 atau `left: 60, width: 840` untuk teks tengah.
 - **Diagram abstrak saja kurang.** Bos minta ilustrasi benda yang jelas menggambarkan tiap penjelasan. Pola: kartu ilustrasi di atas (x 180–900, y 250–760) yang berganti adegan mengikuti kalimat, diagram ringkas di bawahnya, teks bawah y 1250+. Lihat `src/scenes/tiga-hal-sebelum-waris-dibagi/Ilustrasi.tsx`.
+- Ilustrasi harus besar (benda utama >= 128 px, label >= 22 px); gambar < 100 px terbaca seperti simbol UI. Kain kafan digambar sebagai lipatan kain terikat, bukan sosok terbungkus. Tetap satu sorotan oranye per layar.
+- Gaya bentuk (modern, sudut bulat): lihat skill `brand-kit` bagian Gaya ilustrasi.
