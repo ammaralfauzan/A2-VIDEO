@@ -31,7 +31,7 @@ Simpan dan bagikan ke keluarga yang sedang mengurus waris. Ikuti @tams.consultin
 ```
 
 ### Jam posting (usulan)
-Minggu 19.30 WIB, Instagram Reels. Alasan: keluarga berkumpul malam hari dan topiknya urusan keluarga. Usulan umum, belum berdasar data analitik (Metricool tidak terpasang).
+Minggu 22 Nov 2026, 19.30 WIB, Instagram Reels (akun Tams, terpisah dari A2). Alasan: keluarga berkumpul malam hari dan topiknya urusan keluarga. Usulan umum, belum berdasar data analitik (Metricool tidak terpasang).
 
 ### Prompt sampul (siap tempel)
 ```
