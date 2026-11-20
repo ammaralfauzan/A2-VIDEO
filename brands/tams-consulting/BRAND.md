@@ -1,6 +1,6 @@
 # Brand Kit: Tams Consulting
 
-Kode: `tams-consulting` · Disetujui Bos: belum (DRAF, jawaban 5 pertanyaan masuk 20 Nov 2026)
+Kode: `tams-consulting` · Disetujui Bos: ya, 20 Nov 2026 (frame contoh `TamsBrandSample`)
 
 ## Identitas
 - Nama resmi: TAMS CONSULTING. Bidang: konsultasi dan hitung waris (keterangan di posting Bos: "Konsultasi & Hitung Waris"). Penonton: keluarga dan pewaris yang perlu menyelesaikan pembagian waris.

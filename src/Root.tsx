@@ -40,12 +40,12 @@ loadFont({family: 'Fraunces', url: staticFile('fonts/fraunces-latin-normal.woff2
 loadFont({family: 'Fraunces', url: staticFile('fonts/fraunces-latin-italic.woff2'), weight: '500 600', style: 'italic'});
 loadFont({family: 'Outfit', url: staticFile('fonts/outfit-latin.woff2'), weight: '400 700'});
 loadFont({family: 'Plus Jakarta Sans', url: staticFile('fonts/plus-jakarta-sans-latin.woff2'), weight: '400 700'});
-// Fon Tams Consulting (draf Brand Kit): Montserrat.
+// Fon Tams Consulting (Brand Kit): Montserrat.
 loadFont({family: 'Montserrat', url: staticFile('fonts/montserrat-latin.woff2'), weight: '100 900'});
 
 export const Root: React.FC = () => (
   <>
-    {/* Frame contoh Brand Kit Tams Consulting (draf, belum disetujui Bos). */}
+    {/* Frame contoh Brand Kit Tams Consulting (disetujui Bos 20 Nov 2026). */}
     <Composition id="TamsBrandSample" component={TamsBrandSample} durationInFrames={1} fps={30} width={1080} height={1920} />
     <Composition id="Konveksi3D" component={PKonveksi3D} durationInFrames={KONVEKSI_FRAMES} fps={30} width={1080} height={1920} defaultProps={{preview:false,safeGuide:false}} />
     <Composition id="JamSembilanMalam" component={PMain} durationInFrames={TOTAL_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />

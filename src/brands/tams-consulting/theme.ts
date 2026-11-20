@@ -1,4 +1,4 @@
-// Token visual Tams Consulting (kode: tams-consulting). STATUS: DRAF, belum disetujui Bos.
+// Token visual Tams Consulting (kode: tams-consulting). STATUS: disetujui Bos 20 Nov 2026.
 // Warna diambil langsung dari logo Bos (public/brands/tams-consulting/): oranye #E55B03, arang #2B2B2B,
 // hitam huruf #0A0A0A, putih latar logo #FEFEFE. Jangan menambah warna di luar daftar ini.
 export const T = {
