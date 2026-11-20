@@ -101,6 +101,7 @@ Skrip rilis memeriksa durasi klip, merender frame kunci dan video, lalu menormal
 - Voiceover: `public/audio/vo-tiga-hal-sebelum-waris-dibagi.mp3` (ElevenLabs, suara Kang Nandar, MP3 dari Bos). Timing: `src/data/vo-timing-tiga-hal-sebelum-waris-dibagi.json` (ffmpeg silencedetect, 25 potongan ke 15 kalimat)
 - Kode: `src/TigaHalSebelumWaris.tsx`, adegan di `src/scenes/tiga-hal-sebelum-waris-dibagi/` (`Stage`, `Daftar`, `Penutup`, `Caption`, `Broll`, `Sfx`, `layout`), timeline di `src/data/timeline-tiga-hal-sebelum-waris-dibagi.ts`
 - B-roll: slot B1..B5 sudah disiapkan di `layout.ts` (`BROLL`, `src: null` = belum ada klip). Isi `src` dengan klip di `public/broll/` untuk menyisipkannya
+- Revisi 1 (20 Nov 2026): ilustrasi benda per konsep (`Ikon.tsx`: rumah, koin, kunci, kain + sekop, tagihan, amplop; tanpa wajah/figur) dan semua isi ditengahkan di x 540 (`CX` di `layout.ts`)
 - Frame kunci: `out/stills/tiga-hal-sebelum-waris-dibagi/` (`scripts/tiga-hal-sebelum-waris-dibagi-frames.ts`). Perintah: `npm run stills:tiga-hal-waris`, `npm run render:tiga-hal-waris`
 
 ## Skill, pemeriksa tabrakan, dan hook penjaga (Fase 1)

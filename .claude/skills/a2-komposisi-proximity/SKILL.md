@@ -21,3 +21,10 @@ Prinsip dari revisi penutup "Satu Pesanan": ruang kosong dibereskan dengan **men
 - Lihat frame akhir adegan di ukuran penuh: apakah ada "lubang" besar di atas atau bawah kelompok? Jika ya, kelompok belum ditengahkan atau terlalu kecil.
 - Jalankan `a2-anti-tabrakan` (pemeriksa tabrakan) lalu `a2-safe-area-sosmed`.
 - Untuk video bergaya Wakaf (TipsUmroh): kartu di y 1050–1480, strip progres di y 236, wajah pembicara y 460–860 bebas.
+
+
+## Pelajaran revisi (Tams, 20 Nov 2026)
+- **Tengah = tengah bingkai (x 540), bukan tengah area aman (x 480).** Menengahkan di x 480 terlihat condong ke kiri. Pusatkan di x 540 dan jaga isi tetap di x 180-900 (lebar 720, simetris), jadi tidak masuk kolom tombol kanan. Satu konstanta `CX = 540` di `layout.ts`, semua posisi dihitung darinya.
+- **Diagram abstrak butuh ilustrasi benda.** Kotak dan garis saja kurang jelas bagi penonton awam: beri tiap konsep satu benda sederhana (ubin terang bersudut-daun berisi gambar SVG rata). Contoh: `src/scenes/tiga-hal-sebelum-waris-dibagi/Ikon.tsx` (rumah, koin, kunci, kain + sekop, tagihan, amplop). Brand tanpa orang: tanpa wajah, figur, atau siluet; kain kafan digambar sebagai lipatan kain, bukan sosok terbungkus.
+- Ikon redup abu saat belum aktif, berwarna hanya saat gilirannya (tetap satu sorotan oranye per layar). Ikon di atas blok arang pakai aksen abu, bukan oranye.
+- Ukuran: ikon di panggung >= 128 px, label >= 22 px; gambar kecil (<100 px) terbaca seperti simbol UI, bukan ilustrasi.

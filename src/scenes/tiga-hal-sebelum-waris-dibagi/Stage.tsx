@@ -2,7 +2,8 @@ import React from 'react';
 import {interpolate} from 'remotion';
 import {clamp, ease} from '../../components/motion';
 import {leafRadius, T, TF} from '../../brands/tams-consulting/theme';
-import {BIG, BLOCK0, BLOCK_W, CARD, GATES, HEIR, LANE_X, P, PILL, SLICE} from './layout';
+import {Ikon, IkonNama} from './Ikon';
+import {BIG, BLOCK0, BLOCK_W, CARD, CX, GATES, HEIR, ICON, LANE_X, P, PILL, SLICE} from './layout';
 
 const L = (f: number, a: number, b: number, from: number, to: number) => interpolate(f, [a, b], [from, to], {...clamp, easing: ease});
 const rgb = (hex: string) => [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16));
@@ -19,7 +20,10 @@ const lit = (f: number, k: number) => {
   return L(f, P.peel[k] - 4, P.peel[k] + 6, 0, 1) * (1 - L(f, off, off + 8, 0, 1));
 };
 
-const GATE_NAMES = ['1 · PERAWATAN JENAZAH', '2 · UTANG', '3 · WASIAT'];
+const GATE_NAMES = ['1 · PERAWATAN\nJENAZAH', '2 · UTANG', '3 · WASIAT'];
+const GATE_IKON: IkonNama[] = ['kain', 'tagihan', 'amplop'];
+const DIM = '#848484';
+const DIM2 = '#B8B8B8';
 
 // Blok harta, tiga gerbang, potongan yang dilepas, dan kotak ahli waris. Bidang rata, tanpa orang.
 export const Stage: React.FC<{f: number}> = ({f}) => {
@@ -64,10 +68,14 @@ export const Stage: React.FC<{f: number}> = ({f}) => {
   const bars = GATES.map((g, k) => {
     const dr = L(f, P.gates[k], P.gates[k] + 12, 0, 1);
     const c = mix(INK3, T.orange, lit(f, k));
+    const l = lit(f, k);
     return (
       <React.Fragment key={k}>
-        <div style={{position: 'absolute', left: 100, top: g - 4, width: LANE_X - 110 - 100, height: 8, borderRadius: 4, background: c, transformOrigin: 'left center', transform: `scaleX(${dr})`}} />
-        <div style={{position: 'absolute', left: LANE_X + 110, top: g - 4, width: 500 - (LANE_X + 110), height: 8, borderRadius: 4, background: c, transformOrigin: 'right center', transform: `scaleX(${dr})`}} />
+        <div style={{position: 'absolute', left: ICON.x, top: g - ICON.size / 2, opacity: dr, transform: `scale(${0.8 + 0.2 * dr})`}}>
+          <Ikon nama={GATE_IKON[k]} size={ICON.size} m={mix(DIM, T.charcoal, l)} a={mix(DIM2, T.orange, l)} />
+        </div>
+        <div style={{position: 'absolute', left: ICON.x + ICON.size + 12, top: g - 4, width: LANE_X - 110 - (ICON.x + ICON.size + 12), height: 8, borderRadius: 4, background: c, transformOrigin: 'left center', transform: `scaleX(${dr})`}} />
+        <div style={{position: 'absolute', left: LANE_X + 110, top: g - 4, width: 900 - (LANE_X + 110), height: 8, borderRadius: 4, background: c, transformOrigin: 'right center', transform: `scaleX(${dr})`}} />
       </React.Fragment>
     );
   });
@@ -77,13 +85,15 @@ export const Stage: React.FC<{f: number}> = ({f}) => {
     if (p <= 0) return null;
     const x = LANE_X + BLOCK_W / 2 + (PILL.x - (LANE_X + BLOCK_W / 2)) * p;
     const lt = lit(f, k);
+    const top0 = g - SLICE / 2 - PILL.h / 2;
+    const top1 = g - 8 - PILL.h;
     return (
       <div
         key={k}
         style={{
           position: 'absolute',
           left: x,
-          top: g - 20 - PILL.h / 2,
+          top: top0 + (top1 - top0) * p,
           width: PILL.w,
           height: PILL.h,
           borderRadius: leafRadius(30),
@@ -92,11 +102,12 @@ export const Stage: React.FC<{f: number}> = ({f}) => {
           fontFamily: TF.head,
           fontWeight: 800,
           fontSize: 22,
+          lineHeight: 1.2,
           letterSpacing: 0.6,
           display: 'flex',
           alignItems: 'center',
-          paddingLeft: 24,
-          whiteSpace: 'nowrap',
+          paddingLeft: 22,
+          whiteSpace: 'pre',
           opacity: p,
           transformOrigin: 'left center',
           transform: `scale(${0.5 + 0.5 * p})`,
@@ -144,8 +155,13 @@ export const Stage: React.FC<{f: number}> = ({f}) => {
           transform: `scale(${0.94 + 0.06 * intro})`,
         }}
       >
-        <div style={{position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: wide * (1 - landP), fontFamily: TF.head, fontWeight: 800, fontSize: 44, letterSpacing: 5, color: T.onDark, whiteSpace: 'nowrap'}}>
-          HARTA ALMARHUM
+        <div style={{position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 14, opacity: wide * (1 - landP), fontFamily: TF.head, fontWeight: 800, fontSize: 44, letterSpacing: 5, color: T.onDark, whiteSpace: 'nowrap'}}>
+          <div style={{display: 'flex', gap: 18}}>
+            <Ikon nama="rumah" size={88} a={DIM} />
+            <Ikon nama="koin" size={88} a={DIM} />
+            <Ikon nama="kunci" size={88} a={DIM} />
+          </div>
+          <span>HARTA ALMARHUM</span>
         </div>
         <div style={{position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', opacity: narrow * (1 - landP), fontFamily: TF.head, fontWeight: 800, fontSize: 26, letterSpacing: 1.5, lineHeight: 1.25, color: T.onDark, whiteSpace: 'nowrap'}}>
           <span>HARTA</span>
@@ -163,6 +179,8 @@ export const Stage: React.FC<{f: number}> = ({f}) => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
+          paddingLeft: 90,
+          boxSizing: 'border-box',
           fontFamily: TF.head,
           fontWeight: 800,
           fontSize: 30,
@@ -172,6 +190,9 @@ export const Stage: React.FC<{f: number}> = ({f}) => {
         }}
       >
         AHLI WARIS
+      </div>
+      <div style={{position: 'absolute', left: HEIR.x + 22, top: HEIR.y + (HEIR.h - 76) / 2, opacity: heirP}}>
+        <Ikon nama="rumah" size={76} a={DIM} />
       </div>
       {pills}
       {/* kartu sumber */}
@@ -190,7 +211,7 @@ export const Stage: React.FC<{f: number}> = ({f}) => {
           justifyContent: 'center',
           fontFamily: TF.head,
           fontWeight: 700,
-          fontSize: 26,
+          fontSize: 24,
           letterSpacing: 2,
           color: T.ink,
           opacity: cardP,

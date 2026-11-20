@@ -2,17 +2,19 @@ import {ef, S, sf, wf} from '../../data/timeline-tiga-hal-sebelum-waris-dibagi';
 
 // Zona 9:16 (area aman x 60–900, y 220–1500), atas ke bawah:
 // panggung (blok, gerbang, kotak ahli waris) y 380–1160, teks bawah y 1240+.
-export const TEXT_BOX = {left: 120, width: 720, top: 1250};
+export const CX = 540; // tengah bingkai 1080 (revisi: semua isi ditengahkan di sini, bukan di tengah area aman)
+export const TEXT_BOX = {left: CX - 360, width: 720, top: 1250};
 
-export const LANE_X = 300; // pusat jalur blok
+export const LANE_X = CX; // pusat jalur blok
 export const BLOCK_W = 200;
-export const BIG = {cx: 480, w: 560}; // blok pembuka (lebar)
-export const GATES = [680, 820, 960]; // garis gerbang (y)
+export const BIG = {cx: CX, w: 600}; // blok pembuka (lebar)
+export const GATES = [650, 800, 950];
+export const ICON = {x: 180, size: 128}; // ilustrasi tiap gerbang di kiri jalur // garis gerbang (y)
 export const SLICE = 36; // tinggi potongan yang dilepas di tiap gerbang
-export const HEIR = {x: 100, y: 1040, w: 400, h: 110};
-export const BLOCK0 = {top: 400, bottom: 600}; // blok awal
-export const PILL = {x: 520, w: 380, h: 60};
-export const CARD = {x: 540, y: 1040, w: 360, h: 110};
+export const HEIR = {x: CX - 230, y: 1030, w: 460, h: 120};
+export const BLOCK0 = {top: 320, bottom: 530}; // blok awal
+export const PILL = {x: LANE_X + 110, w: 250, h: 72};
+export const CARD = {x: CX - 220, y: 1170, w: 440, h: 64};
 
 // Fase tiap adegan, semua dari timing suara.
 export const P = {

@@ -2,10 +2,12 @@ import React from 'react';
 import {interpolate} from 'remotion';
 import {clamp, ease} from '../../components/motion';
 import {leafRadius, T, TF} from '../../brands/tams-consulting/theme';
-import {P} from './layout';
+import {Ikon, IkonNama} from './Ikon';
+import {CX, P} from './layout';
 
 const ITEMS = ['1 · PERAWATAN JENAZAH', '2 · UTANG', '3 · WASIAT', '4 · WARIS'];
 const TOPS = [440, 580, 720, 860];
+const IKON: IkonNama[] = ['kain', 'tagihan', 'amplop', 'rumah'];
 
 // Empat label berurutan, tiga arang lalu satu oranye; tampil saat kata-katanya diucapkan.
 export const Daftar: React.FC<{f: number}> = ({f}) => {
@@ -19,13 +21,13 @@ export const Daftar: React.FC<{f: number}> = ({f}) => {
         const last = i === 3;
         return (
           <React.Fragment key={i}>
-            {i > 0 ? <div style={{position: 'absolute', left: 478, top: TOPS[i] - 44, width: 4, height: 44 * lineP, background: T.line2}} /> : null}
+            {i > 0 ? <div style={{position: 'absolute', left: CX - 2, top: TOPS[i] - 44, width: 4, height: 44 * lineP, background: T.line2}} /> : null}
             <div
               style={{
                 position: 'absolute',
-                left: 160,
+                left: CX - 330,
                 top: TOPS[i],
-                width: 640,
+                width: 660,
                 height: 96,
                 borderRadius: leafRadius(40),
                 background: last ? T.orange : T.charcoal,
@@ -37,11 +39,13 @@ export const Daftar: React.FC<{f: number}> = ({f}) => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
+                gap: 22,
                 opacity: p,
                 transform: `translateY(${(1 - p) * 22}px)`,
               }}
             >
-              {txt}
+              <Ikon nama={IKON[i]} size={76} a={last ? T.charcoal : '#848484'} />
+              <span>{txt}</span>
             </div>
           </React.Fragment>
         );
