@@ -1,0 +1,6 @@
+Vertical cover for a short video, 9:16, 1080x1920 px. Clean, bright, minimalist flat design with soft depth. Background light #F4F6FA, main color navy #13254A, darkest text #0B1630, white cards #FFFFFF with thin border #E3E7EF and radius 16 px, one soft shadow only. Accent gradient 135 degrees from #00A6F4 to #0A3FD6 used on one element only. Font: Geist (weights 400, 500, 600).
+Centered large title (Geist 600, navy #13254A, max 2 lines), placed fully inside the area x 90 to 990 and y 480 to 1440: "Otomatisasi Itu Seperti Resep"
+Illustration above the title: thin 2 px navy line-art of a small pot on a stove with soft steam rising; the steam curls into three small connected workflow nodes joined by arrows, as if the kitchen drawing is turning into a workflow diagram. One node uses the blue gradient, the other two are white cards with thin borders. No text on the nodes.
+Below the title: one blank white recipe card with three empty horizontal lines, slightly tilted, soft shadow.
+Calm, reassuring, helpful mood. Generous empty space, all key elements inside the safe area. No mascot, no characters.
+Do not include: emoji, purple or pink gradients, dark neon background, glassmorphism, 3D generic illustration, stock people, robots, third-party logos or brands, any redrawn A2 logo, numbers or claims, any text other than "Otomatisasi Itu Seperti Resep".

@@ -1,7 +1,7 @@
 # Serah-terima: otomatisasi-seperti-resep
 
 - Judul / brand / format / durasi: Otomatisasi Itu Seperti Resep / A2 Automation / Reels 9:16 / ±42,6 dtk (ikut panjang suara asli 40,91 dtk + logo ±1,7 dtk; target awal 35 dtk, suara Bos lebih lambat dari perkiraan)
-- Tahap terakhir selesai: BANGUN (20 Nov 2026), menunggu Bos menonton
+- Tahap terakhir selesai: RILIS (20 Nov 2026), video disetujui Bos; belum diposting
 - Keputusan Bos (jangan diubah): hook "Kalau bisa masak mi instan, kamu sudah paham otomatisasi."; ajakan halus konsultasi gratis a2automate.com; tanpa Gigi, mockup, kursor, angka, klaim; naskah dan suara dari MP3 Bos
 - File penting: `naskah-otomatisasi-seperti-resep.md`; `public/audio/vo-otomatisasi-seperti-resep.mp3`; `src/data/vo-timing-otomatisasi-seperti-resep.json`; `src/OtomatisasiResep.tsx`; `src/scenes/otomatisasi-seperti-resep/`; `src/data/timeline-otomatisasi-seperti-resep.ts`; klip di `public/broll/resep-b*.mp4`
 - Status render: selesai, `out/otomatisasi-seperti-resep-9x16.mp4` (1080x1920, 30 fps, 42,63 dtk, 1279 frame; 10,9 MB)
@@ -9,5 +9,5 @@
 - B-roll: B1 (panci) dipakai di hook dan "Air mendidih"; B3 (bahan) di "Mi, bumbu, dan air"; B2 (mi + bumbu) dua potongan di "Masukkan mi, tunggu, tuang bumbu". **B4 dan B5 belum dilampirkan**: adegan "bukan tanganmu" dan "pekerjaan apa" hanya ilustrasi garis (titik sisip belum ada di kode; bila klip datang, tambahkan `Broll` di `layout.ts` `BROLL` dan `Broll.tsx`)
 - Sudah diperiksa: tsc bersih; 31 frame kunci dilihat satu per satu (termasuk tengah transisi dan sambungan B-roll); pemeriksa tabrakan bersih (86 frame); ffprobe 42,63 dtk 1080x1920; volumedetect mean -26,7 dB, max -5,4 dB; tidak ada frame meloncat/kedip (kedip putih di sambungan B2 sempat ada, sudah diperbaiki lewat `solid`); regresi video lain identik kecuali frame derau lingkungan yang sudah tercatat
 - Belum diperiksa / risiko: (1) pemetaan kata per kata di dalam kalimat diperkirakan dari suku kata (tidak ada transkripsi ElevenLabs: konektor tak punya alat unggah); batas kalimat dan koma akurat dari jeda suara. (2) `cek-regresi` untuk JamSembilanMalam (16:9) gagal karena host `remotion.media` tak terjangkau di container; 9:16 dan lainnya dicek. (3) Frame lama `TigaSalahKaprah` (6 frame cap/balik) berbeda dari stills yang di-commit walau kode HEAD sendiri (terbukti: render tanpa perubahan saya tetap beda), jadi stills lama itu usang atau derau; tidak disentuh. (4) Tag audio suara tidak diperiksa ulang
-- Caption dan jam posting usulan: belum (tahap RILIS)
+- Caption, jam, prompt sampul: ada di `rilis/otomatisasi-seperti-resep/caption.txt` dan `prompt-sampul.txt` (isi sama dengan yang ditampilkan di chat). Jam usulan: Rabu 19.30 WIB (setelah jam kerja, tengah pekan). Metricool belum terhubung, jadi belum ada draf. Baris #8 di docs/daftar-konten.md = selesai.
 - Catatan untuk room berikutnya: baris #8 di `docs/daftar-konten.md` ditambahkan setelah Bos setuju. Klip B-roll yang menimpa klip lain harus `solid` (tanpa pudar masuk) agar tidak ada kedip kanvas di sambungan.
