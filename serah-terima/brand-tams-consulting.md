@@ -1,9 +1,9 @@
-# Serah-terima: brand-tams-concsulting
+# Serah-terima: brand-tams-consulting
 
 - Judul / brand / format / durasi target: Brand Kit Tams Consulting (tahap BRAND, bukan video)
 - Tahap terakhir selesai: brand (draf kit + frame contoh)
 - Keputusan Bos (disetujui, jangan diubah): warna hitam-oranye (dari isian), logo resmi (2 gambar, 20 Nov 2026). Kit belum disetujui.
-- File penting: `brands/tams-concsulting/BRAND.md`, `src/brands/tams-concsulting/theme.ts`, `src/brands/tams-concsulting/BrandSample.tsx` (komposisi `TamsBrandSample`), `public/brands/tams-concsulting/logo-*.png`, `public/fonts/montserrat-latin.woff2`, `out/brand-tams-concsulting-sample.png`
+- File penting: `brands/tams-consulting/BRAND.md`, `src/brands/tams-consulting/theme.ts`, `src/brands/tams-consulting/BrandSample.tsx` (komposisi `TamsBrandSample`), `public/brands/tams-consulting/logo-*.png`, `public/fonts/montserrat-latin.woff2`, `out/brand-tams-consulting-sample.png`
 - Status render: frame contoh ada (PNG 1080x1920, 20 Nov 2026)
 - Daftar revisi Bos (belum dikerjakan): -
 - Sudah diperiksa: tsc lolos, frame dilihat (tidak ada tabrakan, isi dalam area aman)

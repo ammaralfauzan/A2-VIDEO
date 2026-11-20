@@ -6,7 +6,7 @@ Satu folder per brand: `brands/<kode>/BRAND.md`. Kode huruf kecil: `a2`, `h2c`, 
 |---|---|---|
 | a2 | A2 Automation | aktif, maskot Gigi |
 | h2c | H2C (Umroh dan Wakaf) | aktif, tanpa maskot, gaya situs Wakaf |
-| tams-concsulting | Tams Consulting | DRAF, menunggu persetujuan Bos; tanpa maskot, hitam-oranye dari logo |
+| tams-consulting | Tams Consulting | DRAF, menunggu persetujuan Bos; tanpa maskot, hitam-oranye dari logo |
 
 ## Aturan
 - Brand di isian dicocokkan ke folder: "A2 Automation" → `a2`, "H2C" → `h2c`. Brand tanpa folder belum punya kit: jalankan tahap BRAND dulu.

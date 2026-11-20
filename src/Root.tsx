@@ -19,7 +19,7 @@ import {AlasanSayaBikinA2} from './AlasanSayaBikinA2';
 import {TOTAL_FRAMES as ASB_TOTAL_FRAMES} from './data/timeline-alasan-saya-bikin-a2';
 import {TigaSalahKaprah} from './TigaSalahKaprah';
 import {TOTAL_FRAMES as TSK_TOTAL_FRAMES} from './data/timeline-tiga-salah-kaprah-otomatisasi';
-import {BrandSample as TamsBrandSample} from './brands/tams-concsulting/BrandSample';
+import {BrandSample as TamsBrandSample} from './brands/tams-consulting/BrandSample';
 
 // Dibungkus probe pemeriksa tabrakan (aktif hanya lewat scripts/check-collisions.mjs).
 const PMain = withProbe(Main);

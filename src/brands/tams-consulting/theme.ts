@@ -1,5 +1,5 @@
-// Token visual Tams Consulting (kode: tams-concsulting). STATUS: DRAF, belum disetujui Bos.
-// Warna diambil langsung dari logo Bos (public/brands/tams-concsulting/): oranye #E55B03, arang #2B2B2B,
+// Token visual Tams Consulting (kode: tams-consulting). STATUS: DRAF, belum disetujui Bos.
+// Warna diambil langsung dari logo Bos (public/brands/tams-consulting/): oranye #E55B03, arang #2B2B2B,
 // hitam huruf #0A0A0A, putih latar logo #FEFEFE. Jangan menambah warna di luar daftar ini.
 export const T = {
   bg: '#FEFEFE', // latar utama = putih latar logo (logo lengkap tampil tanpa kotak)

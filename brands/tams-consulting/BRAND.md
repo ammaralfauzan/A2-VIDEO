@@ -1,6 +1,6 @@
 # Brand Kit: Tams Consulting
 
-Kode: `tams-concsulting` (kode mengikuti isian Bos; nama resmi di logo: TAMS CONSULTING) · Disetujui Bos: belum (DRAF)
+Kode: `tams-consulting` (kode mengikuti isian Bos; nama resmi di logo: TAMS CONSULTING) · Disetujui Bos: belum (DRAF)
 
 ## Identitas
 - Nama resmi: TAMS CONSULTING (dari logo). Bidang: konsultan (jenis layanan belum ditentukan). Penonton: belum ditentukan.
@@ -36,7 +36,7 @@ Latar terang (usulan, menunggu Bos). Tanpa gradasi: warna logo rata, jadi video 
 - Tidak ada (belum ditentukan Bos). Jangan meminjam maskot brand lain.
 
 ## Logo
-- Berkas: `public/brands/tams-concsulting/logo-lengkap.png` (ikon + tulisan, latar putih) dan `logo-ikon.png` (ikon saja, latar transparan).
+- Berkas: `public/brands/tams-consulting/logo-lengkap.png` (ikon + tulisan, latar putih) dan `logo-ikon.png` (ikon saja, latar transparan).
 - Logo lengkap hanya di atas latar putih #FEFEFE. Di latar gelap pakai ikon saja, tetapi lingkaran arang kurang terbaca di latar hitam: beri jarak atau latar terang.
 - Tidak digambar ulang, diputar, diregangkan, atau diwarnai ulang. Area kosong minimal setinggi huruf T di ikon.
 
@@ -49,7 +49,7 @@ Latar terang (usulan, menunggu Bos). Tanpa gradasi: warna logo rata, jadi video 
 
 ## Sumber dan contoh
 - Bahan Bos: logo (2 gambar, 20 Nov 2026), "hitam-oren". Situs atau akun brand: tidak ditemukan saat dicari.
-- Token di kode: `src/brands/tams-concsulting/theme.ts`. Frame contoh: komposisi `TamsBrandSample`, `out/brand-tams-concsulting-sample.png`.
+- Token di kode: `src/brands/tams-consulting/theme.ts`. Frame contoh: komposisi `TamsBrandSample`, `out/brand-tams-consulting-sample.png`.
 
 ## Belum ditentukan
 - Ejaan kode (isian: "concsulting", logo: "CONSULTING").
