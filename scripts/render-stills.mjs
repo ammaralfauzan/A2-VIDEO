@@ -99,6 +99,14 @@ SETS.TigaSalahKaprah = {
   },
 };
 
+// Frame kunci "Otomatisasi Itu Seperti Resep" dihitung dari timing suara (termasuk tengah transisi dan B-roll).
+SETS.OtomatisasiSepertiResep = {
+  dir: 'out/stills/otomatisasi-seperti-resep',
+  get stills() {
+    return JSON.parse(execSync('npx tsx scripts/otomatisasi-seperti-resep-frames.ts', {encoding: 'utf8'}));
+  },
+};
+
 const [id = 'JamSembilanMalam', ...only] = process.argv.slice(2);
 const set = SETS[id];
 if (!set) throw new Error(`Komposisi tidak dikenal: ${id}`);

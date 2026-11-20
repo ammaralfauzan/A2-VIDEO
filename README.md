@@ -86,6 +86,15 @@ Skrip rilis memeriksa durasi klip, merender frame kunci dan video, lalu menormal
 - Kode: `src/TigaSalahKaprah.tsx`, adegan di `src/scenes/tiga-salah-kaprah-otomatisasi/` (`Kartu`, `GigiMelayang`, `Judul`, `Penutup`, `Sfx`, `layout`), timeline di `src/data/timeline-tiga-salah-kaprah-otomatisasi.ts`
 - Frame kunci: `out/stills/tiga-salah-kaprah-otomatisasi/` (dihitung dari timing suara, `scripts/tiga-salah-kaprah-otomatisasi-frames.ts`). Perintah: `npm run stills:tiga-salah-kaprah`, `npm run render:tiga-salah-kaprah`
 
+
+## Video: "Otomatisasi Itu Seperti Resep" (komposisi `OtomatisasiSepertiResep`, 9:16)
+- Naskah: `naskah-otomatisasi-seperti-resep.md`. Ilustrasi garis dapur (panci, kartu resep, bahan, langkah) yang bermorf jadi simpul alur PEMICU, BAHAN, LANGKAH; sisipan B-roll klip Bos (B1, B2, B3); penutup logo A2 + ajakan dua tingkat. Tanpa Gigi, mockup, kursor
+- Hasil: `out/otomatisasi-seperti-resep-9x16.mp4` (1080×1920, 30 fps, ±42,6 detik: suara 40,91 dtk + logo diam ±1,7 dtk)
+- Voiceover: `public/audio/vo-otomatisasi-seperti-resep.mp3` (Jefri, MP3 dari Bos, tidak dipercepat). Timing di `src/data/vo-timing-otomatisasi-seperti-resep.json` (ffmpeg silencedetect, 21 potongan ucapan dipetakan ke 16 kalimat)
+- B-roll: `public/broll/resep-b1-panci.mp4`, `resep-b2-mi-bumbu.mp4`, `resep-b3.mp4` (suara klip dibuang). B4 dan B5 belum ada, adegan itu memakai ilustrasi saja. Titik sisip di `src/scenes/otomatisasi-seperti-resep/layout.ts` (`BROLL`)
+- Kode: `src/OtomatisasiResep.tsx`, adegan di `src/scenes/otomatisasi-seperti-resep/` (`Dapur`, `Alur`, `Broll`, `art`, `Judul`, `Penutup`, `Sfx`, `layout`), timeline di `src/data/timeline-otomatisasi-seperti-resep.ts`
+- Frame kunci: `out/stills/otomatisasi-seperti-resep/` (`scripts/otomatisasi-seperti-resep-frames.ts`). Perintah: `npm run stills:otomatisasi-resep`, `npm run render:otomatisasi-resep`
+
 ## Skill, pemeriksa tabrakan, dan hook penjaga (Fase 1)
 
 - Skill di `.claude/skills/`: `a2-motion-video` (alur umum), `a2-anti-tabrakan`, `a2-komposisi-proximity`, `a2-safe-area-sosmed`, `a2-maskot-gigi`

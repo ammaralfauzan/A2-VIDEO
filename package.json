@@ -23,6 +23,8 @@
     "render:alasan": "remotion render AlasanSayaBikinA2 out/alasan-saya-bikin-a2-9x16.mp4 --concurrency=4",
     "stills:tiga-salah-kaprah": "node scripts/render-stills.mjs TigaSalahKaprah",
     "render:tiga-salah-kaprah": "remotion render TigaSalahKaprah out/tiga-salah-kaprah-otomatisasi-9x16.mp4 --concurrency=4",
+    "stills:otomatisasi-resep": "node scripts/render-stills.mjs OtomatisasiSepertiResep",
+    "render:otomatisasi-resep": "remotion render OtomatisasiSepertiResep out/otomatisasi-seperti-resep-9x16.mp4 --concurrency=4",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
