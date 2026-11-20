@@ -40,7 +40,6 @@ export const Daftar: React.FC<{f: number}> = ({f}) => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                gap: 22,
                 opacity: p,
                 transform: `translateY(${(1 - p) * 22}px)`,
               }}

@@ -135,8 +135,6 @@ export const Stage: React.FC<{f: number}> = ({f}) => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          paddingLeft: 90,
-          boxSizing: 'border-box',
           fontFamily: TF.head,
           fontWeight: 800,
           fontSize: 28,
