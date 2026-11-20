@@ -1,11 +1,11 @@
 # Brand Kit: Tams Consulting
 
-Kode: `tams-consulting` (kode mengikuti isian Bos; nama resmi di logo: TAMS CONSULTING) · Disetujui Bos: belum (DRAF)
+Kode: `tams-consulting` · Disetujui Bos: belum (DRAF, jawaban 5 pertanyaan masuk 20 Nov 2026)
 
 ## Identitas
-- Nama resmi: TAMS CONSULTING (dari logo). Bidang: konsultan (jenis layanan belum ditentukan). Penonton: belum ditentukan.
-- Nada bicara (3 kata): belum ditentukan.
-- Nuansa visual (3 kata): tegas, bersih, profesional (usulan dari logo; menunggu Bos).
+- Nama resmi: TAMS CONSULTING. Bidang: konsultasi dan hitung waris (keterangan di posting Bos: "Konsultasi & Hitung Waris"). Penonton: keluarga dan pewaris yang perlu menyelesaikan pembagian waris.
+- Nada bicara (3 kata): tegas, meyakinkan, menenangkan (jawaban Bos: tegas dan meyakinkan).
+- Nuansa visual (3 kata): bersih, terang, profesional (dari posting Bos).
 
 ## Warna (token, hex)
 Diambil langsung dari piksel logo Bos.
@@ -20,7 +20,7 @@ Diambil langsung dari piksel logo Bos.
 | onDark | #FEFEFE | teks di atas arang atau oranye |
 | line | rgba(10,10,10,.10) | garis halus |
 
-Latar terang (usulan, menunggu Bos). Tanpa gradasi: warna logo rata, jadi video juga rata. Oranye hanya untuk satu sorotan atau tombol per layar.
+Latar terang (keputusan Bos). Tanpa gradasi: warna logo rata, jadi video juga rata. Oranye hanya untuk satu sorotan atau tombol per layar.
 
 ## Huruf
 - Judul / UI / teks: Montserrat (geometris, paling dekat dengan huruf logo; huruf asli logo belum diketahui). Satu keluarga huruf.
@@ -29,7 +29,9 @@ Latar terang (usulan, menunggu Bos). Tanpa gradasi: warna logo rata, jadi video 
 ## Bentuk dan nuansa
 - Bentuk khas "sudut daun": satu sudut kiri atas membulat besar (56 px untuk kartu, 32 px tombol), sudut lain hampir siku (4 px). Diambil dari bidang oranye logo.
 - Kartu: panel arang rata untuk judul, kartu abu terang dengan garis tipis untuk ilustrasi. Tanpa bayangan berat, tanpa blur.
-- Ikon dan ilustrasi: bidang rata arang dan oranye, sorotan memakai sudut daun.
+- Susunan dari posting Bos: logo di atas tengah, judul di tengah (baris pembuka hitam, kata kunci oranye), teks isi abu tengah, garis oranye pendek di bawah judul ajakan, dekor lingkaran atau seperempat lingkaran pudar di sudut. Di video, "tengah" berarti tengah area aman (x 480).
+- Foto: foto asli suasana konsultasi keluarga, sudut membulat. Wajah klien disamarkan bila perlu (seperti di posting Bos).
+- Ilustrasi: bidang rata arang dan oranye (mis. bagan pewaris ke ahli waris), sorotan memakai sudut daun.
 - Gerak: belum ditentukan.
 
 ## Maskot
@@ -42,17 +44,14 @@ Latar terang (usulan, menunggu Bos). Tanpa gradasi: warna logo rata, jadi video 
 
 ## Suara dan ajakan
 - Pengisi suara, model, nada: belum ditentukan.
-- Kalimat ajakan dan URL: belum ditentukan.
+- Kalimat ajakan dan URL: belum ada (jawaban Bos). Posting lama memakai "Jadwalkan Konsultasi" lewat WhatsApp; jangan dipakai di video sebelum Bos menentukan.
 
 ## Larangan khas brand
-- Tanpa warna di luar token (tanpa biru navy A2, tanpa hijau dan emas H2C). Tanpa gradasi pada logo atau tombol. Tanpa emoji, merek pihak ketiga, backdrop-filter. Angka contoh berlabel "contoh". Tanpa klaim hasil atau jaminan yang tidak diberikan Bos.
+- Tanpa warna di luar token (tanpa biru navy A2, tanpa hijau dan emas H2C). Tanpa gradasi pada logo atau tombol. Tanpa emoji, merek pihak ketiga, backdrop-filter. Angka contoh berlabel "contoh". Tanpa klaim hasil atau jaminan yang tidak diberikan Bos. Tanpa hitungan bagian waris nyata kecuali dari Bos; angka bagian selalu berlabel "contoh". Tanpa nomor telepon di video sebelum Bos menentukan ajakan.
 
 ## Sumber dan contoh
-- Bahan Bos: logo (2 gambar, 20 Nov 2026), "hitam-oren". Situs atau akun brand: tidak ditemukan saat dicari.
+- Bahan Bos: logo (2 gambar) dan contoh posting "Konsultasi Waris" (20 Nov 2026), "hitam-oren". Situs: tidak ditemukan saat dicari.
 - Token di kode: `src/brands/tams-consulting/theme.ts`. Frame contoh: komposisi `TamsBrandSample`, `out/brand-tams-consulting-sample.png`.
 
 ## Belum ditentukan
-- Ejaan kode (isian: "concsulting", logo: "CONSULTING").
-- Bidang layanan dan penonton, nada bicara.
-- Mode terang atau gelap (draf: terang).
-- Gaya gerak, suara narasi, ajakan dan URL.
+- Gaya gerak, suara narasi, ajakan dan URL, maskot.
