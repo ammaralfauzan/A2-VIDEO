@@ -23,6 +23,8 @@ import {OtomatisasiResep} from './OtomatisasiResep';
 import {TOTAL_FRAMES as OSR_TOTAL_FRAMES} from './data/timeline-otomatisasi-seperti-resep';
 import {TigaHalSebelumWaris} from './TigaHalSebelumWaris';
 import {TOTAL_FRAMES as TH_TOTAL_FRAMES} from './data/timeline-tiga-hal-sebelum-waris-dibagi';
+import {ManualTemplateOtomatis} from './ManualTemplateOtomatis';
+import {TOTAL_FRAMES as MTO_TOTAL_FRAMES} from './data/timeline-manual-template-otomatis';
 import {BrandSample as TamsBrandSample} from './brands/tams-consulting/BrandSample';
 
 // Dibungkus probe pemeriksa tabrakan (aktif hanya lewat scripts/check-collisions.mjs).
@@ -37,6 +39,7 @@ const PAlasanSayaBikinA2 = withProbe(AlasanSayaBikinA2);
 const PTigaSalahKaprah = withProbe(TigaSalahKaprah);
 const POtomatisasiResep = withProbe(OtomatisasiResep);
 const PTigaHal = withProbe(TigaHalSebelumWaris);
+const PManualTemplateOtomatis = withProbe(ManualTemplateOtomatis);
 
 for (const weight of ['400', '500', '600']) {
   loadFont({family: 'Geist', url: staticFile(`fonts/geist-sans-latin-${weight}-normal.woff2`), weight});
@@ -90,5 +93,7 @@ export const Root: React.FC = () => (
     <Composition id="OtomatisasiSepertiResep" component={POtomatisasiResep} durationInFrames={OSR_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} defaultProps={{safeGuide: false}} />
     {/* "Tiga Hal Sebelum Waris Dibagi" (Tams Consulting): blok harta melewati tiga gerbang, 9:16, tanpa ajakan. */}
     <Composition id="TigaHalSebelumWaris" component={PTigaHal} durationInFrames={TH_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} defaultProps={{safeGuide: false}} />
+    {/* "Manual, Template, atau Otomatis?": tangga tiga tingkat + contoh tugas marketing digital, Gigi naik, 9:16. */}
+    <Composition id="ManualTemplateOtomatis" component={PManualTemplateOtomatis} durationInFrames={MTO_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} defaultProps={{safeGuide: false}} />
   </>
 );

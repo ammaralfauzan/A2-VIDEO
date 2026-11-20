@@ -105,6 +105,14 @@ Skrip rilis memeriksa durasi klip, merender frame kunci dan video, lalu menormal
 - Revisi 1 (20 Nov 2026): ilustrasi benda per konsep (`Ikon.tsx`: rumah, koin, kunci, kain + sekop, tagihan, amplop; tanpa wajah/figur) dan semua isi ditengahkan di x 540 (`CX` di `layout.ts`)
 - Frame kunci: `out/stills/tiga-hal-sebelum-waris-dibagi/` (`scripts/tiga-hal-sebelum-waris-dibagi-frames.ts`). Perintah: `npm run stills:tiga-hal-waris`, `npm run render:tiga-hal-waris`
 
+## Video: "Manual, Template, atau Otomatis?" (komposisi `ManualTemplateOtomatis`, 9:16)
+- Naskah: `naskah-manual-template-otomatis.md`. Edukasi teknis ringan marketing digital: tangga tiga tingkat (manual, template, otomatis), tiap tingkat memuat kartu contoh tugas berlabel "contoh"; tingkat 3 = rantai PEMICU, ATURAN, TINDAKAN dengan kartu "Formulir masuk" yang mengalir lalu "Laporan mingguan" terkumpul; Gigi melayang naik anak tangga; ajakan komentar; penutup logo A2 + ajakan follow `@a2automation.official` (tanpa konsultasi, perintah Bos)
+- Hasil: `out/manual-template-otomatis-9x16.mp4` (1080x1920, 30 fps, 61,5 detik: suara 60,03 dtk + logo diam ±1,5 dtk)
+- Voiceover: `public/audio/vo-manual-template-otomatis.mp3` (ElevenLabs, Jefri - Soft Explanatory Voice, MP3 dari Bos, tidak dipercepat). Timing: `src/data/vo-timing-manual-template-otomatis.json` (ffmpeg silencedetect, 22 kalimat; pemetaan dicek dari durasi dan suku kata, belum didengar)
+- B-roll: klip B1 sampai B5 belum dilampirkan, jadi belum ada. Titik sisip terencana di `src/scenes/manual-template-otomatis/layout.ts` (`BROLL_PLAN`); isi `BROLL_CLIPS` dengan `{src: 'broll/...mp4', from, to, shift?}` (pola `src/tips-umroh/Broll.tsx`) lalu render ulang
+- Kode: `src/ManualTemplateOtomatis.tsx`, adegan di `src/scenes/manual-template-otomatis/` (`Tangga`, `GigiNaik`, `Judul`, `Penutup`, `Sfx`, `layout`), timeline di `src/data/timeline-manual-template-otomatis.ts`
+- Frame kunci: `out/stills/manual-template-otomatis/` (`scripts/manual-template-otomatis-frames.ts`). Perintah: `npm run stills:manual-template-otomatis`, `npm run render:manual-template-otomatis`
+
 ## Skill, pemeriksa tabrakan, dan hook penjaga (Fase 1)
 
 - Skill di `.claude/skills/`: `a2-motion-video` (alur umum), `a2-anti-tabrakan`, `a2-komposisi-proximity`, `a2-safe-area-sosmed`, `a2-maskot-gigi`

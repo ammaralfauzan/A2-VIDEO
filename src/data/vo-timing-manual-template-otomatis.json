@@ -1,0 +1,332 @@
+{
+ "audio": "public/audio/vo-manual-template-otomatis.mp3",
+ "durasi": 60.03,
+ "suara": "Jefri - Soft Explanatory Voice (ElevenLabs, MP3 dari Bos 20 Nov 2026, nama file menyebut v4, s50 sim75), tidak dipercepat",
+ "metode": "Timing dari ffmpeg silencedetect (-35 dB/0,25 dtk untuk jeda kalimat; -30 dB/0,12 dtk untuk jeda koma). Konektor ElevenLabs tidak punya alat unggah berkas lokal, jadi creative_transcribe_audio tidak dipakai. 'segmen' = potongan ucapan di antara jeda beserta jumlah kata layar di dalamnya; waktu per kata dalam segmen diperkirakan dari jumlah suku kata. Pemetaan potongan ke kalimat naskah dicek dari durasi dan jumlah suku kata, belum didengar manusia.",
+ "kalimat": [
+  {
+   "mulai": 0.08,
+   "selesai": 3.0,
+   "teks": "Cara kerja marketing digitalmu ada di tingkat berapa?",
+   "segmen": [
+    {
+     "mulai": 0.08,
+     "selesai": 3.0,
+     "kata": 8
+    }
+   ]
+  },
+  {
+   "mulai": 3.38,
+   "selesai": 7.09,
+   "teks": "Ada tiga tingkat: manual, template, dan otomatis.",
+   "segmen": [
+    {
+     "mulai": 3.38,
+     "selesai": 4.17,
+     "kata": 3
+    },
+    {
+     "mulai": 4.62,
+     "selesai": 5.21,
+     "kata": 1
+    },
+    {
+     "mulai": 5.53,
+     "selesai": 7.09,
+     "kata": 3
+    }
+   ]
+  },
+  {
+   "mulai": 7.57,
+   "selesai": 8.91,
+   "teks": "Tingkat satu, manual.",
+   "segmen": [
+    {
+     "mulai": 7.57,
+     "selesai": 8.24,
+     "kata": 2
+    },
+    {
+     "mulai": 8.41,
+     "selesai": 8.91,
+     "kata": 1
+    }
+   ]
+  },
+  {
+   "mulai": 9.33,
+   "selesai": 12.07,
+   "teks": "Posting diunggah satu per satu di tiap platform.",
+   "segmen": [
+    {
+     "mulai": 9.33,
+     "selesai": 12.07,
+     "kata": 8
+    }
+   ]
+  },
+  {
+   "mulai": 12.37,
+   "selesai": 14.39,
+   "teks": "Pesan masuk dibalas satu per satu.",
+   "segmen": [
+    {
+     "mulai": 12.37,
+     "selesai": 14.39,
+     "kata": 6
+    }
+   ]
+  },
+  {
+   "mulai": 14.68,
+   "selesai": 17.84,
+   "teks": "Datanya disalin ke lembar kerja, lalu dihitung sendiri.",
+   "segmen": [
+    {
+     "mulai": 14.68,
+     "selesai": 17.84,
+     "kata": 8
+    }
+   ]
+  },
+  {
+   "mulai": 18.28,
+   "selesai": 19.78,
+   "teks": "Tingkat dua, template.",
+   "segmen": [
+    {
+     "mulai": 18.28,
+     "selesai": 18.99,
+     "kata": 2
+    },
+    {
+     "mulai": 19.25,
+     "selesai": 19.78,
+     "kata": 1
+    }
+   ]
+  },
+  {
+   "mulai": 20.12,
+   "selesai": 23.76,
+   "teks": "Kalender konten, kerangka caption, dan balasan siap pakai.",
+   "segmen": [
+    {
+     "mulai": 20.12,
+     "selesai": 21.13,
+     "kata": 2
+    },
+    {
+     "mulai": 21.31,
+     "selesai": 23.76,
+     "kata": 6
+    }
+   ]
+  },
+  {
+   "mulai": 24.1,
+   "selesai": 26.66,
+   "teks": "Mengetik lebih singkat, gaya lebih konsisten.",
+   "segmen": [
+    {
+     "mulai": 24.1,
+     "selesai": 25.1,
+     "kata": 3
+    },
+    {
+     "mulai": 25.34,
+     "selesai": 26.66,
+     "kata": 3
+    }
+   ]
+  },
+  {
+   "mulai": 26.99,
+   "selesai": 30.61,
+   "teks": "Tapi kamu masih harus membuka dan menekan kirim sendiri.",
+   "segmen": [
+    {
+     "mulai": 26.99,
+     "selesai": 30.61,
+     "kata": 9
+    }
+   ]
+  },
+  {
+   "mulai": 31.0,
+   "selesai": 32.68,
+   "teks": "Tingkat tiga, otomatis.",
+   "segmen": [
+    {
+     "mulai": 31.0,
+     "selesai": 31.72,
+     "kata": 2
+    },
+    {
+     "mulai": 31.98,
+     "selesai": 32.68,
+     "kata": 1
+    }
+   ]
+  },
+  {
+   "mulai": 32.96,
+   "selesai": 36.49,
+   "teks": "Cukup tiga bagian: pemicu, aturan, dan tindakan.",
+   "segmen": [
+    {
+     "mulai": 32.96,
+     "selesai": 34.0,
+     "kata": 3
+    },
+    {
+     "mulai": 34.28,
+     "selesai": 34.85,
+     "kata": 1
+    },
+    {
+     "mulai": 35.12,
+     "selesai": 36.49,
+     "kata": 3
+    }
+   ]
+  },
+  {
+   "mulai": 36.81,
+   "selesai": 39.67,
+   "teks": "Contohnya, calon pelanggan mengisi formulir iklan,",
+   "segmen": [
+    {
+     "mulai": 36.81,
+     "selesai": 37.41,
+     "kata": 1
+    },
+    {
+     "mulai": 37.65,
+     "selesai": 39.67,
+     "kata": 5
+    }
+   ]
+  },
+  {
+   "mulai": 39.89,
+   "selesai": 41.14,
+   "teks": "datanya langsung tercatat,",
+   "segmen": [
+    {
+     "mulai": 39.89,
+     "selesai": 41.14,
+     "kata": 3
+    }
+   ]
+  },
+  {
+   "mulai": 41.4,
+   "selesai": 42.88,
+   "teks": "balasan pertama terkirim.",
+   "segmen": [
+    {
+     "mulai": 41.4,
+     "selesai": 42.88,
+     "kata": 3
+    }
+   ]
+  },
+  {
+   "mulai": 43.18,
+   "selesai": 45.04,
+   "teks": "Laporan mingguan terkumpul sendiri.",
+   "segmen": [
+    {
+     "mulai": 43.18,
+     "selesai": 45.04,
+     "kata": 4
+    }
+   ]
+  },
+  {
+   "mulai": 45.41,
+   "selesai": 47.2,
+   "teks": "Tidak perlu langsung ke tingkat tiga.",
+   "segmen": [
+    {
+     "mulai": 45.41,
+     "selesai": 47.2,
+     "kata": 6
+    }
+   ]
+  },
+  {
+   "mulai": 47.55,
+   "selesai": 51.43,
+   "teks": "Pilih satu tugas yang paling sering berulang, lalu naik satu tingkat.",
+   "segmen": [
+    {
+     "mulai": 47.55,
+     "selesai": 49.82,
+     "kata": 7
+    },
+    {
+     "mulai": 50.06,
+     "selesai": 51.43,
+     "kata": 4
+    }
+   ]
+  },
+  {
+   "mulai": 51.88,
+   "selesai": 54.07,
+   "teks": "Tugasmu yang mana, dan di tingkat berapa?",
+   "segmen": [
+    {
+     "mulai": 51.88,
+     "selesai": 52.74,
+     "kata": 3
+    },
+    {
+     "mulai": 52.97,
+     "selesai": 54.07,
+     "kata": 4
+    }
+   ]
+  },
+  {
+   "mulai": 54.43,
+   "selesai": 55.2,
+   "teks": "Tulis di komentar.",
+   "segmen": [
+    {
+     "mulai": 54.43,
+     "selesai": 55.2,
+     "kata": 3
+    }
+   ]
+  },
+  {
+   "mulai": 55.52,
+   "selesai": 56.89,
+   "teks": "Suka dengan konten seperti ini?",
+   "segmen": [
+    {
+     "mulai": 55.52,
+     "selesai": 56.89,
+     "kata": 5
+    }
+   ]
+  },
+  {
+   "mulai": 57.2,
+   "selesai": 59.75,
+   "teks": "Follow A Dua Automation titik official.",
+   "segmen": [
+    {
+     "mulai": 57.2,
+     "selesai": 59.75,
+     "kata": 5
+    }
+   ]
+  }
+ ]
+}

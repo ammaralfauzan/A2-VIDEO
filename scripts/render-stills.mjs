@@ -115,6 +115,14 @@ SETS.TigaHalSebelumWaris = {
   },
 };
 
+// Frame kunci "Manual, Template, atau Otomatis?" dihitung dari timing suara (termasuk tengah transisi).
+SETS.ManualTemplateOtomatis = {
+  dir: 'out/stills/manual-template-otomatis',
+  get stills() {
+    return JSON.parse(execSync('npx tsx scripts/manual-template-otomatis-frames.ts', {encoding: 'utf8'}));
+  },
+};
+
 const [id = 'JamSembilanMalam', ...only] = process.argv.slice(2);
 const set = SETS[id];
 if (!set) throw new Error(`Komposisi tidak dikenal: ${id}`);

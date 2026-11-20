@@ -24,6 +24,8 @@
     "stills:tiga-salah-kaprah": "node scripts/render-stills.mjs TigaSalahKaprah",
     "render:tiga-salah-kaprah": "remotion render TigaSalahKaprah out/tiga-salah-kaprah-otomatisasi-9x16.mp4 --concurrency=4",
     "stills:otomatisasi-resep": "node scripts/render-stills.mjs OtomatisasiSepertiResep",
+    "stills:manual-template-otomatis": "node scripts/render-stills.mjs ManualTemplateOtomatis",
+    "render:manual-template-otomatis": "remotion render ManualTemplateOtomatis out/manual-template-otomatis-9x16.mp4 --concurrency=4",
     "stills:tiga-hal-waris": "node scripts/render-stills.mjs TigaHalSebelumWaris",
     "render:tiga-hal-waris": "remotion render TigaHalSebelumWaris out/tiga-hal-sebelum-waris-dibagi-9x16.mp4 --concurrency=4",
     "render:otomatisasi-resep": "remotion render OtomatisasiSepertiResep out/otomatisasi-seperti-resep-9x16.mp4 --concurrency=4",

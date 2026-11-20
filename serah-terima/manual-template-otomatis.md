@@ -1,12 +1,13 @@
 # Serah-terima: manual-template-otomatis
 
-- Judul / brand / format / durasi target: Manual, Template, atau Otomatis? / A2 Automation / Reels 9:16 / ±60 dtk (revisi Bos 20 Nov 2026: lebih panjang dan teknis, marketing digital)
-- Tahap terakhir selesai: KONSEP revisi 1 (20 Nov 2026), menunggu persetujuan Bos
-- Keputusan Bos (disetujui, jangan diubah): belum ada. Usulan: konsep tangga tiga tingkat, suara Jefri Eleven v3, ajakan penutup: "Suka dengan konten seperti ini? Follow @a2automation.official" (perintah Bos; TANPA kalimat konsultasi gratis a2automate.com), tanpa musik
-- File penting: `naskah-manual-template-otomatis.md`, nanti `public/audio/vo-manual-template-otomatis.mp3` dan klip B1 sampai B5
-- Status render: belum
+- Judul / brand / format / durasi: Manual, Template, atau Otomatis? / A2 Automation / Reels 9:16 / 61,5 dtk (suara 60,03 dtk + logo ±1,5 dtk)
+- Tahap terakhir selesai: BANGUN (20 Nov 2026), MP4 sudah dirender, menunggu Bos menonton
+- Keputusan Bos (disetujui, jangan diubah): konsep tangga tiga tingkat, naskah, suara Jefri Eleven v3 (MP3 dari Bos), ajakan penutup "Suka dengan konten seperti ini? Follow @a2automation.official" (TANPA konsultasi gratis), tanpa musik
+- File penting: `out/manual-template-otomatis-9x16.mp4`, `public/audio/vo-manual-template-otomatis.mp3`, `src/ManualTemplateOtomatis.tsx`, `src/scenes/manual-template-otomatis/`, `src/data/timeline-manual-template-otomatis.ts`, `src/data/vo-timing-manual-template-otomatis.json`, `out/stills/manual-template-otomatis/`
+- Status render: selesai (tsc bersih, pemeriksa tabrakan bersih 124 frame, tanpa frame meloncat, ffprobe 1080x1920 30 fps 61,53 dtk, audio rata-rata -26,2 dB maks -6,5 dB, setara video lain)
+- B-roll: B1 sampai B5 BELUM dilampirkan, dibangun tanpa klip. Slot sudah disiapkan (`BROLL_PLAN`, `BROLL_CLIPS` di `layout.ts`); revisi cukup mengisi klip lalu render ulang
 - Daftar revisi Bos (belum dikerjakan): -
-- Sudah diperiksa: anti-kembar ke `docs/daftar-konten.md` (tidak ada yang kembar); 130 kata ≈ 56,5 dtk + logo ≈ 59 dtk (selisih ±2% dari 60); tag audio dari panduan eleven_v3
-- Belum diperiksa / risiko: format/durasi ISIAN kosong (memakai antrean); Gigi usulan tambahan; baris di `docs/daftar-konten.md` ditambah setelah Bos setuju
+- Sudah diperiksa: tiap adegan dilihat di frame kunci (34 frame, termasuk tengah transisi); `cek-regresi` video lain identik kecuali 9 frame derau lingkungan (2 frame yang sudah dikenal + 7 frame kartu dibalik Tiga Salah Kaprah; terbukti derau: render ulang tanpa perubahan saya menghasilkan berkas yang sama), file stills lama dikembalikan, tidak ikut commit
+- Belum diperiksa / risiko: timing suara dari jeda (ffmpeg), pemetaan potongan ke kalimat belum didengar manusia (transkripsi ElevenLabs tidak dipakai karena butuh unggah berkas); area atas tangga agak lega saat hook; Gigi usulan tambahan (Brand Kit menyebutnya)
 - Caption dan jam posting usulan: belum (tahap RILIS)
-- Catatan untuk room berikutnya: BANGUN pakai `a2-explainer-kinetik`, Gigi sesuai skill `a2-maskot-gigi`; cek suara MP3 Bos sebelum timing
+- Catatan untuk room berikutnya: RILIS: caption + jam posting, catat ke Obsidian-SB (`proyek/`), baris `docs/daftar-konten.md` #10 sudah ditambah

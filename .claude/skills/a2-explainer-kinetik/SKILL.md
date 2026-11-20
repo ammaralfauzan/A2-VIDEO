@@ -45,6 +45,13 @@ Untuk cerita orang pertama, Bos meminta **ilustrasi animasi tiap bagian cerita**
 - Tanda tanya di punggung kartu digambar (path SVG), bukan teks, agar kartu bertumpuk tidak dianggap teks bertabrakan.
 - Timing tanpa transkrip: simpan `segmen` (ucapan di antara jeda + jumlah kata) per kalimat; kata disebar hanya di dalam segmennya (`timeline-tiga-salah-kaprah-otomatisasi.ts`).
 
+## Tangga tiga tingkat (pelajaran "Manual, Template, atau Otomatis?")
+- Pola: tiga blok anak tangga (zona y 700–1050), panel contoh di atasnya (y 330–600) yang berganti per tingkat, Gigi melayang di atas anak tangga aktif (pegas teredam kritis, tanpa lompat). Anak tangga aktif = satu-satunya elemen bergradasi. Contoh `src/scenes/manual-template-otomatis/`.
+- Caption pill kecil di atas harus di y ≤ 232 agar tidak menyentuh panel (y 330).
+- Kalimat ajakan yang diucapkan bersamaan dengan logo (penutup mulai 12 frame sebelum kalimat): jangan jadwalkan label/tombol dari kata ucapan; hitung dari awal penutup (`start + 46/60`) agar muncul SETELAH huruf A, angka 2, wordmark tersusun. Pemeriksa frame meloncat menangkap tombol yang muncul sebelum logo.
+- Perubahan warna kotak (mis. simpul menyala) dihaluskan 8 frame (lapisan beropasitas), bukan ditukar mendadak: pemeriksa frame meloncat menandainya.
+- Elemen yang berpindah (kartu tugas) tidak boleh muncul di jalur Gigi yang sedang melayang; tunda kemunculan ±20 frame setelah Gigi berangkat.
+
 ## Aturan
 - Angka ilustratif selalu berlabel "contoh". Tanpa emoji, merek pihak ketiga, gradasi ungu.
 - Setiap elemen pakai gerak masuk yang sama (spring, blur→tajam, geser kecil).
