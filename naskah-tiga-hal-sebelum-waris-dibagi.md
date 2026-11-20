@@ -4,7 +4,7 @@ Format: Reels 9:16 (1080x1920), target 50 dtk (ISIAN; format kosong, dipakai 9:1
 Pola: bidang rata arang dan oranye, tanpa orang/tangan; satu blok harta mengalir turun melewati tiga gerbang berurutan, sisanya baru sampai ke kotak ahli waris. Tanpa angka, tanpa bagian waris, tanpa ajakan jualan.
 Suara: Jefri (Suara Penjelasan Lembut) sebagai usulan awal (suara Tams belum ditentukan Bos), Eleven v3 dengan tag audio.
 
-**STATUS: menunggu persetujuan Bos (KONSEP, 20 Nov 2026).**
+**STATUS: DISETUJUI Bos (KONSEP, 20 Nov 2026). Siap BANGUN.**
 
 ## Konsep
 Edukasi urutan: harta almarhum tidak langsung dibagi. Satu blok harta di atas mengalir turun melewati tiga gerbang berurutan: perawatan jenazah, utang, wasiat. Baru sisanya sampai ke kotak ahli waris. Dasar: QS An-Nisa 4:11-12 (waris dibagi setelah wasiat ditunaikan dan utang dilunasi); para ulama juga mendahulukan biaya perawatan jenazah. Pesan tunggal: waris bukan soal cepat membagi, tetapi membagi dengan urutan yang benar. Ditutup kalimat edukasi dan logo Tams, tanpa ajakan jualan.
