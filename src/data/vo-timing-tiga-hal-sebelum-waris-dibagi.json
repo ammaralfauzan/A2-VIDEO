@@ -1,0 +1,253 @@
+{
+ "audio": "public/audio/vo-tiga-hal-sebelum-waris-dibagi.mp3",
+ "durasi": 56.53,
+ "suara": "Kang Nandar - Smooth, Soothing and Calm (ElevenLabs, MP3 dari Bos 20 Nov 2026), tidak dipercepat",
+ "metode": "ffmpeg silencedetect (-35 dB/0,25 dtk jeda kalimat dan koma panjang; -30 dB/0,12 dtk jeda koma). 25 potongan ucapan dipetakan ke 15 kalimat naskah menurut jumlah suku kata (cocok semua). Waktu kata di dalam segmen diperkirakan dari suku kata. Konektor ElevenLabs tidak dapat dipakai karena tidak ada alat unggah berkas lokal.",
+ "kalimat": [
+  {
+   "mulai": 0.09,
+   "selesai": 2.43,
+   "teks": "Harta almarhum belum boleh dibagi.",
+   "segmen": [
+    {
+     "mulai": 0.09,
+     "selesai": 2.43,
+     "kata": 5
+    }
+   ]
+  },
+  {
+   "mulai": 3.05,
+   "selesai": 4.98,
+   "teks": "Ada yang harus beres dulu.",
+   "segmen": [
+    {
+     "mulai": 3.05,
+     "selesai": 4.98,
+     "kata": 5
+    }
+   ]
+  },
+  {
+   "mulai": 5.84,
+   "selesai": 11.1,
+   "teks": "Bayangkan seluruh harta itu satu blok, yang mengalir turun melewati tiga gerbang.",
+   "segmen": [
+    {
+     "mulai": 5.84,
+     "selesai": 8.2,
+     "kata": 6
+    },
+    {
+     "mulai": 8.55,
+     "selesai": 11.1,
+     "kata": 6
+    }
+   ]
+  },
+  {
+   "mulai": 11.81,
+   "selesai": 14.54,
+   "teks": "Gerbang pertama: biaya perawatan jenazah.",
+   "segmen": [
+    {
+     "mulai": 11.81,
+     "selesai": 12.61,
+     "kata": 2
+    },
+    {
+     "mulai": 13.01,
+     "selesai": 14.54,
+     "kata": 3
+    }
+   ]
+  },
+  {
+   "mulai": 15.13,
+   "selesai": 18.89,
+   "teks": "Menurut para ulama, ini diambil lebih dulu dari harta almarhum.",
+   "segmen": [
+    {
+     "mulai": 15.13,
+     "selesai": 16.23,
+     "kata": 3
+    },
+    {
+     "mulai": 16.45,
+     "selesai": 18.89,
+     "kata": 7
+    }
+   ]
+  },
+  {
+   "mulai": 19.67,
+   "selesai": 21.19,
+   "teks": "Gerbang kedua: utang.",
+   "segmen": [
+    {
+     "mulai": 19.67,
+     "selesai": 20.36,
+     "kata": 2
+    },
+    {
+     "mulai": 20.79,
+     "selesai": 21.19,
+     "kata": 1
+    }
+   ]
+  },
+  {
+   "mulai": 21.76,
+   "selesai": 24.02,
+   "teks": "Utang almarhum harus dilunasi dulu.",
+   "segmen": [
+    {
+     "mulai": 21.76,
+     "selesai": 24.02,
+     "kata": 5
+    }
+   ]
+  },
+  {
+   "mulai": 24.46,
+   "selesai": 27.17,
+   "teks": "Itu hak orang lain, bukan bagian ahli waris.",
+   "segmen": [
+    {
+     "mulai": 24.46,
+     "selesai": 25.53,
+     "kata": 4
+    },
+    {
+     "mulai": 25.86,
+     "selesai": 27.17,
+     "kata": 4
+    }
+   ]
+  },
+  {
+   "mulai": 27.91,
+   "selesai": 29.49,
+   "teks": "Gerbang ketiga: wasiat.",
+   "segmen": [
+    {
+     "mulai": 27.91,
+     "selesai": 28.66,
+     "kata": 2
+    },
+    {
+     "mulai": 29.03,
+     "selesai": 29.49,
+     "kata": 1
+    }
+   ]
+  },
+  {
+   "mulai": 30.07,
+   "selesai": 33.2,
+   "teks": "Wasiat yang sah ditunaikan sebelum waris dibagi.",
+   "segmen": [
+    {
+     "mulai": 30.07,
+     "selesai": 33.2,
+     "kata": 7
+    }
+   ]
+  },
+  {
+   "mulai": 33.74,
+   "selesai": 38.11,
+   "teks": "Ini ditegaskan Al-Qur'an, surah An-Nisa ayat sebelas dan dua belas.",
+   "segmen": [
+    {
+     "mulai": 33.74,
+     "selesai": 35.15,
+     "kata": 3
+    },
+    {
+     "mulai": 35.43,
+     "selesai": 38.11,
+     "kata": 7
+    }
+   ]
+  },
+  {
+   "mulai": 39.38,
+   "selesai": 43.75,
+   "teks": "Baru setelah ketiganya beres, sisanya sampai ke ahli waris.",
+   "segmen": [
+    {
+     "mulai": 39.38,
+     "selesai": 41.37,
+     "kata": 4
+    },
+    {
+     "mulai": 41.58,
+     "selesai": 43.75,
+     "kata": 5
+    }
+   ]
+  },
+  {
+   "mulai": 44.23,
+   "selesai": 49.17,
+   "teks": "Urutannya: perawatan jenazah, utang, wasiat, lalu waris.",
+   "segmen": [
+    {
+     "mulai": 44.23,
+     "selesai": 44.91,
+     "kata": 1
+    },
+    {
+     "mulai": 45.24,
+     "selesai": 46.25,
+     "kata": 2
+    },
+    {
+     "mulai": 46.66,
+     "selesai": 47.19,
+     "kata": 1
+    },
+    {
+     "mulai": 47.5,
+     "selesai": 47.99,
+     "kata": 1
+    },
+    {
+     "mulai": 48.4,
+     "selesai": 49.17,
+     "kata": 2
+    }
+   ]
+  },
+  {
+   "mulai": 49.79,
+   "selesai": 52.1,
+   "teks": "Waris bukan soal cepat membagi.",
+   "segmen": [
+    {
+     "mulai": 49.79,
+     "selesai": 52.1,
+     "kata": 5
+    }
+   ]
+  },
+  {
+   "mulai": 52.75,
+   "selesai": 56.22,
+   "teks": "Tapi soal membagi dengan benar, dan urutan yang tepat.",
+   "segmen": [
+    {
+     "mulai": 52.75,
+     "selesai": 54.71,
+     "kata": 5
+    },
+    {
+     "mulai": 55.1,
+     "selesai": 56.22,
+     "kata": 4
+    }
+   ]
+  }
+ ]
+}

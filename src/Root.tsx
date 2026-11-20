@@ -21,6 +21,8 @@ import {TigaSalahKaprah} from './TigaSalahKaprah';
 import {TOTAL_FRAMES as TSK_TOTAL_FRAMES} from './data/timeline-tiga-salah-kaprah-otomatisasi';
 import {OtomatisasiResep} from './OtomatisasiResep';
 import {TOTAL_FRAMES as OSR_TOTAL_FRAMES} from './data/timeline-otomatisasi-seperti-resep';
+import {TigaHalSebelumWaris} from './TigaHalSebelumWaris';
+import {TOTAL_FRAMES as TH_TOTAL_FRAMES} from './data/timeline-tiga-hal-sebelum-waris-dibagi';
 import {BrandSample as TamsBrandSample} from './brands/tams-consulting/BrandSample';
 
 // Dibungkus probe pemeriksa tabrakan (aktif hanya lewat scripts/check-collisions.mjs).
@@ -34,6 +36,7 @@ const PKonveksi3D = withProbe(Konveksi3D);
 const PAlasanSayaBikinA2 = withProbe(AlasanSayaBikinA2);
 const PTigaSalahKaprah = withProbe(TigaSalahKaprah);
 const POtomatisasiResep = withProbe(OtomatisasiResep);
+const PTigaHal = withProbe(TigaHalSebelumWaris);
 
 for (const weight of ['400', '500', '600']) {
   loadFont({family: 'Geist', url: staticFile(`fonts/geist-sans-latin-${weight}-normal.woff2`), weight});
@@ -85,5 +88,7 @@ export const Root: React.FC = () => (
     <Composition id="TigaSalahKaprah" component={PTigaSalahKaprah} durationInFrames={TSK_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} defaultProps={{safeGuide: false}} />
     {/* "Otomatisasi Itu Seperti Resep": ilustrasi garis dapur bermorf jadi alur kerja + B-roll, 9:16, tanpa Gigi. */}
     <Composition id="OtomatisasiSepertiResep" component={POtomatisasiResep} durationInFrames={OSR_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} defaultProps={{safeGuide: false}} />
+    {/* "Tiga Hal Sebelum Waris Dibagi" (Tams Consulting): blok harta melewati tiga gerbang, 9:16, tanpa ajakan. */}
+    <Composition id="TigaHalSebelumWaris" component={PTigaHal} durationInFrames={TH_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} defaultProps={{safeGuide: false}} />
   </>
 );

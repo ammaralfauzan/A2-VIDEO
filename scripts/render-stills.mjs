@@ -107,6 +107,14 @@ SETS.OtomatisasiSepertiResep = {
   },
 };
 
+// Frame kunci "Tiga Hal Sebelum Waris Dibagi" dihitung dari timing suara (termasuk tengah transisi).
+SETS.TigaHalSebelumWaris = {
+  dir: 'out/stills/tiga-hal-sebelum-waris-dibagi',
+  get stills() {
+    return JSON.parse(execSync('npx tsx scripts/tiga-hal-sebelum-waris-dibagi-frames.ts', {encoding: 'utf8'}));
+  },
+};
+
 const [id = 'JamSembilanMalam', ...only] = process.argv.slice(2);
 const set = SETS[id];
 if (!set) throw new Error(`Komposisi tidak dikenal: ${id}`);

@@ -95,6 +95,14 @@ Skrip rilis memeriksa durasi klip, merender frame kunci dan video, lalu menormal
 - Kode: `src/OtomatisasiResep.tsx`, adegan di `src/scenes/otomatisasi-seperti-resep/` (`Dapur`, `Alur`, `Broll`, `art`, `Judul`, `Penutup`, `Sfx`, `layout`), timeline di `src/data/timeline-otomatisasi-seperti-resep.ts`
 - Frame kunci: `out/stills/otomatisasi-seperti-resep/` (`scripts/otomatisasi-seperti-resep-frames.ts`). Perintah: `npm run stills:otomatisasi-resep`, `npm run render:otomatisasi-resep`
 
+## Video: "Tiga Hal Sebelum Waris Dibagi" (komposisi `TigaHalSebelumWaris`, 9:16, brand Tams Consulting)
+- Naskah: `naskah-tiga-hal-sebelum-waris-dibagi.md`. Edukasi urutan: satu blok "HARTA ALMARHUM" turun melewati tiga gerbang (perawatan jenazah, utang, wasiat), tiap gerbang melepas potongan berlabel; sisanya mengisi kotak AHLI WARIS; daftar urutan 1-4; penutup "Urutan yang benar, baru dibagi." + logo Tams asli. Bidang rata arang/oranye di latar putih, tanpa orang, angka, atau ajakan. Gaya mengikuti `brands/tams-consulting/BRAND.md`
+- Hasil: `out/tiga-hal-sebelum-waris-dibagi-9x16.mp4` (1080x1920, 30 fps, 58,5 detik: suara 56,5 dtk + logo diam 2 dtk). Suara lebih panjang dari target 50 dtk dan tidak dipercepat
+- Voiceover: `public/audio/vo-tiga-hal-sebelum-waris-dibagi.mp3` (ElevenLabs, suara Kang Nandar, MP3 dari Bos). Timing: `src/data/vo-timing-tiga-hal-sebelum-waris-dibagi.json` (ffmpeg silencedetect, 25 potongan ke 15 kalimat)
+- Kode: `src/TigaHalSebelumWaris.tsx`, adegan di `src/scenes/tiga-hal-sebelum-waris-dibagi/` (`Stage`, `Daftar`, `Penutup`, `Caption`, `Broll`, `Sfx`, `layout`), timeline di `src/data/timeline-tiga-hal-sebelum-waris-dibagi.ts`
+- B-roll: slot B1..B5 sudah disiapkan di `layout.ts` (`BROLL`, `src: null` = belum ada klip). Isi `src` dengan klip di `public/broll/` untuk menyisipkannya
+- Frame kunci: `out/stills/tiga-hal-sebelum-waris-dibagi/` (`scripts/tiga-hal-sebelum-waris-dibagi-frames.ts`). Perintah: `npm run stills:tiga-hal-waris`, `npm run render:tiga-hal-waris`
+
 ## Skill, pemeriksa tabrakan, dan hook penjaga (Fase 1)
 
 - Skill di `.claude/skills/`: `a2-motion-video` (alur umum), `a2-anti-tabrakan`, `a2-komposisi-proximity`, `a2-safe-area-sosmed`, `a2-maskot-gigi`
