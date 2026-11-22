@@ -6,6 +6,7 @@ Satu folder per brand: `brands/<kode>/BRAND.md`. Kode huruf kecil: `a2`, `h2c`, 
 |---|---|---|
 | a2 | A2 Automation | aktif, maskot Gigi |
 | h2c | H2C (Umroh dan Wakaf) | aktif, tanpa maskot, gaya situs Wakaf |
+| h2c-umroh | H2C Umroh (H2C Wisata Mandiri) | menunggu persetujuan Bos, gelap zamrud-emas dari situs umroh, tanpa maskot |
 | tams-consulting | Tams Consulting (konsultasi waris) | aktif (disetujui 20 Nov 2026), terang, hitam-oranye dari logo, tanpa maskot |
 
 ## Aturan

@@ -26,6 +26,7 @@ import {TOTAL_FRAMES as TH_TOTAL_FRAMES} from './data/timeline-tiga-hal-sebelum-
 import {ManualTemplateOtomatis} from './ManualTemplateOtomatis';
 import {TOTAL_FRAMES as MTO_TOTAL_FRAMES} from './data/timeline-manual-template-otomatis';
 import {BrandSample as TamsBrandSample} from './brands/tams-consulting/BrandSample';
+import {BrandSample as H2cUmrohBrandSample} from './brands/h2c-umroh/BrandSample';
 
 // Dibungkus probe pemeriksa tabrakan (aktif hanya lewat scripts/check-collisions.mjs).
 const PMain = withProbe(Main);
@@ -51,11 +52,17 @@ loadFont({family: 'Outfit', url: staticFile('fonts/outfit-latin.woff2'), weight:
 loadFont({family: 'Plus Jakarta Sans', url: staticFile('fonts/plus-jakarta-sans-latin.woff2'), weight: '400 700'});
 // Fon Tams Consulting (Brand Kit): Montserrat.
 loadFont({family: 'Montserrat', url: staticFile('fonts/montserrat-latin.woff2'), weight: '100 900'});
+// Fon H2C Umroh (Brand Kit, dari situs umroh): Great Vibes (skrip), Anton (judul kapital), Amiri (judul serif).
+loadFont({family: 'Great Vibes', url: staticFile('fonts/great-vibes-latin.woff2'), weight: '400'});
+loadFont({family: 'Anton', url: staticFile('fonts/anton-latin.woff2'), weight: '400'});
+loadFont({family: 'Amiri', url: staticFile('fonts/amiri-latin-700.woff2'), weight: '700'});
 
 export const Root: React.FC = () => (
   <>
     {/* Frame contoh Brand Kit Tams Consulting (disetujui Bos 20 Nov 2026). */}
     <Composition id="TamsBrandSample" component={TamsBrandSample} durationInFrames={1} fps={30} width={1080} height={1920} />
+    {/* Frame contoh Brand Kit H2C Umroh (menunggu persetujuan Bos). */}
+    <Composition id="H2cUmrohBrandSample" component={H2cUmrohBrandSample} durationInFrames={1} fps={30} width={1080} height={1920} />
     <Composition id="Konveksi3D" component={PKonveksi3D} durationInFrames={KONVEKSI_FRAMES} fps={30} width={1080} height={1920} defaultProps={{preview:false,safeGuide:false}} />
     <Composition id="JamSembilanMalam" component={PMain} durationInFrames={TOTAL_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
     <Composition id="A2Umum" component={PA2Umum} durationInFrames={U_TOTAL_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
