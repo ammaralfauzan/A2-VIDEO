@@ -82,3 +82,8 @@ Jumlah kata 150 ≈ 65,2 dtk (+8,7% dari target 60 dtk, masih di bawah 10%).
 Hook baru: "Mau berangkat umroh bareng H dua C? Mulainya gampang: buat akun dulu, sekali saja."
 Penutup baru: "Gampang, kan? Yuk, buat akun sekarang. Lagi ada promo umroh, lihat promonya di umroh titik H dua C titik or titik id."
 Baris "Ikuti pelan-pelan ya, Bapak, Ibu..." dibuang agar durasi tetap dekat target. Tanpa detail promo. Jumlah kata 147 ≈ 63,9 dtk.
+
+## Versi D: promo di depan (permintaan Bos, 22 Nov 2026)
+Teks layar hook: "ADA PROMO UMROH!" · Hook suara: "Ada promo umroh di H dua C! Tapi sebelum itu, buat akun dulu. Gampang kok."
+Penutup: "Gampang, kan? Yuk, buat akun sekarang, lalu lihat promonya di umroh titik H dua C titik or titik id."
+Tanpa detail promo. Jumlah kata 145 ≈ 63.0 dtk.
