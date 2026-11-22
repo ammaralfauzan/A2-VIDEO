@@ -1,0 +1,73 @@
+# Naskah Video: "Daftar dan Masuk Akun H2C, Satu Video Selesai"
+
+Format: Reels 9:16 (1080x1920), target 60 dtk (ISIAN) · Brand: H2C Umroh (kit `h2c-umroh`, tanpa maskot) · Pola: replika layar web umroh H2C + kursor manusiawi
+Suara: usulan Jefri (Suara Penjelasan Lembut), Eleven v3 dengan tag audio; keputusan suara menunggu Bos. Tanpa musik.
+
+**STATUS: konsep menunggu persetujuan Bos.**
+
+## Konsep
+Panduan satu video untuk bapak-ibu yang gaptek: daftar akun cukup sekali, lain kali masuk cukup email dan password. Layar web umroh H2C direplika persis, kursor bergerak seperti tangan manusia (kurva, melambat sebelum klik, ada jeda), kolom yang diisi disorot emas. Dua bagian bernomor besar: 1 Daftar, 2 Masuk. Di tengah, layar Gmail untuk mengambil kode 6 angka. Data fiktif, tanpa angka atau klaim.
+
+## Tabel naskah
+| Waktu | Suara | Visual | B-roll |
+| --- | --- | --- | --- |
+| 0-3,5 hook | Belum punya akun? Daftar sekali, lalu masuknya gampang. | Judul skrip + kapital emas di atas latar zamrud, ponsel/layar web muncul | B1 (3 dtk) |
+| 3,5-7 | Ikuti pelan-pelan ya, Bapak, Ibu. Tidak perlu buru-buru. | Layar beranda replika, kursor masuk pelan dari tepi | - |
+| 7-12 | Bagian satu: daftar. Buka situs umroh H dua C, lalu tekan Daftar. | Angka besar "1 DAFTAR"; kursor melengkung ke tombol Daftar, melambat, jeda, klik | - |
+| 12-16,5 | Isi nama lengkap Anda. Lalu isi email yang masih aktif. | Formulir daftar; sorotan emas di kolom Nama, lalu Email; teks fiktif diketik | - |
+| 16,5-23,5 | Buat password, minimal delapan huruf atau angka. Ikon mata di samping bisa dipakai untuk melihat tulisannya. | Sorotan di kolom Password; titik-titik muncul; kursor ke ikon mata, klik, tulisan terlihat | - |
+| 23,5-28,7 | Tekan Daftar. Nanti ada kode enam angka yang dikirim ke email Anda. | Kursor klik Daftar; layar kode 6 kotak muncul | B2 (3-4 dtk, notifikasi) |
+| 28,7-36 | Buka Gmail, cari surat dari H dua C Travel. Kalau belum ada, lihat juga di kotak Spam. | Pindah ke layar Gmail replika; surat "H2C Travel" dibuka; sorotan di 6 angka (fiktif); tab Spam berkedip sekali | - |
+| 36-41,7 | Salin enam angkanya, kembali ke H dua C, lalu ketik di kolom kode. | Kursor menyalin, kembali ke tab H2C, angka mengisi 6 kotak satu per satu | - |
+| 41,7-44,3 | Selesai. Daftar cukup sekali ini saja. | Centang limau besar, "DAFTAR: SELESAI" | B3 (2-3 dtk, lega) |
+| 44,3-48,3 | Bagian dua: masuk. Lain kali, tidak perlu kode lagi. | Angka besar "2 MASUK"; layar Masuk replika | - |
+| 48,3-52,2 | Ketik email Anda. Lalu ketik password Anda. Tekan Masuk. | Sorotan Email, lalu Password; kursor ke tombol Masuk, klik | - |
+| 52,2-55,2 | Itu saja. Email dan password, langsung masuk. | Layar akun terbuka; dua chip "Email" dan "Password" menyala | - |
+| 55,2-60,4 ajakan | Gampang, kan? Kunjungi umroh titik H dua C titik or titik id. | Logo lingkaran asli + tombol emas `umroh.h2c.or.id` | B4 (3 dtk, latar) |
+
+Waktu perkiraan; adegan nanti mengikuti MP3 asli (suara tidak dipercepat).
+Jumlah kata 139 ≈ 60,4 dtk (2,3 kata/dtk). Selisih dari target 60 dtk: +0,7% (aman).
+
+## Beda dari konten lama (cek `docs/daftar-konten.md`)
+- Terdekat di brand yang sama: #4 tips-umroh (5 hal sebelum daftar umroh, video bicara). Beda topik (panduan akun), beda pola (replika layar + kursor), hook beda.
+- Pola replika layar + kursor mirip #1 dan #2 (A2, beda brand dan topik). Aman.
+- Baris #18 dan #19 sudah digabung ke sini.
+
+## Prompt suara ElevenLabs (siap salin)
+Suara: Jefri (Suara Penjelasan Lembut), usulan · Model: Eleven v3 (mendukung tag audio) · Nada: hangat, sabar, menenangkan · Target: ±60 dtk
+
+```
+[warmly] Belum punya akun? Daftar sekali, lalu masuknya gampang.
+
+[softly] Ikuti pelan-pelan ya, Bapak, Ibu. Tidak perlu buru-buru.
+
+[warmly] Bagian satu: daftar. Buka situs umroh H dua C, lalu tekan Daftar.
+
+[softly] Isi nama lengkap Anda. Lalu isi email yang masih aktif.
+
+[softly] Buat password, minimal delapan huruf atau angka. Ikon mata di samping bisa dipakai untuk melihat tulisannya.
+
+[curious] Tekan Daftar. Nanti ada kode enam angka yang dikirim ke email Anda.
+
+[warmly] Buka Gmail, cari surat dari H dua C Travel. Kalau belum ada, lihat juga di kotak Spam.
+
+[softly] Salin enam angkanya, kembali ke H dua C, lalu ketik di kolom kode.
+
+[warmly] Selesai. Daftar cukup sekali ini saja.
+
+[warmly] Bagian dua: masuk. Lain kali, tidak perlu kode lagi.
+
+[softly] Ketik email Anda. Lalu ketik password Anda. Tekan Masuk.
+
+[warmly] Itu saja. Email dan password, langsung masuk.
+
+[warmly] Gampang, kan? Kunjungi umroh titik H dua C titik or titik id.
+```
+
+## Prompt B-roll (generator video AI)
+Lihat serah-terima/daftar-dan-masuk-h2c.md (B1 sampai B4).
+
+## Risiko / asumsi
+- Nama tombol dan urutan layar (Daftar, Masuk, kolom, kode 6 angka, "H2C Travel") dari kode repo h2c-umroh; cek ke situs hidup di BANGUN.
+- Setelah kode benar, apakah akun langsung masuk atau harus Masuk lagi belum dipastikan; naskah hanya bilang "Selesai".
+- Suara narasi belum ditentukan Bos (kit); Jefri hanya usulan.
