@@ -1,4 +1,4 @@
-// Token visual H2C Umroh / H2C Wisata Mandiri (kode: h2c-umroh). STATUS: menunggu persetujuan Bos.
+// Token visual H2C Umroh / H2C Wisata Mandiri (kode: h2c-umroh). STATUS: disetujui Bos 22 Nov 2026.
 // Sumber: repo h2c-umroh, app/globals.css (:root) dan app/landing.css (judul hero .hx-* / .st-*),
 // plus hijau limau dari logo (public/logo.jpeg). Berbeda dari kit `h2c` (situs Wakaf: #06140C, emas #F6C56B, Fraunces).
 // Jangan menambah warna di luar daftar ini.

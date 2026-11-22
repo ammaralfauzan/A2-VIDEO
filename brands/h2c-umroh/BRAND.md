@@ -1,11 +1,11 @@
 # Brand Kit: H2C Umroh (H2C Wisata Mandiri)
 
-Kode: `h2c-umroh` · Disetujui Bos: belum (frame contoh `H2cUmrohBrandSample`, 22 Nov 2026)
+Kode: `h2c-umroh` · Disetujui Bos: ya, 22 Nov 2026 (frame contoh `H2cUmrohBrandSample`; jawaban 1a 2a 3a 4a 5b)
 
 ## Identitas
 - Nama resmi: H2C Wisata Mandiri (PT HDUAC Berkah Mandiri). Bidang: travel umroh, situs `umroh.h2c.or.id`. Penonton: calon jamaah umroh, sebagian besar datang dari Instagram/iklan di HP.
 - Pesan dari situs/logo: "Umroh Aman & Amanah", "dari niat sampai pulang ke rumah", "Melayani Dengan Sepenuh Hati".
-- Nada bicara (3 kata): hangat, amanah, menenangkan (dari teks situs; belum dikonfirmasi Bos).
+- Nada bicara (3 kata): hangat, amanah, menenangkan (dari teks situs).
 - Nuansa visual (3 kata): zamrud, emas, megah-hangat.
 
 ## Warna (token, hex)
@@ -22,7 +22,7 @@ Dari `app/globals.css` repo h2c-umroh; limau dari logo.
 | leaf / leafLight | #8CC63F / #B5E36B | hijau limau logo: aksen kecil (titik, garis kemajuan, centang) |
 | goldLine | rgba(212,175,106,.30) | bingkai kartu dan chip |
 
-Latar gelap zamrud. Judul besar bergradasi gading ke emas (#FFFAF0, #F3E3C0, #D4AF6A) dari atas ke bawah. Pita emas bergradasi (#C18A36, #D9AB5B, #B67D2C). Garis aksen emas ke limau. Limau dipakai sedikit, bukan warna dominan.
+Latar gelap zamrud (keputusan Bos). Judul besar bergradasi gading ke emas (#FFFAF0, #F3E3C0, #D4AF6A) dari atas ke bawah. Pita emas bergradasi (#C18A36, #D9AB5B, #B67D2C). Garis aksen emas ke limau. Limau dipakai sedikit, bukan warna dominan.
 
 ## Huruf
 - Judul khas (dari hero situs): baris skrip Great Vibes, lalu kapital tegak rapat Anton bergradasi emas, lalu pita emas miring -2° berisi skrip.
@@ -36,15 +36,15 @@ Latar gelap zamrud. Judul besar bergradasi gading ke emas (#FFFAF0, #F3E3C0, #D4
 - Gerak (dari situs): masuk bertahap (stagger), ease-out lembut, sedikit pegas untuk tombol. Detail gerak video: belum ditentukan.
 
 ## Maskot
-- Tidak ada (usulan; menunggu jawaban Bos). Jangan memakai Gigi atau maskot brand lain.
+- Tidak ada (keputusan Bos 22 Nov 2026). Jangan memakai Gigi atau maskot brand lain.
 
 ## Logo
 - Berkas: `public/brands/h2c-umroh/logo.jpeg` (salinan `public/logo.jpeg` repo h2c-umroh, 447x447, lingkaran dengan latar hijau limau).
 - Tampil dalam lingkaran, tidak digambar ulang, diputar, atau diwarnai ulang.
 
 ## Suara dan ajakan
-- Pengisi suara: belum ditentukan.
-- Ajakan (usulan, menunggu Bos): tombol emas `umroh.h2c.or.id`. Kontak lain di situs: Instagram `@h2c_wisata_mandiri`, WhatsApp resmi (nomor tidak dimasukkan ke video sebelum Bos memilih).
+- Pengisi suara: belum ditentukan; diputuskan di video pertama (keputusan Bos).
+- Ajakan (keputusan Bos): tombol emas `umroh.h2c.or.id`. Kontak lain di situs: Instagram `@h2c_wisata_mandiri`, WhatsApp resmi (nomor tidak dimasukkan ke video sebelum Bos memilih).
 
 ## Larangan khas brand
 - Tanpa elemen kit `h2c` lama (Fraunces, Outfit, emas #F6C56B, hijau #06140C) kecuali Bos meminta. Tanpa warna A2, Gigi, atau warna Tams.
@@ -57,4 +57,5 @@ Latar gelap zamrud. Judul besar bergradasi gading ke emas (#FFFAF0, #F3E3C0, #D4
 - Token di kode: `src/brands/h2c-umroh/theme.ts`. Frame contoh: komposisi `H2cUmrohBrandSample`, `out/brand-h2c-umroh-sample.png`. Huruf: `public/fonts/great-vibes-latin.woff2`, `anton-latin.woff2`, `amiri-latin-700.woff2`.
 
 ## Belum ditentukan
-- Pembagian dengan kit `h2c` lama, maskot, ajakan final, suara narasi, gaya gerak video.
+- Suara narasi (di video pertama), gaya gerak video.
+- Sudah diputuskan: kit `h2c` khusus Wakaf, semua konten umroh memakai kit ini.

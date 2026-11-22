@@ -61,7 +61,7 @@ export const Root: React.FC = () => (
   <>
     {/* Frame contoh Brand Kit Tams Consulting (disetujui Bos 20 Nov 2026). */}
     <Composition id="TamsBrandSample" component={TamsBrandSample} durationInFrames={1} fps={30} width={1080} height={1920} />
-    {/* Frame contoh Brand Kit H2C Umroh (menunggu persetujuan Bos). */}
+    {/* Frame contoh Brand Kit H2C Umroh (disetujui Bos 22 Nov 2026). */}
     <Composition id="H2cUmrohBrandSample" component={H2cUmrohBrandSample} durationInFrames={1} fps={30} width={1080} height={1920} />
     <Composition id="Konveksi3D" component={PKonveksi3D} durationInFrames={KONVEKSI_FRAMES} fps={30} width={1080} height={1920} defaultProps={{preview:false,safeGuide:false}} />
     <Composition id="JamSembilanMalam" component={PMain} durationInFrames={TOTAL_FRAMES} fps={FPS} width={WIDTH} height={HEIGHT} />
