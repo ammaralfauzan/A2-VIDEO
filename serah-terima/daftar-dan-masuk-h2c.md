@@ -1,13 +1,13 @@
 # Serah-terima: daftar-dan-masuk-h2c
 
 - Judul / brand / format / durasi target: Daftar dan Masuk Akun H2C, Satu Video Selesai / H2C Umroh (`h2c-umroh`) / 9:16 (format ISIAN kosong, default 9:16) / 60 dtk (wajib)
-- Tahap terakhir selesai: konsep (menunggu persetujuan Bos)
-- Keputusan Bos (disetujui, jangan diubah): web persis replika repo h2c-umroh; kursor manusiawi; sasaran bapak-ibu gaptek; kit `h2c-umroh` tanpa maskot, ajakan `umroh.h2c.or.id`; data fiktif, tanpa angka/klaim. Belum disetujui: naskah, suara (usulan Jefri), B-roll.
+- Tahap terakhir selesai: konsep (DISETUJUI Bos 22 Nov 2026)
+- Keputusan Bos (disetujui, jangan diubah): web persis replika repo h2c-umroh; kursor manusiawi; sasaran bapak-ibu gaptek; kit `h2c-umroh` tanpa maskot, ajakan `umroh.h2c.or.id`; data fiktif, tanpa angka/klaim. Disetujui 22 Nov: naskah, hook "Mau pesan umroh lewat web H dua C? Buat akun dulu, sekali saja.", suara Jefri (Suara Penjelasan Lembut), B-roll B1-B4, format 9:16, durasi 60 dtk (target; naskah 143 kata ≈ 62 dtk).
 - File penting: `naskah-daftar-dan-masuk-h2c.md`, `public/audio/vo-daftar-dan-masuk-h2c.mp3` (belum ada), `public/broll/daftar-dan-masuk-h2c/B1-B4.mp4` (belum ada), `out/daftar-dan-masuk-h2c-9x16.mp4` (belum ada)
 - Status render: belum
 - Daftar revisi Bos (belum dikerjakan): -
 - Sudah diperiksa: anti-kembar vs docs/daftar-konten.md (aman); 143 kata ≈ 62,2 dtk.
-- Belum diperiksa / risiko: nama tombol/urutan layar dari kode repo, belum dari situs hidup; layar sesudah kode benar; suara narasi belum diputuskan; B-roll dibuat Bos sendiri.
+- Belum diperiksa / risiko: nama tombol/urutan layar dari kode repo, belum dari situs hidup; layar sesudah kode benar; B-roll dibuat Bos sendiri.
 - Caption dan jam posting usulan: -
 - Catatan untuk room berikutnya: BANGUN pakai replika layar (tema `src/brands/h2c-umroh/theme.ts`). "H2C" ditulis "H dua C" di suara. Prompt B-roll ada di bawah.
 

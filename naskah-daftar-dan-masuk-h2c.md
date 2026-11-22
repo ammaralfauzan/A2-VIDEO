@@ -3,7 +3,7 @@
 Format: Reels 9:16 (1080x1920), target 60 dtk (ISIAN) · Brand: H2C Umroh (kit `h2c-umroh`, tanpa maskot) · Pola: replika layar web umroh H2C + kursor manusiawi
 Suara: usulan Jefri (Suara Penjelasan Lembut), Eleven v3 dengan tag audio; keputusan suara menunggu Bos. Tanpa musik.
 
-**STATUS: konsep menunggu persetujuan Bos. Hook dipilih Bos (22 Nov): "Mau pesan umroh lewat web H dua C? Buat akun dulu, sekali saja."**
+**STATUS: disetujui Bos (22 Nov 2026): konsep, naskah, hook, suara Jefri, B-roll B1-B4. Jangan diubah.**
 
 ## Konsep
 Panduan satu video untuk bapak-ibu yang gaptek: daftar akun cukup sekali, lain kali masuk cukup email dan password. Layar web umroh H2C direplika persis, kursor bergerak seperti tangan manusia (kurva, melambat sebelum klik, ada jeda), kolom yang diisi disorot emas. Dua bagian bernomor besar: 1 Daftar, 2 Masuk. Di tengah, layar Gmail untuk mengambil kode 6 angka. Data fiktif, tanpa angka atau klaim.
