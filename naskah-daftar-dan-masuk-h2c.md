@@ -3,7 +3,7 @@
 Format: Reels 9:16 (1080x1920), target 60 dtk (ISIAN) · Brand: H2C Umroh (kit `h2c-umroh`, tanpa maskot) · Pola: replika layar web umroh H2C + kursor manusiawi
 Suara: usulan Jefri (Suara Penjelasan Lembut), Eleven v3 dengan tag audio; keputusan suara menunggu Bos. Tanpa musik.
 
-**STATUS: konsep menunggu persetujuan Bos.**
+**STATUS: konsep menunggu persetujuan Bos. Hook dipilih Bos (22 Nov): "Mau pesan umroh lewat web H dua C? Buat akun dulu, sekali saja."**
 
 ## Konsep
 Panduan satu video untuk bapak-ibu yang gaptek: daftar akun cukup sekali, lain kali masuk cukup email dan password. Layar web umroh H2C direplika persis, kursor bergerak seperti tangan manusia (kurva, melambat sebelum klik, ada jeda), kolom yang diisi disorot emas. Dua bagian bernomor besar: 1 Daftar, 2 Masuk. Di tengah, layar Gmail untuk mengambil kode 6 angka. Data fiktif, tanpa angka atau klaim.
@@ -11,7 +11,7 @@ Panduan satu video untuk bapak-ibu yang gaptek: daftar akun cukup sekali, lain k
 ## Tabel naskah
 | Waktu | Suara | Visual | B-roll |
 | --- | --- | --- | --- |
-| 0-3,5 hook | Belum punya akun? Daftar sekali, lalu masuknya gampang. | Judul skrip + kapital emas di atas latar zamrud, ponsel/layar web muncul | B1 (3 dtk) |
+| 0-4 hook | Mau pesan umroh lewat web H dua C? Buat akun dulu, sekali saja. | Judul skrip + kapital emas di atas latar zamrud, ponsel/layar web muncul | B1 (3 dtk) |
 | 3,5-7 | Ikuti pelan-pelan ya, Bapak, Ibu. Tidak perlu buru-buru. | Layar beranda replika, kursor masuk pelan dari tepi | - |
 | 7-12 | Bagian satu: daftar. Buka situs umroh H dua C, lalu tekan Daftar. | Angka besar "1 DAFTAR"; kursor melengkung ke tombol Daftar, melambat, jeda, klik | - |
 | 12-16,5 | Isi nama lengkap Anda. Lalu isi email yang masih aktif. | Formulir daftar; sorotan emas di kolom Nama, lalu Email; teks fiktif diketik | - |
@@ -26,7 +26,7 @@ Panduan satu video untuk bapak-ibu yang gaptek: daftar akun cukup sekali, lain k
 | 55,2-60,4 ajakan | Gampang, kan? Kunjungi umroh titik H dua C titik or titik id. | Logo lingkaran asli + tombol emas `umroh.h2c.or.id` | B4 (3 dtk, latar) |
 
 Waktu perkiraan; adegan nanti mengikuti MP3 asli (suara tidak dipercepat).
-Jumlah kata 139 ≈ 60,4 dtk (2,3 kata/dtk). Selisih dari target 60 dtk: +0,7% (aman).
+Jumlah kata 143 ≈ 62,2 dtk (2,3 kata/dtk). Selisih dari target 60 dtk: +3,7% (aman, di bawah 10%).
 
 ## Beda dari konten lama (cek `docs/daftar-konten.md`)
 - Terdekat di brand yang sama: #4 tips-umroh (5 hal sebelum daftar umroh, video bicara). Beda topik (panduan akun), beda pola (replika layar + kursor), hook beda.
@@ -37,7 +37,7 @@ Jumlah kata 139 ≈ 60,4 dtk (2,3 kata/dtk). Selisih dari target 60 dtk: +0,7% (
 Suara: Jefri (Suara Penjelasan Lembut), usulan · Model: Eleven v3 (mendukung tag audio) · Nada: hangat, sabar, menenangkan · Target: ±60 dtk
 
 ```
-[warmly] Belum punya akun? Daftar sekali, lalu masuknya gampang.
+[warmly] Mau pesan umroh lewat web H dua C? Buat akun dulu, sekali saja.
 
 [softly] Ikuti pelan-pelan ya, Bapak, Ibu. Tidak perlu buru-buru.
 

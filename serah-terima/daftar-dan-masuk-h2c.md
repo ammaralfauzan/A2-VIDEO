@@ -6,13 +6,13 @@
 - File penting: `naskah-daftar-dan-masuk-h2c.md`, `public/audio/vo-daftar-dan-masuk-h2c.mp3` (belum ada), `public/broll/daftar-dan-masuk-h2c/B1-B4.mp4` (belum ada), `out/daftar-dan-masuk-h2c-9x16.mp4` (belum ada)
 - Status render: belum
 - Daftar revisi Bos (belum dikerjakan): -
-- Sudah diperiksa: anti-kembar vs docs/daftar-konten.md (aman); 139 kata ≈ 60,4 dtk.
+- Sudah diperiksa: anti-kembar vs docs/daftar-konten.md (aman); 143 kata ≈ 62,2 dtk.
 - Belum diperiksa / risiko: nama tombol/urutan layar dari kode repo, belum dari situs hidup; layar sesudah kode benar; suara narasi belum diputuskan; B-roll dibuat Bos sendiri.
 - Caption dan jam posting usulan: -
 - Catatan untuk room berikutnya: BANGUN pakai replika layar (tema `src/brands/h2c-umroh/theme.ts`). "H2C" ditulis "H dua C" di suara. Prompt B-roll ada di bawah.
 
 ## Prompt B-roll (siap salin; dipakai Bos di generator video AI)
-B1 · dipakai saat: "Belum punya akun? Daftar sekali, lalu masuknya gampang." (±3 dtk)
+B1 · dipakai saat: "Mau pesan umroh lewat web H dua C? Buat akun dulu, sekali saja." (±3 dtk)
 ```
 B1 · 3 seconds · 9:16 vertical (1080x1920)
 Close-up of a person's hands holding a smartphone at a tidy wooden desk, thumb gently scrolling, soft warm window light, shallow depth of field, slow gentle push-in. Realistic, clean look, deep emerald green and warm gold tones, calm and reassuring mood.
