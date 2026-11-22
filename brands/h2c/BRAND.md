@@ -1,4 +1,6 @@
-# Brand Kit: H2C (Umroh dan Wakaf)
+# Brand Kit: H2C Wakaf
+
+> Sejak 22 Nov 2026 (keputusan Bos): kit ini **khusus konten Wakaf**. Konten umroh memakai `brands/h2c-umroh/BRAND.md`. Video lama *5 Hal Sebelum Daftar Umroh* (`TipsUmroh`) tetap seperti adanya.
 
 Kode: `h2c` · Dasar: situs Wakaf H2C (`h2c-wakaf/public/assets/css/style.css`), dipakai juga untuk konten Umroh atas permintaan Bos (2026-10-29) · Disetujui Bos: ya, untuk video *5 Hal Sebelum Daftar Umroh*
 

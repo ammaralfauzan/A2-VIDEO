@@ -8,9 +8,9 @@ description: Memakai atau membuat Brand Kit per brand agar video brand lain tida
 Satu folder per brand: `brands/<kode>/BRAND.md`. Daftar dan aturan: `brands/README.md`. Template: `brands/_template.md`.
 
 ## Memakai (setiap video)
-1. Cocokkan brand di isian ke folder `brands/` (A2 Automation = `a2`, H2C = `h2c`). Tidak ada folder: berhenti dan minta Bos menjalankan tahap BRAND.
+1. Cocokkan brand di isian ke folder `brands/` (A2 Automation = `a2`, H2C Umroh / konten umroh = `h2c-umroh`, H2C Wakaf = `h2c`). Tidak ada folder: berhenti dan minta Bos menjalankan tahap BRAND.
 2. Baca `BRAND.md`. Itu satu-satunya sumber warna, huruf, bentuk, gerak, maskot, suara, ajakan, dan larangan. Kolom "belum ditentukan" jangan diisi tebakan; tanyakan Bos.
-3. Token di kode: A2 di `src/theme.ts`, H2C di `src/tips-umroh/theme.ts`. Brand baru memakai `src/brands/<kode>/theme.ts` dan komposisinya mengimpor token brand sendiri, bukan token A2.
+3. Token di kode: A2 di `src/theme.ts`, H2C Wakaf di `src/tips-umroh/theme.ts` (nama folder warisan), H2C Umroh di `src/brands/h2c-umroh/theme.ts`. Brand baru memakai `src/brands/<kode>/theme.ts` dan komposisinya mengimpor token brand sendiri, bukan token A2.
 4. Skill `a2-*` hanya untuk A2. Untuk brand lain pakai aturan umum (area aman, anti-tabrakan, render) dan gaya dari kit.
 
 ## Membuat (brand baru, sekali)

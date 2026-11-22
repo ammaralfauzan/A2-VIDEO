@@ -5,12 +5,12 @@ Satu folder per brand: `brands/<kode>/BRAND.md`. Kode huruf kecil: `a2`, `h2c`, 
 | Kode | Brand | Status |
 |---|---|---|
 | a2 | A2 Automation | aktif, maskot Gigi |
-| h2c | H2C (Umroh dan Wakaf) | aktif, tanpa maskot, gaya situs Wakaf |
-| h2c-umroh | H2C Umroh (H2C Wisata Mandiri) | menunggu persetujuan Bos, gelap zamrud-emas dari situs umroh, tanpa maskot |
+| h2c | H2C Wakaf | aktif, khusus Wakaf sejak 22 Nov 2026, tanpa maskot, gaya situs Wakaf |
+| h2c-umroh | H2C Umroh (H2C Wisata Mandiri) | aktif (disetujui 22 Nov 2026), semua konten umroh, gelap zamrud-emas dari situs umroh, tanpa maskot |
 | tams-consulting | Tams Consulting (konsultasi waris) | aktif (disetujui 20 Nov 2026), terang, hitam-oranye dari logo, tanpa maskot |
 
 ## Aturan
-- Brand di isian dicocokkan ke folder: "A2 Automation" → `a2`, "H2C" → `h2c`. Brand tanpa folder belum punya kit: jalankan tahap BRAND dulu.
+- Brand di isian dicocokkan ke folder: "A2 Automation" → `a2`, "H2C Umroh" / konten umroh H2C → `h2c-umroh`, "H2C Wakaf" / konten wakaf → `h2c`. Brand tanpa folder belum punya kit: jalankan tahap BRAND dulu.
 - Jangan membawa elemen satu brand ke brand lain (mis. Gigi dan warna A2 ke H2C).
 - Brand baru dibuat lewat tahap BRAND (`docs/prompt-inti.md`), disetujui Bos dengan satu frame contoh, baru dipakai.
 - Kit adalah satu-satunya sumber gaya. Bila Bos mengubah gaya brand, ubah kitnya, bukan hanya videonya.
