@@ -81,4 +81,4 @@ Jumlah kata 150 ≈ 65,2 dtk (+8,7% dari target 60 dtk, masih di bawah 10%).
 ## Versi C: hook dan penutup lebih mengajak (permintaan Bos, 22 Nov 2026)
 Hook baru: "Mau berangkat umroh bareng H dua C? Mulainya gampang: buat akun dulu, sekali saja."
 Penutup baru: "Gampang, kan? Yuk, buat akun sekarang. Lagi ada promo umroh, lihat promonya di umroh titik H dua C titik or titik id."
-Baris "Ikuti pelan-pelan ya, Bapak, Ibu..." dibuang agar durasi tetap dekat target. Tanpa detail promo. Jumlah kata 147 ≈ {147/2.3:.1f} dtk.
+Baris "Ikuti pelan-pelan ya, Bapak, Ibu..." dibuang agar durasi tetap dekat target. Tanpa detail promo. Jumlah kata 147 ≈ 63,9 dtk.
