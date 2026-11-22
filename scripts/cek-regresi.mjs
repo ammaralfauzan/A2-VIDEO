@@ -14,6 +14,7 @@ const DIRS = {
   TipsUmroh: 'out/stills/tips-umroh',
   AlasanSayaBikinA2: 'out/stills/alasan-saya-bikin-a2',
   TigaSalahKaprah: 'out/stills/tiga-salah-kaprah-otomatisasi',
+  DaftarDanMasukH2C: 'out/stills/daftar-dan-masuk-h2c',
 };
 const ids = process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(DIRS);
 const bad = [];

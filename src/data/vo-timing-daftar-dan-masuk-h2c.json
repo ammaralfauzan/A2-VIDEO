@@ -1,0 +1,244 @@
+{
+ "audio": "public/audio/vo-daftar-dan-masuk-h2c.mp3",
+ "durasi": 60.84,
+ "suara": "Jefri - Soft Explanatory Voice (ElevenLabs, MP3 dari Bos 22 Nov 2026, nama file: v4 s50 sim75), tidak dipercepat",
+ "metode": "ffmpeg silencedetect -35 dB/0,25 dtk (29 potongan ucapan) dicek dengan -30 dB/0,12 dtk untuk koma. Konektor ElevenLabs di sesi ini tidak punya alat unggah berkas lokal, jadi creative_transcribe_audio tidak dipakai. 29 potongan dipetakan ke 13 kalimat naskah dari urutan, durasi, dan jumlah suku kata; belum didengar manusia. Waktu per kata di dalam potongan diperkirakan dari suku kata.",
+ "kalimat": [
+  {
+   "mulai": 0.13,
+   "selesai": 4.55,
+   "teks": "Mau pesan umroh lewat web H dua C? Buat akun dulu, sekali saja.",
+   "potongan": [
+    {
+     "mulai": 0.13,
+     "selesai": 1.97,
+     "teks": "Mau pesan umroh lewat web H dua C?"
+    },
+    {
+     "mulai": 2.33,
+     "selesai": 4.55,
+     "teks": "Buat akun dulu, sekali saja."
+    }
+   ]
+  },
+  {
+   "mulai": 5.02,
+   "selesai": 8.7,
+   "teks": "Ikuti pelan-pelan ya, Bapak, Ibu. Tidak perlu buru-buru.",
+   "potongan": [
+    {
+     "mulai": 5.02,
+     "selesai": 7.18,
+     "teks": "Ikuti pelan-pelan ya, Bapak, Ibu."
+    },
+    {
+     "mulai": 7.69,
+     "selesai": 8.7,
+     "teks": "Tidak perlu buru-buru."
+    }
+   ]
+  },
+  {
+   "mulai": 9.27,
+   "selesai": 14.75,
+   "teks": "Bagian satu: daftar. Buka situs umroh H dua C, lalu tekan Daftar.",
+   "potongan": [
+    {
+     "mulai": 9.27,
+     "selesai": 10.18,
+     "teks": "Bagian satu:"
+    },
+    {
+     "mulai": 10.44,
+     "selesai": 10.98,
+     "teks": "daftar."
+    },
+    {
+     "mulai": 11.45,
+     "selesai": 14.75,
+     "teks": "Buka situs umroh H dua C, lalu tekan Daftar."
+    }
+   ]
+  },
+  {
+   "mulai": 15.18,
+   "selesai": 18.94,
+   "teks": "Isi nama lengkap Anda. Lalu isi email yang masih aktif.",
+   "potongan": [
+    {
+     "mulai": 15.18,
+     "selesai": 16.48,
+     "teks": "Isi nama lengkap Anda."
+    },
+    {
+     "mulai": 16.98,
+     "selesai": 18.94,
+     "teks": "Lalu isi email yang masih aktif."
+    }
+   ]
+  },
+  {
+   "mulai": 19.25,
+   "selesai": 25.77,
+   "teks": "Buat password, minimal delapan huruf atau angka. Ikon mata di samping bisa dipakai untuk melihat tulisannya.",
+   "potongan": [
+    {
+     "mulai": 19.25,
+     "selesai": 20.13,
+     "teks": "Buat password,"
+    },
+    {
+     "mulai": 20.39,
+     "selesai": 22.34,
+     "teks": "minimal delapan huruf atau angka."
+    },
+    {
+     "mulai": 22.85,
+     "selesai": 25.77,
+     "teks": "Ikon mata di samping bisa dipakai untuk melihat tulisannya."
+    }
+   ]
+  },
+  {
+   "mulai": 26.12,
+   "selesai": 30.16,
+   "teks": "Tekan Daftar. Nanti ada kode enam angka yang dikirim ke email Anda.",
+   "potongan": [
+    {
+     "mulai": 26.12,
+     "selesai": 26.87,
+     "teks": "Tekan Daftar."
+    },
+    {
+     "mulai": 27.29,
+     "selesai": 30.16,
+     "teks": "Nanti ada kode enam angka yang dikirim ke email Anda."
+    }
+   ]
+  },
+  {
+   "mulai": 30.48,
+   "selesai": 36.06,
+   "teks": "Buka Gmail, cari surat dari H dua C Travel. Kalau belum ada, lihat juga di kotak Spam.",
+   "potongan": [
+    {
+     "mulai": 30.48,
+     "selesai": 33.5,
+     "teks": "Buka Gmail, cari surat dari H dua C Travel."
+    },
+    {
+     "mulai": 33.77,
+     "selesai": 36.06,
+     "teks": "Kalau belum ada, lihat juga di kotak Spam."
+    }
+   ]
+  },
+  {
+   "mulai": 36.33,
+   "selesai": 40.71,
+   "teks": "Salin enam angkanya, kembali ke H dua C, lalu ketik di kolom kode.",
+   "potongan": [
+    {
+     "mulai": 36.33,
+     "selesai": 40.71,
+     "teks": "Salin enam angkanya, kembali ke H dua C, lalu ketik di kolom kode."
+    }
+   ]
+  },
+  {
+   "mulai": 40.98,
+   "selesai": 43.7,
+   "teks": "Selesai. Daftar cukup sekali ini saja.",
+   "potongan": [
+    {
+     "mulai": 40.98,
+     "selesai": 41.6,
+     "teks": "Selesai."
+    },
+    {
+     "mulai": 41.89,
+     "selesai": 43.7,
+     "teks": "Daftar cukup sekali ini saja."
+    }
+   ]
+  },
+  {
+   "mulai": 44.09,
+   "selesai": 47.89,
+   "teks": "Bagian dua: masuk. Lain kali, tidak perlu kode lagi.",
+   "potongan": [
+    {
+     "mulai": 44.09,
+     "selesai": 44.83,
+     "teks": "Bagian dua:"
+    },
+    {
+     "mulai": 45.11,
+     "selesai": 45.61,
+     "teks": "masuk."
+    },
+    {
+     "mulai": 45.93,
+     "selesai": 47.89,
+     "teks": "Lain kali, tidak perlu kode lagi."
+    }
+   ]
+  },
+  {
+   "mulai": 48.18,
+   "selesai": 52.06,
+   "teks": "Ketik email Anda. Lalu ketik password Anda. Tekan Masuk.",
+   "potongan": [
+    {
+     "mulai": 48.18,
+     "selesai": 49.15,
+     "teks": "Ketik email Anda."
+    },
+    {
+     "mulai": 49.62,
+     "selesai": 51.0,
+     "teks": "Lalu ketik password Anda."
+    },
+    {
+     "mulai": 51.41,
+     "selesai": 52.06,
+     "teks": "Tekan Masuk."
+    }
+   ]
+  },
+  {
+   "mulai": 52.32,
+   "selesai": 55.34,
+   "teks": "Itu saja. Email dan password, langsung masuk.",
+   "potongan": [
+    {
+     "mulai": 52.32,
+     "selesai": 52.9,
+     "teks": "Itu saja."
+    },
+    {
+     "mulai": 53.27,
+     "selesai": 55.34,
+     "teks": "Email dan password, langsung masuk."
+    }
+   ]
+  },
+  {
+   "mulai": 55.62,
+   "selesai": 60.58,
+   "teks": "Gampang, kan? Kunjungi umroh titik H dua C titik or titik id.",
+   "potongan": [
+    {
+     "mulai": 55.62,
+     "selesai": 56.38,
+     "teks": "Gampang, kan?"
+    },
+    {
+     "mulai": 56.75,
+     "selesai": 60.58,
+     "teks": "Kunjungi umroh titik H dua C titik or titik id."
+    }
+   ]
+  }
+ ]
+}

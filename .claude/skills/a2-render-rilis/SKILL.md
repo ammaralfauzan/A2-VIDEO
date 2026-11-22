@@ -10,6 +10,8 @@ description: Alur render dan rilis video A2/H2C: stills → review → pemeriksa
 - Render: `npx remotion render <Id> out/<nama>.mp4 --concurrency=4`. Frame kunci: `node scripts/render-stills.mjs <Id> [awalan...]` (`SAFE_GUIDE=1` menandai area aman 9:16). Daftar frame tiap komposisi ada di `scripts/render-stills.mjs` (`SETS`).
 - Komposisi baru: daftarkan di `src/Root.tsx` (dibungkus `withProbe`), tambah `SETS` di `render-stills.mjs`, skrip `stills:*`/`render:*` di `package.json`, dan bagian di `README.md`.
 
+- `node_modules` bawaan container bisa rusak sebagian (mis. `remotion/dist/esm` hilang, `tsx` tidak ada, tsc mengeluh `useVideoConfig`): perbaiki dengan `rm -rf node_modules && npm ci`.
+
 ## Urutan wajib
 1. `npx tsc --noEmit -p .` bersih.
 2. **Frame kunci** tiap adegan, termasuk frame di tengah transisi; lihat di ukuran penuh dan lewati checklist `a2-motion-video`.
@@ -18,6 +20,7 @@ description: Alur render dan rilis video A2/H2C: stills → review → pemeriksa
    - `ffprobe` durasi dan resolusi; `ffmpeg -af volumedetect` (tidak ada klip, SFX di bawah narator).
    - **Kedipan/frame meloncat** (lihat pelajaran glitch di vault: bandingkan beda antarframe; tidak boleh ada frame yang beda jauh dari kedua tetangganya).
 5. **Regresi**: setelah mengubah komponen bersama, `node scripts/cek-regresi.mjs` (semua video) atau dengan Id video lama; harus "Identik".
+   - 22 Nov 2026: 7 frame `tiga-salah-kaprah-otomatisasi/01b..03d` (kartu dibuka/dicap) juga beda di container baru, padahal render kode `HEAD` (git worktree + symlink node_modules) identik dengan render sesi: derau lingkungan, kembalikan dengan `git checkout HEAD -- out/stills/...`.
    - Di container cloud (19 Nov 2026) tiga frame selalu sedikit beda walau kodenya asli: `a2-umum-9x16/06-laporan-f600`, `jam-9-malam-9x16/07-laporan-f712`, `tips-umroh/00b-pembuka-buka-f033` (beda <60/255 pada beberapa puluh piksel). Buktikan dengan merender ulang frame itu memakai kode `HEAD`; bila tetap beda, itu derau lingkungan: kembalikan dengan `git checkout HEAD -- out/stills/...` dan jangan di-commit.
 6. Commit pesan jelas + atribusi sesi; `git push -u origin <cabang kerja>`. Cabang kerja repo: `claude/inspiring-keller-3vz48r`. **Tidak ada PR** kecuali diminta; jangan menyentuh `main`.
 7. Kirim MP4 ke Bos (`SendUserFile`) dan jelaskan perubahan singkat, risiko, dan yang belum dicek.

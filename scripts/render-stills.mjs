@@ -123,6 +123,14 @@ SETS.ManualTemplateOtomatis = {
   },
 };
 
+// Frame kunci "Daftar dan Masuk Akun H2C" dihitung dari timing suara (termasuk tengah transisi).
+SETS.DaftarDanMasukH2C = {
+  dir: 'out/stills/daftar-dan-masuk-h2c',
+  get stills() {
+    return JSON.parse(execSync('npx tsx scripts/daftar-dan-masuk-h2c-frames.ts', {encoding: 'utf8'}));
+  },
+};
+
 const [id = 'JamSembilanMalam', ...only] = process.argv.slice(2);
 const set = SETS[id];
 if (!set) throw new Error(`Komposisi tidak dikenal: ${id}`);

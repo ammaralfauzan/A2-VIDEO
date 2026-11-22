@@ -25,6 +25,8 @@ import {TigaHalSebelumWaris} from './TigaHalSebelumWaris';
 import {TOTAL_FRAMES as TH_TOTAL_FRAMES} from './data/timeline-tiga-hal-sebelum-waris-dibagi';
 import {ManualTemplateOtomatis} from './ManualTemplateOtomatis';
 import {TOTAL_FRAMES as MTO_TOTAL_FRAMES} from './data/timeline-manual-template-otomatis';
+import {DaftarDanMasukH2C} from './DaftarDanMasukH2C';
+import {TOTAL_FRAMES as DMH_TOTAL_FRAMES} from './data/timeline-daftar-dan-masuk-h2c';
 import {BrandSample as TamsBrandSample} from './brands/tams-consulting/BrandSample';
 import {BrandSample as H2cUmrohBrandSample} from './brands/h2c-umroh/BrandSample';
 
@@ -41,6 +43,7 @@ const PTigaSalahKaprah = withProbe(TigaSalahKaprah);
 const POtomatisasiResep = withProbe(OtomatisasiResep);
 const PTigaHal = withProbe(TigaHalSebelumWaris);
 const PManualTemplateOtomatis = withProbe(ManualTemplateOtomatis);
+const PDaftarDanMasukH2C = withProbe(DaftarDanMasukH2C);
 
 for (const weight of ['400', '500', '600']) {
   loadFont({family: 'Geist', url: staticFile(`fonts/geist-sans-latin-${weight}-normal.woff2`), weight});
@@ -102,5 +105,7 @@ export const Root: React.FC = () => (
     <Composition id="TigaHalSebelumWaris" component={PTigaHal} durationInFrames={TH_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} defaultProps={{safeGuide: false}} />
     {/* "Manual, Template, atau Otomatis?": tangga tiga tingkat + contoh tugas marketing digital, Gigi naik, 9:16. */}
     <Composition id="ManualTemplateOtomatis" component={PManualTemplateOtomatis} durationInFrames={MTO_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} defaultProps={{safeGuide: false}} />
+    {/* "Daftar dan Masuk Akun H2C": replika web umroh H2C + kursor manusiawi, brand H2C Umroh, 9:16. */}
+    <Composition id="DaftarDanMasukH2C" component={PDaftarDanMasukH2C} durationInFrames={DMH_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} defaultProps={{safeGuide: false}} />
   </>
 );

@@ -15,3 +15,9 @@ Komponen siap pakai di `src/components/`: `Window` (jendela macOS: title bar, ti
 5. Titik balik: kekacauan (`MessyDesktop`) berubah jadi satu aplikasi bersih lewat klik satu tombol ("Otomatiskan").
 6. Versi 9:16 memakai kamera yang menyorot area aktif (`Vertical.tsx`: `Camera keys`), teks ditata ulang di area aman (`a2-safe-area-sosmed`). Verifikasi 16:9 tetap identik dengan `scripts/cek-regresi.mjs`.
 7. Teks UI terbaca di layar ponsel (≥ 28 px pada 1920x1080).
+
+## Replika web brand lain + kursor manusiawi (contoh: `DaftarDanMasukH2C`, H2C Umroh)
+- Jendela peramban tampilan HP (720x990 di x 180–900) dengan dua tab (situs brand + "Email" generik) dan bilah alamat; pindah aplikasi = klik tab. Aplikasi email tanpa merek pihak ketiga (narasi boleh menyebut "Gmail", layar menulis "email").
+- Kursor manusiawi (`src/scenes/daftar-dan-masuk-h2c/Kursor.tsx`): bezier kuadrat dengan lengkung berganti sisi, easing cepat-lalu-melambat, jeda sebelum klik, goyang kecil saat diam, riak emas saat klik. Titik kunci harus berurutan (skrip frame kunci memeriksanya).
+- Ketikan tidak rata (jeda tetap per huruf, lebih lama di `@` dan `.`); kolom aktif disorot garis emas + cahaya; password titik-titik lalu terlihat lewat ikon mata.
+- Kartu bagian/selesai di tengah layar: jendela di belakangnya dipudarkan **penuh** dan judul baru masuk ±6 frame kemudian; jendela yang hanya diredupkan terlihat menumpuk dengan judul besar.
