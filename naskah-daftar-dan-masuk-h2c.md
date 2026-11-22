@@ -71,3 +71,9 @@ Lihat serah-terima/daftar-dan-masuk-h2c.md (B1 sampai B4).
 - Nama tombol dan urutan layar (Daftar, Masuk, kolom, kode 6 angka, "H2C Travel") dari kode repo h2c-umroh; cek ke situs hidup di BANGUN.
 - Setelah kode benar, apakah akun langsung masuk atau harus Masuk lagi belum dipastikan; naskah hanya bilang "Selesai".
 - Suara narasi belum ditentukan Bos (kit); Jefri hanya usulan.
+
+## Versi B: dengan ajakan promo (permintaan Bos, 22 Nov 2026)
+Beda hanya di penutup. Detail promo (harga, kuota, tanggal) tidak disebut; menunggu data dari Bos. Layar akhir: kartu "PROMO" polos (tanpa angka) + tombol emas `umroh.h2c.or.id`.
+Penutup lama: "Gampang, kan? Kunjungi umroh titik H dua C titik or titik id."
+Penutup baru: "[warmly] Gampang, kan? Sekarang lagi ada promo umroh. Lihat promonya di umroh titik H dua C titik or titik id."
+Jumlah kata 150 ≈ 65,2 dtk (+8,7% dari target 60 dtk, masih di bawah 10%).

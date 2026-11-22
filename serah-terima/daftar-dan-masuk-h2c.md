@@ -8,6 +8,7 @@
 - Daftar revisi Bos (belum dikerjakan): -
 - Sudah diperiksa: anti-kembar vs docs/daftar-konten.md (aman); 143 kata ≈ 62,2 dtk.
 - Belum diperiksa / risiko: nama tombol/urutan layar dari kode repo, belum dari situs hidup; layar sesudah kode benar; B-roll dibuat Bos sendiri.
+- Versi B (ajakan promo): diminta Bos 22 Nov, hanya penutup berbeda (lihat naskah). Detail promo belum diberikan Bos.
 - Caption dan jam posting usulan: -
 - Catatan untuk room berikutnya: BANGUN pakai replika layar (tema `src/brands/h2c-umroh/theme.ts`). "H2C" ditulis "H dua C" di suara. Prompt B-roll ada di bawah.
 
