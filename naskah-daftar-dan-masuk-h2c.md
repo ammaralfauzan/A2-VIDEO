@@ -87,3 +87,7 @@ Baris "Ikuti pelan-pelan ya, Bapak, Ibu..." dibuang agar durasi tetap dekat targ
 Teks layar hook: "ADA PROMO UMROH!" · Hook suara: "Ada promo umroh di H dua C! Tapi sebelum itu, buat akun dulu. Gampang kok."
 Penutup: "Gampang, kan? Yuk, buat akun sekarang, lalu lihat promonya di umroh titik H dua C titik or titik id."
 Tanpa detail promo. Jumlah kata 145 ≈ 63.0 dtk.
+
+## Versi E: untuk bapak/ibu sepuh dan gaptek (permintaan Bos, 22 Nov 2026)
+Dasar versi D (promo di depan). Kata lebih sederhana (password dijelaskan "kata rahasia", "salin" jadi "lihat lalu ketik"), menyapa "Bapak, Ibu", kalimat pendek, tag [slowly] di langkah penting. Tanpa detail promo. Jumlah kata 145 ≈ 63.0 dtk.
+Layar: teks besar, kursor lebih lambat, jeda lebih lama sebelum klik, sorotan emas lebih tebal.
