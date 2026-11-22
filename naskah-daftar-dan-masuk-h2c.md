@@ -91,3 +91,30 @@ Tanpa detail promo. Jumlah kata 145 ≈ 63.0 dtk.
 ## Versi E: untuk bapak/ibu sepuh dan gaptek (permintaan Bos, 22 Nov 2026)
 Dasar versi D (promo di depan). Kata lebih sederhana (password dijelaskan "kata rahasia", "salin" jadi "lihat lalu ketik"), menyapa "Bapak, Ibu", kalimat pendek, tag [slowly] di langkah penting. Tanpa detail promo. Jumlah kata 145 ≈ 63.0 dtk.
 Layar: teks besar, kursor lebih lambat, jeda lebih lama sebelum klik, sorotan emas lebih tebal.
+
+### Naskah suara versi E lengkap (arsip; dipakai di BANGUN 22 Nov 2026, MP3 63,24 dtk)
+```
+[warmly] Bapak, Ibu, ada promo umroh di H dua C! Tapi sebelum itu, buat akun dulu ya. Gampang kok, pelan-pelan saja.
+
+[slowly] Bagian satu: daftar. Buka situs umroh H dua C. Lalu tekan tombol Daftar.
+
+[softly] Ketik nama lengkap Bapak atau Ibu. Lalu ketik alamat email.
+
+[softly] Buat password, yaitu kata rahasia, minimal delapan huruf atau angka. Tekan gambar mata kalau mau melihat tulisannya.
+
+[curious] Lalu tekan Daftar. Nanti ada kode enam angka dikirim ke email Bapak atau Ibu.
+
+[warmly] Buka Gmail, cari surat dari H dua C Travel. Kalau tidak ada, lihat di kotak Spam.
+
+[slowly] Lihat enam angkanya, lalu ketik di kolom kode H dua C.
+
+[warmly] Selesai! Daftar cukup sekali saja.
+
+[warmly] Bagian dua: masuk. Lain kali, tidak perlu kode lagi.
+
+[softly] Ketik email. Lalu ketik password. Tekan Masuk.
+
+[warmly] Itu saja. Mudah, kan?
+
+[excited] Yuk, Bapak, Ibu, buat akun sekarang, lalu lihat promonya di umroh titik H dua C titik or titik id.
+```

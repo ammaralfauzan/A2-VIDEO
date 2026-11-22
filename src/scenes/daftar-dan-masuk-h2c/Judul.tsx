@@ -24,16 +24,18 @@ const stag = (f: number, start: number, k: number, end: number) => {
   return {opacity: p * o, transform: `translateY(${(1 - p) * 26}px) scale(${0.96 + 0.04 * p})`};
 };
 
+// Versi E (promo di depan): teks layar hook "ADA PROMO UMROH!", lalu pita "buat akun dulu" saat kalimat kedua.
 export const Hook: React.FC<{f: number}> = ({f}) => {
   if (f > P.hookOut + 2) return null;
   const end = P.hookOut;
   return (
-    <div style={{...center, top: 360}}>
+    <div style={{...center, top: 330}}>
       <Img src={staticFile('brands/h2c-umroh/logo.jpeg')} style={{width: 150, height: 150, borderRadius: '50%', border: `3px solid ${U.goldLine}`, ...stag(f, 0, 0, end)}} />
-      <div style={{fontFamily: UF.script, fontSize: 104, lineHeight: 1.1, color: U.ivory, marginTop: 40, padding: '0 10px', ...stag(f, 0, 1, end)}}>Daftar &amp; Masuk</div>
-      <div style={{...big, fontSize: 170, marginTop: 6, ...stag(f, 0, 2, end)}}>Akun H2C</div>
-      <div style={{...stag(f, 0, 3, end)}}>
-        <div style={{...RIBBON, fontFamily: UF.script, fontSize: 62, lineHeight: 1, padding: '6px 34px 14px', marginTop: 30}}>cukup sekali saja</div>
+      <div style={{fontFamily: UF.script, fontSize: 100, lineHeight: 1.1, color: U.ivory, marginTop: 30, padding: '0 10px', ...stag(f, 0, 1, end)}}>Bapak, Ibu,</div>
+      <div style={{...big, fontSize: 150, marginTop: 6, ...stag(f, 0, 2, end)}}>Ada Promo</div>
+      <div style={{...big, fontSize: 150, ...stag(f, 0, 3, end)}}>Umroh!</div>
+      <div style={{...stag(f, P.hookRibbon, 0, end)}}>
+        <div style={{...RIBBON, fontFamily: UF.script, fontSize: 60, lineHeight: 1, padding: '6px 34px 14px', marginTop: 34}}>buat akun dulu, sekali saja</div>
       </div>
     </div>
   );

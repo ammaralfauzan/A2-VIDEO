@@ -11,6 +11,7 @@ for (let i = 1; i < SCREENS.length; i++) {
 
 const frames: [string, number][] = [
   ['01-hook-judul', 40],
+  ['01a-hook-pita', P.hookRibbon + 20],
   ['01b-hook-ke-layar-tengah', P.frameIn + 6],
   ['02-beranda-kursor', sg(3) + 10],
   ['03-bagian1-tengah', P.sec1[0] + 5],
@@ -27,7 +28,7 @@ const frames: [string, number][] = [
   ['08b-kotak-masuk', P.clickItem - 6],
   ['08c-surat-terbuka', P.clickItem + 20],
   ['08d-spam', P.spam + 6],
-  ['09-salin', P.copyTo + 6],
+  ['09-lihat-kode', P.copyTo + 6],
   ['09b-kembali-h2c-tengah', P.clickTabH2C + 7],
   ['09c-ketik-kode', Math.round((P.digitsFrom + P.digitsTo) / 2)],
   ['09d-kode-penuh', P.digitsTo + 10],
@@ -41,7 +42,8 @@ const frames: [string, number][] = [
   ['13-akun-tengah', P.clickMasuk + 8],
   ['13b-akun-chip', P.chipLangsung + 12],
   ['14-penutup-tengah', P.outro + 8],
-  ['14b-penutup-tombol', wf(28, 1) + 20],
+  ['14a-penutup-promo', wf(27, 8) + 8],
+  ['14b-penutup-tombol', wf(27, 10) + 20],
   ['14c-akhir', TOTAL_FRAMES - 4],
 ];
 console.log(JSON.stringify(frames));

@@ -80,8 +80,8 @@ const Field: React.FC<{
           height: FIELD_H,
           borderRadius: 24,
           background: U.bg2,
-          border: `3px solid ${focus > 0.02 ? U.gold : U.goldLine}`,
-          boxShadow: focus > 0.02 ? `0 0 0 ${8 * focus}px rgba(212,175,106,${0.22 * focus})` : 'none',
+          border: `${focus > 0.02 ? 6 : 3}px solid ${focus > 0.02 ? U.goldLight : U.goldLine}`,
+          boxShadow: focus > 0.02 ? `0 0 0 ${7 * focus}px rgba(212,175,106,${0.3 * focus})` : 'none',
           boxSizing: 'border-box',
         })}
       />
@@ -316,7 +316,6 @@ const Email: React.FC<{f: number}> = ({f}) => {
   const spam = interpolate(f, [P.spam - 2, P.spam + 4, P.spam + 12, P.spam + 20], [0, 1, 1, 0], clamp);
   const hover = interpolate(f, [P.clickItem - 10, P.clickItem - 4], [0, 1], clamp);
   const sel = interpolate(f, [P.copyFrom + 8, P.copyTo], [0, 1], clamp);
-  const toast = interpolate(f, [P.copyTo + 2, P.copyTo + 8, P.clickTabH2C - 2, P.clickTabH2C + 2], [0, 1, 1, 0], clamp);
   const ink = U.bg;
   const pill = (label: string, x: number, w: number, active: boolean, glow = 0) => (
     <div
@@ -376,14 +375,6 @@ const Email: React.FC<{f: number}> = ({f}) => {
           <div style={A({left: IN_X, top: MAIL.codeY + 18, width: IN_W, textAlign: 'center', fontFamily: UF.big, fontSize: 84, letterSpacing: 22, lineHeight: 1.15, color: ink})}>{DATA.kode}</div>
           <div style={A({left: IN_X, top: MAIL.codeY + 150, width: IN_W, textAlign: 'right', fontFamily: UF.text, fontWeight: 600, fontSize: 22, color: ink, opacity: 0.5})}>contoh</div>
           <div style={A({left: IN_X, top: MAIL.codeY + 200, width: IN_W, fontFamily: UF.text, fontWeight: 500, fontSize: 24, lineHeight: 1.4, color: ink, opacity: 0.6})}>Jangan bagikan kode ini kepada siapa pun.</div>
-          {toast > 0 ? (
-            <div style={A({left: 540 - 130, top: 1150 + (1 - toast) * 20, width: 260, height: 70, borderRadius: 999, background: U.surface, opacity: toast, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12, fontFamily: UF.text, fontWeight: 700, fontSize: 26, color: U.ivory})}>
-              <svg width={30} height={30} viewBox="0 0 24 24">
-                <path d="M5 12.5 L10 17 L19 7" fill="none" stroke={U.leaf} strokeWidth={3.2} strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-              Disalin
-            </div>
-          ) : null}
         </div>
       ) : null}
     </>

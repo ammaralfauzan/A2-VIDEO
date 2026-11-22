@@ -20,4 +20,7 @@ Komponen siap pakai di `src/components/`: `Window` (jendela macOS: title bar, ti
 - Jendela peramban tampilan HP (720x990 di x 180–900) dengan dua tab (situs brand + "Email" generik) dan bilah alamat; pindah aplikasi = klik tab. Aplikasi email tanpa merek pihak ketiga (narasi boleh menyebut "Gmail", layar menulis "email").
 - Kursor manusiawi (`src/scenes/daftar-dan-masuk-h2c/Kursor.tsx`): bezier kuadrat dengan lengkung berganti sisi, easing cepat-lalu-melambat, jeda sebelum klik, goyang kecil saat diam, riak emas saat klik. Titik kunci harus berurutan (skrip frame kunci memeriksanya).
 - Ketikan tidak rata (jeda tetap per huruf, lebih lama di `@` dan `.`); kolom aktif disorot garis emas + cahaya; password titik-titik lalu terlihat lewat ikon mata.
+- **Versi untuk penonton sepuh/gaptek** (Bos, 22 Nov 2026, `DaftarDanMasukH2C` versi E): teks layar 56 px, kursor 66x78, kursor tiba ±10 frame sebelum klik lalu diam (`dwell` di `Kursor.tsx`), sorotan kolom 6 px. Cahaya sorotan maks. ±7 px: lebih lebar menyentuh label kolom di atasnya.
+- Teks layar yang berakhir sebelum URL jangan menggantung ("lalu lihat promonya di"): taruh kata sambung bersama URL di potongan yang disembunyikan.
+- Narasi "lihat lalu ketik" (bukan "salin"): jangan tampilkan toast "Disalin"; layar harus cocok dengan kata kerja di suara.
 - Kartu bagian/selesai di tengah layar: jendela di belakangnya dipudarkan **penuh** dan judul baru masuk ±6 frame kemudian; jendela yang hanya diredupkan terlihat menumpuk dengan judul besar.

@@ -16,7 +16,9 @@ export const cursorAt = (f: number): {x: number; y: number; vis: number} => {
   const a: Key = K[i];
   if (i === K.length - 1) return {x: a.x, y: a.y, vis: a.hide ? 0 : 1};
   const b: Key = K[i + 1];
-  const t = land((f - a.f) / Math.max(1, b.f - a.f));
+  // versi E (sepuh): sebelum klik kursor tiba lebih awal lalu diam sebentar
+  const dwell = b.click ? Math.min(10, Math.floor((b.f - a.f) * 0.45)) : 0;
+  const t = land(Math.min(1, (f - a.f) / Math.max(1, b.f - a.f - dwell)));
   const dx = b.x - a.x;
   const dy = b.y - a.y;
   const dist = Math.hypot(dx, dy);
@@ -59,8 +61,8 @@ export const Kursor: React.FC<{f: number}> = ({f}) => {
         />
       ) : null}
       <svg
-        width={56}
-        height={66}
+        width={66}
+        height={78}
         viewBox="0 0 28 33"
         style={{position: 'absolute', left: x - 4, top: y - 3, transform: `scale(${1 - press * 0.18})`, transformOrigin: '4px 3px', filter: 'drop-shadow(0 6px 10px rgba(0,0,0,.45))'}}
       >

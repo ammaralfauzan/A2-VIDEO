@@ -25,8 +25,8 @@ export const Caption: React.FC<{f: number}> = ({f}) => {
         columnGap: 14,
         fontFamily: UF.text,
         fontWeight: 700,
-        fontSize: 50,
-        lineHeight: 1.22,
+        fontSize: 56,
+        lineHeight: 1.18,
         textAlign: 'center',
         opacity: out,
       }}
