@@ -120,3 +120,29 @@ Layar: teks besar, kursor lebih lambat, jeda lebih lama sebelum klik, sorotan em
 ```
 ### Revisi Versi E (23 Nov 2026): kode OTP disalin dan ditempel
 Baris kode jadi: "Salin atau copy enam angkanya. Kembali ke H dua C, lalu tempel atau paste di kolom kode." Visual: angka di Gmail disorot, kursor menekan Salin, kembali ke tab H2C, menempel ke 6 kotak sekaligus. Baris "Itu saja. Mudah, kan?" dibuang agar durasi aman. Jumlah kata 147 ≈ 63.9 dtk.
+
+## Versi F (final usulan, 23 Nov 2026): hook "ribet? salah!", sepuh/gaptek, OTP salin-tempel, promo di penutup
+Teks layar hook: "DAFTAR ONLINE ITU RIBET? SALAH!" · Tanpa detail promo. Jumlah kata 144 ≈ 62.6 dtk.
+```
+[excited] Katanya daftar umroh online itu ribet? Salah! Bapak, Ibu juga bisa. Ikuti langkahnya!
+
+[slowly] Bagian satu: daftar. Buka situs umroh H dua C. Lalu tekan tombol Daftar.
+
+[softly] Ketik nama lengkap Bapak atau Ibu. Lalu ketik alamat email.
+
+[softly] Buat password, yaitu kata rahasia, minimal delapan huruf atau angka. Tekan gambar mata kalau mau melihat tulisannya.
+
+[curious] Lalu tekan Daftar. Nanti ada kode enam angka dikirim ke email Bapak atau Ibu.
+
+[warmly] Buka Gmail, cari surat dari H dua C Travel. Kalau tidak ada, lihat di kotak Spam.
+
+[slowly] Salin atau copy enam angkanya. Kembali ke H dua C, lalu tempel atau paste di kolom kode.
+
+[warmly] Selesai! Daftar cukup sekali saja.
+
+[warmly] Bagian dua: masuk. Lain kali, tidak perlu kode lagi.
+
+[softly] Ketik email. Lalu ketik password. Tekan Masuk.
+
+[excited] Mudah, kan? Yuk, Bapak, Ibu, buat akun sekarang. Lagi ada promo umroh, lihat di umroh titik H dua C titik or titik id.
+```
