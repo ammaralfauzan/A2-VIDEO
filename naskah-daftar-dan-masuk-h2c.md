@@ -118,3 +118,5 @@ Layar: teks besar, kursor lebih lambat, jeda lebih lama sebelum klik, sorotan em
 
 [excited] Yuk, Bapak, Ibu, buat akun sekarang, lalu lihat promonya di umroh titik H dua C titik or titik id.
 ```
+### Revisi Versi E (23 Nov 2026): kode OTP disalin dan ditempel
+Baris kode jadi: "Salin atau copy enam angkanya. Kembali ke H dua C, lalu tempel atau paste di kolom kode." Visual: angka di Gmail disorot, kursor menekan Salin, kembali ke tab H2C, menempel ke 6 kotak sekaligus. Baris "Itu saja. Mudah, kan?" dibuang agar durasi aman. Jumlah kata 147 ≈ 63.9 dtk.
