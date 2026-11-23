@@ -17,7 +17,7 @@ export const sfxEvents = (): Ev[] => {
   Object.values(TYPE).forEach((t) => {
     for (let f = t.from + 2; f < typedEnd(t); f += 3) ev.push({f, src: 'tick', v: 0.22});
   });
-  for (let f = P.digitsFrom; f < P.digitsTo; f += Math.round((P.digitsTo - P.digitsFrom) / 6)) ev.push({f, src: 'tick', v: 0.3});
+  ev.push({f: P.digitsFrom, src: 'tick', v: 0.4}); // tempel: 6 angka masuk sekaligus
   ev.push({f: P.frameIn, src: 'umroh/wush', v: 0.5});
   ev.push({f: P.sec1[0], src: 'umroh/wush-besar', v: 0.5});
   ev.push({f: P.sec2[0], src: 'umroh/wush-besar', v: 0.5});

@@ -1,5 +1,5 @@
 // Komposisi "Daftar dan Masuk Akun H2C" (DaftarDanMasukH2C), 1080x1920, 30 fps, brand H2C Umroh.
-// Waktu dari vo-timing-daftar-dan-masuk-h2c.json (suara asli Bos, tidak dipercepat): 28 potongan ucapan (naskah versi E).
+// Waktu dari vo-timing-daftar-dan-masuk-h2c.json (suara asli Bos, tidak dipercepat): 31 potongan ucapan (naskah versi F).
 // Teks layar per potongan: *kata* = kata kunci (emas). | = pindah ke potongan teks berikutnya (maks. 6 kata).
 // Di layar "H2C" ditulis H2C (diucapkan "H dua C"); "Gmail" di layar ditulis "email" (tanpa merek pihak ketiga).
 import voTiming from './vo-timing-daftar-dan-masuk-h2c.json';
@@ -12,9 +12,10 @@ const T = voTiming as Timing;
 const POT: Pot[] = T.kalimat.flatMap((k) => k.potongan);
 
 export const SEG_TEXT = [
-  'Bapak, Ibu, ada|*promo* *umroh* di *H2C!*',
-  'Tapi sebelum itu,|buat *akun* dulu ya.',
-  'Gampang kok,|*pelan-pelan* saja.',
+  'Katanya daftar|*umroh* *online*|itu *ribet?*',
+  '*Salah!*',
+  'Bapak, Ibu|juga *bisa.*',
+  'Ikuti *langkahnya!*',
   'Bagian *satu:*',
   '*daftar.*',
   'Buka situs umroh *H2C.*',
@@ -28,7 +29,9 @@ export const SEG_TEXT = [
   'Nanti ada *kode* *enam* *angka*|dikirim ke email|Bapak atau Ibu.',
   'Buka *email,*|cari surat dari *H2C* *Travel.*',
   'Kalau tidak ada,|lihat di kotak *Spam.*',
-  '*Lihat* enam angkanya,|lalu *ketik* di|kolom kode *H2C.*',
+  '*Salin* atau *copy*|enam angkanya.',
+  'Kembali ke *H2C,*',
+  'lalu *tempel* atau|*paste* di kolom kode.',
   '*Selesai!*',
   'Daftar cukup|*sekali* saja.',
   'Bagian *dua:*',
@@ -37,9 +40,9 @@ export const SEG_TEXT = [
   'Ketik *email.*',
   'Lalu ketik *password.*',
   'Tekan *Masuk.*',
-  'Itu saja.',
   '*Mudah,* kan?',
-  'Yuk, Bapak, Ibu,|buat akun *sekarang,*|lalu lihat *promonya*|di umroh.h2c.or.id',
+  'Yuk, Bapak, Ibu,|buat akun *sekarang.*',
+  'Lagi ada *promo* *umroh,*|lihat di umroh.h2c.or.id',
 ] as const;
 
 if (POT.length !== SEG_TEXT.length) throw new Error('Jumlah potongan timing VO tidak cocok dengan teks layar');
@@ -48,7 +51,7 @@ export const AUDIO_END = T.durasi;
 export const sg = (i: number) => Math.round(POT[i].mulai * FPS);
 export const eg = (i: number) => Math.round(POT[i].selesai * FPS);
 
-// Suara 63,24 dtk + logo diam ±0,9 dtk (suara tidak dipercepat).
+// Suara 63,79 dtk + logo diam ±0,9 dtk (suara tidak dipercepat).
 export const TOTAL_FRAMES = Math.ceil((AUDIO_END + 0.9) * FPS);
 
 const syllables = (w: string) => Math.max(1, (w.toLowerCase().match(/[aiueo]+/g) || []).length);

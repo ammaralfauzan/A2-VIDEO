@@ -1,6 +1,6 @@
 // Tata letak dan jadwal adegan "Daftar dan Masuk Akun H2C". Semua frame dihitung dari timing suara.
 // Area aman 9:16: x 60–900, y 220–1500. Isi ditengahkan di x 540, lebar maks. 720 (x 180–900).
-import {eg, sg, TOTAL_FRAMES, wf} from '../../data/timeline-daftar-dan-masuk-h2c';
+import {sg, TOTAL_FRAMES, wf} from '../../data/timeline-daftar-dan-masuk-h2c';
 
 // Jendela peramban (replika web umroh H2C tampilan HP).
 export const FRAME = {x: 180, y: 300, w: 720, h: 990} as const;
@@ -30,6 +30,9 @@ export const TAB1 = {x: FRAME.x + 14, w: 330};
 export const TAB2 = {x: FRAME.x + 352, w: 220};
 export const HEADER_BTN = {daftar: {x: 724, y: 462, w: 136, h: 56}, masuk: {x: 604, y: 462, w: 110, h: 56}};
 export const MAIL = {pillsY: 456, itemY: 548, itemH: 124, codeY: 820};
+// Menu kecil seperti di HP: "Salin" di atas kode email, "Tempel" di atas kotak kode.
+export const COPY_MENU = {x: 540 - 100, y: 738, w: 200, h: 68};
+export const PASTE_MENU = {x: 236, y: 604, w: 220, h: 68};
 export const CAPTION_BOX = {x: 180, y: 1330, w: 720, h: 170};
 
 // Isian fiktif.
@@ -42,37 +45,41 @@ export const DATA = {
 
 // Jadwal (frame global).
 export const P = {
-  hookOut: sg(2) - 12,
-  hookRibbon: sg(1) - 4,
-  frameIn: sg(2) - 16,
-  cursorIn: sg(2) + 6,
-  sec1: [sg(3) - 6, sg(5) + 2] as [number, number],
-  clickDaftar1: wf(6, 3) + 2,
-  clickNama: sg(7) + 2,
-  clickEmail: wf(8, 1) - 2,
-  clickPass: sg(9) + 1,
-  eyeHint: wf(11, 0),
-  clickEye: wf(11, 3),
-  clickDaftar2: wf(12, 2) + 1,
-  notif: wf(13, 5),
-  clickTabMail: wf(14, 1) + 2,
-  clickItem: wf(14, 6) + 2,
-  spam: wf(15, 6),
-  copyFrom: wf(16, 0),
-  copyTo: wf(16, 2) + 4,
-  clickTabH2C: wf(16, 3),
-  clickBox: wf(16, 4) + 2,
-  digitsFrom: wf(16, 5) + 2,
-  digitsTo: eg(16) - 4,
-  done: [sg(17) - 3, sg(19) - 8] as [number, number],
-  sec2: [sg(19) - 6, sg(21) + 2] as [number, number],
-  clickMEmail: sg(22) - 2,
-  clickMPass: sg(23) - 3,
-  clickMasuk: wf(24, 1) + 1,
-  chipEmail: sg(25),
-  chipPass: wf(25, 1),
-  chipLangsung: sg(26),
-  outro: sg(27) - 6,
+  // hook versi F: "Daftar online itu ribet?" lalu "Salah!" lalu pita "Bapak, Ibu juga bisa"
+  hookSalah: sg(1) - 4,
+  hookRibbon: sg(2) - 4,
+  hookOut: sg(3) - 12,
+  frameIn: sg(3) - 16,
+  sec1: [sg(4) - 6, sg(6) + 2] as [number, number],
+  clickDaftar1: wf(7, 3) + 2,
+  clickNama: sg(8) + 2,
+  clickEmail: wf(9, 1) - 2,
+  clickPass: sg(10) + 1,
+  eyeHint: wf(12, 0),
+  clickEye: wf(12, 3),
+  clickDaftar2: wf(13, 2) + 1,
+  notif: wf(14, 5),
+  clickTabMail: wf(15, 1) + 2,
+  clickItem: wf(15, 6) + 2,
+  spam: wf(16, 6),
+  // salin-tempel (revisi E 23 Nov): angka disorot, menu "Salin" ditekan, kembali ke H2C, menu "Tempel" ditekan
+  selFrom: wf(17, 0) - 2,
+  selTo: wf(17, 0) + 10,
+  copyClick: wf(17, 2) + 2,
+  clickTabH2C: wf(18, 0) + 4,
+  clickBox: sg(19) - 2,
+  pasteClick: wf(19, 1) + 4,
+  digitsFrom: wf(19, 1) + 6,
+  digitsTo: wf(19, 1) + 14,
+  done: [sg(20) - 3, sg(22) - 8] as [number, number],
+  sec2: [sg(22) - 6, sg(24) + 2] as [number, number],
+  clickMEmail: sg(25) - 2,
+  clickMPass: sg(26) - 3,
+  clickMasuk: wf(27, 1) + 1,
+  chipEmail: wf(27, 1) + 14,
+  chipPass: wf(27, 1) + 22,
+  chipLangsung: sg(28),
+  outro: sg(29) - 6,
   end: TOTAL_FRAMES,
 };
 
@@ -102,10 +109,6 @@ export const TYPE = {
 export type Key = {f: number; x: number; y: number; click?: boolean; hide?: boolean};
 const fieldPt = (y: number, dx = -60) => ({x: 540 + dx, y: y + FIELD_H / 2});
 export const CURSOR_KEYS: Key[] = [
-  {f: P.cursorIn - 1, x: 1010, y: 1380, hide: true},
-  {f: P.cursorIn + 40, x: 660, y: 1010},
-  {f: P.sec1[0] - 4, x: 640, y: 1000},
-  {f: P.sec1[0] + 6, x: 640, y: 1000, hide: true},
   {f: P.sec1[1] - 2, x: 600, y: 960, hide: true},
   {f: P.sec1[1] + 6, x: 600, y: 960},
   {f: P.clickDaftar1 - 12, x: 793, y: 492},
@@ -133,13 +136,17 @@ export const CURSOR_KEYS: Key[] = [
   {f: P.clickItem + 24, x: 780, y: 760},
   {f: P.spam - 8, x: IN_X + 300, y: MAIL.pillsY + 30},
   {f: P.spam + 4, x: IN_X + 298, y: MAIL.pillsY + 28},
-  {f: P.copyFrom + 5, x: 300, y: MAIL.codeY + 66},
-  {f: P.copyFrom + 8, x: 300, y: MAIL.codeY + 66, click: true},
-  {f: P.copyTo, x: 780, y: MAIL.codeY + 70},
+  {f: P.selFrom, x: 520, y: MAIL.codeY + 70},
+  {f: P.selTo, x: 760, y: MAIL.codeY + 74},
+  {f: P.copyClick - 6, x: COPY_MENU.x + COPY_MENU.w / 2 + 6, y: COPY_MENU.y + COPY_MENU.h / 2 + 6},
+  {f: P.copyClick, x: COPY_MENU.x + COPY_MENU.w / 2, y: COPY_MENU.y + COPY_MENU.h / 2, click: true},
+  {f: P.copyClick + 20, x: 760, y: 1000},
   {f: P.clickTabH2C - 6, x: TAB1.x + 160, y: FRAME.y + 36},
   {f: P.clickTabH2C, x: TAB1.x + 158, y: FRAME.y + 34, click: true},
-  {f: P.clickBox - 2, x: BOX_X0 + BOX.w / 2, y: BOX.y + BOX.h / 2},
-  {f: P.clickBox + 1, x: BOX_X0 + BOX.w / 2, y: BOX.y + BOX.h / 2, click: true},
+  {f: P.clickBox - 3, x: BOX_X0 + BOX.w / 2 + 4, y: BOX.y + BOX.h / 2 + 4},
+  {f: P.clickBox, x: BOX_X0 + BOX.w / 2, y: BOX.y + BOX.h / 2, click: true},
+  {f: P.pasteClick - 6, x: PASTE_MENU.x + PASTE_MENU.w / 2 + 6, y: PASTE_MENU.y + PASTE_MENU.h / 2 + 6},
+  {f: P.pasteClick, x: PASTE_MENU.x + PASTE_MENU.w / 2, y: PASTE_MENU.y + PASTE_MENU.h / 2, click: true},
   {f: P.digitsFrom + 14, x: 700, y: 1000},
   {f: P.done[0] - 2, x: 720, y: 1020},
   {f: P.done[0] + 6, x: 720, y: 1020, hide: true},
@@ -162,7 +169,7 @@ export const CURSOR_KEYS: Key[] = [
 // Isi `src` dengan 'broll/daftar-dan-masuk-h2c/B1.mp4' dst. lalu render ulang (pola src/tips-umroh/Broll.tsx).
 export const BROLL: {id: string; from: number; to: number; src: string | null; shift?: number}[] = [
   {id: 'B1', from: 0, to: sg(1) + 12, src: null},
-  {id: 'B2', from: sg(13), to: sg(13) + 90, src: null},
-  {id: 'B3', from: wf(18, 0), to: wf(18, 0) + 66, src: null},
-  {id: 'B4', from: sg(27) + 18, to: sg(27) + 108, src: null},
+  {id: 'B2', from: sg(14), to: sg(14) + 90, src: null},
+  {id: 'B3', from: wf(21, 0), to: wf(21, 0) + 66, src: null},
+  {id: 'B4', from: sg(29) + 18, to: sg(29) + 108, src: null},
 ];

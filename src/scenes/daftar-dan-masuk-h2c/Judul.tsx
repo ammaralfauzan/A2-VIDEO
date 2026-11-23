@@ -24,18 +24,24 @@ const stag = (f: number, start: number, k: number, end: number) => {
   return {opacity: p * o, transform: `translateY(${(1 - p) * 26}px) scale(${0.96 + 0.04 * p})`};
 };
 
-// Versi E (promo di depan): teks layar hook "ADA PROMO UMROH!", lalu pita "buat akun dulu" saat kalimat kedua.
+// Versi F: "Daftar online itu ribet?" lalu cap "Salah!" saat diucapkan, lalu pita "Bapak, Ibu juga bisa".
 export const Hook: React.FC<{f: number}> = ({f}) => {
   if (f > P.hookOut + 2) return null;
   const end = P.hookOut;
+  const strike = interpolate(f, [P.hookSalah, P.hookSalah + 6], [0, 1], {...clamp, easing: ease});
+  const stamp = interpolate(f, [P.hookSalah + 2, P.hookSalah + 8, P.hookSalah + 12], [0, 1.12, 1], clamp);
+  const out = interpolate(f, [end - 8, end], [1, 0], clamp);
   return (
     <div style={{...center, top: 330}}>
       <Img src={staticFile('brands/h2c-umroh/logo.jpeg')} style={{width: 150, height: 150, borderRadius: '50%', border: `3px solid ${U.goldLine}`, ...stag(f, 0, 0, end)}} />
-      <div style={{fontFamily: UF.script, fontSize: 100, lineHeight: 1.1, color: U.ivory, marginTop: 30, padding: '0 10px', ...stag(f, 0, 1, end)}}>Bapak, Ibu,</div>
-      <div style={{...big, fontSize: 150, marginTop: 6, ...stag(f, 0, 2, end)}}>Ada Promo</div>
-      <div style={{...big, fontSize: 150, ...stag(f, 0, 3, end)}}>Umroh!</div>
+      <div style={{fontFamily: UF.script, fontSize: 96, lineHeight: 1.1, color: U.ivory, marginTop: 24, padding: '0 10px', ...stag(f, 0, 1, end)}}>Daftar online itu</div>
+      <div style={{position: 'relative', ...stag(f, 0, 2, end)}}>
+        <div style={{...big, fontSize: 170, opacity: 1 - 0.55 * strike}}>Ribet?</div>
+        <div style={{position: 'absolute', left: -10, right: -10, top: '48%', height: 12, borderRadius: 6, background: U.ivory, transformOrigin: 'left center', transform: `scaleX(${strike}) rotate(-4deg)`}} />
+      </div>
+      <div style={{...big, fontSize: 190, marginTop: 10, opacity: Math.min(1, stamp) * out, transform: `rotate(-4deg) scale(${stamp})`}}>Salah!</div>
       <div style={{...stag(f, P.hookRibbon, 0, end)}}>
-        <div style={{...RIBBON, fontFamily: UF.script, fontSize: 60, lineHeight: 1, padding: '6px 34px 14px', marginTop: 34}}>buat akun dulu, sekali saja</div>
+        <div style={{...RIBBON, fontFamily: UF.script, fontSize: 60, lineHeight: 1, padding: '6px 34px 14px', marginTop: 30}}>Bapak, Ibu juga bisa</div>
       </div>
     </div>
   );

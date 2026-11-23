@@ -13,10 +13,10 @@ export const Penutup: React.FC<{f: number}> = ({f}) => {
     const p = interpolate(f, [a + 6 + k * 6, a + 18 + k * 6], [0, 1], {...clamp, easing: ease});
     return {opacity: p, transform: `translateY(${(1 - p) * 24}px)`};
   };
-  const btnAt = wf(27, 10) - 4;
+  const btnAt = wf(30, 6) - 4;
   const bp = interpolate(f, [btnAt, btnAt + 8, btnAt + 12], [0, 1.08, 1], clamp);
   const glow = interpolate(f, [btnAt + 12, btnAt + 40], [0, 1], clamp);
-  const promoAt = wf(27, 8) - 4;
+  const promoAt = wf(30, 2) - 4;
   const pp = interpolate(f, [promoAt, promoAt + 10], [0, 1], {...clamp, easing: ease});
   return (
     <div style={{position: 'absolute', left: 180, top: 520, width: 720, display: 'flex', flexDirection: 'column', alignItems: 'center'}}>

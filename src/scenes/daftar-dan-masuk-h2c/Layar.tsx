@@ -7,6 +7,7 @@ import {
   BOX,
   BOX_X0,
   CONTENT_Y,
+  COPY_MENU,
   DATA,
   EYE,
   F,
@@ -17,6 +18,7 @@ import {
   IN_X,
   MAIL,
   P,
+  PASTE_MENU,
   Screen,
   SCREENS,
   TAB1,
@@ -242,11 +244,42 @@ const Daftar: React.FC<{f: number}> = ({f}) => {
   );
 };
 
+// Menu kecil gelap seperti menu salin/tempel di HP; berkedip emas saat ditekan.
+const Menu: React.FC<{label: string; box: {x: number; y: number; w: number; h: number}; p: number; press: number; f: number}> = ({label, box, p, press, f}) => {
+  const hit = interpolate(f, [press - 2, press, press + 6], [0, 1, 0], clamp);
+  return (
+    <div
+      style={A({
+        left: box.x,
+        top: box.y + (1 - p) * 10,
+        width: box.w,
+        height: box.h,
+        borderRadius: 18,
+        background: hit > 0.3 ? U.gold : U.bg,
+        border: `2px solid ${U.gold}`,
+        boxSizing: 'border-box',
+        opacity: p,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontFamily: UF.text,
+        fontWeight: 700,
+        fontSize: 32,
+        color: hit > 0.3 ? U.bg : U.ivory,
+        boxShadow: '0 16px 34px -12px rgba(0,0,0,.55)',
+      })}
+    >
+      {label}
+    </div>
+  );
+};
+
 const Kode: React.FC<{f: number}> = ({f}) => {
   const n = f < P.digitsFrom ? 0 : Math.min(6, 1 + Math.floor(((f - P.digitsFrom) / Math.max(1, P.digitsTo - P.digitsFrom)) * 6));
   const doneP = interpolate(f, [P.digitsTo + 2, P.digitsTo + 10], [0, 1], {...clamp, easing: ease});
   const focusBox = f >= P.clickBox ? Math.min(5, n) : -1;
   const notif = interpolate(f, [P.notif, P.notif + 8, P.clickTabMail - 4, P.clickTabMail + 2], [0, 1, 1, 0], {...clamp, easing: ease});
+  const pasteMenu = interpolate(f, [P.clickBox + 3, P.clickBox + 9, P.pasteClick + 4, P.pasteClick + 10], [0, 1, 1, 0], clamp);
   return (
     <>
       <Title title="Masukkan Kode" sub="Kode 6 angka sudah dikirim ke email Anda." />
@@ -290,6 +323,7 @@ const Kode: React.FC<{f: number}> = ({f}) => {
           </svg>
         </div>
       ) : null}
+      {pasteMenu > 0 ? <Menu label="Tempel" box={PASTE_MENU} p={pasteMenu} press={P.pasteClick} f={f} /> : null}
       {notif > 0 ? (
         <div style={A({left: IN_X, top: 1110 + (1 - notif) * 30, width: IN_W, height: 100, borderRadius: 999, background: U.surface2, border: `2px solid ${U.goldLine}`, boxSizing: 'border-box', opacity: notif, display: 'flex', alignItems: 'center', gap: 18, padding: '0 28px'})}>
           <MailIcon size={44} color={U.gold} />
@@ -315,7 +349,9 @@ const Email: React.FC<{f: number}> = ({f}) => {
   const openP = interpolate(f, [P.clickItem + 4, P.clickItem + 12], [0, 1], {...clamp, easing: ease});
   const spam = interpolate(f, [P.spam - 2, P.spam + 4, P.spam + 12, P.spam + 20], [0, 1, 1, 0], clamp);
   const hover = interpolate(f, [P.clickItem - 10, P.clickItem - 4], [0, 1], clamp);
-  const sel = interpolate(f, [P.copyFrom + 8, P.copyTo], [0, 1], clamp);
+  const sel = interpolate(f, [P.selFrom, P.selTo], [0, 1], clamp);
+  const menu = interpolate(f, [P.selTo - 2, P.selTo + 4, P.copyClick + 4, P.copyClick + 10], [0, 1, 1, 0], clamp);
+  const toast = interpolate(f, [P.copyClick + 4, P.copyClick + 10, P.clickTabH2C - 6, P.clickTabH2C], [0, 1, 1, 0], {...clamp, easing: ease});
   const ink = U.bg;
   const pill = (label: string, x: number, w: number, active: boolean, glow = 0) => (
     <div
@@ -375,6 +411,15 @@ const Email: React.FC<{f: number}> = ({f}) => {
           <div style={A({left: IN_X, top: MAIL.codeY + 18, width: IN_W, textAlign: 'center', fontFamily: UF.big, fontSize: 84, letterSpacing: 22, lineHeight: 1.15, color: ink})}>{DATA.kode}</div>
           <div style={A({left: IN_X, top: MAIL.codeY + 150, width: IN_W, textAlign: 'right', fontFamily: UF.text, fontWeight: 600, fontSize: 22, color: ink, opacity: 0.5})}>contoh</div>
           <div style={A({left: IN_X, top: MAIL.codeY + 200, width: IN_W, fontFamily: UF.text, fontWeight: 500, fontSize: 24, lineHeight: 1.4, color: ink, opacity: 0.6})}>Jangan bagikan kode ini kepada siapa pun.</div>
+        </div>
+      ) : null}
+      {menu > 0 ? <Menu label="Salin" box={COPY_MENU} p={menu} press={P.copyClick} f={f} /> : null}
+      {toast > 0 ? (
+        <div style={A({left: IN_X + 60, top: 1130 + (1 - toast) * 24, width: IN_W - 120, height: 84, borderRadius: 999, background: U.bg, opacity: toast, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 14, fontFamily: UF.text, fontWeight: 700, fontSize: 28, color: U.ivory})}>
+          <span style={{width: 34, height: 34, borderRadius: '50%', background: U.leaf, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+            <svg width={22} height={22} viewBox="0 0 24 24"><path d="M5 12.5 L10 17 L19 7" fill="none" stroke={U.bg} strokeWidth={3.4} strokeLinecap="round" strokeLinejoin="round" /></svg>
+          </span>
+          Kode disalin
         </div>
       ) : null}
     </>

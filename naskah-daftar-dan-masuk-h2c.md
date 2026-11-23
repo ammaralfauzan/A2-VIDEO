@@ -121,7 +121,7 @@ Layar: teks besar, kursor lebih lambat, jeda lebih lama sebelum klik, sorotan em
 ### Revisi Versi E (23 Nov 2026): kode OTP disalin dan ditempel
 Baris kode jadi: "Salin atau copy enam angkanya. Kembali ke H dua C, lalu tempel atau paste di kolom kode." Visual: angka di Gmail disorot, kursor menekan Salin, kembali ke tab H2C, menempel ke 6 kotak sekaligus. Baris "Itu saja. Mudah, kan?" dibuang agar durasi aman. Jumlah kata 147 ≈ 63.9 dtk.
 
-## Versi F (final usulan, 23 Nov 2026): hook "ribet? salah!", sepuh/gaptek, OTP salin-tempel, promo di penutup
+## Versi F (dipakai: MP3 dari Bos 23 Nov 2026, dibangun di REVISI 1): hook "ribet? salah!", sepuh/gaptek, OTP salin-tempel, promo di penutup
 Teks layar hook: "DAFTAR ONLINE ITU RIBET? SALAH!" · Tanpa detail promo. Jumlah kata 144 ≈ 62.6 dtk.
 ```
 [excited] Katanya daftar umroh online itu ribet? Salah! Bapak, Ibu juga bisa. Ikuti langkahnya!
