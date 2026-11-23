@@ -2,7 +2,7 @@
  "audio": "public/audio/vo-daftar-dan-masuk-h2c.mp3",
  "durasi": 63.79,
  "suara": "Jefri - Soft Explanatory Voice (ElevenLabs, MP3 versi F dari Bos 23 Nov 2026, nama file: v4 s50 sim75), tidak dipercepat",
- "metode": "ffmpeg silencedetect -35 dB/0,25 dtk (28 potongan) dan -30 dB/0,1 dtk untuk memecah hook, password, salin-tempel, dan penutup. Transkripsi ElevenLabs tidak bisa (konektor minta izin ulang). 31 potongan dipetakan ke naskah versi F dari urutan dan durasi; durasi baris yang sama dengan versi E cocok (selisih <0,15 dtk). Belum didengar manusia.",
+ "metode": "ffmpeg silencedetect -35 dB/0,25 dtk (28 potongan) dan -30 dB/0,1 dtk untuk memecah hook, password, salin-tempel, dan penutup. Transkripsi ElevenLabs tidak bisa (konektor minta izin ulang). 31 potongan dipetakan ke naskah versi F dari urutan dan durasi; durasi baris yang sama dengan versi E cocok (selisih <0,15 dtk). Belum didengar manusia. Revisi 2 (23 Nov): penutup dipecah 4 potongan dari jeda -25 dB/0,07 dtk (56,47 / 57,33 / 58,66 / 60,06) setelah Bos mendengar teks layar terlambat; pemetaan lama menggabung 'Yuk, Bapak, Ibu' ke dua potongan pertama.",
  "kalimat": [
   {
    "mulai": 0.05,
@@ -216,7 +216,7 @@
   },
   {
    "mulai": 55.46,
-   "selesai": 63.52,
+   "selesai": 63.5,
    "teks": "Mudah, kan? Yuk, Bapak, Ibu, buat akun sekarang. Lagi ada promo umroh, lihat di umroh titik H dua C titik or titik id.",
    "potongan": [
     {
@@ -226,13 +226,23 @@
     },
     {
      "mulai": 56.47,
-     "selesai": 59.77,
-     "teks": "Yuk, Bapak, Ibu, buat akun sekarang."
+     "selesai": 57.25,
+     "teks": "Yuk, Bapak, Ibu,"
+    },
+    {
+     "mulai": 57.33,
+     "selesai": 58.25,
+     "teks": "buat akun sekarang."
+    },
+    {
+     "mulai": 58.66,
+     "selesai": 59.76,
+     "teks": "Lagi ada promo umroh,"
     },
     {
      "mulai": 60.06,
-     "selesai": 63.52,
-     "teks": "Lagi ada promo umroh, lihat di umroh titik H dua C titik or titik id."
+     "selesai": 63.5,
+     "teks": "lihat di umroh titik H dua C titik or titik id."
     }
    ]
   }

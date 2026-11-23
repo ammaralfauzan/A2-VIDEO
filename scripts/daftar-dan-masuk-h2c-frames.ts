@@ -47,8 +47,8 @@ const frames: [string, number][] = [
   ['13-akun-tengah', P.clickMasuk + 8],
   ['13b-akun-chip', P.chipLangsung + 10],
   ['14-penutup-tengah', P.outro + 8],
-  ['14a-penutup-promo', wf(30, 2) + 8],
-  ['14b-penutup-tombol', wf(30, 6) + 20],
+  ['14a-penutup-promo', wf(31, 2) + 8],
+  ['14b-penutup-tombol', wf(32, 2) + 20],
   ['14c-akhir', TOTAL_FRAMES - 4],
 ];
 console.log(JSON.stringify(frames));

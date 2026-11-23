@@ -1,5 +1,5 @@
 // Komposisi "Daftar dan Masuk Akun H2C" (DaftarDanMasukH2C), 1080x1920, 30 fps, brand H2C Umroh.
-// Waktu dari vo-timing-daftar-dan-masuk-h2c.json (suara asli Bos, tidak dipercepat): 31 potongan ucapan (naskah versi F).
+// Waktu dari vo-timing-daftar-dan-masuk-h2c.json (suara asli Bos, tidak dipercepat): 33 potongan ucapan (naskah versi F).
 // Teks layar per potongan: *kata* = kata kunci (emas). | = pindah ke potongan teks berikutnya (maks. 6 kata).
 // Di layar "H2C" ditulis H2C (diucapkan "H dua C"); "Gmail" di layar ditulis "email" (tanpa merek pihak ketiga).
 import voTiming from './vo-timing-daftar-dan-masuk-h2c.json';
@@ -41,8 +41,10 @@ export const SEG_TEXT = [
   'Lalu ketik *password.*',
   'Tekan *Masuk.*',
   '*Mudah,* kan?',
-  'Yuk, Bapak, Ibu,|buat akun *sekarang.*',
-  'Lagi ada *promo* *umroh,*|lihat di umroh.h2c.or.id',
+  'Yuk, Bapak, Ibu,',
+  'buat akun *sekarang.*',
+  'Lagi ada *promo* *umroh,*',
+  'lihat di umroh.h2c.or.id',
 ] as const;
 
 if (POT.length !== SEG_TEXT.length) throw new Error('Jumlah potongan timing VO tidak cocok dengan teks layar');
