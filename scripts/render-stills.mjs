@@ -155,6 +155,14 @@ SETS.AkunKeluargaH2C = {
   },
 };
 
+// Frame kunci "Hubungan Darah Belum Tentu Cukup" (Tams) dihitung dari timing suara (termasuk tengah transisi).
+SETS.PenghalangWaris = {
+  dir: 'out/stills/penghalang-waris',
+  get stills() {
+    return JSON.parse(execSync('npx tsx scripts/penghalang-waris-frames.ts', {encoding: 'utf8'}));
+  },
+};
+
 const [id = 'JamSembilanMalam', ...only] = process.argv.slice(2);
 const set = SETS[id];
 if (!set) throw new Error(`Komposisi tidak dikenal: ${id}`);

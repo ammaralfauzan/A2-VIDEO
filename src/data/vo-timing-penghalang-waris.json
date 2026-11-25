@@ -1,0 +1,235 @@
+{
+ "sumber": "public/audio/vo-penghalang-waris.mp3 (ElevenLabs, Jefri - Suara Penjelasan Lembut, MP3 dari Bos 25 Nov 2026, tidak dipercepat)",
+ "metode": "ffmpeg silencedetect -35dB d=0.25 (antarkalimat) dan -30dB d=0.12 (koma); 28 potongan ucapan dipetakan manual ke 14 kalimat naskah",
+ "durasi": 54.204,
+ "kalimat": [
+  {
+   "teks": "Masih satu keluarga, tapi tidak otomatis menerima waris.",
+   "mulai": 0.135,
+   "selesai": 3.959,
+   "segmen": [
+    {
+     "mulai": 0.135,
+     "selesai": 1.377,
+     "kata": 3
+    },
+    {
+     "mulai": 1.777,
+     "selesai": 3.959,
+     "kata": 5
+    }
+   ]
+  },
+  {
+   "teks": "Hubungan darah memang sebab seseorang mewarisi.",
+   "mulai": 4.319,
+   "selesai": 6.98,
+   "segmen": [
+    {
+     "mulai": 4.319,
+     "selesai": 6.98,
+     "kata": 6
+    }
+   ]
+  },
+  {
+   "teks": "Tapi ulama menjelaskan, ada penghalang yang membuat hak itu tertahan.",
+   "mulai": 7.398,
+   "selesai": 11.96,
+   "segmen": [
+    {
+     "mulai": 7.398,
+     "selesai": 9.137,
+     "kata": 3
+    },
+    {
+     "mulai": 9.394,
+     "selesai": 11.96,
+     "kata": 7
+    }
+   ]
+  },
+  {
+   "teks": "Dua yang paling dikenal.",
+   "mulai": 12.429,
+   "selesai": 13.722,
+   "segmen": [
+    {
+     "mulai": 12.429,
+     "selesai": 13.722,
+     "kata": 4
+    }
+   ]
+  },
+  {
+   "teks": "Pertama, perbedaan agama.",
+   "mulai": 14.404,
+   "selesai": 16.235,
+   "segmen": [
+    {
+     "mulai": 14.404,
+     "selesai": 14.957,
+     "kata": 1
+    },
+    {
+     "mulai": 15.251,
+     "selesai": 16.235,
+     "kata": 2
+    }
+   ]
+  },
+  {
+   "teks": "Usamah bin Zaid radhiyallahu 'anhu meriwayatkan,",
+   "mulai": 16.714,
+   "selesai": 19.661,
+   "segmen": [
+    {
+     "mulai": 16.714,
+     "selesai": 19.661,
+     "kata": 6
+    }
+   ]
+  },
+  {
+   "teks": "Nabi shallallahu 'alaihi wa sallam bersabda:",
+   "mulai": 19.992,
+   "selesai": 22.48,
+   "segmen": [
+    {
+     "mulai": 19.992,
+     "selesai": 22.48,
+     "kata": 6
+    }
+   ]
+  },
+  {
+   "teks": "muslim tidak mewarisi orang kafir, dan orang kafir tidak mewarisi muslim.",
+   "mulai": 23.05,
+   "selesai": 27.835,
+   "segmen": [
+    {
+     "mulai": 23.05,
+     "selesai": 25.245,
+     "kata": 5
+    },
+    {
+     "mulai": 25.491,
+     "selesai": 26.451,
+     "kata": 3
+    },
+    {
+     "mulai": 26.635,
+     "selesai": 27.835,
+     "kata": 3
+    }
+   ]
+  },
+  {
+   "teks": "Hadits ini diriwayatkan Bukhari dan Muslim, dan menjadi pendapat jumhur ulama.",
+   "mulai": 28.294,
+   "selesai": 32.838,
+   "segmen": [
+    {
+     "mulai": 28.294,
+     "selesai": 30.66,
+     "kata": 6
+    },
+    {
+     "mulai": 30.934,
+     "selesai": 32.838,
+     "kata": 5
+    }
+   ]
+  },
+  {
+   "teks": "Kedua, membunuh pewaris.",
+   "mulai": 33.44,
+   "selesai": 35.311,
+   "segmen": [
+    {
+     "mulai": 33.44,
+     "selesai": 33.912,
+     "kata": 1
+    },
+    {
+     "mulai": 34.152,
+     "selesai": 35.311,
+     "kata": 2
+    }
+   ]
+  },
+  {
+   "teks": "Ulama sepakat, pembunuh tidak mewarisi orang yang ia bunuh.",
+   "mulai": 35.674,
+   "selesai": 39.615,
+   "segmen": [
+    {
+     "mulai": 35.674,
+     "selesai": 36.55,
+     "kata": 2
+    },
+    {
+     "mulai": 36.921,
+     "selesai": 37.592,
+     "kata": 1
+    },
+    {
+     "mulai": 37.74,
+     "selesai": 39.615,
+     "kata": 6
+    }
+   ]
+  },
+  {
+   "teks": "Rincian jenis pembunuhannya berbeda antar mazhab.",
+   "mulai": 40.169,
+   "selesai": 42.788,
+   "segmen": [
+    {
+     "mulai": 40.169,
+     "selesai": 42.788,
+     "kata": 6
+    }
+   ]
+  },
+  {
+   "teks": "Jadi sebelum harta dibagi, pastikan dulu siapa yang benar-benar berhak, dan siapa yang terhalang.",
+   "mulai": 43.312,
+   "selesai": 49.359,
+   "segmen": [
+    {
+     "mulai": 43.312,
+     "selesai": 45.112,
+     "kata": 4
+    },
+    {
+     "mulai": 45.328,
+     "selesai": 47.798,
+     "kata": 6
+    },
+    {
+     "mulai": 48.124,
+     "selesai": 49.359,
+     "kata": 4
+    }
+   ]
+  },
+  {
+   "teks": "Bila ragu dengan keadaan keluarga sendiri, tanyakan kepada ahlinya.",
+   "mulai": 50.022,
+   "selesai": 53.943,
+   "segmen": [
+    {
+     "mulai": 50.022,
+     "selesai": 52.348,
+     "kata": 6
+    },
+    {
+     "mulai": 52.682,
+     "selesai": 53.943,
+     "kata": 3
+    }
+   ]
+  }
+ ]
+}

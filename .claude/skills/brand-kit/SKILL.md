@@ -36,3 +36,9 @@ Keluhan Bos: "kurang ilustrasi", "tatanan berantakan", "kurang estetik/modern", 
 - **Satu adegan benda per bagian cerita** (bukan satu diagram kecil sepanjang video): mis. kamar sunyi (meja samping, lampu, gelas, obat, jendela bulan), toples penuh vs mangkuk kosong, rak kitab bernama, palang penahan, bingkisan bersegel, rumah dinaungi lengkung. Benda muncul dengan pegas bertahap dan melayang pelan. Diagram (batang harta) dibuat besar dan diisi benda, bukan batang polos.
 - Bentuk dasar yang bisa dipakai ulang (benda saja, aman untuk brand tanpa makhluk bernyawa): `src/scenes/wasiat-maksimal-sepertiga/Ilustrasi.tsx`; panggung bergantian: `Panggung.tsx`.
 - Label di bawah batang: label lama hilang dulu, baru label baru masuk (pernah tertangkap "HARTA" menimpa "AHLI WARIS" di frame transisi).
+
+## Pelajaran `penghalang-waris` (BANGUN, 25 Nov 2026)
+- **Shalawat/doa sahabat yang diucapkan** ditulis di timeline dengan penanda `~` (mis. `~shallallahu`): teks bawah menampilkannya kecil abu dan tidak menambah shalawat otomatis lagi setelah "Nabi" (kalau tidak, tertulis dua kali).
+- **Garis aksen di bawah judul penutup** dihitung dari tinggi judul sungguhan: judul 3 baris pernah membuat garis menembus baris ketiga. Tentukan pemenggalan baris dengan `<br />` sendiri dan letakkan garis di bawah baris terakhir.
+- **Kutipan panjang di zona judul**: penggal baris sendiri (ukuran ±44), jangan biarkan kata pendek ("kafir,") tersisa sendirian di satu baris.
+

@@ -35,6 +35,8 @@
     "render:akun-keluarga-h2c": "remotion render AkunKeluargaH2C out/akun-keluarga-h2c-9x16.mp4 --concurrency=4",
     "stills:wasiat-sepertiga": "node scripts/render-stills.mjs WasiatMaksimalSepertiga",
     "render:wasiat-sepertiga": "remotion render WasiatMaksimalSepertiga out/wasiat-maksimal-sepertiga-9x16.mp4 --concurrency=4",
+    "stills:penghalang-waris": "node scripts/render-stills.mjs PenghalangWaris",
+    "render:penghalang-waris": "remotion render PenghalangWaris out/penghalang-waris-9x16.mp4 --concurrency=4",
     "stills:dulu-tak-dapat-bagian": "node scripts/render-stills.mjs DuluTakDapatBagian",
     "render:dulu-tak-dapat-bagian": "remotion render DuluTakDapatBagian out/dulu-tak-dapat-bagian-9x16.mp4 --concurrency=4",
     "typecheck": "tsc --noEmit"

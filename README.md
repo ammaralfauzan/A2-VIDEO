@@ -129,6 +129,14 @@ Skrip rilis memeriksa durasi klip, merender frame kunci dan video, lalu menormal
 - Kode: `src/AkunKeluargaH2C.tsx`, adegan di `src/scenes/akun-keluarga-h2c/` (`Meja`, `Layar`, `Kamera`, `Judul`, `Kursor`, `Caption`, `Penutup`, `Sfx`, `layout`), timeline di `src/data/timeline-akun-keluarga-h2c.ts`
 - Frame kunci: `out/stills/akun-keluarga-h2c/` (`scripts/akun-keluarga-h2c-frames.ts`). Perintah: `npm run stills:akun-keluarga-h2c`, `npm run render:akun-keluarga-h2c`
 
+## Video: "Hubungan Darah Belum Tentu Cukup" (komposisi `PenghalangWaris`, 9:16, brand Tams Consulting)
+- Naskah: `naskah-penghalang-waris.md`. Edukasi dua penghalang waris: diagram kotak keluarga (ANAK, SAUDARA, ORANG TUA, PASANGAN) ke kotak PEWARIS; kunci oranye "HUBUNGAN DARAH" menyalakan jalur waris; gembok samar di tepi, lalu gembok 1 (BEDA AGAMA, hadits Usamah bin Zaid, HR. Bukhari 6764, Muslim 1614, jumhur) dan gembok 2 (MEMBUNUH PEWARIS, kesepakatan ulama, rincian beda antar mazhab) masing-masing menahan satu kotak; rak kitab Bukhari-Muslim saat sumber disebut; kotak berhak dicentang. Penutup "Bila ragu, tanyakan kepada ahlinya." + logo Tams asli, tanpa nomor/URL/jualan. Tanpa makhluk bernyawa, tanpa angka
+- Hasil: `out/penghalang-waris-9x16.mp4` (1080x1920, 30 fps, 56,2 detik: suara 54,2 dtk + logo diam 2 dtk). Target naskah 45 dtk; suara tidak dipercepat
+- Voiceover: `public/audio/vo-penghalang-waris.mp3` (ElevenLabs, Jefri "Suara Penjelasan Lembut", Eleven v4, MP3 dari Bos 25 Nov). Timing: `src/data/vo-timing-penghalang-waris.json` (ffmpeg silencedetect, 28 potongan ke 14 kalimat). Shalawat dan "radhiyallahu 'anhu" yang diucapkan tampil kecil abu di teks bawah (penanda `~` di timeline)
+- B-roll: B1..B5 belum dilampirkan. Slot di `src/scenes/penghalang-waris/layout.ts` (`BROLL`, `src: null`)
+- Kode: `src/PenghalangWaris.tsx`, adegan di `src/scenes/penghalang-waris/` (`Kartu`, `Diagram`, `Panggung`, `Penutup`, `Caption`, `Broll`, `Sfx`, `layout`; benda dasar dipakai ulang dari `wasiat-maksimal-sepertiga/Ilustrasi.tsx`), timeline di `src/data/timeline-penghalang-waris.ts`, entry satu video `src/entries/penghalang-waris.tsx`
+- Frame kunci: `out/stills/penghalang-waris/` (`scripts/penghalang-waris-frames.ts`). Perintah: `npm run stills:penghalang-waris`, `npm run render:penghalang-waris` (bila bundel utuh gagal: `REMOTION_ENTRY=src/entries/penghalang-waris.tsx`)
+
 ## Skill, pemeriksa tabrakan, dan hook penjaga (Fase 1)
 
 - Skill di `.claude/skills/`: `a2-motion-video` (alur umum), `a2-anti-tabrakan`, `a2-komposisi-proximity`, `a2-safe-area-sosmed`, `a2-maskot-gigi`
