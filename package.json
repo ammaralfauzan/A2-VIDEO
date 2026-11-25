@@ -33,6 +33,8 @@
     "render:otomatisasi-resep": "remotion render OtomatisasiSepertiResep out/otomatisasi-seperti-resep-9x16.mp4 --concurrency=4",
     "stills:akun-keluarga-h2c": "node scripts/render-stills.mjs AkunKeluargaH2C",
     "render:akun-keluarga-h2c": "remotion render AkunKeluargaH2C out/akun-keluarga-h2c-9x16.mp4 --concurrency=4",
+    "stills:wasiat-sepertiga": "node scripts/render-stills.mjs WasiatMaksimalSepertiga",
+    "render:wasiat-sepertiga": "remotion render WasiatMaksimalSepertiga out/wasiat-maksimal-sepertiga-9x16.mp4 --concurrency=4",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

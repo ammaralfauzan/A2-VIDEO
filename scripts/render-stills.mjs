@@ -115,6 +115,14 @@ SETS.TigaHalSebelumWaris = {
   },
 };
 
+// Frame kunci "Kenapa Wasiat Dibatasi Sepertiga?" dihitung dari timing suara (termasuk tengah transisi).
+SETS.WasiatMaksimalSepertiga = {
+  dir: 'out/stills/wasiat-maksimal-sepertiga',
+  get stills() {
+    return JSON.parse(execSync('npx tsx scripts/wasiat-maksimal-sepertiga-frames.ts', {encoding: 'utf8'}));
+  },
+};
+
 // Frame kunci "Manual, Template, atau Otomatis?" dihitung dari timing suara (termasuk tengah transisi).
 SETS.ManualTemplateOtomatis = {
   dir: 'out/stills/manual-template-otomatis',

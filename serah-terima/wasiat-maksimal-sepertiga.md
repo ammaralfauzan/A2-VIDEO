@@ -1,12 +1,17 @@
 # Serah-terima: wasiat-maksimal-sepertiga
 
-- Judul / brand / format / durasi target: Kenapa Wasiat Dibatasi Sepertiga? / Tams Consulting (`tams-consulting`) / 9:16, jalur 2D / 50 dtk (dipilih di KONSEP; ISIAN "isi sendiri"; menimpa ±35 dtk antrean #14)
-- Tahap terakhir selesai: konsep (25 Nov 2026, room R2), MENUNGGU persetujuan Bos
-- Keputusan Bos (disetujui, jangan diubah): Brand Kit Tams (20 Nov 2026); edukasi murni tanpa selling; tanpa makhluk bernyawa (CLAUDE.md 25 Nov 2026); tanpa nominal/persentase hitungan (ISIAN). Konsep, naskah, suara: BELUM disetujui.
-- File penting: `naskah-wasiat-maksimal-sepertiga.md`; (nanti) `public/audio/vo-wasiat-maksimal-sepertiga.mp3`, klip `B1..B5.mp4`, `src/data/vo-timing-wasiat-maksimal-sepertiga.json`, `out/wasiat-maksimal-sepertiga-9x16.mp4`
-- Status render: belum
+- Judul / brand / format / durasi target: Kenapa Wasiat Dibatasi Sepertiga? / Tams Consulting (`tams-consulting`) / 9:16, jalur 2D / target 50 dtk; hasil 61,7 dtk (suara Bos 59,7 dtk, tidak dipercepat)
+- Tahap terakhir selesai: bangun (25 Nov 2026, room R3), MENUNGGU Bos menonton
+- Keputusan Bos (disetujui, jangan diubah): Brand Kit Tams (20 Nov 2026); edukasi murni tanpa selling; tanpa makhluk bernyawa; tanpa nominal/persentase; konsep, naskah, dan suara (MP3 Jefri 25 Nov 2026) disetujui
+- File penting: `naskah-wasiat-maksimal-sepertiga.md`, `public/audio/vo-wasiat-maksimal-sepertiga.mp3`, `src/data/vo-timing-wasiat-maksimal-sepertiga.json`, komposisi `WasiatMaksimalSepertiga`, `out/wasiat-maksimal-sepertiga-9x16.mp4`
+- Status render: ada, 61,7 dtk, 1080x1920 30 fps, 25 Nov 2026
 - Daftar revisi Bos (belum dikerjakan): -
-- Sudah diperiksa: anti-kembar ke `docs/daftar-konten.md` (aman; beda dari #9); 113 kata ≈ 49 dtk (+logo ≈ 50 dtk); tag audio dari panduan model eleven_v3 (curious, slowly, warmly, short pause, softly)
-- Belum diperiksa / risiko: redaksi hadits diringkas dan nomor hadits perlu dicek ke kitab asli; pengecualian persetujuan ahli waris tidak dibahas; semua perlu telaah TAMS sebelum rilis; suara Tams belum ditetapkan (Kang Nandar dipakai di #9); pelafalan "Sa'd bin Abi Waqqash"
+- Sudah diperiksa: tsc (bersih untuk video ini), 27 frame kunci dilihat, pemeriksa tabrakan `--every=15` bersih (124 frame), ffprobe, volumedetect (rata -27,5 dB, puncak -6,2 dB), tanpa kedipan/frame meloncat, regresi video lain identik (9 frame derau lingkungan yang sudah tercatat di skill dikembalikan)
+- Belum diperiksa / risiko:
+  - B-roll B1..B5 belum dilampirkan: dibangun tanpa klip (slot siap di `layout.ts`)
+  - Suara tidak mengucapkan "shallallahu 'alaihi wa sallam" (prompt suara dibuat sebelum aturan Brand Kit 25 Nov); di layar sudah ditulis setiap kata "Nabi"
+  - Nomor hadits di layar (Bukhari 2742, Muslim 1628, Abu Dawud 2870, Ibnu Majah 2713) dari naskah; perlu telaah TAMS sebelum rilis
+  - Timing dari silencedetect (konektor ElevenLabs tanpa alat unggah); pemetaan 26 potongan cocok semua, belum didengar langsung
+  - Data timing `akun-keluarga-h2c` diubah room 3D (5a02c61) sehingga bundel Remotion gagal; untuk render dipulihkan sementara di lokal, TIDAK di-commit. Room akun-keluarga-h2c perlu memperbaikinya
 - Caption dan jam posting usulan: (RILIS) sumber hadits wajib di caption
-- Catatan untuk room berikutnya: setelah Bos setuju, tambah baris #12 ke `docs/daftar-konten.md` (status "konsep disetujui") dan isi ISIAN UNTUK BANGUN. Tanpa maskot, tanpa ajakan. Teks layar pakai kata "sepertiga", bukan angka/persen.
+- Catatan untuk room berikutnya: format 9:16, durasi 61,7 dtk. Bila Bos mengirim klip B-roll, isi `src` di `BROLL` lalu render ulang. Bila bundel gagal karena `timeline-akun-keluarga-h2c.ts`, pulihkan sementara `git show 5a02c61^:src/data/vo-timing-akun-keluarga-h2c.json` dan kembalikan sebelum commit.
