@@ -54,7 +54,7 @@ Latar terang (keputusan Bos). Tanpa gradasi: warna logo rata, jadi video juga ra
 ## Sumber dalil dan penyebutan (aturan Bos 25 Nov 2026, semua konten Tams)
 - Utamakan riwayat dan sumbernya, dan tampilkan sumbernya di layar/desain: nama kitab dan nomor hadits (mis. "HR. Bukhari 2742"), ayat sebagai "QS An-Nisa 4:11". URL situs tidak ditampilkan; dicatat di vault.
 - Utamakan Shahih Bukhari dan Muslim. Riwayat di luar keduanya boleh bila dibahas di Rumaysho (cek isi artikel dan takhrijnya).
-- Menyebut Nabi: selalu diikuti "shallallahu 'alaihi wa sallam", di suara dan di teks layar. Menyebut Allah: diikuti "subhanahu wa ta'ala". Rujukan ganti ("beliau") tidak perlu diulang.
+- Menyebut Nabi: selalu diikuti "shallallahu 'alaihi wa sallam", di suara dan di teks layar. Menyebut Allah: diikuti "subhanahu wa ta'ala". Rujukan ganti ("beliau") tidak perlu diulang. Menyebut sahabat: diikuti "radhiyallahu 'anhu" (Bos 25 Nov); sebutan berikutnya boleh diganti "ia".
 
 ## Sumber dan contoh
 - Bahan Bos: logo (2 gambar) dan contoh posting "Konsultasi Waris" (20 Nov 2026), "hitam-oren". Situs: tidak ditemukan saat dicari. Instagram: `@tams.consulting`. Arahan lama Bos: vault Obsidian-SB `proyek/tams-consulting.md`. Pesan brand awal: "Warisan tertata. Keluarga terjaga."

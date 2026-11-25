@@ -1,15 +1,15 @@
 # Serah-terima: dulu-tak-dapat-bagian
 
 - Judul / brand / format / durasi target: Dulu Mereka Tidak Dapat Bagian / Tams Consulting (`tams-consulting`) / 9:16 / 40 dtk (ISIAN kosong, ditetapkan di KONSEP; antrean #16 semula ±35 dtk, sudah diperbarui) / jalur 2D
-- Tahap terakhir selesai: KONSEP versi 2 (25 Nov 2026, room R2), MENUNGGU persetujuan Bos. Bos memilih "2": ganti ke riwayat Bukhari 4577 / Muslim 1616 (Jabir sakit) + QS An-Nisa 4:7 dan 4:11; judul usulan "Siapa yang Menentukan Bagian Waris?", slug tetap
+- Tahap terakhir selesai: KONSEP versi 2 DISETUJUI Bos (25 Nov 2026, room R2): naskah dan judul "Siapa yang Menentukan Bagian Waris?", tambah radhiyallahu 'anhu untuk Jabir dan Abu Bakar, suara Kang Nandar, 9:16, 40 dtk (naskah 93 kata ≈ 40,4 dtk). Bos memilih "2": ganti ke riwayat Bukhari 4577 / Muslim 1616 (Jabir sakit) + QS An-Nisa 4:7 dan 4:11; judul usulan "Siapa yang Menentukan Bagian Waris?", slug tetap
 - Keputusan Bos (disetujui, jangan diubah): ide dipilih Bos (ISIAN 25 Nov): hook "Dulu, anak perempuan bisa tidak dapat apa-apa dari warisan ayahnya.", riwayat Jabir, QS An-Nisa 4:11, pesan "waris ketetapan Allah, bukan kebiasaan keluarga", pola dua kartu Sebelum/Sesudah dengan geser sudut daun, label "Riwayat hadits", tanpa orang/siluet, tanpa pecahan bagian. Konsep, naskah, suara: BELUM disetujui. Arahan Bos 25 Nov (revisi naskah): sumber riwayat ditampilkan di layar; shalawat setelah menyebut Nabi, "subhanahu wa ta'ala" setelah menyebut Allah; utamakan Bukhari-Muslim, selain itu boleh bila dari Rumaysho (dicatat di BRAND.md Tams).
 - File penting: `naskah-dulu-tak-dapat-bagian.md`; nanti `public/audio/vo-dulu-tak-dapat-bagian.mp3`, `src/data/vo-timing-dulu-tak-dapat-bagian.json`, klip `B1..B5.mp4`, `out/dulu-tak-dapat-bagian-9x16.mp4`
-- Status render: belum
+- Status render: belum. BANGUN: label sumber "HR. Bukhari 4577, Muslim 1616" dan QS 4:11, 4:7; cocokkan nomor hadits ke teks asli sebelum rilis.
 - Daftar revisi Bos (belum dikerjakan): -
 - Sudah diperiksa: anti-kembar ke `docs/daftar-konten.md` (beda dari #9: topik sejarah ayat, bukan urutan pembagian; hook dan pola beda); jumlah kata 93 ≈ 40,4 dtk; tag audio dari panduan model eleven_v3
 - Belum diperiksa / risiko: riwayat Jabir di luar Bukhari-Muslim dan BELUM dipastikan ada di Rumaysho (sunnah.com dan rumaysho.com sudah diizinkan di jaringan, tetapi tertahan pemeriksa robot situs); nomor dari pencarian Tirmidzi 2092, Ibnu Majah 2720, Abu Dawud belum pasti; derajat hadits Tirmidzi (hasan gharib vs hasan shahih antar cetakan) dan nomor hadits, cek kitab asli; perlu telaah TAMS sebelum rilis; suara Tams belum ditetapkan Brand Kit (usul Kang Nandar seperti video #9); pelafalan "Sa'd bin Rabi'"; Brand Kit video memakai sudut bulat penuh, sedangkan ISIAN meminta geser sudut daun untuk transisi (dipakai hanya pada transisi kartu)
 - Caption dan jam posting usulan: (RILIS)
-- Catatan untuk room berikutnya: setelah Bos setuju, tambah baris #12 ke `docs/daftar-konten.md` berstatus "konsep disetujui". Tanpa Gigi, tanpa ajakan, tanpa makhluk bernyawa (juga di B-roll).
+- Catatan untuk room berikutnya: baris #13 sudah ditambahkan ke `docs/daftar-konten.md` (konsep disetujui). BANGUN butuh MP3 dan klip B1..B5 dari Bos. Tanpa Gigi, tanpa ajakan, tanpa makhluk bernyawa (juga di B-roll).
 
 ## Telaah sanad riwayat Jabir (25 Nov 2026, dari pencarian; kitab asli belum dibuka)
 - Takhrij: Tirmidzi 2092 (Tirmidzi: "hasan shahih", hanya lewat Abdullah bin Muhammad bin 'Aqil), Ibnu Majah 2720, Abu Dawud 2891-2892 (satu jalur keliru menyebut "Tsabit bin Qais"; yang terjaga Sa'd bin Rabi', kata Al-Albani), Ahmad.
