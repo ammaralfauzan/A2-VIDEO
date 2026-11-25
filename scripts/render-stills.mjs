@@ -123,6 +123,14 @@ SETS.WasiatMaksimalSepertiga = {
   },
 };
 
+// Frame kunci "Siapa yang Menentukan Bagian Waris?" (dulu-tak-dapat-bagian) dihitung dari timing suara (termasuk tengah transisi).
+SETS.DuluTakDapatBagian = {
+  dir: 'out/stills/dulu-tak-dapat-bagian',
+  get stills() {
+    return JSON.parse(execSync('npx tsx scripts/dulu-tak-dapat-bagian-frames.ts', {encoding: 'utf8'}));
+  },
+};
+
 // Frame kunci "Manual, Template, atau Otomatis?" dihitung dari timing suara (termasuk tengah transisi).
 SETS.ManualTemplateOtomatis = {
   dir: 'out/stills/manual-template-otomatis',

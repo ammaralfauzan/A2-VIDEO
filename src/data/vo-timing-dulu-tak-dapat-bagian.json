@@ -1,0 +1,168 @@
+{
+ "audio": "public/audio/vo-dulu-tak-dapat-bagian.mp3",
+ "durasi": 46.11,
+ "suara": "Jefri - Suara Penjelasan Lembut (nama berkas MP3 dari Bos 25 Nov 2026, ElevenLabs), tidak dipercepat",
+ "metode": "ffmpeg silencedetect (-35 dB/0,25 dtk; -30 dB/0,12 dtk untuk memecah kalimat 3). 17 potongan ucapan dipetakan ke 10 kalimat naskah menurut urutan dan laju suku kata (5-7 suku kata/dtk, cocok semua). Waktu kata di dalam segmen diperkirakan dari suku kata. Konektor ElevenLabs di sesi ini tidak punya alat unggah berkas lokal, jadi transkripsi tidak dipakai.",
+ "kalimat": [
+  {
+   "mulai": 0.18,
+   "selesai": 3.2,
+   "teks": "Siapa yang berhak menentukan bagian waris dalam keluarga?",
+   "segmen": [
+    {
+     "mulai": 0.18,
+     "selesai": 3.2,
+     "kata": 8
+    }
+   ]
+  },
+  {
+   "mulai": 3.69,
+   "selesai": 9.27,
+   "teks": "Jabir bin Abdullah radhiyallahu 'anhu pernah sakit parah, sampai tidak sadarkan diri.",
+   "segmen": [
+    {
+     "mulai": 3.69,
+     "selesai": 7.37,
+     "kata": 8
+    },
+    {
+     "mulai": 7.75,
+     "selesai": 9.27,
+     "kata": 4
+    }
+   ]
+  },
+  {
+   "mulai": 9.78,
+   "selesai": 15.09,
+   "teks": "Rasulullah shallallahu 'alaihi wa sallam datang menjenguk bersama Abu Bakar radhiyallahu 'anhu.",
+   "segmen": [
+    {
+     "mulai": 9.78,
+     "selesai": 12.32,
+     "kata": 5
+    },
+    {
+     "mulai": 12.44,
+     "selesai": 15.09,
+     "kata": 7
+    }
+   ]
+  },
+  {
+   "mulai": 15.53,
+   "selesai": 20.08,
+   "teks": "Beliau berwudhu, lalu memercikkan airnya kepadanya, hingga ia sadar.",
+   "segmen": [
+    {
+     "mulai": 15.53,
+     "selesai": 16.47,
+     "kata": 2
+    },
+    {
+     "mulai": 16.79,
+     "selesai": 18.76,
+     "kata": 4
+    },
+    {
+     "mulai": 19.06,
+     "selesai": 20.08,
+     "kata": 3
+    }
+   ]
+  },
+  {
+   "mulai": 20.55,
+   "selesai": 24.47,
+   "teks": "Ia bertanya kepada beliau: apa yang harus aku lakukan dengan hartaku?",
+   "segmen": [
+    {
+     "mulai": 20.55,
+     "selesai": 21.82,
+     "kata": 4
+    },
+    {
+     "mulai": 22.25,
+     "selesai": 24.47,
+     "kata": 7
+    }
+   ]
+  },
+  {
+   "mulai": 25.19,
+   "selesai": 29.0,
+   "teks": "Lalu turun ayat waris, surah An-Nisa ayat sebelas.",
+   "segmen": [
+    {
+     "mulai": 25.19,
+     "selesai": 26.84,
+     "kata": 4
+    },
+    {
+     "mulai": 27.1,
+     "selesai": 29.0,
+     "kata": 4
+    }
+   ]
+  },
+  {
+   "mulai": 29.37,
+   "selesai": 34.46,
+   "teks": "Di surah yang sama, ayat tujuh menegaskan: perempuan juga punya hak bagian.",
+   "segmen": [
+    {
+     "mulai": 29.37,
+     "selesai": 32.05,
+     "kata": 7
+    },
+    {
+     "mulai": 32.45,
+     "selesai": 34.46,
+     "kata": 5
+    }
+   ]
+  },
+  {
+   "mulai": 34.81,
+   "selesai": 38.49,
+   "teks": "Bagian itu sudah ditetapkan, sedikit atau banyak hartanya.",
+   "segmen": [
+    {
+     "mulai": 34.81,
+     "selesai": 36.36,
+     "kata": 4
+    },
+    {
+     "mulai": 36.66,
+     "selesai": 38.49,
+     "kata": 4
+    }
+   ]
+  },
+  {
+   "mulai": 38.89,
+   "selesai": 41.73,
+   "teks": "Jadi waris bukan soal kebiasaan keluarga.",
+   "segmen": [
+    {
+     "mulai": 38.89,
+     "selesai": 41.73,
+     "kata": 6
+    }
+   ]
+  },
+  {
+   "mulai": 42.09,
+   "selesai": 45.81,
+   "teks": "Waris adalah ketetapan Allah subhanahu wa ta'ala.",
+   "segmen": [
+    {
+     "mulai": 42.09,
+     "selesai": 45.81,
+     "kata": 7
+    }
+   ]
+  }
+ ]
+}
