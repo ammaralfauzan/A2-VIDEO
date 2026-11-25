@@ -1,65 +1,67 @@
-# Naskah Video: "Dulu Mereka Tidak Dapat Bagian"
+# Naskah Video: "Siapa yang Menentukan Bagian Waris?" (slug tetap: dulu-tak-dapat-bagian)
 
-Format: Reels 9:16 (1080x1920) · Target: 40 dtk (ISIAN kosong, ditetapkan di KONSEP; antrean semula ±35 dtk) · Jalur: 2D · Brand: Tams Consulting (`brands/tams-consulting/BRAND.md`)
-Pola: dua kartu besar "SEBELUM AYAT TURUN" (arang) dan "SESUDAH AYAT TURUN" (terang, aksen oranye) beralih dengan geser sudut daun. Tanpa orang, tanpa siluet, tanpa tangan; hanya dokumen dan benda. Label kecil "Riwayat hadits". Tanpa pecahan bagian, tanpa angka, tanpa ajakan jualan.
-Suara: Kang Nandar (dipakai di video Tams sebelumnya; Brand Kit belum menetapkan), Eleven v3 dengan tag audio.
+Format: Reels 9:16 (1080x1920) · Target: 40 dtk · Jalur: 2D · Brand: Tams Consulting (`brands/tams-consulting/BRAND.md`)
+Pola: dua kartu besar "SEBELUM AYAT TURUN" (arang) dan "SESUDAH AYAT TURUN" (terang, aksen oranye) beralih dengan geser sudut daun. Tanpa orang, siluet, tangan; hanya dokumen dan benda. Label sumber kecil tampil. Tanpa pecahan bagian, tanpa angka, tanpa ajakan jualan.
+Suara: Kang Nandar (usulan; Brand Kit belum menetapkan), Eleven v3 dengan tag audio.
 
-**STATUS: MENUNGGU PERSETUJUAN Bos (KONSEP, 25 Nov 2026).**
+**STATUS: MENUNGGU PERSETUJUAN Bos (KONSEP versi 2, 25 Nov 2026).** Versi 1 (kisah dua putri Sa'd bin Rabi', hasan, perawi Ibnu 'Aqil diperselisihkan) diganti atas pilihan Bos "2": pakai riwayat Bukhari-Muslim.
+
+## Sumber (aturan Bos: utamakan Bukhari-Muslim, tampilkan sumber)
+- HR. Bukhari 4577 dan Muslim 1616, dari Jabir bin Abdullah: Nabi shallallahu 'alaihi wa sallam dan Abu Bakar menjenguk Jabir yang sakit dan tidak sadar; beliau berwudhu dan memercikkan air, Jabir sadar dan bertanya tentang hartanya; lalu turun QS An-Nisa 4:11.
+- QS An-Nisa 4:7: bagi laki-laki dan perempuan ada hak bagian dari peninggalan orang tua dan kerabat, sedikit atau banyak, bagian yang telah ditetapkan.
+- Nomor hadits dari ingatan dan rujukan umum; teks belum dibaca langsung di sunnah.com (situs menahan akses robot). Cek sebelum rilis.
 
 ## Konsep
-Edukasi sejarah turunnya ayat waris. Hook: dulu anak perempuan bisa tidak mendapat apa-apa. Riwayat Jabir (HR Abu Dawud, Tirmidzi, Ibnu Majah; Tirmidzi: hasan gharib): Sa'd bin Rabi' gugur di Uhud, hartanya diambil saudaranya padahal ada dua putri; istrinya mengadu kepada Rasulullah, lalu turun QS An-Nisa 4:11 yang menetapkan bagian anak perempuan, dan Rasulullah memerintahkan paman memberikan bagian mereka. Visual: kartu "Sebelum" (map harta berpindah ke satu sisi, dua map kecil kosong) bergeser sudut daun menjadi kartu "Sesudah" (dua map kecil terisi, kartu ayat). Pesan tunggal: waris adalah ketetapan Allah, bukan kebiasaan keluarga.
+Video dibuka dengan pertanyaan: siapa yang berhak menentukan bagian waris? Jawabannya lewat riwayat sahih Jabir (Bukhari-Muslim): saat sakit ia bertanya kepada Nabi tentang hartanya, lalu turun QS An-Nisa 4:11. Ayat 7 di surah yang sama menegaskan perempuan juga punya hak bagian yang ditetapkan. Visual: kartu "Sebelum" (surat pertanyaan "Hartaku harus diapakan?", kendi air) bergeser sudut daun ke kartu "Sesudah" (kartu ayat, dua map setara "LAKI-LAKI" dan "PEREMPUAN" sama-sama terisi). Pesan tunggal: waris adalah ketetapan Allah subhanahu wa ta'ala, bukan kebiasaan keluarga.
 
 ## Tabel naskah
-Sumber tampil di layar (aturan Bos 25 Nov): label tetap kecil di adegan 2–6 "Riwayat hadits · dari Jabir bin Abdullah · HR. Abu Dawud, at-Tirmidzi, Ibnu Majah" (nomor hadits ditambahkan setelah diverifikasi); di adegan ayat "QS An-Nisa 4:11". Teks layar menulis "Rasulullah shallallahu 'alaihi wa sallam" dan "Allah subhanahu wa ta'ala".
+Label sumber kecil tetap di adegan 2–5: "Riwayat hadits · HR. Bukhari 4577, Muslim 1616 · dari Jabir bin Abdullah". Adegan 6–7: "QS An-Nisa 4:11" lalu "QS An-Nisa 4:7". Teks layar menulis "Rasulullah shallallahu 'alaihi wa sallam" dan "Allah subhanahu wa ta'ala".
 
 | Waktu | Suara | Visual | B-roll |
 | --- | --- | --- | --- |
-| 1 · 0–4,5 | Dulu, anak perempuan bisa tidak dapat apa-apa dari warisan ayahnya. | Latar putih; kotak harta terbuka, dua map kecil kosong; "apa-apa" oranye | B1 (0–4) |
-| 2 · 4,5–12 | Ada riwayat dari sahabat Jabir. Sa'd bin Rabi' gugur di Perang Uhud, meninggalkan istri dan dua putri. | Label sumber muncul; kartu arang "SEBELUM AYAT TURUN"; map besar "HARTA SA'D" + map "PUTRI 1", "PUTRI 2" | - |
-| 3 · 12–16,5 | Lalu saudaranya mengambil seluruh harta itu. Kedua putrinya tidak mendapat bagian. | Map besar bergeser keluar kartu; dua map kecil dicap "KOSONG" | B2 (12–16) |
-| 4 · 16,5–21 | Istri Sa'd datang mengadu kepada Rasulullah shallallahu 'alaihi wa sallam. | Amplop aduan bersegel meluncur ke tengah; teks kecil "Rasulullah shallallahu 'alaihi wa sallam" | - |
-| 5 · 21–24,5 | Lalu turun ayat waris, surah An-Nisa ayat sebelas. | Geser sudut daun ke kartu terang "SESUDAH AYAT TURUN"; kartu "QS An-Nisa 4:11" | B3 (21–24) |
-| 6 · 24,5–31,5 | Ayat itu menetapkan bagian untuk anak perempuan. Beliau memerintahkan paman mereka memberikan bagian kedua putri itu. | Dua map kecil terisi; pita oranye "BAGIANNYA DITETAPKAN" (tanpa pecahan) | - |
-| 7 · 31,5–36 | Sejak itu, bagian waris tidak lagi ditentukan oleh yang paling kuat. | "Sebelum: yang paling kuat" (dicoret) dan "Sesudah: ketetapan Allah" (oranye) | B4 (31,5–35,5) |
-| 8 · 36–40,5 | Waris adalah ketetapan Allah subhanahu wa ta'ala, bukan kebiasaan keluarga. | Kalimat penutup, "ketetapan Allah subhanahu wa ta'ala" oranye; logo Tams asli, tanpa ajakan | B5 (36–40) |
+| 1 · 0–3,5 | Siapa yang berhak menentukan bagian waris dalam keluarga? | Latar putih; map "HARTA" di tengah, tanda tanya oranye besar | B1 (0–3,5) |
+| 2 · 3,5–8 | Jabir bin Abdullah pernah sakit parah, sampai tidak sadarkan diri. | Label sumber muncul; kartu arang "SEBELUM AYAT TURUN"; benda: meja kecil, gelas air | B2 (4–8) |
+| 3 · 8–12 | Rasulullah shallallahu 'alaihi wa sallam datang menjenguk bersama Abu Bakar. | Teks "Rasulullah shallallahu 'alaihi wa sallam" dan "Abu Bakar" di dua kapsul | - |
+| 4 · 12–17 | Beliau berwudhu, lalu memercikkan airnya kepada Jabir, dan Jabir pun sadar. | Kendi air, tetes air oranye memercik ringan | - |
+| 5 · 17–21,5 | Jabir bertanya kepada beliau: apa yang harus aku lakukan dengan hartaku? | Kartu surat bertulis "Hartaku harus diapakan?" | - |
+| 6 · 21,5–25 | Lalu turun ayat waris, surah An-Nisa ayat sebelas. | Geser sudut daun ke kartu terang "SESUDAH AYAT TURUN"; kartu "QS An-Nisa 4:11" | B3 (21,5–25) |
+| 7 · 25–34 | Di surah yang sama, ayat tujuh menegaskan: perempuan juga punya hak bagian. Bagian itu sudah ditetapkan, sedikit atau banyak hartanya. | Kartu "QS An-Nisa 4:7"; dua map setara "LAKI-LAKI" dan "PEREMPUAN" sama-sama terisi; pita "DITETAPKAN" (tanpa pecahan) | B4 (29–33) |
+| 8 · 34–39,5 | Jadi waris bukan soal kebiasaan keluarga. Waris adalah ketetapan Allah subhanahu wa ta'ala. | "Kebiasaan keluarga" (dicoret) lalu "ketetapan Allah subhanahu wa ta'ala" oranye; logo Tams asli, tanpa ajakan | B5 (35–39) |
 
-Waktu perkiraan; adegan nanti mengikuti MP3 asli (suara tidak dipercepat). B-roll opsional sebagai sisipan.
+Waktu perkiraan; adegan mengikuti MP3 asli (suara tidak dipercepat).
 
 ## Suara ElevenLabs (siap salin)
-Suara: Kang Nandar (dipakai di video Tams sebelumnya; Brand Kit belum menetapkan) · Model: Eleven v3 (mendukung tag audio) · Nada: tenang, tegas, menyentuh · Target: ±40 dtk
+Suara: Kang Nandar (usulan; Brand Kit belum menetapkan) · Model: Eleven v3 (mendukung tag audio) · Nada: tenang, tegas, menyentuh · Target: ±40 dtk
 
 ```
-[softly] Dulu, anak perempuan bisa tidak dapat apa-apa dari warisan ayahnya.
+[curious] Siapa yang berhak menentukan bagian waris dalam keluarga?
 
-Ada riwayat dari sahabat Jabir.
+[softly] Jabir bin Abdullah pernah sakit parah, sampai tidak sadarkan diri.
 
-Sa'd bin Rabi' gugur di Perang Uhud, meninggalkan istri dan dua putri.
+Rasulullah shallallahu 'alaihi wa sallam datang menjenguk bersama Abu Bakar.
 
-[sad] Lalu saudaranya mengambil seluruh harta itu.
+Beliau berwudhu, lalu memercikkan airnya kepada Jabir, dan Jabir pun sadar.
 
-Kedua putrinya tidak mendapat bagian.
-
-Istri Sa'd datang mengadu kepada Rasulullah shallallahu 'alaihi wa sallam.
+Jabir bertanya kepada beliau: apa yang harus aku lakukan dengan hartaku?
 
 [pause] Lalu turun ayat waris, surah An-Nisa ayat sebelas.
 
-[warmly] Ayat itu menetapkan bagian untuk anak perempuan.
+[warmly] Di surah yang sama, ayat tujuh menegaskan: perempuan juga punya hak bagian.
 
-Beliau memerintahkan paman mereka memberikan bagian kedua putri itu.
+Bagian itu sudah ditetapkan, sedikit atau banyak hartanya.
 
-Sejak itu, bagian waris tidak lagi ditentukan oleh yang paling kuat.
+Jadi waris bukan soal kebiasaan keluarga.
 
-[slowly] Waris adalah ketetapan Allah subhanahu wa ta'ala, bukan kebiasaan keluarga.
+[slowly] Waris adalah ketetapan Allah subhanahu wa ta'ala.
 ```
 
 ## Prompt B-roll
-Ditampilkan di chat KONSEP (B1–B5, benda saja, tanpa orang/tangan). Ringkas: B1 peti kayu tua terbuka kosong; B2 map dokumen bergeser menjauh di meja; B3 buku tua tertutup di rehal kayu dekat jendela; B4 dua tumpukan map rapi di meja terang; B5 meja putih bersih dengan map tertutup dan kunci.
+Ditampilkan di chat (B1–B5, benda saja). B1 map di meja dengan cahaya samping; B2 meja samping ranjang dengan gelas air di kamar redup; B3 buku tua tertutup di rehal kayu; B4 dua tumpukan map setara; B5 meja putih, map tertutup dan kunci.
 
 ## Jumlah kata dan durasi
-93 kata ≈ 40,4 dtk (2,3 kata/dtk), target 40 dtk (selisih 1%). Revisi 25 Nov: tambah shalawat dan subhanahu wa ta'ala, kalimat lain dipadatkan.
+91 kata ≈ 39,6 dtk (2,3 kata/dtk), target 40 dtk (selisih 1%).
 
-## Risiko / perlu telaah TAMS
-- Aturan sumber (Bos 25 Nov): utamakan Bukhari-Muslim; riwayat di luar keduanya boleh bila dibahas Rumaysho. Riwayat Jabir ini di luar Bukhari-Muslim: BELUM dipastikan ada di Rumaysho (rumaysho.com dan sunnah.com tertahan pemeriksa robot saat dibuka dari sesi). Nomor dari pencarian: Tirmidzi 2092, Ibnu Majah 2720; Abu Dawud belum pasti (2891/2892).
-- Derajat hadits: ISIAN menulis Tirmidzi "hasan gharib"; sebagian cetakan Tirmidzi menulis "hasan shahih". Tidak disebut di suara; cek kitab asli sebelum dicantumkan di caption.
-- Dalam riwayat yang mengambil harta disebut "paman" kedua putri (saudara Sa'd); naskah memakai "saudaranya" lalu "paman mereka" (sama orangnya).
-- Pelafalan "Sa'd bin Rabi'", "Uhud", "An-Nisa" perlu diuji.
+## Risiko
+- Nomor Bukhari 4577 dan Muslim 1616 belum dicocokkan langsung ke teks; ada versi riwayat Muslim yang menyebut ayat kalalah. Ibnu Hajar: ayat turun untuk kisah Jabir dan dua putri Sa'd.
+- Judul dan hook berubah dari ide awal ("Dulu Mereka Tidak Dapat Bagian") karena hook lama bersandar pada riwayat yang hasan; slug tetap.
+- Pelafalan "Jabir", "Abu Bakar", "shallallahu 'alaihi wa sallam" perlu diuji.
