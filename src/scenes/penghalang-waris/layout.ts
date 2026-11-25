@@ -7,19 +7,30 @@ export const TEXT_BOX = {left: 180, width: 720, top: 1250};
 export const TOP = {x: 180, y: 240, w: 720, h: 350};
 export const STAGE = {x: 180, y: 620, w: 720, h: 570};
 
-// Diagram keluarga dalam koordinat panggung (y 0 = layar 620, x 0 = tengah). Kartu latar x -340..340, y 0..560;
-// isi diberi padding >= 36 px dari tepi kartu. Semua bentuk bersudut bulat (kotak rx 34, garis ujung bulat, siku melengkung).
-export const CARD = {x: -340, y: 0, w: 680, h: 560, r: 56};
-export const PEWARIS = {y: 40, w: 300, h: 100, r: 36};
-export const TRUNK_END = 200; // y tempat garis cabang membelok
-export const ELBOW_R = 28;
-export const BOX = {y: 320, w: 144, h: 140, r: 34};
-export const BOX_X = [-231, -77, 77, 231];
-export const BOX_LABEL = ['ANAK', 'SAUDARA', 'ORANG TUA', 'PASANGAN'];
-// Kotak yang ditahan gembok: 1 = beda agama (SAUDARA), 2 = membunuh pewaris (ORANG TUA). Label netral, tanpa nama.
-export const LOCK_BOX = [1, 2];
-export const LOCK_Y = 306; // dasar gembok di garis cabang
-export const LEGEND_Y = 514;
+// Adegan keluarga dalam koordinat panggung (y 0 = layar 620, x 0 = tengah). Revisi 2 Bos (25 Nov 2026): BUKAN bagan,
+// tanpa kartu/kotak di belakang. Rumah PEWARIS di atas, empat benda keluarga melayang di bawahnya, aliran cahaya
+// lengkung dari pintu rumah ke tiap benda (muncul setelah kunci membuka pintu). Jarak antarelemen >= 28 px.
+export const HOUSE = {x: 0, y: 222}; // tanah depan pintu; rumah setinggi 204 (atap y 18)
+export const ITEM_Y = 400; // tengah ikon (ikon ±55, tanah ikon y 450)
+export const ITEM_LABEL_Y = 490;
+export const ITEM_X = [-255, -85, 85, 255];
+export const ITEM_LABEL = ['ANAK', 'SAUDARA', 'ORANG TUA', 'PASANGAN'];
+// Benda yang ditahan gembok: 1 = beda agama (SAUDARA), 2 = membunuh pewaris (ORANG TUA). Label netral, tanpa nama.
+export const LOCK_ITEM = [1, 2];
+export const LOCK_Y = 334; // dasar gembok, tepat di ujung aliran di atas benda
+export const LEGEND_Y = 546;
+// Aliran: kurva kubik dari tanah rumah ke atas benda.
+export const flow = (x: number) => ({p0: [x * 0.1, 236], p1: [x * 0.1, 292], p2: [x, 268], p3: [x, 336]});
+export const flowPath = (x: number) => {
+  const {p0, p1, p2, p3} = flow(x);
+  return `M${p0[0]} ${p0[1]} C${p1[0]} ${p1[1]} ${p2[0]} ${p2[1]} ${p3[0]} ${p3[1]}`;
+};
+export const flowAt = (x: number, t: number) => {
+  const {p0, p1, p2, p3} = flow(x);
+  const u = 1 - t;
+  const k = [u * u * u, 3 * u * u * t, 3 * u * t * t, t * t * t];
+  return [k[0] * p0[0] + k[1] * p1[0] + k[2] * p2[0] + k[3] * p3[0], k[0] * p0[1] + k[1] * p1[1] + k[2] * p2[1] + k[3] * p3[1]];
+};
 
 // Fase tiap adegan, semua dari timing suara (grafis ±4 frame sebelum kata pemicu).
 export const P = {

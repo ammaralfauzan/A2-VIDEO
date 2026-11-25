@@ -50,3 +50,12 @@ Keluhan Bos: teks/elemen menabrak frame (padding), ilustrasi kurang menarik/mini
 - **Ikon benda tanpa makhluk bernyawa** untuk peran keluarga: ANAK tunas, SAUDARA batang bercabang, ORANG TUA pohon cemara, PASANGAN dua cincin, PEWARIS rumah (`Ikon.tsx`).
 - **Warna status:** terkunci merah, berhak hijau (token Tams `red`/`green`). Gembok digambar dengan badan bulat, lengkung tebal berujung bulat, lubang kunci, kilap tipis; membuka = lengkung naik dan miring. Garis menyala animasikan dengan `pathLength=1` + `strokeDashoffset`, bukan potongan garis.
 - Garis yang memerah hanya segmen vertikal di bawah gembok; jangan menimpa batang/garis mendatar yang dipakai cabang lain.
+
+## Revisi 2 `penghalang-waris` (REVISI, 25 Nov 2026): bukan bagan, tanpa kartu
+Keluhan Bos (diulang = revisi 1 belum cukup): "jangan seperti bagan, mau motion graphic", "tanpa frame/kartu di belakang", rumah aneh, kunci/gembok kurang realistis, ikon kurang menggambarkan, label "HUBUNGAN DARAH" menabrak bingkai.
+- **Konsep keluarga/waris = adegan benda, bukan bagan kotak-garis.** Pewaris = rumah detail di atas; ahli waris = benda melayang tanpa kotak (bayangan elips di bawah saja); hubungan = **aliran cahaya lengkung** (kurva kubik) dengan titik cahaya bergerak, muncul setelah kunci membuka pintu. Hindari kotak + garis siku: itu langsung terbaca "bagan".
+- **Tanpa kartu latar di panggung** (diagram maupun rak kitab). Pendar di belakang benda pakai `radialGradient` memudar ke 0 (cahaya), bukan lingkaran rata berbatas (terbaca bingkai).
+- **Realistis = volume dari lapisan token**, bukan gradasi: kilap `rgba(254,254,254,.38)`, bayangan sisi `rgba(10,10,10,.20)`, pinggir timbul, paku keling, kusen, genteng berbaris, tulang daun. Gembok: lengkung baja abu bertepi terang/gelap, badan merah berpinggir, pelat lubang kunci. Kunci: gagang tiga lengkung berlubang, kerah, batang berkilap, mata bergigi; "berputar" = skala vertikal mata kunci `cos(t·π)`.
+- **Gembok muncul padat** (opasitas 0→1 dalam 4 frame + pegas jatuh), jangan bayangan transparan yang menunggu lama; tutup = lengkung turun "klik" + cincin + percik pendek.
+- **Label menempel benda**, bukan kapsul berbingkai: mis. label kertas tergantung di kunci, legenda status hanya ikon + teks. Benda yang terkunci: filter `feColorMatrix saturate 0` + opasitas, label merah.
+- Komponen: `src/scenes/penghalang-waris/Ikon.tsx` (Rumah, Kunci, LabelGantung, Gembok, ikon tunas/dua tunas/pohon/cincin), aliran `flowPath`/`flowAt` di `layout.ts`.

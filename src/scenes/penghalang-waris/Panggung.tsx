@@ -1,11 +1,11 @@
 import React from 'react';
 import {interpolate} from 'remotion';
 import {clamp} from '../../components/motion';
-import {At, Books, G, LINE, pop} from '../wasiat-maksimal-sepertiga/Ilustrasi';
+import {At, Books, pop} from '../wasiat-maksimal-sepertiga/Ilustrasi';
 import {Diagram} from './Diagram';
 import {P, STAGE} from './layout';
 
-// Panggung ilustrasi (x 180–900, y 620–1190): diagram kotak keluarga, diselingi rak kitab Bukhari-Muslim saat sumber
+// Panggung ilustrasi (x 180–900, y 620–1190), tanpa kartu latar (revisi 2 Bos): adegan rumah dan benda keluarga, diselingi rak kitab Bukhari-Muslim saat sumber
 // disebut. Adegan bergantian (lama memudar 8 frame, baru masuk dengan pegas). Koordinat SVG: x 0 = tengah layar.
 type Scene = {from: number; render: (f: number) => React.ReactNode};
 
@@ -16,7 +16,6 @@ const SCENES: Scene[] = [
     from: P.books,
     render: (f) => (
       <>
-        <rect x={-340} y={0} width={680} height={560} rx={56} fill={G} stroke={LINE} strokeWidth={3} />
         <At x={0} y={470} s={0.92}>
           <Books a={pop(f, P.books + 4)} b={pop(f, P.books + 10)} open={Math.min(1, pop(f, P.books + 18))} />
         </At>
