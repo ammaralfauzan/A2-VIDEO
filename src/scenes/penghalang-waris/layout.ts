@@ -7,16 +7,19 @@ export const TEXT_BOX = {left: 180, width: 720, top: 1250};
 export const TOP = {x: 180, y: 240, w: 720, h: 350};
 export const STAGE = {x: 180, y: 620, w: 720, h: 570};
 
-// Diagram keluarga dalam koordinat panggung (y 0 = layar 620).
-export const PEWARIS = {y: 26, w: 300, h: 92};
-export const BAR_Y = 206;
-export const BOX = {y: 306, w: 172, h: 96};
-export const BOX_X = [-270, -90, 90, 270];
+// Diagram keluarga dalam koordinat panggung (y 0 = layar 620, x 0 = tengah). Kartu latar x -340..340, y 0..560;
+// isi diberi padding >= 36 px dari tepi kartu. Semua bentuk bersudut bulat (kotak rx 34, garis ujung bulat, siku melengkung).
+export const CARD = {x: -340, y: 0, w: 680, h: 560, r: 56};
+export const PEWARIS = {y: 40, w: 300, h: 100, r: 36};
+export const TRUNK_END = 200; // y tempat garis cabang membelok
+export const ELBOW_R = 28;
+export const BOX = {y: 320, w: 144, h: 140, r: 34};
+export const BOX_X = [-231, -77, 77, 231];
 export const BOX_LABEL = ['ANAK', 'SAUDARA', 'ORANG TUA', 'PASANGAN'];
 // Kotak yang ditahan gembok: 1 = beda agama (SAUDARA), 2 = membunuh pewaris (ORANG TUA). Label netral, tanpa nama.
 export const LOCK_BOX = [1, 2];
-export const LOCK_Y = 284; // pangkal gembok di garis penghubung
-export const GHOST = [{x: -318, y: 160}, {x: 318, y: 160}];
+export const LOCK_Y = 306; // dasar gembok di garis cabang
+export const LEGEND_Y = 514;
 
 // Fase tiap adegan, semua dari timing suara (grafis ±4 frame sebelum kata pemicu).
 export const P = {

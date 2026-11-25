@@ -42,3 +42,11 @@ Keluhan Bos: "kurang ilustrasi", "tatanan berantakan", "kurang estetik/modern", 
 - **Garis aksen di bawah judul penutup** dihitung dari tinggi judul sungguhan: judul 3 baris pernah membuat garis menembus baris ketiga. Tentukan pemenggalan baris dengan `<br />` sendiri dan letakkan garis di bawah baris terakhir.
 - **Kutipan panjang di zona judul**: penggal baris sendiri (ukuran ±44), jangan biarkan kata pendek ("kafir,") tersisa sendirian di satu baris.
 
+
+## Revisi `penghalang-waris` (REVISI, 25 Nov 2026)
+Keluhan Bos: teks/elemen menabrak frame (padding), ilustrasi kurang menarik/minimalis, garis bagan lancip padahal kotak bulat, gembok/kunci kurang detail, warna terkunci kurang jelas, mau ikon bukan bagan polos.
+- **Bentuk konsisten:** kotak bulat (rx 34–36) berarti garis penghubung juga bulat: siku melengkung (`Q`), ujung `strokeLinecap="round"`, `strokeLinejoin="round"`. Jangan campur siku tajam dengan kotak bulat.
+- **Padding dalam bingkai:** kartu latar bulat di panggung, isi minimal 36 px dari tepi kartu; label di kotak diukur (mis. "ORANG TUA" 16 px di kotak 144 px = ±18 px tiap sisi). Cek di frame penuh, bukan hanya pemeriksa tabrakan (ia tidak menangkap teks yang mepet garis kotak).
+- **Ikon benda tanpa makhluk bernyawa** untuk peran keluarga: ANAK tunas, SAUDARA batang bercabang, ORANG TUA pohon cemara, PASANGAN dua cincin, PEWARIS rumah (`Ikon.tsx`).
+- **Warna status:** terkunci merah, berhak hijau (token Tams `red`/`green`). Gembok digambar dengan badan bulat, lengkung tebal berujung bulat, lubang kunci, kilap tipis; membuka = lengkung naik dan miring. Garis menyala animasikan dengan `pathLength=1` + `strokeDashoffset`, bukan potongan garis.
+- Garis yang memerah hanya segmen vertikal di bawah gembok; jangan menimpa batang/garis mendatar yang dipakai cabang lain.
