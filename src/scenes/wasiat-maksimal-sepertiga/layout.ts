@@ -1,13 +1,14 @@
 import {S, sf, wf} from '../../data/timeline-wasiat-maksimal-sepertiga';
 
 // Zona 9:16 (area aman x 60–900, y 220–1500). Semua ditengahkan di x 540, lebar maks 720 (x 180–900):
-// kartu atas y 260–720, penanda y 812–856, batang harta y 900–980, kotak ahli waris y 1110–1206, teks bawah y 1250+.
+// judul tanpa bingkai y 240–590, panggung ilustrasi y 620–1190 (SVG, x 0 = tengah layar), teks bawah y 1250+.
 export const CX = 540;
 export const TEXT_BOX = {left: 180, width: 720, top: 1250};
-export const CARD = {x: 180, y: 260, w: 720, h: 460};
-export const BAR = {left: 180, right: 900, top: 900, h: 80};
+export const TOP = {x: 180, y: 240, w: 720, h: 350};
+export const STAGE = {x: 180, y: 620, w: 720, h: 570};
+// Batang harta dalam koordinat panggung (x -360..360 = layar 180..900; y 190 = layar 810).
+export const BAR = {left: -360, right: 360, top: 190, h: 170};
 export const KEW = 150; // lebar potongan "kewajiban" yang dilepas
-export const HEIR = {x: 300, y: 1110, w: 480, h: 96};
 
 // Fase tiap adegan, semua dari timing suara (grafis ±4 frame sebelum kata pemicu).
 export const P = {

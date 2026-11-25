@@ -28,3 +28,11 @@ Satu folder per brand: `brands/<kode>/BRAND.md`. Daftar dan aturan: `brands/READ
 - **Modern dan bulat:** semua sudut membulat (kartu 44, kapsul/label `border-radius: 999`, baris daftar 48, ikon `rx` 8–24, poligon atap/emas lewat garis tebal warna sama `strokeLinejoin="round"`). Tanpa garis hitam tebal; tepi lembut `rgba(ink,.12)`, bidang rata + rona (tint) dari token, bayangan elips lembut di bawah benda, lingkaran latar pudar.
 - **Detail kecil yang menjelaskan** (ikatan kain, cap, segel, pita buku, label "LUNAS"/"SAH") lebih penting daripada banyak benda.
 - **Wajah:** hindari. Bila sosok benar-benar perlu (dan Brand Kit mengizinkan), muka dibuat rata tanpa mata/mulut. Brand tanpa makhluk bernyawa (mis. Tams) tetap memakai benda saja.
+
+## Video edukasi 2D: judul tanpa kotak + panggung ilustrasi (revisi Bos `wasiat-maksimal-sepertiga`, 25 Nov 2026)
+Keluhan Bos: "kurang ilustrasi", "tatanan berantakan", "kurang estetik/modern", "teks atas kenapa pakai frame kotak". Pola yang dipakai dan berlaku untuk video edukasi 2D berikutnya:
+- **Judul atas tanpa bingkai.** Jangan membungkus teks atas dalam kartu/kotak. Tipografi bebas di latar: label kecil oranye bertitik (huruf besar renggang), judul besar 60–64 tebal 800, garis aksen pendek, isi abu. Masuk bertahap (label → judul → isi), blur ke tajam.
+- **Tiga zona tetap 9:16:** judul y 240–590, panggung ilustrasi y 620–1190, teks bawah y 1250+. Tiap zona punya satu fungsi; tidak ada elemen kecil mengambang di antara zona.
+- **Satu adegan benda per bagian cerita** (bukan satu diagram kecil sepanjang video): mis. kamar sunyi (meja samping, lampu, gelas, obat, jendela bulan), toples penuh vs mangkuk kosong, rak kitab bernama, palang penahan, bingkisan bersegel, rumah dinaungi lengkung. Benda muncul dengan pegas bertahap dan melayang pelan. Diagram (batang harta) dibuat besar dan diisi benda, bukan batang polos.
+- Bentuk dasar yang bisa dipakai ulang (benda saja, aman untuk brand tanpa makhluk bernyawa): `src/scenes/wasiat-maksimal-sepertiga/Ilustrasi.tsx`; panggung bergantian: `Panggung.tsx`.
+- Label di bawah batang: label lama hilang dulu, baru label baru masuk (pernah tertangkap "HARTA" menimpa "AHLI WARIS" di frame transisi).
