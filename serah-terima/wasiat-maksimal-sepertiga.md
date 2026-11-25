@@ -1,7 +1,7 @@
 # Serah-terima: wasiat-maksimal-sepertiga
 
 - Judul / brand / format / durasi target: Kenapa Wasiat Dibatasi Sepertiga? / Tams Consulting (`tams-consulting`) / 9:16, jalur 2D / target 50 dtk; hasil 61,7 dtk (suara Bos 59,7 dtk, tidak dipercepat)
-- Tahap terakhir selesai: REVISI 1 (25 Nov 2026, room R4), DISETUJUI Bos; lanjut RILIS (room R5)
+- Tahap terakhir selesai: RILIS (25 Nov 2026, room R5); video final disetujui Bos. Tinggal posting oleh Bos
 - Keputusan Bos (disetujui, jangan diubah): Brand Kit Tams (20 Nov 2026); edukasi murni tanpa selling; tanpa makhluk bernyawa; tanpa nominal/persentase; konsep, naskah, dan suara (MP3 Jefri 25 Nov 2026) disetujui
 - File penting: `naskah-wasiat-maksimal-sepertiga.md`, `public/audio/vo-wasiat-maksimal-sepertiga.mp3`, `src/data/vo-timing-wasiat-maksimal-sepertiga.json`, komposisi `WasiatMaksimalSepertiga`, `out/wasiat-maksimal-sepertiga-9x16.mp4`
 - Status render: ada (revisi 1), 61,7 dtk, 1080x1920 30 fps, 25 Nov 2026
@@ -15,5 +15,12 @@
   - Nomor hadits di layar (Bukhari 2742, Muslim 1628, Abu Dawud 2870, Ibnu Majah 2713) dari naskah; perlu telaah TAMS sebelum rilis
   - Timing dari silencedetect (konektor ElevenLabs tanpa alat unggah); pemetaan 26 potongan cocok semua, belum didengar langsung
   - Data timing `akun-keluarga-h2c` diubah room 3D (5a02c61) sehingga bundel Remotion gagal; untuk render dipulihkan sementara di lokal, TIDAK di-commit. Room akun-keluarga-h2c perlu memperbaikinya
-- Caption dan jam posting usulan: (RILIS) sumber hadits wajib di caption
+- Caption dan jam posting usulan: lihat bagian RILIS di bawah (arsip; teks polos di `rilis/wasiat-maksimal-sepertiga/`)
 - Catatan untuk room berikutnya: render/cek video ini pakai entry `src/entries/wasiat-maksimal-sepertiga.tsx` (REMOTION_ENTRY=...), tidak perlu memulihkan berkas akun-keluarga.  format 9:16, durasi 61,7 dtk. Bila Bos mengirim klip B-roll, isi `src` di `BROLL` lalu render ulang. Bila bundel gagal karena `timeline-akun-keluarga-h2c.ts`, pulihkan sementara `git show 5a02c61^:src/data/vo-timing-akun-keluarga-h2c.json` dan kembalikan sebelum commit.
+
+
+## RILIS (25 Nov 2026)
+- Jam usulan: Jumat 27 Nov 2026, 10.00 WIB, IG Reels akun Tams (data Metricool: Jumat 10.00 tertinggi minggu itu; sehari setelah dulu-tak-dapat-bagian di Kamis 26 Nov). Cadangan: Rabu 2 Des 10.00.
+- Caption: `rilis/wasiat-maksimal-sepertiga/caption.txt`. Prompt sampul: `rilis/wasiat-maksimal-sepertiga/prompt-sampul.txt` (judul "Kenapa Wasiat Dibatasi Sepertiga?").
+- Risiko: nomor hadits (Bukhari 2742, Muslim 1628, Abu Dawud 2870, Ibnu Majah 2713) belum dicocokkan ke kitab asli, perlu telaah TAMS. Handle di caption sengaja tidak ditulis: Brand Kit mencatat @tams.consulting, tetapi Metricool menunjukkan akun terhubung tams.syariahconsulting; Bos tentukan.
+- Draf Metricool: belum dibuat (menunggu Bos melihat caption dan jam). Belum diposting.
