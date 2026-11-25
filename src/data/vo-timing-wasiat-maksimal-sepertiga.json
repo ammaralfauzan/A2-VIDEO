@@ -1,0 +1,258 @@
+{
+ "audio": "public/audio/vo-wasiat-maksimal-sepertiga.mp3",
+ "durasi": 59.72,
+ "suara": "Jefri - Suara Penjelasan Lembut (ElevenLabs eleven v4, MP3 dari Bos 25 Nov 2026), tidak dipercepat",
+ "metode": "ffmpeg silencedetect (-35 dB/0,25 dtk; -30 dB/0,12 dtk untuk koma). 26 potongan ucapan dipetakan ke 15 kalimat naskah menurut urutan dan suku kata (cocok semua). Waktu kata di dalam segmen diperkirakan dari suku kata. Konektor ElevenLabs tidak punya alat unggah berkas lokal, jadi transkripsi tidak dipakai.",
+ "kalimat": [
+  {
+   "mulai": 0.18,
+   "selesai": 1.93,
+   "teks": "Mau mewasiatkan semua harta?",
+   "segmen": [
+    {
+     "mulai": 0.18,
+     "selesai": 1.93,
+     "kata": 4
+    }
+   ]
+  },
+  {
+   "mulai": 2.44,
+   "selesai": 4.52,
+   "teks": "Nabi menjawab: jangan.",
+   "segmen": [
+    {
+     "mulai": 2.44,
+     "selesai": 3.53,
+     "kata": 2
+    },
+    {
+     "mulai": 3.85,
+     "selesai": 4.52,
+     "kata": 1
+    }
+   ]
+  },
+  {
+   "mulai": 5.31,
+   "selesai": 9.07,
+   "teks": "Suatu hari, sahabat Sa'd bin Abi Waqqash sakit keras.",
+   "segmen": [
+    {
+     "mulai": 5.31,
+     "selesai": 7.61,
+     "kata": 7
+    },
+    {
+     "mulai": 7.74,
+     "selesai": 9.07,
+     "kata": 2
+    }
+   ]
+  },
+  {
+   "mulai": 9.47,
+   "selesai": 13.48,
+   "teks": "Ia bertanya kepada Nabi, bolehkah mewasiatkan seluruh hartanya?",
+   "segmen": [
+    {
+     "mulai": 9.47,
+     "selesai": 10.85,
+     "kata": 4
+    },
+    {
+     "mulai": 11.33,
+     "selesai": 13.48,
+     "kata": 4
+    }
+   ]
+  },
+  {
+   "mulai": 13.99,
+   "selesai": 15.58,
+   "teks": "Nabi menjawab: tidak.",
+   "segmen": [
+    {
+     "mulai": 13.99,
+     "selesai": 14.85,
+     "kata": 2
+    },
+    {
+     "mulai": 15.16,
+     "selesai": 15.58,
+     "kata": 1
+    }
+   ]
+  },
+  {
+   "mulai": 15.9,
+   "selesai": 17.97,
+   "teks": "Bagaimana kalau setengah? Tidak.",
+   "segmen": [
+    {
+     "mulai": 15.9,
+     "selesai": 17.08,
+     "kata": 3
+    },
+    {
+     "mulai": 17.54,
+     "selesai": 17.97,
+     "kata": 1
+    }
+   ]
+  },
+  {
+   "mulai": 18.33,
+   "selesai": 18.89,
+   "teks": "Sepertiga?",
+   "segmen": [
+    {
+     "mulai": 18.33,
+     "selesai": 18.89,
+     "kata": 1
+    }
+   ]
+  },
+  {
+   "mulai": 19.3,
+   "selesai": 23.84,
+   "teks": "Nabi bersabda: sepertiga, dan sepertiga itu sudah banyak.",
+   "segmen": [
+    {
+     "mulai": 19.3,
+     "selesai": 20.27,
+     "kata": 2
+    },
+    {
+     "mulai": 20.61,
+     "selesai": 21.44,
+     "kata": 1
+    },
+    {
+     "mulai": 21.8,
+     "selesai": 23.84,
+     "kata": 5
+    }
+   ]
+  },
+  {
+   "mulai": 24.3,
+   "selesai": 33.44,
+   "teks": "Lalu beliau menjelaskan: meninggalkan ahli waris dalam keadaan berkecukupan, lebih baik daripada meninggalkan mereka miskin, meminta-minta kepada orang lain.",
+   "segmen": [
+    {
+     "mulai": 24.3,
+     "selesai": 25.57,
+     "kata": 3
+    },
+    {
+     "mulai": 25.94,
+     "selesai": 28.74,
+     "kata": 6
+    },
+    {
+     "mulai": 28.92,
+     "selesai": 31.55,
+     "kata": 6
+    },
+    {
+     "mulai": 31.75,
+     "selesai": 33.44,
+     "kata": 4
+    }
+   ]
+  },
+  {
+   "mulai": 33.92,
+   "selesai": 36.33,
+   "teks": "Hadits ini diriwayatkan Bukhari dan Muslim.",
+   "segmen": [
+    {
+     "mulai": 33.92,
+     "selesai": 36.33,
+     "kata": 6
+    }
+   ]
+  },
+  {
+   "mulai": 36.92,
+   "selesai": 42.82,
+   "teks": "Jadi, wasiat paling banyak sepertiga, dari sisa harta setelah kewajiban almarhum diselesaikan.",
+   "segmen": [
+    {
+     "mulai": 36.92,
+     "selesai": 39.39,
+     "kata": 5
+    },
+    {
+     "mulai": 39.66,
+     "selesai": 42.82,
+     "kata": 7
+    }
+   ]
+  },
+  {
+   "mulai": 43.35,
+   "selesai": 47.75,
+   "teks": "Satu lagi. Nabi bersabda: tidak ada wasiat untuk ahli waris.",
+   "segmen": [
+    {
+     "mulai": 43.35,
+     "selesai": 43.89,
+     "kata": 2
+    },
+    {
+     "mulai": 44.36,
+     "selesai": 45.17,
+     "kata": 2
+    },
+    {
+     "mulai": 45.58,
+     "selesai": 47.75,
+     "kata": 6
+    }
+   ]
+  },
+  {
+   "mulai": 48.12,
+   "selesai": 50.2,
+   "teks": "Diriwayatkan Abu Dawud dan Ibnu Majah.",
+   "segmen": [
+    {
+     "mulai": 48.12,
+     "selesai": 50.2,
+     "kata": 6
+    }
+   ]
+  },
+  {
+   "mulai": 50.63,
+   "selesai": 53.39,
+   "teks": "Sebab ahli waris sudah punya bagiannya sendiri.",
+   "segmen": [
+    {
+     "mulai": 50.63,
+     "selesai": 53.39,
+     "kata": 7
+    }
+   ]
+  },
+  {
+   "mulai": 53.79,
+   "selesai": 59.45,
+   "teks": "Batas ini bukan untuk menahan kebaikan, tapi untuk menjaga keluarga yang ditinggalkan.",
+   "segmen": [
+    {
+     "mulai": 53.79,
+     "selesai": 56.33,
+     "kata": 6
+    },
+    {
+     "mulai": 56.77,
+     "selesai": 59.45,
+     "kata": 6
+    }
+   ]
+  }
+ ]
+}

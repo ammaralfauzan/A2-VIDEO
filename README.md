@@ -179,3 +179,11 @@ Jika Chromium tidak bisa diunduh otomatis, isi `REMOTION_BROWSER` dengan path Ch
    Jika suara lebih panjang, perpanjang adegan, jangan percepat suara.
 
 Angka di kedua video (mis. 32 siswa, 97 chat, 128 tagihan, Rp123 jt) hanya ilustrasi.
+
+## Video: "Kenapa Wasiat Dibatasi Sepertiga?" (komposisi `WasiatMaksimalSepertiga`, 9:16, brand Tams Consulting)
+- Naskah: `naskah-wasiat-maksimal-sepertiga.md`. Edukasi satu dalil: kisah Sa'd bin Abi Waqqash. Satu batang HARTA arang; penanda SELURUH? dan SETENGAH? dicoret, garis oranye terkunci di SEPERTIGA, sisanya meredup (gembok) dan mengalir ke kotak AHLI WARIS; lalu potongan KEWAJIBAN dilepas (SISA HARTA), panah wasiat ke ahli waris ditahan palang, tanda "bagian sudah ditetapkan". Kartu atas: amplop wasiat, kisah, sabda, perbandingan berkecukupan/meminta-minta, sumber hadits bernomor. Penutup "Batas yang menjaga keluarga." + logo Tams asli, tanpa ajakan
+- Hasil: `out/wasiat-maksimal-sepertiga-9x16.mp4` (1080x1920, 30 fps, 61,7 detik: suara 59,7 dtk + logo diam 2 dtk). Suara tidak dipercepat
+- Voiceover: `public/audio/vo-wasiat-maksimal-sepertiga.mp3` (ElevenLabs, suara Jefri "Suara Penjelasan Lembut", MP3 dari Bos). Timing: `src/data/vo-timing-wasiat-maksimal-sepertiga.json` (ffmpeg silencedetect, 26 potongan ke 15 kalimat)
+- Kode: `src/WasiatMaksimalSepertiga.tsx`, adegan di `src/scenes/wasiat-maksimal-sepertiga/` (`Kartu`, `Batang`, `Penutup`, `Caption`, `Broll`, `Sfx`, `layout`), timeline di `src/data/timeline-wasiat-maksimal-sepertiga.ts`. Teks bawah: kata "Nabi" selalu diikuti "shallallahu 'alaihi wa sallam" (aturan Brand Kit)
+- B-roll: slot B1..B5 di `layout.ts` (`BROLL`, `src: null` = belum ada klip)
+- Frame kunci: `out/stills/wasiat-maksimal-sepertiga/` (`scripts/wasiat-maksimal-sepertiga-frames.ts`). Perintah: `npm run stills:wasiat-sepertiga`, `npm run render:wasiat-sepertiga`

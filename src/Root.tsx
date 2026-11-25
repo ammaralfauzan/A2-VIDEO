@@ -29,6 +29,8 @@ import {DaftarDanMasukH2C} from './DaftarDanMasukH2C';
 import {TOTAL_FRAMES as DMH_TOTAL_FRAMES} from './data/timeline-daftar-dan-masuk-h2c';
 import {AkunKeluargaH2C} from './AkunKeluargaH2C';
 import {TOTAL_FRAMES as AKH_TOTAL_FRAMES} from './data/timeline-akun-keluarga-h2c';
+import {WasiatMaksimalSepertiga} from './WasiatMaksimalSepertiga';
+import {TOTAL_FRAMES as WMS_TOTAL_FRAMES} from './data/timeline-wasiat-maksimal-sepertiga';
 import {BrandSample as TamsBrandSample} from './brands/tams-consulting/BrandSample';
 import {BrandSample as H2cUmrohBrandSample} from './brands/h2c-umroh/BrandSample';
 
@@ -47,6 +49,7 @@ const PTigaHal = withProbe(TigaHalSebelumWaris);
 const PManualTemplateOtomatis = withProbe(ManualTemplateOtomatis);
 const PDaftarDanMasukH2C = withProbe(DaftarDanMasukH2C);
 const PAkunKeluargaH2C = withProbe(AkunKeluargaH2C);
+const PWasiatMaksimalSepertiga = withProbe(WasiatMaksimalSepertiga);
 
 for (const weight of ['400', '500', '600']) {
   loadFont({family: 'Geist', url: staticFile(`fonts/geist-sans-latin-${weight}-normal.woff2`), weight});
@@ -111,5 +114,7 @@ export const Root: React.FC = () => (
     {/* "Daftar dan Masuk Akun H2C": replika web umroh H2C + kursor manusiawi, brand H2C Umroh, 9:16. */}
     <Composition id="DaftarDanMasukH2C" component={PDaftarDanMasukH2C} durationInFrames={DMH_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} defaultProps={{safeGuide: false}} />
     <Composition id="AkunKeluargaH2C" component={PAkunKeluargaH2C} durationInFrames={AKH_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} defaultProps={{safeGuide: false}} />
+    {/* "Kenapa Wasiat Dibatasi Sepertiga?" (Tams Consulting): batang harta + batas sepertiga, 9:16, tanpa ajakan. */}
+    <Composition id="WasiatMaksimalSepertiga" component={PWasiatMaksimalSepertiga} durationInFrames={WMS_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} defaultProps={{safeGuide: false}} />
   </>
 );
