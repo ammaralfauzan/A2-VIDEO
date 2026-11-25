@@ -1,0 +1,455 @@
+{
+ "length": 70.0,
+ "target_lufs": -14,
+ "voice": {
+  "file": "../../public/audio/vo-akun-keluarga-h2c.mp3",
+  "at": 0,
+  "gain_db": 0
+ },
+ "sfx": [
+  {
+   "file": "../../public/sfx/card-1.wav",
+   "at": 0.0,
+   "gain_db": -12,
+   "why": "kartu muncul"
+  },
+  {
+   "file": "../../public/sfx/card-2.wav",
+   "at": 0.2,
+   "gain_db": -12,
+   "why": "kartu muncul"
+  },
+  {
+   "file": "../../public/sfx/card-3.wav",
+   "at": 0.4,
+   "gain_db": -12,
+   "why": "kartu muncul"
+  },
+  {
+   "file": "../../public/sfx/card-4.wav",
+   "at": 0.6,
+   "gain_db": -12,
+   "why": "kartu muncul"
+  },
+  {
+   "file": "../../public/sfx/tick.wav",
+   "at": 1.0,
+   "gain_db": -10,
+   "why": "saklar lampu"
+  },
+  {
+   "file": "../../public/sfx/chip.wav",
+   "at": 2.72,
+   "gain_db": -12,
+   "why": "kartu akun KK"
+  },
+  {
+   "file": "../../public/sfx/chip.wav",
+   "at": 4.95,
+   "gain_db": -14,
+   "why": "chip anggota"
+  },
+  {
+   "file": "../../public/sfx/step-1.wav",
+   "at": 7.06,
+   "gain_db": -13,
+   "why": "titik langkah"
+  },
+  {
+   "file": "../../public/sfx/step-2.wav",
+   "at": 7.7,
+   "gain_db": -13,
+   "why": "titik langkah"
+  },
+  {
+   "file": "../../public/sfx/step-3.wav",
+   "at": 8.35,
+   "gain_db": -13,
+   "why": "titik langkah"
+  },
+  {
+   "file": "../../public/sfx/step-4.wav",
+   "at": 9.0,
+   "gain_db": -13,
+   "why": "titik langkah"
+  },
+  {
+   "file": "../../public/sfx/umroh/dentum.wav",
+   "at": 12.38,
+   "gain_db": -12,
+   "why": "angka langkah"
+  },
+  {
+   "file": "../../public/sfx/badge.wav",
+   "at": 12.41,
+   "gain_db": -12,
+   "why": "angka langkah"
+  },
+  {
+   "file": "../../public/sfx/umroh/dentum.wav",
+   "at": 26.67,
+   "gain_db": -12,
+   "why": "angka langkah"
+  },
+  {
+   "file": "../../public/sfx/badge.wav",
+   "at": 26.7,
+   "gain_db": -12,
+   "why": "angka langkah"
+  },
+  {
+   "file": "../../public/sfx/umroh/dentum.wav",
+   "at": 36.37,
+   "gain_db": -12,
+   "why": "angka langkah"
+  },
+  {
+   "file": "../../public/sfx/badge.wav",
+   "at": 36.4,
+   "gain_db": -12,
+   "why": "angka langkah"
+  },
+  {
+   "file": "../../public/sfx/umroh/dentum.wav",
+   "at": 48.99,
+   "gain_db": -12,
+   "why": "angka langkah"
+  },
+  {
+   "file": "../../public/sfx/badge.wav",
+   "at": 49.02,
+   "gain_db": -12,
+   "why": "angka langkah"
+  },
+  {
+   "file": "../../public/sfx/tick.wav",
+   "at": 14.33,
+   "gain_db": -8,
+   "why": "klik kursor"
+  },
+  {
+   "file": "../../public/sfx/tick.wav",
+   "at": 18.28,
+   "gain_db": -8,
+   "why": "klik kursor"
+  },
+  {
+   "file": "../../public/sfx/tick.wav",
+   "at": 19.43,
+   "gain_db": -8,
+   "why": "klik kursor"
+  },
+  {
+   "file": "../../public/sfx/tick.wav",
+   "at": 20.78,
+   "gain_db": -8,
+   "why": "klik kursor"
+  },
+  {
+   "file": "../../public/sfx/tick.wav",
+   "at": 30.43,
+   "gain_db": -8,
+   "why": "klik kursor"
+  },
+  {
+   "file": "../../public/sfx/tick.wav",
+   "at": 39.53,
+   "gain_db": -8,
+   "why": "klik kursor"
+  },
+  {
+   "file": "../../public/sfx/tick.wav",
+   "at": 41.33,
+   "gain_db": -8,
+   "why": "klik kursor"
+  },
+  {
+   "file": "../../public/sfx/tick.wav",
+   "at": 43.43,
+   "gain_db": -8,
+   "why": "klik kursor"
+  },
+  {
+   "file": "../../public/sfx/tick.wav",
+   "at": 44.73,
+   "gain_db": -8,
+   "why": "klik kursor"
+  },
+  {
+   "file": "../../public/sfx/tick.wav",
+   "at": 52.33,
+   "gain_db": -8,
+   "why": "klik kursor"
+  },
+  {
+   "file": "../../public/sfx/tick.wav",
+   "at": 54.83,
+   "gain_db": -8,
+   "why": "klik kursor"
+  },
+  {
+   "file": "../../public/sfx/tick.wav",
+   "at": 55.83,
+   "gain_db": -8,
+   "why": "klik kursor"
+  },
+  {
+   "file": "sound/key.wav",
+   "at": 18.4,
+   "gain_db": -13,
+   "why": "ketik"
+  },
+  {
+   "file": "sound/key.wav",
+   "at": 18.517,
+   "gain_db": -13,
+   "why": "ketik"
+  },
+  {
+   "file": "sound/key.wav",
+   "at": 18.633,
+   "gain_db": -13,
+   "why": "ketik"
+  },
+  {
+   "file": "sound/key.wav",
+   "at": 18.75,
+   "gain_db": -13,
+   "why": "ketik"
+  },
+  {
+   "file": "sound/key.wav",
+   "at": 18.867,
+   "gain_db": -13,
+   "why": "ketik"
+  },
+  {
+   "file": "sound/key.wav",
+   "at": 18.983,
+   "gain_db": -13,
+   "why": "ketik"
+  },
+  {
+   "file": "sound/key.wav",
+   "at": 19.55,
+   "gain_db": -13,
+   "why": "ketik"
+  },
+  {
+   "file": "sound/key.wav",
+   "at": 19.663,
+   "gain_db": -13,
+   "why": "ketik"
+  },
+  {
+   "file": "sound/key.wav",
+   "at": 19.775,
+   "gain_db": -13,
+   "why": "ketik"
+  },
+  {
+   "file": "sound/key.wav",
+   "at": 19.887,
+   "gain_db": -13,
+   "why": "ketik"
+  },
+  {
+   "file": "sound/key.wav",
+   "at": 20.0,
+   "gain_db": -13,
+   "why": "ketik"
+  },
+  {
+   "file": "sound/key.wav",
+   "at": 20.113,
+   "gain_db": -13,
+   "why": "ketik"
+  },
+  {
+   "file": "sound/key.wav",
+   "at": 20.225,
+   "gain_db": -13,
+   "why": "ketik"
+  },
+  {
+   "file": "sound/key.wav",
+   "at": 20.337,
+   "gain_db": -13,
+   "why": "ketik"
+  },
+  {
+   "file": "sound/key.wav",
+   "at": 42.4,
+   "gain_db": -13,
+   "why": "ketik"
+  },
+  {
+   "file": "sound/key.wav",
+   "at": 42.512,
+   "gain_db": -13,
+   "why": "ketik"
+  },
+  {
+   "file": "sound/key.wav",
+   "at": 42.625,
+   "gain_db": -13,
+   "why": "ketik"
+  },
+  {
+   "file": "sound/key.wav",
+   "at": 42.737,
+   "gain_db": -13,
+   "why": "ketik"
+  },
+  {
+   "file": "sound/key.wav",
+   "at": 42.85,
+   "gain_db": -13,
+   "why": "ketik"
+  },
+  {
+   "file": "sound/key.wav",
+   "at": 42.962,
+   "gain_db": -13,
+   "why": "ketik"
+  },
+  {
+   "file": "sound/key.wav",
+   "at": 43.075,
+   "gain_db": -13,
+   "why": "ketik"
+  },
+  {
+   "file": "sound/key.wav",
+   "at": 43.188,
+   "gain_db": -13,
+   "why": "ketik"
+  },
+  {
+   "file": "sound/key.wav",
+   "at": 43.5,
+   "gain_db": -13,
+   "why": "ketik"
+  },
+  {
+   "file": "sound/key.wav",
+   "at": 43.6,
+   "gain_db": -13,
+   "why": "ketik"
+  },
+  {
+   "file": "sound/key.wav",
+   "at": 43.7,
+   "gain_db": -13,
+   "why": "ketik"
+  },
+  {
+   "file": "sound/key.wav",
+   "at": 43.8,
+   "gain_db": -13,
+   "why": "ketik"
+  },
+  {
+   "file": "sound/key.wav",
+   "at": 43.9,
+   "gain_db": -13,
+   "why": "ketik"
+  },
+  {
+   "file": "sound/key.wav",
+   "at": 44.0,
+   "gain_db": -13,
+   "why": "ketik"
+  },
+  {
+   "file": "sound/key.wav",
+   "at": 44.1,
+   "gain_db": -13,
+   "why": "ketik"
+  },
+  {
+   "file": "sound/key.wav",
+   "at": 44.2,
+   "gain_db": -13,
+   "why": "ketik"
+  },
+  {
+   "file": "../../public/sfx/tiga/balik-0.wav",
+   "at": 20.95,
+   "gain_db": -10,
+   "why": "kartu berbalik"
+  },
+  {
+   "file": "../../public/sfx/tiga/balik-1.wav",
+   "at": 23.4,
+   "gain_db": -10,
+   "why": "kartu berbalik"
+  },
+  {
+   "file": "../../public/sfx/tiga/balik-2.wav",
+   "at": 24.2,
+   "gain_db": -10,
+   "why": "kartu berbalik"
+  },
+  {
+   "file": "../../public/sfx/tiga/balik-3.wav",
+   "at": 25.0,
+   "gain_db": -10,
+   "why": "kartu berbalik"
+  },
+  {
+   "file": "../../public/sfx/ting.wav",
+   "at": 30.5,
+   "gain_db": -12,
+   "why": "tersalin"
+  },
+  {
+   "file": "../../public/sfx/umroh/wush.wav",
+   "at": 32.45,
+   "gain_db": -14,
+   "why": "kamera ke ponsel"
+  },
+  {
+   "file": "../../public/sfx/umroh/ting-2.wav",
+   "at": 33.9,
+   "gain_db": -11,
+   "why": "pesan masuk"
+  },
+  {
+   "file": "../../public/sfx/badge.wav",
+   "at": 44.95,
+   "gain_db": -11,
+   "why": "selamat datang"
+  },
+  {
+   "file": "../../public/sfx/chip.wav",
+   "at": 47.45,
+   "gain_db": -12,
+   "why": "tidak perlu daftar lagi"
+  },
+  {
+   "file": "../../public/sfx/umroh/ting-3.wav",
+   "at": 56.5,
+   "gain_db": -11,
+   "why": "pesanan dibuat"
+  },
+  {
+   "file": "../../public/sfx/cascade.wav",
+   "at": 59.0,
+   "gain_db": -12,
+   "why": "selesai, kartu memantul"
+  },
+  {
+   "file": "../../public/sfx/umroh/wush.wav",
+   "at": 62.6,
+   "gain_db": -15,
+   "why": "kamera ke layar"
+  },
+  {
+   "file": "../../public/sfx/outro.wav",
+   "at": 65.0,
+   "gain_db": -12,
+   "why": "tombol ajakan"
+  }
+ ]
+}

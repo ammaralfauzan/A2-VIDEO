@@ -1,11 +1,12 @@
 {
-  "name": "my-3d-film",
+  "name": "akun-keluarga-h2c-3d",
   "private": true,
   "type": "module",
   "scripts": {
-    "stills": "node render.mjs --stills=0.5,2.5,4.5 --n=16",
-    "preview": "node render.mjs --video --n=4 --out=out/preview.mp4",
-    "final": "node render.mjs --video --n=48 --out=out/final.mp4"
+    "stills": "node render.mjs --stills=3.3,27.6,67.5 --n=16",
+    "preview": "node render.mjs --video --n=4 --audio=sound/mix.wav --out=out/preview.mp4",
+    "final": "node render.mjs --video --n=48 --audio=sound/mix.wav --out=out/final.mp4",
+    "mix": "python3 mix.py sound/cues.json sound/mix.wav"
   },
   "dependencies": {
     "puppeteer": "25.12.0",
