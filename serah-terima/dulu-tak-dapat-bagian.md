@@ -1,7 +1,7 @@
 # Serah-terima: dulu-tak-dapat-bagian
 
 - Judul / brand / format / durasi target: Dulu Mereka Tidak Dapat Bagian / Tams Consulting (`tams-consulting`) / 9:16 / 40 dtk (ISIAN kosong, ditetapkan di KONSEP; antrean #16 semula ±35 dtk, sudah diperbarui) / jalur 2D
-- Tahap terakhir selesai: KONSEP (25 Nov 2026, room R2), MENUNGGU persetujuan Bos
+- Tahap terakhir selesai: KONSEP versi 2 (25 Nov 2026, room R2), MENUNGGU persetujuan Bos. Bos memilih "2": ganti ke riwayat Bukhari 4577 / Muslim 1616 (Jabir sakit) + QS An-Nisa 4:7 dan 4:11; judul usulan "Siapa yang Menentukan Bagian Waris?", slug tetap
 - Keputusan Bos (disetujui, jangan diubah): ide dipilih Bos (ISIAN 25 Nov): hook "Dulu, anak perempuan bisa tidak dapat apa-apa dari warisan ayahnya.", riwayat Jabir, QS An-Nisa 4:11, pesan "waris ketetapan Allah, bukan kebiasaan keluarga", pola dua kartu Sebelum/Sesudah dengan geser sudut daun, label "Riwayat hadits", tanpa orang/siluet, tanpa pecahan bagian. Konsep, naskah, suara: BELUM disetujui. Arahan Bos 25 Nov (revisi naskah): sumber riwayat ditampilkan di layar; shalawat setelah menyebut Nabi, "subhanahu wa ta'ala" setelah menyebut Allah; utamakan Bukhari-Muslim, selain itu boleh bila dari Rumaysho (dicatat di BRAND.md Tams).
 - File penting: `naskah-dulu-tak-dapat-bagian.md`; nanti `public/audio/vo-dulu-tak-dapat-bagian.mp3`, `src/data/vo-timing-dulu-tak-dapat-bagian.json`, klip `B1..B5.mp4`, `out/dulu-tak-dapat-bagian-9x16.mp4`
 - Status render: belum
