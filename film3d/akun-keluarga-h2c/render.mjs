@@ -24,7 +24,7 @@ const angle = process.platform === 'darwin' ? ['--use-angle=metal'] : process.pl
 const browser = await puppeteer.launch({ headless: true, executablePath: process.env.CHROME_PATH || undefined,
   args: ['--hide-scrollbars', '--force-color-profile=srgb', '--enable-gpu', '--ignore-gpu-blocklist', '--disable-gpu-vsync', '--run-all-compositor-stages-before-draw', ...angle, ...(process.getuid && process.getuid() === 0 ? ['--no-sandbox'] : [])] });
 const page = await browser.newPage();
-await page.setViewport({ width: 1920, height: 1080, deviceScaleFactor: 1 });
+await page.setViewport({ width: 1080, height: 1920, deviceScaleFactor: 1 });
 page.on('console', (m) => { if (['error', 'warning', 'warn'].includes(m.type())) console.log('[page]', m.type(), m.text()); });
 page.on('pageerror', (e) => console.log('[pageerror]', e.message));
 page.on('response', (r) => { if (r.status() >= 400) console.log('[missing]', r.url()); });

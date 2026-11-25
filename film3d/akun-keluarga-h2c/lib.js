@@ -1,5 +1,5 @@
 // Small helpers. Every frame is a pure function of t (seconds): no clocks, no Math.random(), no state carried between frames.
-export const W = 1920, H = 1080, FPS = 30;
+export const W = 1080, H = 1920, FPS = 30;
 export const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
 export const lerp = (a, b, k) => a + (b - a) * k;
 export const seg = (t, a, b) => clamp((t - a) / (b - a));              // 0 before a, 1 after b

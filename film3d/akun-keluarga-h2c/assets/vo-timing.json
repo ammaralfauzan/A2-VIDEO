@@ -1,0 +1,175 @@
+{
+ "audio": "public/audio/vo-akun-keluarga-h2c.mp3",
+ "durasi": 69.07,
+ "ucapan_mulai": 0.14,
+ "ucapan_selesai": 68.8,
+ "suara": "MP3 V3 dari Bos (25 Nov 2026, lampiran room BANGUN 3D), tidak dipercepat. Menggantikan MP3 lama 61,57 dtk.",
+ "metode": "ffmpeg silencedetect -30 dB/0,12 dtk dan -24 dB/0,08 dtk; potongan dicocokkan ke naskah menurut urutan dan jumlah suku kata. Whisper tidak bisa dipakai (unduhan model diblokir jaringan). Bagian 39-49 dtk (langkah tiga) paling tidak pasti, kira-kira +-0,5 dtk. Belum didengar manusia.",
+ "potongan": [
+  {
+   "mulai": 0.14,
+   "selesai": 2.12,
+   "teks": "Umroh sekeluarga?"
+  },
+  {
+   "mulai": 2.72,
+   "selesai": 4.53,
+   "teks": "Cukup satu akun kepala keluarga."
+  },
+  {
+   "mulai": 4.95,
+   "selesai": 6.6,
+   "teks": "Tidak perlu semua daftar sendiri."
+  },
+  {
+   "mulai": 7.06,
+   "selesai": 9.07,
+   "teks": "Ikuti empat langkahnya ya,"
+  },
+  {
+   "mulai": 9.55,
+   "selesai": 10.27,
+   "teks": "Bapak, Ibu."
+  },
+  {
+   "mulai": 10.95,
+   "selesai": 11.9,
+   "teks": "Pelan-pelan saja."
+  },
+  {
+   "mulai": 12.41,
+   "selesai": 13.36,
+   "teks": "Langkah satu:"
+  },
+  {
+   "mulai": 14.02,
+   "selesai": 15.52,
+   "teks": "tambah anggota."
+  },
+  {
+   "mulai": 15.74,
+   "selesai": 17.96,
+   "teks": "Kepala keluarga buka halaman keluarga,"
+  },
+  {
+   "mulai": 18.32,
+   "selesai": 20.87,
+   "teks": "lalu isi nama dan sandi setiap anggota."
+  },
+  {
+   "mulai": 21.38,
+   "selesai": 22.86,
+   "teks": "Sandi itu kata rahasia."
+  },
+  {
+   "mulai": 23.35,
+   "selesai": 26.17,
+   "teks": "Satu akun bisa menampung sampai empat anggota."
+  },
+  {
+   "mulai": 26.7,
+   "selesai": 27.48,
+   "teks": "Langkah dua:"
+  },
+  {
+   "mulai": 27.97,
+   "selesai": 29.53,
+   "teks": "kirim ID dan sandinya."
+  },
+  {
+   "mulai": 30.02,
+   "selesai": 32.33,
+   "teks": "Salin ID keluarga dan sandi anggota,"
+  },
+  {
+   "mulai": 32.66,
+   "selesai": 35.91,
+   "teks": "lalu kirim lewat WhatsApp."
+  },
+  {
+   "mulai": 36.4,
+   "selesai": 37.18,
+   "teks": "Langkah tiga:"
+  },
+  {
+   "mulai": 37.58,
+   "selesai": 38.72,
+   "teks": "anggota masuk."
+  },
+  {
+   "mulai": 39.18,
+   "selesai": 40.9,
+   "teks": "Pilih masuk dengan ID keluarga,"
+  },
+  {
+   "mulai": 41.36,
+   "selesai": 44.24,
+   "teks": "lalu ketik ID dan sandi"
+  },
+  {
+   "mulai": 44.6,
+   "selesai": 47.08,
+   "teks": "yang dikirim tadi."
+  },
+  {
+   "mulai": 47.49,
+   "selesai": 48.65,
+   "teks": "Tidak perlu daftar lagi."
+  },
+  {
+   "mulai": 49.02,
+   "selesai": 49.84,
+   "teks": "Langkah empat:"
+  },
+  {
+   "mulai": 50.35,
+   "selesai": 51.26,
+   "teks": "belikan paket."
+  },
+  {
+   "mulai": 51.74,
+   "selesai": 53.66,
+   "teks": "Kepala keluarga memilih paket umroh,"
+  },
+  {
+   "mulai": 53.98,
+   "selesai": 56.11,
+   "teks": "lalu memilih nama anggota yang dibelikan."
+  },
+  {
+   "mulai": 56.56,
+   "selesai": 58.59,
+   "teks": "Semua diatur dari satu akun."
+  },
+  {
+   "mulai": 59.02,
+   "selesai": 59.66,
+   "teks": "Selesai."
+  },
+  {
+   "mulai": 60.05,
+   "selesai": 60.81,
+   "teks": "Satu akun,"
+  },
+  {
+   "mulai": 61.06,
+   "selesai": 62.34,
+   "teks": "untuk seluruh keluarga."
+  },
+  {
+   "mulai": 62.73,
+   "selesai": 62.92,
+   "teks": "Yuk,"
+  },
+  {
+   "mulai": 63.14,
+   "selesai": 64.67,
+   "teks": "rencanakan umroh sekeluarga."
+  },
+  {
+   "mulai": 65.01,
+   "selesai": 68.8,
+   "teks": "Kunjungi umroh titik H dua C titik or titik id."
+  }
+ ]
+}
