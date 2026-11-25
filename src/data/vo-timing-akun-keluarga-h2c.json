@@ -1,0 +1,214 @@
+{
+ "audio": "public/audio/vo-akun-keluarga-h2c.mp3",
+ "durasi": 61.57,
+ "suara": "Jefri - Soft Explanatory Voice (ElevenLabs, MP3 dari Bos 25 Nov 2026, nama file: pvc s50 sim75 v4), tidak dipercepat",
+ "metode": "ffmpeg silencedetect -35 dB/0,25 dtk (24 potongan ucapan) dan -30 dB/0,12 dtk untuk memecah baris panjang (tambah anggota, salin/kirim, pilih/ketik, paket/nama/semua). Baris tanpa jeda dipecah sebanding jumlah suku kata. Transkripsi ElevenLabs tidak dipakai (konektor tidak bisa mengambil berkas lampiran). Belum didengar manusia.",
+ "kalimat": [
+  {
+   "mulai": 0.0,
+   "selesai": 5.41,
+   "teks": "Umroh sekeluarga? Cukup satu akun kepala keluarga. Tidak perlu semua daftar sendiri.",
+   "potongan": [
+    {
+     "mulai": 0.0,
+     "selesai": 1.0,
+     "teks": "Umroh sekeluarga?"
+    },
+    {
+     "mulai": 1.46,
+     "selesai": 3.26,
+     "teks": "Cukup satu akun kepala keluarga."
+    },
+    {
+     "mulai": 3.69,
+     "selesai": 5.41,
+     "teks": "Tidak perlu semua daftar sendiri."
+    }
+   ]
+  },
+  {
+   "mulai": 5.84,
+   "selesai": 11.08,
+   "teks": "Ikuti empat langkahnya ya, Bapak, Ibu. Pelan-pelan saja.",
+   "potongan": [
+    {
+     "mulai": 5.84,
+     "selesai": 8.2,
+     "teks": "Ikuti empat langkahnya ya,"
+    },
+    {
+     "mulai": 8.68,
+     "selesai": 9.51,
+     "teks": "Bapak, Ibu."
+    },
+    {
+     "mulai": 10.06,
+     "selesai": 11.08,
+     "teks": "Pelan-pelan saja."
+    }
+   ]
+  },
+  {
+   "mulai": 11.54,
+   "selesai": 24.0,
+   "teks": "Langkah satu: tambah anggota. Kepala keluarga buka halaman keluarga, lalu isi nama dan sandi setiap anggota. Sandi itu kata rahasia. Satu akun bisa menampung sampai empat anggota.",
+   "potongan": [
+    {
+     "mulai": 11.54,
+     "selesai": 12.66,
+     "teks": "Langkah satu:"
+    },
+    {
+     "mulai": 13.21,
+     "selesai": 14.0,
+     "teks": "tambah anggota."
+    },
+    {
+     "mulai": 14.0,
+     "selesai": 16.45,
+     "teks": "Kepala keluarga buka halaman keluarga,"
+    },
+    {
+     "mulai": 16.45,
+     "selesai": 18.72,
+     "teks": "lalu isi nama dan sandi setiap anggota."
+    },
+    {
+     "mulai": 19.12,
+     "selesai": 20.76,
+     "teks": "Sandi itu kata rahasia."
+    },
+    {
+     "mulai": 21.17,
+     "selesai": 24.0,
+     "teks": "Satu akun bisa menampung sampai empat anggota."
+    }
+   ]
+  },
+  {
+   "mulai": 24.5,
+   "selesai": 32.05,
+   "teks": "Langkah dua: kirim ID dan sandinya. Salin ID keluarga dan sandi anggota, lalu kirim lewat WhatsApp.",
+   "potongan": [
+    {
+     "mulai": 24.5,
+     "selesai": 25.43,
+     "teks": "Langkah dua:"
+    },
+    {
+     "mulai": 25.85,
+     "selesai": 27.54,
+     "teks": "kirim ID dan sandinya."
+    },
+    {
+     "mulai": 27.97,
+     "selesai": 30.41,
+     "teks": "Salin ID keluarga dan sandi anggota,"
+    },
+    {
+     "mulai": 30.56,
+     "selesai": 32.05,
+     "teks": "lalu kirim lewat WhatsApp."
+    }
+   ]
+  },
+  {
+   "mulai": 32.47,
+   "selesai": 41.32,
+   "teks": "Langkah tiga: anggota masuk. Pilih masuk dengan ID keluarga, lalu ketik ID dan sandi yang dikirim tadi. Tidak perlu daftar lagi.",
+   "potongan": [
+    {
+     "mulai": 32.47,
+     "selesai": 33.26,
+     "teks": "Langkah tiga:"
+    },
+    {
+     "mulai": 33.58,
+     "selesai": 34.68,
+     "teks": "anggota masuk."
+    },
+    {
+     "mulai": 35.01,
+     "selesai": 36.82,
+     "teks": "Pilih masuk dengan ID keluarga,"
+    },
+    {
+     "mulai": 37.04,
+     "selesai": 39.76,
+     "teks": "lalu ketik ID dan sandi yang dikirim tadi."
+    },
+    {
+     "mulai": 40.13,
+     "selesai": 41.32,
+     "teks": "Tidak perlu daftar lagi."
+    }
+   ]
+  },
+  {
+   "mulai": 41.71,
+   "selesai": 51.39,
+   "teks": "Langkah empat: belikan paket. Kepala keluarga memilih paket umroh, lalu memilih nama anggota yang dibelikan. Semua diatur dari satu akun.",
+   "potongan": [
+    {
+     "mulai": 41.71,
+     "selesai": 42.68,
+     "teks": "Langkah empat:"
+    },
+    {
+     "mulai": 42.95,
+     "selesai": 43.97,
+     "teks": "belikan paket."
+    },
+    {
+     "mulai": 44.46,
+     "selesai": 46.48,
+     "teks": "Kepala keluarga memilih paket umroh,"
+    },
+    {
+     "mulai": 46.72,
+     "selesai": 49.07,
+     "teks": "lalu memilih nama anggota yang dibelikan."
+    },
+    {
+     "mulai": 49.44,
+     "selesai": 51.39,
+     "teks": "Semua diatur dari satu akun."
+    }
+   ]
+  },
+  {
+   "mulai": 51.67,
+   "selesai": 55.09,
+   "teks": "Selesai. Satu akun, untuk seluruh keluarga.",
+   "potongan": [
+    {
+     "mulai": 51.67,
+     "selesai": 52.34,
+     "teks": "Selesai."
+    },
+    {
+     "mulai": 52.61,
+     "selesai": 55.09,
+     "teks": "Satu akun, untuk seluruh keluarga."
+    }
+   ]
+  },
+  {
+   "mulai": 55.36,
+   "selesai": 61.34,
+   "teks": "Yuk, rencanakan umroh sekeluarga. Kunjungi umroh titik H dua C titik or titik id.",
+   "potongan": [
+    {
+     "mulai": 55.36,
+     "selesai": 57.18,
+     "teks": "Yuk, rencanakan umroh sekeluarga."
+    },
+    {
+     "mulai": 57.52,
+     "selesai": 61.34,
+     "teks": "Kunjungi umroh titik H dua C titik or titik id."
+    }
+   ]
+  }
+ ]
+}

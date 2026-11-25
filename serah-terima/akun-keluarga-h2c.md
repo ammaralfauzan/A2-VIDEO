@@ -1,12 +1,14 @@
 # Serah-terima: akun-keluarga-h2c
 
-- Judul / brand / format / durasi target: Satu Akun untuk Sekeluarga / H2C Umroh (`h2c-umroh`) / 9:16 (format ISIAN kosong, default 9:16) / 55 dtk (wajib) / jalur 3D
-- Tahap terakhir selesai: KONSEP (25 Nov 2026), menunggu persetujuan Bos.
-- Keputusan Bos (disetujui, jangan diubah): ide, hook "Umroh sekeluarga? Cukup satu akun kepala keluarga.", empat langkah, maksimal 4 anggota, kit `h2c-umroh` tanpa maskot, ajakan tombol emas `umroh.h2c.or.id`, tanpa makhluk bernyawa. Naskah dan suara: belum disetujui (diajukan).
-- File penting: `naskah-akun-keluarga-h2c.md`, nanti `public/audio/vo-akun-keluarga-h2c.mp3`, `film3d/akun-keluarga-h2c/`, `out/akun-keluarga-h2c-9x16.mp4`
-- Status render: belum
+- Judul / brand / format / durasi: Satu Akun untuk Sekeluarga / H2C Umroh (`h2c-umroh`) / 9:16 Reels 1080x1920 / target 55 dtk, hasil 62,5 dtk (suara asli 61,57 dtk, tidak dipercepat)
+- Tahap terakhir selesai: BANGUN (25 Nov 2026). Berikutnya: Bos menonton, lalu REVISI bila perlu atau RILIS.
+- Keputusan Bos (disetujui, jangan diubah): ide, konsep, naskah, dan suara (MP3 Jefri dari Bos 25 Nov); hook "Umroh sekeluarga? Cukup satu akun kepala keluarga."; empat langkah; maksimal 4 anggota; kit `h2c-umroh` tanpa maskot; ajakan tombol emas `umroh.h2c.or.id`; tanpa makhluk bernyawa.
+- Cara bangun: Bos memberi blok BANGUN (Remotion), bukan BANGUN 3D, jadi visual konsep 3D (meja zamrud, monitor, kartu nama, ponsel, angka besar, kamera mendekat) dibuat sebagai meja 3D semu di Remotion, tanpa PLAN.md/still terpisah dan tanpa render Mac.
+- File penting: `naskah-akun-keluarga-h2c.md`, `public/audio/vo-akun-keluarga-h2c.mp3`, `src/data/vo-timing-akun-keluarga-h2c.json`, `src/AkunKeluargaH2C.tsx`, `src/scenes/akun-keluarga-h2c/`, `src/data/timeline-akun-keluarga-h2c.ts`, `out/akun-keluarga-h2c-9x16.mp4`, `out/stills/akun-keluarga-h2c/`
+- Status render: selesai, `out/akun-keluarga-h2c-9x16.mp4`
+- B-roll: B1-B4 belum dilampirkan; dibangun tanpa B-roll. Titik sisip siap di `layout.ts` (`BROLL`, `src: null`).
 - Daftar revisi Bos (belum dikerjakan): -
-- Sudah diperiksa: anti-kembar vs docs/daftar-konten.md (aman, topik berdekatan #11 tapi sudut beda); 124 kata ≈ 53,9 dtk (-2% dari 55); tag audio sesuai panduan eleven_v3.
-- Belum diperiksa / risiko: fitur keluarga masih tersembunyi, jangan diposting sebelum dinyalakan; nama tombol dan alur layar belum dicocokkan ke situs; suara menyebut WhatsApp, layar generik tanpa merek; suara Jefri hanya usulan (sama dengan #11).
-- Caption dan jam posting usulan: -
-- Catatan untuk room berikutnya: BANGUN 3D memakai skill `a2-film-3d`: PLAN.md tampil di chat dan 3 still disetujui Bos sebelum render; render final sebaiknya di Mac lokal. "H2C" ditulis "H dua C" di suara. Tanpa manusia, hewan, tangan, siluet. Brand: lihat `brands/h2c-umroh/BRAND.md`.
+- Sudah diperiksa: tsc bersih; 24 frame kunci (termasuk tengah transisi) dilihat; pemeriksa tabrakan `--every=15` bersih; render penuh dicek ffprobe, volumedetect, frame meloncat; cek regresi video lain.
+- Belum diperiksa / risiko: timing dari silencedetect (bukan transkripsi), belum didengar manusia; durasi 62,5 dtk melebihi target 55 dtk karena suara asli 61,6 dtk; fitur keluarga masih tersembunyi di situs, jangan diposting sebelum dinyalakan; nama tombol dan alur layar belum dicocokkan ke situs; suara menyebut WhatsApp, teks layar ditulis "pesan".
+- Caption dan jam posting usulan: - (room RILIS)
+- Catatan untuk room berikutnya: data layar fiktif (Aisyah, Hasan, Fatimah, Umar; KLG-2417; melati24) berlabel "contoh". Pelajaran kamera 3D semu ditulis di skill `a2-anti-tabrakan`.

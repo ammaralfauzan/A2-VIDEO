@@ -3,7 +3,7 @@
 Format: Reels 9:16 (1080x1920), target 55 dtk (ISIAN) · Brand: H2C Umroh (kit `h2c-umroh`, tanpa maskot) · Jalur: 3D (skill `a2-film-3d`; persetujuan PLAN dan 3 still sebelum render)
 Suara: usulan Jefri (Suara Penjelasan Lembut), sama dengan video #11; Eleven v3 dengan tag audio. Tanpa musik.
 
-**STATUS: konsep diajukan, menunggu persetujuan Bos.**
+**STATUS: disetujui Bos; dibangun 25 Nov 2026 (BANGUN).**
 
 ## Konsep
 Lanjutan #11 (daftar dan masuk): panduan akun keluarga untuk bapak-ibu. Satu akun kepala keluarga cukup, empat langkah: tambah anggota (nama, sandi), kirim ID dan sandi, anggota masuk dengan ID keluarga, kepala keluarga membelikan paket. Maksimal empat anggota. Jalur 3D: monitor di meja zamrud dan emas, kamera mendekat ke layar tiap langkah, angka langkah besar. Anggota berupa kartu nama yang berdiri di meja. Gerak hanya dari kursor, kartu, layar, ponsel, benda meja; tanpa makhluk bernyawa. Ajakan tombol emas umroh.h2c.or.id.

@@ -29,3 +29,9 @@ Mengukur kotak teks sungguhan di Chromium pada frame terpilih. Melaporkan `teks-
 
 ## Review visual
 Render frame kunci (`node scripts/render-stills.mjs <Id>`), lihat satu per satu pada ukuran penuh, termasuk frame di tengah transisi (bukan hanya frame akhir tiap adegan). Frame yang paling sering bermasalah: saat dua adegan bertukar dan saat maskot melintas.
+
+## Kamera bergerak di meja 3D semu (pelajaran `akun-keluarga-h2c`, 25 Nov 2026)
+- Saat kamera mendekat ke benda lain (mis. ponsel), teks benda yang tergeser ke luar area aman (monitor, kartu) ikut dihitung pemeriksa. Redupkan benda itu ke opacity < 0.45 **lebih cepat dari gerak kamera** (`1 - 0.62 * min(1, dof * 2.5)`) dan beri blur fokus; jangan menunggu kamera tiba.
+- Angka/judul besar di atas layar: redupkan isi layar **sebelum** angka muncul (±9 frame lebih awal) dan tahan redup sampai angka selesai pindah ke lencana; ganti halaman di balik angka.
+- Isi layar benda yang keluar bingkai (ponsel) dipadamkan sebelum benda keluar, bukan sesudahnya.
+- Kursor jangan diam di atas teks tombol saat klik: klik di sisi kanan tombol, lalu geser menjauh.

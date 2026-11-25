@@ -31,6 +31,8 @@
     "stills:tiga-hal-waris": "node scripts/render-stills.mjs TigaHalSebelumWaris",
     "render:tiga-hal-waris": "remotion render TigaHalSebelumWaris out/tiga-hal-sebelum-waris-dibagi-9x16.mp4 --concurrency=4",
     "render:otomatisasi-resep": "remotion render OtomatisasiSepertiResep out/otomatisasi-seperti-resep-9x16.mp4 --concurrency=4",
+    "stills:akun-keluarga-h2c": "node scripts/render-stills.mjs AkunKeluargaH2C",
+    "render:akun-keluarga-h2c": "remotion render AkunKeluargaH2C out/akun-keluarga-h2c-9x16.mp4 --concurrency=4",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

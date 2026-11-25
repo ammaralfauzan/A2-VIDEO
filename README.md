@@ -121,6 +121,14 @@ Skrip rilis memeriksa durasi klip, merender frame kunci dan video, lalu menormal
 - Kode: `src/DaftarDanMasukH2C.tsx`, adegan di `src/scenes/daftar-dan-masuk-h2c/` (`Layar`, `Kursor`, `Judul`, `Caption`, `Penutup`, `Sfx`, `layout`), timeline di `src/data/timeline-daftar-dan-masuk-h2c.ts`
 - Frame kunci: `out/stills/daftar-dan-masuk-h2c/` (`scripts/daftar-dan-masuk-h2c-frames.ts`). Perintah: `npm run stills:daftar-dan-masuk-h2c`, `npm run render:daftar-dan-masuk-h2c`
 
+## Video: "Satu Akun untuk Sekeluarga" (komposisi `AkunKeluargaH2C`, 9:16, brand H2C Umroh)
+- Naskah: `naskah-akun-keluarga-h2c.md`. Lanjutan #11: akun keluarga dalam empat langkah (tambah anggota, kirim ID dan sandi, anggota masuk dengan ID keluarga, belikan paket; maks. 4 anggota). Meja 3D semu di Remotion: monitor di meja zamrud dengan cahaya tirai emas, kamera mendekat ke layar tiap langkah dan pindah ke ponsel (fokus kabur di monitor) saat ID dikirim, angka langkah besar yang mengecil jadi lencana, empat kartu nama berdiri di meja (nama fiktif berlabel "contoh"), penutup logo asli + tombol emas `umroh.h2c.or.id`. Tanpa makhluk bernyawa, tanpa maskot
+- Hasil: `out/akun-keluarga-h2c-9x16.mp4` (1080x1920, 30 fps, 62,5 detik: suara 61,57 dtk + logo diam ±0,9 dtk)
+- Voiceover: `public/audio/vo-akun-keluarga-h2c.mp3` (ElevenLabs, Jefri - Soft Explanatory Voice, dari Bos 25 Nov, tidak dipercepat). Timing: `src/data/vo-timing-akun-keluarga-h2c.json` (ffmpeg silencedetect, 30 potongan)
+- B-roll: B1 sampai B4 belum dilampirkan. Titik sisip di `src/scenes/akun-keluarga-h2c/layout.ts` (`BROLL`, `src: null`)
+- Kode: `src/AkunKeluargaH2C.tsx`, adegan di `src/scenes/akun-keluarga-h2c/` (`Meja`, `Layar`, `Kamera`, `Judul`, `Kursor`, `Caption`, `Penutup`, `Sfx`, `layout`), timeline di `src/data/timeline-akun-keluarga-h2c.ts`
+- Frame kunci: `out/stills/akun-keluarga-h2c/` (`scripts/akun-keluarga-h2c-frames.ts`). Perintah: `npm run stills:akun-keluarga-h2c`, `npm run render:akun-keluarga-h2c`
+
 ## Skill, pemeriksa tabrakan, dan hook penjaga (Fase 1)
 
 - Skill di `.claude/skills/`: `a2-motion-video` (alur umum), `a2-anti-tabrakan`, `a2-komposisi-proximity`, `a2-safe-area-sosmed`, `a2-maskot-gigi`

@@ -131,6 +131,14 @@ SETS.DaftarDanMasukH2C = {
   },
 };
 
+// Frame kunci "Satu Akun untuk Sekeluarga" (H2C Umroh) dihitung dari timing suara (termasuk tengah transisi).
+SETS.AkunKeluargaH2C = {
+  dir: 'out/stills/akun-keluarga-h2c',
+  get stills() {
+    return JSON.parse(execSync('npx tsx scripts/akun-keluarga-h2c-frames.ts', {encoding: 'utf8'}));
+  },
+};
+
 const [id = 'JamSembilanMalam', ...only] = process.argv.slice(2);
 const set = SETS[id];
 if (!set) throw new Error(`Komposisi tidak dikenal: ${id}`);
