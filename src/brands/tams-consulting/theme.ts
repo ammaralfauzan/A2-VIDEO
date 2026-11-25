@@ -12,6 +12,11 @@ export const T = {
   onDark2: 'rgba(254, 254, 254, .72)',
   orange: '#E55B03', // oranye logo: aksen, sorotan, tombol
   orangeSoft: 'rgba(229, 91, 3, .12)',
+  // Warna status (revisi Bos 25 Nov 2026): terkunci/terhalang merah, berhak hijau. Hanya untuk penanda status, bukan dekor.
+  red: '#D8392B',
+  redSoft: 'rgba(216, 57, 43, .10)',
+  green: '#2E9E6B',
+  greenSoft: 'rgba(46, 158, 107, .12)',
   line: 'rgba(10, 10, 10, .10)',
   line2: 'rgba(10, 10, 10, .20)',
 } as const;

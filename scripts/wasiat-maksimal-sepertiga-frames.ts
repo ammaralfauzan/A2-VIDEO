@@ -14,6 +14,7 @@ const frames: [string, number][] = [
   ['03e-sepertiga-tanya', P.mSepertiga + 14],
   ['04-kunci-tengah', P.lock + 6],
   ['04b-kunci-sudah-banyak', P.banyak + 14],
+  ['04c-ikon-wasiat-ahli-waris', P.heirIn + 24],
   ['05-alir-tengah', P.flow + 11],
   ['05b-berkecukupan', P.cukup + 20],
   ['05c-miskin', P.miskin + 24],

@@ -123,6 +123,14 @@ SETS.WasiatMaksimalSepertiga = {
   },
 };
 
+// Frame kunci "Siapa yang Menentukan Bagian Waris?" (dulu-tak-dapat-bagian) dihitung dari timing suara (termasuk tengah transisi).
+SETS.DuluTakDapatBagian = {
+  dir: 'out/stills/dulu-tak-dapat-bagian',
+  get stills() {
+    return JSON.parse(execSync('npx tsx scripts/dulu-tak-dapat-bagian-frames.ts', {encoding: 'utf8'}));
+  },
+};
+
 // Frame kunci "Manual, Template, atau Otomatis?" dihitung dari timing suara (termasuk tengah transisi).
 SETS.ManualTemplateOtomatis = {
   dir: 'out/stills/manual-template-otomatis',
@@ -147,6 +155,14 @@ SETS.AkunKeluargaH2C = {
   },
 };
 
+// Frame kunci "Hubungan Darah Belum Tentu Cukup" (Tams) dihitung dari timing suara (termasuk tengah transisi).
+SETS.PenghalangWaris = {
+  dir: 'out/stills/penghalang-waris',
+  get stills() {
+    return JSON.parse(execSync('npx tsx scripts/penghalang-waris-frames.ts', {encoding: 'utf8'}));
+  },
+};
+
 const [id = 'JamSembilanMalam', ...only] = process.argv.slice(2);
 const set = SETS[id];
 if (!set) throw new Error(`Komposisi tidak dikenal: ${id}`);
@@ -155,7 +171,7 @@ const inputProps = process.env.SAFE_GUIDE ? {safeGuide: true} : {};
 // Pakai Chromium lokal jika REMOTION_BROWSER diisi (mis. lingkungan tanpa akses unduh).
 const browserExecutable = process.env.REMOTION_BROWSER || null;
 
-const serveUrl = await bundle({entryPoint: path.resolve('src/index.ts')});
+const serveUrl = await bundle({entryPoint: path.resolve(process.env.REMOTION_ENTRY || 'src/index.ts')});
 const composition = await selectComposition({serveUrl, id, browserExecutable, inputProps});
 for (const [name, frame] of set.stills) {
   if (only.length && !only.some((o) => name.startsWith(o))) continue;

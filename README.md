@@ -129,6 +129,14 @@ Skrip rilis memeriksa durasi klip, merender frame kunci dan video, lalu menormal
 - Kode: `src/AkunKeluargaH2C.tsx`, adegan di `src/scenes/akun-keluarga-h2c/` (`Meja`, `Layar`, `Kamera`, `Judul`, `Kursor`, `Caption`, `Penutup`, `Sfx`, `layout`), timeline di `src/data/timeline-akun-keluarga-h2c.ts`
 - Frame kunci: `out/stills/akun-keluarga-h2c/` (`scripts/akun-keluarga-h2c-frames.ts`). Perintah: `npm run stills:akun-keluarga-h2c`, `npm run render:akun-keluarga-h2c`
 
+## Video: "Hubungan Darah Belum Tentu Cukup" (komposisi `PenghalangWaris`, 9:16, brand Tams Consulting)
+- Naskah: `naskah-penghalang-waris.md`. Edukasi dua penghalang waris: diagram kotak keluarga (ANAK, SAUDARA, ORANG TUA, PASANGAN) ke kotak PEWARIS; kunci oranye "HUBUNGAN DARAH" menyalakan jalur waris; gembok samar di tepi, lalu gembok 1 (BEDA AGAMA, hadits Usamah bin Zaid, HR. Bukhari 6764, Muslim 1614, jumhur) dan gembok 2 (MEMBUNUH PEWARIS, kesepakatan ulama, rincian beda antar mazhab) masing-masing menahan satu kotak; rak kitab Bukhari-Muslim saat sumber disebut; kotak berhak dicentang. Penutup "Bila ragu, tanyakan kepada ahlinya." + logo Tams asli, tanpa nomor/URL/jualan. Tanpa makhluk bernyawa, tanpa angka
+- Hasil: `out/penghalang-waris-9x16.mp4` (1080x1920, 30 fps, 56,2 detik: suara 54,2 dtk + logo diam 2 dtk). Target naskah 45 dtk; suara tidak dipercepat
+- Voiceover: `public/audio/vo-penghalang-waris.mp3` (ElevenLabs, Jefri "Suara Penjelasan Lembut", Eleven v4, MP3 dari Bos 25 Nov). Timing: `src/data/vo-timing-penghalang-waris.json` (ffmpeg silencedetect, 28 potongan ke 14 kalimat). Shalawat dan "radhiyallahu 'anhu" yang diucapkan tampil kecil abu di teks bawah (penanda `~` di timeline)
+- B-roll: B1..B5 belum dilampirkan. Slot di `src/scenes/penghalang-waris/layout.ts` (`BROLL`, `src: null`)
+- Kode: `src/PenghalangWaris.tsx`, adegan di `src/scenes/penghalang-waris/` (`Kartu`, `Diagram`, `Panggung`, `Penutup`, `Caption`, `Broll`, `Sfx`, `layout`; benda dasar dipakai ulang dari `wasiat-maksimal-sepertiga/Ilustrasi.tsx`), timeline di `src/data/timeline-penghalang-waris.ts`, entry satu video `src/entries/penghalang-waris.tsx`
+- Frame kunci: `out/stills/penghalang-waris/` (`scripts/penghalang-waris-frames.ts`). Perintah: `npm run stills:penghalang-waris`, `npm run render:penghalang-waris` (bila bundel utuh gagal: `REMOTION_ENTRY=src/entries/penghalang-waris.tsx`)
+
 ## Skill, pemeriksa tabrakan, dan hook penjaga (Fase 1)
 
 - Skill di `.claude/skills/`: `a2-motion-video` (alur umum), `a2-anti-tabrakan`, `a2-komposisi-proximity`, `a2-safe-area-sosmed`, `a2-maskot-gigi`
@@ -187,3 +195,12 @@ Angka di kedua video (mis. 32 siswa, 97 chat, 128 tagihan, Rp123 jt) hanya ilust
 - Kode: `src/WasiatMaksimalSepertiga.tsx`, adegan di `src/scenes/wasiat-maksimal-sepertiga/` (`Kartu`, `Batang`, `Penutup`, `Caption`, `Broll`, `Sfx`, `layout`), timeline di `src/data/timeline-wasiat-maksimal-sepertiga.ts`. Teks bawah: kata "Nabi" selalu diikuti "shallallahu 'alaihi wa sallam" (aturan Brand Kit)
 - B-roll: slot B1..B5 di `layout.ts` (`BROLL`, `src: null` = belum ada klip)
 - Frame kunci: `out/stills/wasiat-maksimal-sepertiga/` (`scripts/wasiat-maksimal-sepertiga-frames.ts`). Perintah: `npm run stills:wasiat-sepertiga`, `npm run render:wasiat-sepertiga`
+
+## Video: "Siapa yang Menentukan Bagian Waris?" (komposisi `DuluTakDapatBagian`, slug `dulu-tak-dapat-bagian`, 9:16, brand Tams Consulting)
+- Naskah: `naskah-dulu-tak-dapat-bagian.md`. Riwayat Jabir bin Abdullah radhiyallahu 'anhu (HR. Bukhari 4577, Muslim 1616) lalu QS An-Nisa 4:11 dan 4:7. Hook map HARTA + tanda tanya; kartu arang "SEBELUM AYAT TURUN" (meja dan gelas, dua kapsul Rasulullah/Abu Bakar dengan lafaz penghormatan, kendi dan percikan, surat "Hartaku harus diapakan?"); geser sudut daun ke kartu terang "SESUDAH AYAT TURUN" (kartu ayat, dua map setara LAKI-LAKI/PEREMPUAN terisi, pita DITETAPKAN); penutup "Kebiasaan keluarga" dicoret, "Ketetapan Allah subhanahu wa ta'ala", logo Tams asli. Label sumber tampil di atas kartu. Tanpa makhluk bernyawa, tanpa pecahan, tanpa ajakan
+- Hasil: `out/dulu-tak-dapat-bagian-9x16.mp4` (1080x1920, 30 fps, 48,1 dtk: suara 46,1 dtk + logo diam 2 dtk; suara tidak dipercepat)
+- Voiceover: `public/audio/vo-dulu-tak-dapat-bagian.mp3` (MP3 dari Bos 25 Nov 2026). Timing: `src/data/vo-timing-dulu-tak-dapat-bagian.json` (ffmpeg silencedetect, 17 potongan ke 10 kalimat)
+- Kode: `src/DuluTakDapatBagian.tsx`, adegan di `src/scenes/dulu-tak-dapat-bagian/` (`Panggung`, `Penutup`, `Caption`, `Broll`, `Sfx`, `layout`), timeline `src/data/timeline-dulu-tak-dapat-bagian.ts` (penanda `~kata` = lafaz penghormatan kecil di teks bawah)
+- B-roll: slot B1..B5 siap di `layout.ts` (`src: null`), klip belum dilampirkan
+- Frame kunci: `out/stills/dulu-tak-dapat-bagian/` (`scripts/dulu-tak-dapat-bagian-frames.ts`). Perintah: `npm run stills:dulu-tak-dapat-bagian`, `npm run render:dulu-tak-dapat-bagian`
+

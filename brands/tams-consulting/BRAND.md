@@ -22,6 +22,8 @@ Diambil langsung dari piksel logo Bos.
 
 Latar terang (keputusan Bos). Tanpa gradasi: warna logo rata, jadi video juga rata. Oranye hanya untuk satu sorotan atau tombol per layar.
 
+- **Warna status (Bos 25 Nov 2026, video penghalang-waris):** terkunci/terhalang MERAH `#D8392B` (rona `rgba(216,57,43,.10)`), berhak HIJAU `#2E9E6B` (rona `rgba(46,158,107,.12)`). Hanya untuk penanda status (gembok, silang, centang, garis terkunci), bukan dekor; token `red`/`green` di `theme.ts`.
+
 ## Huruf
 - Judul / UI / teks: Montserrat (geometris, paling dekat dengan huruf logo; huruf asli logo belum diketahui). Satu keluarga huruf.
 - Skala di 1080x1920: judul 74 tebal 800, isi 32 tebal 500, label 26 tebal 700 huruf besar renggang (meniru "CONSULTING" di logo).

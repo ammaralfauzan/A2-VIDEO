@@ -12,6 +12,8 @@ description: Alur render dan rilis video A2/H2C: stills → review → pemeriksa
 
 - `node_modules` bawaan container bisa rusak sebagian (mis. `remotion/dist/esm` hilang, `tsx` tidak ada, tsc mengeluh `useVideoConfig`): perbaiki dengan `rm -rf node_modules && npm ci`.
 
+- 25 Nov 2026: bila bundle gagal (`Cannot read properties of undefined`) karena berkas video LAIN rusak di cabang (mis. JSON timing diganti format baru oleh room lain), jangan mengubah video itu: tambal lokal sementara (mis. arahkan impor ke salinan JSON lama dari `git show`), render, lalu kembalikan dengan `git checkout HEAD -- <berkas>` sebelum commit, dan laporkan ke Bos dan serah-terima.
+
 ## Urutan wajib
 1. `npx tsc --noEmit -p .` bersih.
 2. **Frame kunci** tiap adegan, termasuk frame di tengah transisi; lihat di ukuran penuh dan lewati checklist `a2-motion-video`.
@@ -30,3 +32,6 @@ description: Alur render dan rilis video A2/H2C: stills → review → pemeriksa
 - Menghapus file kerja dengan pola `rm` lebar: `00-gigi-ekspresi.png` pernah ikut terhapus (hook kini memblokirnya). Hapus per nama, dan ingat bahwa tidak semua file di `out/stills/` dihasilkan `render-stills.mjs`.
 - Menimpa VO/aset video lain; memakai `backdrop-filter`; membiarkan frame video lama berubah tanpa sengaja.
 - Mengirim hasil tanpa melihat frame yang dirender.
+
+## Bundel gagal karena data video lain (25 Nov 2026)
+Jangan menimpa berkas video lain untuk mengakali bundel. Pakai entry satu video: `src/entries/<slug>.tsx` (contoh `wasiat-maksimal-sepertiga.tsx`), lalu `REMOTION_ENTRY=src/entries/<slug>.tsx node scripts/render-stills.mjs <Id>` / `check-collisions.mjs`, dan `npx remotion render src/entries/<slug>.tsx <Id> out/...`. Regresi video lain tetap memakai `src/index.ts` (perlu bundel utuh).
