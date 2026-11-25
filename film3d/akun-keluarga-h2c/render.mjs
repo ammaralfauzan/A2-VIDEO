@@ -35,6 +35,8 @@ const gpu = await page.evaluate(() => { const gl = document.createElement('canva
 console.log('GPU:', gpu, /swiftshader|llvmpipe|software/i.test(gpu) ? '<- software rendering: it works, but slowly. Use --n=4 for previews.' : '');
 
 const total = await page.evaluate('window.total');
+if (args.nocap) await page.evaluate(() => { window.NOCAP = 1; });
+if (args.showocc) await page.evaluate(() => { window.SHOWOCC = 1; });
 const N = +(args.n || 16);
 const grab = async (t) => Buffer.from(await page.evaluate((tt, n) => { window.renderAt(tt, n); return document.getElementById('stage').toDataURL('image/png').split(',')[1]; }, t, N), 'base64');
 

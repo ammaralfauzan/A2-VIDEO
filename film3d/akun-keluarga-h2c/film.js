@@ -16,7 +16,7 @@ const V = (x, y, z) => new THREE.Vector3(x, y, z);
 const C = { bg: '#0A1F17', bg2: '#0E2A1F', surface: '#123B2A', surface2: '#1B4E38', ivory: '#F4EFE1', ivory2: '#E9E2CD', sage: '#9FB3A6',
   gold: '#D4AF6A', goldLight: '#E3C78C', goldDeep: '#B8872F', leaf: '#8CC63F', leafLight: '#B5E36B', goldLine: 'rgba(212,175,106,.30)' };
 const fonts = [['GreatVibes', 'assets/great-vibes-latin.woff2', '400'], ['Anton', 'assets/anton-latin.woff2', '400'],
-  ['Amiri', 'assets/amiri-latin-700.woff2', '700'], ['Jakarta', 'assets/plus-jakarta-sans-latin.woff2', '200 800']];
+  ['Amiri', 'assets/amiri-latin-700.woff2', '700'], ['Jakarta', 'assets/plus-jakarta-sans-latin.woff2', '200 800'], ['Brush', 'assets/caveat-brush-latin.woff2', '400']];
 for (const [name, url, weight] of fonts) { const f = new FontFace(name, `url(${url})`, { weight }); await f.load(); document.fonts.add(f); }
 const logo = await new Promise((r) => { const i = new Image(); i.onload = () => r(i); i.src = 'assets/logo.jpeg'; });
 const DIGITS = await (await fetch('assets/digits.json')).json();
@@ -144,6 +144,8 @@ for (const ch of '1234') {
   const gl = add(geo, goldMat, 0, 0.072, 0, g); g.visible = false; numerals[ch] = g;
 }
 const STEPS = [['1', 12.41], ['2', 26.70], ['3', 36.40], ['4', 49.02]];
+// hero objects on layer 1: the caption mask (type can sit behind them)
+for (const o of [...cards.map((c) => c.root), phone, ...Object.values(numerals)]) o.traverse((m) => { if (m.isMesh) m.layers.enable(1); });
 
 // geometric lattice between the sun and the room (out of frame): its shadow paints a star grid on wall and desk
 const SUN_POS = V(-2.4, 2.1, 1.5), SUN_AT = V(0.05, 0.3, -0.5);
@@ -477,7 +479,7 @@ const P = {
   hookB: { eye: V(0.13, 0.55, 1.42), look: V(0.0, 0.31, -0.02), focus: V(0, 0.3, 0.0) },
   wide: { eye: V(-0.06, 0.6, 1.62), look: V(0.0, 0.29, -0.02), focus: V(0, 0.28, 0.0) },
   med: { eye: V(-0.12, 0.42, 1.25), look: V(-0.04, 0.27, 0.0), focus: V(-0.17, 0.12, 0.04), capY: 1420, capX: 655, capW: 420 },   // desk band right of the gold numeral
-  scr: SC(1.24), scr2: SC(1.16),
+  scr: SC(1.32, 0.022, -0.075), scr2: SC(1.24, 0.022, -0.07),   // screen sits high: the foot of the frame stays free for captions
   cards: { eye: V(0.06, 0.15, 0.78), look: V(0.0, 0.08, 0.1), focus: V(0, 0.04, 0.13), capY: 730 },
   cards2: { eye: V(-0.04, 0.14, 0.72), look: V(0.0, 0.08, 0.1), focus: V(0, 0.04, 0.13), capY: 730 },
   phone: { eye: V(0.36, 0.33, 0.36), look: V(0.43, 0.0, 0.11), focus: V(0.43, 0.0, 0.12) },
@@ -490,7 +492,7 @@ const KEYS = [[0, 'hookA'], [7.0, 'hookB'], [11.2, 'wide'], [12.6, 'wide'], [13.
   [27.3, 'med'], [28.6, 'med'], [29.8, 'scr'], [32.5, 'scr2'], [33.7, 'phone'], [36.0, 'phone2'], [37.2, 'med'], [38.4, 'med'], [39.4, 'scr'], [44.8, 'scr2'],
   [45.9, 'medlow'], [48.5, 'medlow'], [49.6, 'med'], [51.0, 'med'], [52.0, 'scr'], [54.6, 'scr2'], [55.4, 'medlow'], [58.4, 'medlow'], [59.6, 'wide'], [62.4, 'wide'],
   [64.0, 'cta'], [69.2, 'ctaEnd'], [70.0, 'ctaEnd']];
-let capY = 1430, capX = 480, capW = 800; const eye = V(0, 0, 0), look = V(0, 0, 0), focus = V(0, 0, 0), right = V(0, 0, 0), up = V(0, 0, 0), tmp = V(0, 0, 0);
+let capY = 1430, capX = 480, capW = 800, curPose = 'hookA'; const eye = V(0, 0, 0), look = V(0, 0, 0), focus = V(0, 0, 0), right = V(0, 0, 0), up = V(0, 0, 0), tmp = V(0, 0, 0);
 const curve = new THREE.CubicBezierCurve3(V(0, 0, 0), V(0, 0, 0), V(0, 0, 0), V(0, 0, 0));
 function camPose(t) {
   let i = 0; while (i < KEYS.length - 2 && t >= KEYS[i + 1][0]) i++;
@@ -501,7 +503,7 @@ function camPose(t) {
   curve.v0.copy(A.eye); curve.v3.copy(B.eye);
   curve.v1.copy(A.eye).addScaledVector(d, 0.33).add(side); curve.v2.copy(A.eye).addScaledVector(d, 0.67).add(side);
   if (d.lengthSq() < 1e-8) eye.copy(A.eye); else curve.getPoint(p, eye);
-  look.copy(A.look).lerp(B.look, p); focus.copy(A.focus).lerp(B.focus, p); const C0 = p < 0.5 ? A : B; capY = C0.capY ?? 236; capX = C0.capX ?? 480; capW = C0.capW ?? 800;   // snap at mid-move: a sliding caption crosses the screen UI
+  look.copy(A.look).lerp(B.look, p); focus.copy(A.focus).lerp(B.focus, p); const C0 = p < 0.5 ? A : B; curPose = p < 0.5 ? a : b; capY = C0.capY ?? 236; capX = C0.capX ?? 480; capW = C0.capW ?? 800;   // snap at mid-move: a sliding caption crosses the screen UI
 }
 function shoot(t, k, n) {
   camPose(t);
@@ -525,24 +527,126 @@ function jitterLights(k, n) {
   lampLight.target.position.set(0.0, 0.03, 0.13);
 }
 
-// ---------- subtitles: one phrase at a time, in the 9:16 safe area (y <= 1500) ----------
+// ---------- captions: kinetic type (motion overlay, not 3D). Big lime words, ivory lead-ins, a brush-hand accent, a lime pill.
+// Each phrase sits in a free zone of the camera pose it starts in; "behind" zones tuck the type behind the hero objects
+// (monitor, cards, numeral, phone) with a silhouette mask, so nothing that must be seen is covered.
 const capCanvas = Object.assign(document.createElement('canvas'), { width: W, height: H }), cg = capCanvas.getContext('2d');
 const capTex = new THREE.CanvasTexture(capCanvas); capTex.colorSpace = THREE.SRGBColorSpace; capTex.flipY = true;
-const PHR = SUB.potongan.map((p) => ({ ...p, teks: p.teks.replace('umroh titik H dua C titik or titik id', 'umroh.h2c.or.id') }));
-function wrap(g, text, max) { const ws = text.split(' '), out = []; let l = ''; for (const w of ws) { const n = l ? l + ' ' + w : w; if (g.measureText(n).width > max && l) { out.push(l); l = w; } else l = n; } out.push(l); return out; }
+const PHR = SUB.potongan;
+// m = lead-in (ivory), b = big (lime), h = brush hand (white, tilted, lime squiggle), p = pill (lime, dark text). null = no caption.
+const SPEC = [
+  'm:umroh|b:sekeluarga?', 'm:cukup|b:satu akun|p:kepala keluarga', 'm:tidak perlu semua|h:daftar sendiri.', 'm:ikuti empat|b:langkahnya|h:ya,',
+  'h:Bapak, Ibu.', 'b:pelan-pelan|h:saja.', 'p:langkah satu', 'b:tambah|h:anggota.', 'p:kepala keluarga|m:buka halaman keluarga,',
+  'm:lalu isi|b:nama & sandi|m:setiap anggota.', 'm:sandi itu|h:kata rahasia.', 'm:satu akun bisa menampung|m:sampai|b:empat anggota.', 'p:langkah dua',
+  'b:kirim|m:ID dan sandinya.', 'm:salin|b:ID keluarga|m:dan sandi anggota,', 'm:lalu kirim lewat|h:WhatsApp.', 'p:langkah tiga', 'm:anggota|b:masuk.',
+  'm:pilih masuk dengan|b:ID keluarga,', 'm:lalu ketik|b:ID dan sandi', 'h:yang dikirim tadi.', 'm:tidak perlu|b:daftar lagi.', 'p:langkah empat',
+  'b:belikan|h:paket.', 'p:kepala keluarga|m:memilih paket umroh,', 'm:lalu memilih|b:nama anggota|m:yang dibelikan.', 'm:semua diatur dari|b:satu akun.',
+  'h:selesai.', 'b:satu akun,', 'm:untuk seluruh|h:keluarga.', null, null, null,   // CTA: the screen already says it
+].map((s) => s && s.split('|').map((l) => ({ st: l[0], tx: l.slice(2) })));
+// free zone per pose: cx, y (top or bottom edge), scale, max line width, behind = tuck behind hero objects
+const ZONE = {
+  hookA: { cx: 540, y: 1365, anchor: 'bottom', s: 0.74, maxw: 900, behind: true },
+  hookB: { cx: 540, y: 1490, anchor: 'bottom', s: 0.74, maxw: 900, behind: true },
+  wide: { cx: 540, y: 1395, anchor: 'bottom', s: 0.72, maxw: 900, behind: true },
+  med: { cx: 655, y: 1470, anchor: 'bottom', s: 0.6, maxw: 470, behind: true },
+  scr: { cx: 420, y: 1500, anchor: 'bottom', s: 0.56, maxw: 640, behind: false }, scr2: { cx: 420, y: 1500, anchor: 'bottom', s: 0.56, maxw: 640, behind: false },
+  cards: { cx: 540, y: 745, anchor: 'top', s: 0.8, maxw: 900, behind: true }, cards2: { cx: 540, y: 745, anchor: 'top', s: 0.8, maxw: 900, behind: true },
+  phone: { cx: 540, y: 250, anchor: 'top', s: 0.82, maxw: 900, behind: true }, phone2: { cx: 540, y: 250, anchor: 'top', s: 0.82, maxw: 900, behind: true },
+  medlow: { cx: 540, y: 1470, anchor: 'bottom', s: 0.68, maxw: 900, behind: true },
+  cta: { cx: 420, y: 1500, anchor: 'bottom', s: 0.56, maxw: 640, behind: false }, ctaEnd: { cx: 420, y: 1500, anchor: 'bottom', s: 0.56, maxw: 640, behind: false },
+};
+const STY = {
+  m: { font: (z) => JK(800, z), size: 66, lead: 0.98, color: C.ivory, track: -0.02 },
+  b: { font: (z) => JK(800, z), size: 132, lead: 0.86, color: C.leafLight, track: -0.05 },
+  h: { font: (z) => `400 ${z}px Brush`, size: 120, lead: 0.9, color: '#FFFFFF', track: 0 },
+  p: { font: (z) => JK(800, z), size: 56, lead: 1.0, color: C.bg, track: -0.01 },
+};
+let capBehind = 1;
+// where the type goes: the desk band between the monitor's lower edge and the card tops (type tucks a little behind
+// the cards), right of a gold numeral when one stands there; above the phone; or the empty foot of a screen that fills the frame
+const pj = V(0, 0, 0), toPx = (w) => { pj.copy(w).project(camera); return [(pj.x + 1) * W / 2, (1 - pj.y) * H / 2]; };
+function bandAt(t) { pose(t); camPose(t); shoot(t, 0, 1);
+  return { monB: toPx(V(0, SCR_Y - SCR_H / 2 - 0.011, SCR_Z))[1], cardT: Math.min(...cards.map((c) => toPx(c.board.localToWorld(V(0, CH, 0)))[1])),
+    numOn: Object.values(numerals).some((g) => g.visible), phone: curPose.startsWith('phone') }; }
+// type and size are fixed per phrase (read at its middle); the band edge is read every frame so the type rides with the set
+function zoneFor(p, lines, t) {
+  const tm = Math.min(p.mulai + 0.6, (p.mulai + p.selesai) / 2), A = bandAt(tm);
+  const h1 = lines.map((l) => lineSize(l, 1, 1e9).h), H1 = h1.reduce((a, b) => a + b, 0), last = lines[lines.length - 1].st;
+  const tuck = (last === 'b' || last === 'm' ? 0.1 : 0) * h1[h1.length - 1];
+  if (A.phone) { const k = KEYS.find((q) => q[1] === 'phone' && q[0] > p.mulai - 3); return { cx: 540, y: 250, anchor: 'top', s: 1.0, maxw: 900, behind: true, minT: k ? k[0] - 0.25 : 0 }; }
+  // cards in frame at any moment of the phrase: the type sits on the cards for the whole phrase (sized for the tightest moment)
+  const looks = [p.mulai, tm, p.selesai].map(bandAt).filter((b) => b.cardT < 1560);
+  if (looks.length) {
+    const numOn = looks.some((b) => b.numOn), cx = numOn ? 660 : 540, maxw = numOn ? 470 : 900;
+    let s = 0.95; for (const L of looks) {
+      const bot = Math.min(L.cardT, 1500); let k = (bot - Math.max(235, L.monB - 40) + tuck * 0.95) / H1;
+      if (k < 0.62) k = (bot - Math.max(235, L.monB - 230) + tuck * 0.95) / H1; s = Math.min(s, k);
+    }
+    s = Math.max(s, 0.5);
+    const B = bandAt(t), y = clamp(Math.min(B.cardT, 1500) + tuck * s, 235 + H1 * s, 1500 + tuck * s);
+    return { cx, y, anchor: 'bottom', s, maxw, behind: true };
+  }
+  return { cx: 440, y: 1495, anchor: 'bottom', s: 0.7, maxw: 700, behind: false };
+}
+
+function lineSize(l, s, maxw) {
+  const S = STY[l.st]; let z = S.size * s; cg.font = S.font(z); cg.letterSpacing = `${S.track * z}px`;
+  let w = cg.measureText(l.tx).width + (l.st === 'p' ? z * 1.1 : 0); if (w > maxw) { z *= maxw / w; w = maxw; }
+  return { z, w, h: l.st === 'p' ? z * 1.75 : z * S.lead };
+}
 function drawCaption(t) {
   cg.clearRect(0, 0, W, H);
-  let cur = null; for (let i = 0; i < PHR.length; i++) { const p = PHR[i], nx = PHR[i + 1]; const end = Math.min(nx ? nx.mulai - 0.04 : 1e9, p.selesai + 0.45); if (t >= p.mulai - 0.05 && t < end) cur = { ...p, end }; }
-  camPose(t); if (t > 64.9) cur = null;
-  if (cur) {
-    const k = seg(t, cur.mulai - 0.05, cur.mulai + 0.1), out = 1 - seg(t, cur.end - 0.1, cur.end);
-    cg.font = JK(700, 46); const lines = wrap(cg, cur.teks, capW), lh = 60, w = Math.max(...lines.map((l) => cg.measureText(l).width)) + 64, h = lines.length * lh + 30;
-    const cx = capX, cy = capY + (capY > 900 ? -h / 2 : h / 2) + 8 * (1 - easeOut(k));
-    cg.globalAlpha = Math.min(k, out); fillRR(cg, cx - w / 2, cy - h / 2, w, h, 26, 'rgba(10,31,23,.86)', 'rgba(212,175,106,.45)', 2);
-    cg.fillStyle = C.ivory; cg.textAlign = 'center'; cg.textBaseline = 'middle';
-    lines.forEach((l, i) => cg.fillText(l, cx, cy - h / 2 + 15 + lh * (i + 0.5)));
-    cg.textBaseline = 'alphabetic'; cg.globalAlpha = 1;
-  }
+  let ci = -1, end = 0;
+  for (let i = 0; i < PHR.length; i++) { const p = PHR[i], nx = PHR[i + 1]; const e = Math.min(nx ? nx.mulai - 0.04 : 1e9, p.selesai + 0.45); if (t >= p.mulai - 0.08 && t < e) { ci = i; end = e; } }
+  if (ci < 0 || !SPEC[ci] || window.NOCAP) { capTex.needsUpdate = true; return; }
+  const p = PHR[ci], lines = SPEC[ci];
+  const Z = zoneFor(p, lines, t); capBehind = Z.behind ? 1 : 0; camPose(t);
+  const sz = lines.map((l) => lineSize(l, Z.s, Z.maxw)), Ht = sz.reduce((a, b) => a + b.h, 0);
+  let y = Z.anchor === 'top' ? Z.y : Z.y - Ht;
+  const chars = lines.map((l) => l.tx.length), tot = chars.reduce((a, b) => a + b, 0); let acc = 0;
+    lines.forEach((l, i) => {
+    const S = STY[l.st], { z, w, h } = sz[i];
+    const t0 = Math.max(Z.minT || 0, p.mulai - 0.06) + (acc / tot) * (p.selesai - Math.max(Z.minT || 0, p.mulai)) * 0.85; acc += chars[i];   // phone shots wait for the camera to land
+    if (t < t0) { y += h; return; }
+    const dx = lines.length > 1 ? (i % 2 ? 1 : -1) * Math.min(36, (Z.maxw - w) * 0.2) * Z.s : 0, cx = Z.cx + dx;
+    const fl = Math.sin(t * 1.3 + i * 1.7) * 2.5 * Z.s;   // a slow breath so held type is never frozen
+    cg.save(); cg.font = S.font(z); cg.letterSpacing = `${S.track * z}px`; cg.textBaseline = 'alphabetic'; cg.textAlign = 'left';
+    cg.shadowColor = 'rgba(0,0,0,.6)'; cg.shadowBlur = 28 * Z.s; cg.shadowOffsetY = 6 * Z.s;
+    const ex = (j) => seg(t, end - 0.3 + j * 0.03, end - 0.08 + j * 0.03);   // exit: words drift up and soften, one after another
+    if (l.st === 'b' || l.st === 'm') {
+      // words land one by one: rise, settle with a little spring, sharpen out of a soft blur
+      const words = l.tx.split(' '), sp = cg.measureText(' ').width; let x = cx - w / 2;
+      const base = y + h * 0.8 + fl;
+      words.forEach((wd, j) => {
+        const ww = cg.measureText(wd).width, k = seg(t, t0 + j * 0.07, t0 + j * 0.07 + (l.st === 'b' ? 0.42 : 0.32)), o = ex(j);
+        if (k > 0) {
+          const e = l.st === 'b' ? backOut(k) : easeOut(k), sc = 0.9 + 0.1 * e, blur = (1 - easeOut(k)) * 10 * Z.s + o * 8 * Z.s;
+          cg.save(); cg.globalAlpha = Math.min(1, k * 1.8) * (1 - o); if (blur > 0.3) cg.filter = `blur(${blur.toFixed(1)}px)`;
+          cg.translate(x + ww / 2, base + (1 - e) * 34 * Z.s - o * 20 * Z.s); cg.scale(sc, sc); cg.fillStyle = S.color; cg.fillText(wd, -ww / 2, 0); cg.restore();
+        }
+        x += ww + sp;
+      });
+    } else if (l.st === 'h') {
+      // brush hand writes itself left to right, then a lime squiggle underlines it
+      const k = seg(t, t0, t0 + 0.55), o = ex(0); cg.globalAlpha = 1 - o; if (o > 0) cg.filter = `blur(${(o * 8 * Z.s).toFixed(1)}px)`;
+      cg.translate(cx, y + h * 0.68 + fl - o * 20 * Z.s); cg.rotate(-0.06);
+      cg.save(); cg.beginPath(); cg.rect(-w / 2 - 30, -z * 1.3, (w + 60) * easeInOut(k), z * 1.8); cg.clip(); cg.fillStyle = S.color; cg.fillText(l.tx, -w / 2, 0); cg.restore();
+      const u = seg(t, t0 + 0.4, t0 + 0.8); if (u > 0) {
+        cg.shadowBlur = 0; cg.strokeStyle = C.leafLight; cg.lineWidth = 7 * Z.s; cg.lineCap = 'round'; cg.beginPath();
+        const x0 = -w * 0.44, x1 = x0 + w * 0.88 * easeOut(u);
+        for (let x = x0; x <= x1; x += 6) cg.lineTo(x, z * 0.22 + Math.sin((x - x0) / (w * 0.88) * Math.PI * 2.2) * 5 * Z.s);
+        cg.stroke();
+      }
+    } else if (l.st === 'p') {
+      // pill pops with a spring, its label slides in a beat later
+      const k = seg(t, t0, t0 + 0.4), q = seg(t, t0 + 0.12, t0 + 0.4), o = ex(0), e = backOut(k), ph = z * 1.6, pw = w * (0.75 + 0.25 * e);
+      cg.globalAlpha = Math.min(1, k * 2) * (1 - o); cg.translate(cx, y + h / 2 + fl - o * 20 * Z.s); cg.rotate(-0.035); cg.scale(0.7 + 0.3 * e, 0.7 + 0.3 * e);
+      fillRR(cg, -pw / 2, -ph / 2, pw, ph, ph / 2, C.leafLight);
+      cg.shadowColor = 'transparent'; cg.globalAlpha *= q; cg.fillStyle = S.color; cg.textBaseline = 'middle'; cg.textAlign = 'center'; cg.fillText(l.tx, (1 - easeOut(q)) * 14, 2);
+    }
+    cg.restore(); y += h;
+  });
+  cg.letterSpacing = '0px';
   capTex.needsUpdate = true;
 }
 
@@ -552,8 +656,8 @@ const addPass = new FullScreenQuad(new THREE.ShaderMaterial({ uniforms: { tex: {
   fragmentShader: 'uniform sampler2D tex; uniform float w; varying vec2 vUv; void main() { gl_FragColor = vec4(texture2D(tex, vUv).rgb * w, 1.0); }',
   blending: THREE.CustomBlending, blendSrc: THREE.OneFactor, blendDst: THREE.OneFactor, blendEquation: THREE.AddEquation, depthTest: false, depthWrite: false, transparent: true }));
 const bloom = new UnrealBloomPass(new THREE.Vector2(W, H), 0.18, 0.4, 0.92);
-const grade = new FullScreenQuad(new THREE.ShaderMaterial({ uniforms: { tex: { value: accum.texture }, cap: { value: capTex }, seed: { value: 0 }, exposure: { value: 1 } }, vertexShader: vert,
-  fragmentShader: `uniform sampler2D tex, cap; uniform float seed, exposure; varying vec2 vUv;
+const grade = new FullScreenQuad(new THREE.ShaderMaterial({ uniforms: { tex: { value: accum.texture }, cap: { value: capTex }, occ: { value: null }, behind: { value: 1 }, showOcc: { value: 0 }, seed: { value: 0 }, exposure: { value: 1 } }, vertexShader: vert,
+  fragmentShader: `uniform sampler2D tex, cap, occ; uniform float seed, exposure, behind, showOcc; varying vec2 vUv;
     float h(vec2 p) { return fract(sin(dot(p, vec2(12.9898, 78.233)) + seed) * 43758.5453); }
     vec3 aces(vec3 x) { return clamp(x * (2.51 * x + 0.03) / (x * (2.43 * x + 0.59) + 0.14), 0.0, 1.0); }
     vec3 srgb(vec3 c) { return mix(c * 12.92, 1.055 * pow(max(c, vec3(0.0)), vec3(1.0 / 2.4)) - 0.055, step(0.0031308, c)); }
@@ -564,15 +668,41 @@ const grade = new FullScreenQuad(new THREE.ShaderMaterial({ uniforms: { tex: { v
       c *= mix(1.0, 0.62, smoothstep(0.35, 0.95, length(d * vec2(0.8, 1.0)) * 1.45));
       c = srgb(c);
       c += (h(vUv * 1000.0) - 0.5) * 0.025 * (1.0 - 0.55 * dot(c, vec3(0.33)));
-      vec4 k = texture2D(cap, vUv); c = c * (1.0 - k.a) + k.rgb;
+      vec4 k = texture2D(cap, vUv) * (1.0 - behind * texture2D(occ, vUv).r); c = c * (1.0 - k.a) + k.rgb;
+      c = mix(c, vec3(1.0, 0.0, 0.0), showOcc * 0.5 * texture2D(occ, vUv).r);
       gl_FragColor = vec4(c, 1.0); }`, depthTest: false, depthWrite: false }));
 capTex.premultiplyAlpha = true;
 
+const occRT = new THREE.WebGLRenderTarget(W / 2, H / 2, { samples: 4 }), occMat = new THREE.MeshBasicMaterial({ color: 0xffffff, side: THREE.DoubleSide });
+function renderOcc(t) {   // silhouette of the hero objects at t (sharp, no jitter)
+  pose(t); shoot(t, 0, 1); camera.layers.set(1); scene.overrideMaterial = occMat; const bg = scene.background; scene.background = new THREE.Color(0x000000);
+  const su = renderer.shadowMap.autoUpdate; renderer.shadowMap.autoUpdate = false;
+  renderer.setRenderTarget(occRT); renderer.render(scene, camera);
+  renderer.shadowMap.autoUpdate = su; scene.background = bg; scene.overrideMaterial = null; camera.layers.set(0);
+}
+// motion blur without ghosts: enough sub-frames that no point moves more than ~2 px between two of them
+const probe = [V(0, SCR_Y, SCR_Z), V(-SCR_W / 2, SCR_Y + SCR_H / 2, SCR_Z), V(SCR_W / 2, SCR_Y - SCR_H / 2, SCR_Z), PHONE.clone()], pv = V(0, 0, 0);
+function shotPts(ts) {
+  pose(ts); shoot(ts, 0, 1); const pts = [];
+  const add2 = (w) => { pv.copy(w).project(camera); pts.push([(pv.x + 1) * W / 2, (1 - pv.y) * H / 2]); };
+  probe.forEach(add2); for (const c of cards) add2(c.board.localToWorld(V(0, CH, 0)));
+  for (const g of Object.values(numerals)) if (g.visible) add2(g.localToWorld(V(0, 0.2, 0)));
+  return pts;
+}
+const NMAX = 40, STEP_PX = 2.0;
 export function renderAt(t, n = 1) {
-  drawScreen(t); drawPhone(t); drawCaption(t);
+  drawScreen(t); drawPhone(t); drawCaption(t); renderOcc(t);
+  grade.material.uniforms.occ.value = occRT.texture; grade.material.uniforms.behind.value = capBehind; grade.material.uniforms.showOcc.value = window.SHOWOCC ? 1 : 0;
+  let shut = SHUTTER;
+  if (n > 1) {
+    const a = shotPts(t - SHUTTER / 2), b = shotPts(t + SHUTTER / 2); let D = 0;
+    for (let i = 0; i < Math.min(a.length, b.length); i++) D = Math.max(D, Math.hypot(a[i][0] - b[i][0], a[i][1] - b[i][1]));
+    const need = Math.ceil(D / STEP_PX); if (need > NMAX) shut *= NMAX * STEP_PX / D; n = clamp(Math.max(n, need), n, NMAX);
+    window.__lastN = n;
+  }
   renderer.setRenderTarget(accum); renderer.setClearColor(0x000000, 1); renderer.clear();
   for (let k = 0; k < n; k++) {
-    const ts = n === 1 ? t : t + ((k + 0.5) / n - 0.5) * SHUTTER;
+    const ts = n === 1 ? t : t + ((k + 0.5) / n - 0.5) * shut;
     pose(ts); shoot(ts, k, n); jitterLights(k, n);
     renderer.setRenderTarget(rt); renderer.render(scene, camera);
     addPass.material.uniforms.tex.value = rt.texture; addPass.material.uniforms.w.value = 1 / n;
