@@ -8,3 +8,6 @@
 - **Awal sesi dan tiap permintaan:** baca `INDEX.md` di repo `ammaralfauzan/Obsidian-SB` (tambahkan dengan `add_repo` bila belum ada di sesi), lalu buka hanya catatan yang relevan. Jangan meminta Bos menjelaskan ulang yang sudah tercatat. Catatan lama tanpa tanggal: cek keadaan nyata dulu.
 - **Aturan kerja resmi:** `docs/CARA-KERJA.md` di repo `ammaralfauzan/A2-Automation`.
 - **Jawaban:** Bahasa Indonesia, ringkas, singkat, padat, mudah; panggil "Bos". Tetap sebut hasil, risiko, yang belum dicek, keputusan yang menunggu.
+
+## Aturan tetap konten (Bos, 2026-11-25)
+- **Tanpa makhluk bernyawa** di semua konten buatan (3D, animasi, ilustrasi, B-roll AI): tidak ada manusia, hewan, wajah, tangan, siluet, atau bagian tubuh. Tumbuhan, benda, mesin, dan layar boleh. Berlaku untuk semua room dan semua tahap; suara narasi tidak termasuk (bukan gambar).

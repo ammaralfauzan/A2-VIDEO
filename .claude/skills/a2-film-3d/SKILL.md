@@ -5,6 +5,7 @@ description: (A2) Jalur 3D untuk video A2/H2C. Make cinematic 3D films and reels
 > **Catatan A2 (jalur `3D`).** Salinan skill `3d-animator` untuk repo A2-VIDEO, dipakai di tahap BANGUN 3D (`docs/prompt-inti.md`). Aturan A2 menimpa bagian umum di bawah:
 > - **Brand:** ikuti `brands/<kode>/BRAND.md` (A2: navy #13254A, biru #00A6F4→#0A3FD6 hanya aksen, kanvas #F4F6FA, Geist; maskot Gigi hanya A2). Logo hanya file resmi `public/logo/a2-automation.png`, tidak digambar ulang.
 > - **Suara:** MP3 dari Bos (lampiran) sudah ada; **jangan memanggil ElevenLabs**. Simpan ke `public/audio/vo-<slug>.mp3`, ukur waktu kata, jangan mempercepat suara.
+> - **Tanpa makhluk bernyawa (aturan tetap Bos, 2026-11-25):** tidak ada manusia, hewan, wajah, tangan, atau siluet di adegan. Abaikan bagian skill di bawah yang memakai tangan, orang, atau hewan (mis. getar tangan HP, tangan di keyboard). Tumbuhan, benda, mesin, dan layar boleh. Aksi digerakkan oleh benda (kursor, kartu, pintu, lampu).
 > - **Isi layar:** generik, berlabel "Simulasi", tanpa merek pihak ketiga, tanpa angka klaim, tanpa tempat ibadah/ritual/tokoh nyata. Area aman 9:16: x 60–900, y 220–1500.
 > - **Persetujuan Bos dua kali sebelum render panjang:** (1) `PLAN.md` tampil di chat; (2) 3 still dikirim (SendUserFile). Lalu pratinjau dan final.
 > - **Tempat kerja:** `film3d/<slug>/` (salin `kit/`); jangan commit `node_modules`. Keluaran `out/<slug>-9x16.mp4` + satu frame sampul. Jangan menyentuh video lain atau `main`.
