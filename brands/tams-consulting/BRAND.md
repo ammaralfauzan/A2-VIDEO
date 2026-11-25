@@ -51,6 +51,11 @@ Latar terang (keputusan Bos). Tanpa gradasi: warna logo rata, jadi video juga ra
 ## Larangan khas brand
 - Tanpa warna di luar token (tanpa biru navy A2, tanpa hijau dan emas H2C). Tanpa gradasi pada logo atau tombol. Tanpa emoji, merek pihak ketiga, backdrop-filter. Angka contoh berlabel "contoh". Tanpa klaim hasil atau jaminan yang tidak diberikan Bos. Tanpa hitungan bagian waris nyata kecuali dari Bos; angka bagian selalu berlabel "contoh". Tanpa nomor telepon di video sebelum Bos menentukan ajakan. Konten utamanya edukasi, bukan jualan; tidak semua video diakhiri ajakan WhatsApp (draf lama memakai "Ikuti @tams.consulting"). Cerita rekaan diberi label kecil "Cerita ilustrasi", bukan kasus klien. Materi hukum (mis. KHI) tidak ditampilkan sebagai kepastian tanpa telaah TAMS; tanpa persentase bagian umum tanpa konteks.
 
+## Sumber dalil dan penyebutan (aturan Bos 25 Nov 2026, semua konten Tams)
+- Utamakan riwayat dan sumbernya, dan tampilkan sumbernya di layar/desain: nama kitab dan nomor hadits (mis. "HR. Bukhari 2742"), ayat sebagai "QS An-Nisa 4:11". URL situs tidak ditampilkan; dicatat di vault.
+- Utamakan Shahih Bukhari dan Muslim. Riwayat di luar keduanya boleh bila dibahas di Rumaysho (cek isi artikel dan takhrijnya).
+- Menyebut Nabi: selalu diikuti "shallallahu 'alaihi wa sallam", di suara dan di teks layar. Menyebut Allah: diikuti "subhanahu wa ta'ala". Rujukan ganti ("beliau") tidak perlu diulang.
+
 ## Sumber dan contoh
 - Bahan Bos: logo (2 gambar) dan contoh posting "Konsultasi Waris" (20 Nov 2026), "hitam-oren". Situs: tidak ditemukan saat dicari. Instagram: `@tams.consulting`. Arahan lama Bos: vault Obsidian-SB `proyek/tams-consulting.md`. Pesan brand awal: "Warisan tertata. Keluarga terjaga."
 - Token di kode: `src/brands/tams-consulting/theme.ts`. Frame contoh: komposisi `TamsBrandSample`, `out/brand-tams-consulting-sample.png`.
