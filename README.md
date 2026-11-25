@@ -187,3 +187,12 @@ Angka di kedua video (mis. 32 siswa, 97 chat, 128 tagihan, Rp123 jt) hanya ilust
 - Kode: `src/WasiatMaksimalSepertiga.tsx`, adegan di `src/scenes/wasiat-maksimal-sepertiga/` (`Kartu`, `Batang`, `Penutup`, `Caption`, `Broll`, `Sfx`, `layout`), timeline di `src/data/timeline-wasiat-maksimal-sepertiga.ts`. Teks bawah: kata "Nabi" selalu diikuti "shallallahu 'alaihi wa sallam" (aturan Brand Kit)
 - B-roll: slot B1..B5 di `layout.ts` (`BROLL`, `src: null` = belum ada klip)
 - Frame kunci: `out/stills/wasiat-maksimal-sepertiga/` (`scripts/wasiat-maksimal-sepertiga-frames.ts`). Perintah: `npm run stills:wasiat-sepertiga`, `npm run render:wasiat-sepertiga`
+
+## Video: "Siapa yang Menentukan Bagian Waris?" (komposisi `DuluTakDapatBagian`, slug `dulu-tak-dapat-bagian`, 9:16, brand Tams Consulting)
+- Naskah: `naskah-dulu-tak-dapat-bagian.md`. Riwayat Jabir bin Abdullah radhiyallahu 'anhu (HR. Bukhari 4577, Muslim 1616) lalu QS An-Nisa 4:11 dan 4:7. Hook map HARTA + tanda tanya; kartu arang "SEBELUM AYAT TURUN" (meja dan gelas, dua kapsul Rasulullah/Abu Bakar dengan lafaz penghormatan, kendi dan percikan, surat "Hartaku harus diapakan?"); geser sudut daun ke kartu terang "SESUDAH AYAT TURUN" (kartu ayat, dua map setara LAKI-LAKI/PEREMPUAN terisi, pita DITETAPKAN); penutup "Kebiasaan keluarga" dicoret, "Ketetapan Allah subhanahu wa ta'ala", logo Tams asli. Label sumber tampil di atas kartu. Tanpa makhluk bernyawa, tanpa pecahan, tanpa ajakan
+- Hasil: `out/dulu-tak-dapat-bagian-9x16.mp4` (1080x1920, 30 fps, 48,1 dtk: suara 46,1 dtk + logo diam 2 dtk; suara tidak dipercepat)
+- Voiceover: `public/audio/vo-dulu-tak-dapat-bagian.mp3` (MP3 dari Bos 25 Nov 2026). Timing: `src/data/vo-timing-dulu-tak-dapat-bagian.json` (ffmpeg silencedetect, 17 potongan ke 10 kalimat)
+- Kode: `src/DuluTakDapatBagian.tsx`, adegan di `src/scenes/dulu-tak-dapat-bagian/` (`Panggung`, `Penutup`, `Caption`, `Broll`, `Sfx`, `layout`), timeline `src/data/timeline-dulu-tak-dapat-bagian.ts` (penanda `~kata` = lafaz penghormatan kecil di teks bawah)
+- B-roll: slot B1..B5 siap di `layout.ts` (`src: null`), klip belum dilampirkan
+- Frame kunci: `out/stills/dulu-tak-dapat-bagian/` (`scripts/dulu-tak-dapat-bagian-frames.ts`). Perintah: `npm run stills:dulu-tak-dapat-bagian`, `npm run render:dulu-tak-dapat-bagian`
+
