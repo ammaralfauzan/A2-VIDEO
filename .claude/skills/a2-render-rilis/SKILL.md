@@ -32,3 +32,6 @@ description: Alur render dan rilis video A2/H2C: stills → review → pemeriksa
 - Menghapus file kerja dengan pola `rm` lebar: `00-gigi-ekspresi.png` pernah ikut terhapus (hook kini memblokirnya). Hapus per nama, dan ingat bahwa tidak semua file di `out/stills/` dihasilkan `render-stills.mjs`.
 - Menimpa VO/aset video lain; memakai `backdrop-filter`; membiarkan frame video lama berubah tanpa sengaja.
 - Mengirim hasil tanpa melihat frame yang dirender.
+
+## Bundel gagal karena data video lain (25 Nov 2026)
+Jangan menimpa berkas video lain untuk mengakali bundel. Pakai entry satu video: `src/entries/<slug>.tsx` (contoh `wasiat-maksimal-sepertiga.tsx`), lalu `REMOTION_ENTRY=src/entries/<slug>.tsx node scripts/render-stills.mjs <Id>` / `check-collisions.mjs`, dan `npx remotion render src/entries/<slug>.tsx <Id> out/...`. Regresi video lain tetap memakai `src/index.ts` (perlu bundel utuh).

@@ -163,7 +163,7 @@ const inputProps = process.env.SAFE_GUIDE ? {safeGuide: true} : {};
 // Pakai Chromium lokal jika REMOTION_BROWSER diisi (mis. lingkungan tanpa akses unduh).
 const browserExecutable = process.env.REMOTION_BROWSER || null;
 
-const serveUrl = await bundle({entryPoint: path.resolve('src/index.ts')});
+const serveUrl = await bundle({entryPoint: path.resolve(process.env.REMOTION_ENTRY || 'src/index.ts')});
 const composition = await selectComposition({serveUrl, id, browserExecutable, inputProps});
 for (const [name, frame] of set.stills) {
   if (only.length && !only.some((o) => name.startsWith(o))) continue;

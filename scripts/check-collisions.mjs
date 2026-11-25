@@ -32,7 +32,7 @@ const protect = [...(cfg[id]?.protect ?? []), ...opt('protect')].map((v) => {
 });
 
 const browserExecutable = process.env.REMOTION_BROWSER || undefined;
-const serveUrl = await bundle({entryPoint: path.resolve('src/index.ts'), webpackOverride: (c) => c});
+const serveUrl = await bundle({entryPoint: path.resolve(process.env.REMOTION_ENTRY || 'src/index.ts'), webpackOverride: (c) => c});
 const browser = await openBrowser('chrome', {browserExecutable, chromiumOptions: {gl: 'angle'}});
 
 const base = {collisionProbe: true};
