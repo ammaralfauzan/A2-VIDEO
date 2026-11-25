@@ -476,13 +476,13 @@ const P = {
   hookA: { eye: V(0.30, 0.66, 1.78), look: V(0.0, 0.30, 0.0), focus: V(0, 0.3, 0.0) },
   hookB: { eye: V(0.13, 0.55, 1.42), look: V(0.0, 0.31, -0.02), focus: V(0, 0.3, 0.0) },
   wide: { eye: V(-0.06, 0.6, 1.62), look: V(0.0, 0.29, -0.02), focus: V(0, 0.28, 0.0) },
-  med: { eye: V(-0.12, 0.42, 1.25), look: V(-0.04, 0.27, 0.0), focus: V(-0.17, 0.12, 0.04) },
+  med: { eye: V(-0.12, 0.42, 1.25), look: V(-0.04, 0.27, 0.0), focus: V(-0.17, 0.12, 0.04), capY: 1420, capX: 655, capW: 420 },   // desk band right of the gold numeral
   scr: SC(1.24), scr2: SC(1.16),
-  cards: { eye: V(0.06, 0.15, 0.78), look: V(0.0, 0.08, 0.1), focus: V(0, 0.04, 0.13) },
-  cards2: { eye: V(-0.04, 0.14, 0.72), look: V(0.0, 0.08, 0.1), focus: V(0, 0.04, 0.13) },
+  cards: { eye: V(0.06, 0.15, 0.78), look: V(0.0, 0.08, 0.1), focus: V(0, 0.04, 0.13), capY: 730 },
+  cards2: { eye: V(-0.04, 0.14, 0.72), look: V(0.0, 0.08, 0.1), focus: V(0, 0.04, 0.13), capY: 730 },
   phone: { eye: V(0.36, 0.33, 0.36), look: V(0.43, 0.0, 0.11), focus: V(0.43, 0.0, 0.12) },
   phone2: { eye: V(0.39, 0.30, 0.33), look: V(0.43, 0.0, 0.11), focus: V(0.43, 0.0, 0.12) },
-  medlow: { eye: V(0.08, 0.32, 1.1), look: V(0.0, 0.25, 0.0), focus: V(0, 0.06, 0.1) },
+  medlow: { eye: V(0.08, 0.32, 1.1), look: V(0.0, 0.25, 0.0), focus: V(0, 0.06, 0.1), capY: 1370 },
   cta: SC(1.22, 0.02, -0.02), ctaEnd: SC(1.0, 0.012, -0.03),
 };
 // [start time, pose]; between two keys the camera travels; a key repeated = hold
@@ -490,7 +490,7 @@ const KEYS = [[0, 'hookA'], [7.0, 'hookB'], [11.2, 'wide'], [12.6, 'wide'], [13.
   [27.3, 'med'], [28.6, 'med'], [29.8, 'scr'], [32.5, 'scr2'], [33.7, 'phone'], [36.0, 'phone2'], [37.2, 'med'], [38.4, 'med'], [39.4, 'scr'], [44.8, 'scr2'],
   [45.9, 'medlow'], [48.5, 'medlow'], [49.6, 'med'], [51.0, 'med'], [52.0, 'scr'], [54.6, 'scr2'], [55.4, 'medlow'], [58.4, 'medlow'], [59.6, 'wide'], [62.4, 'wide'],
   [64.0, 'cta'], [69.2, 'ctaEnd'], [70.0, 'ctaEnd']];
-let capY = 1430; const eye = V(0, 0, 0), look = V(0, 0, 0), focus = V(0, 0, 0), right = V(0, 0, 0), up = V(0, 0, 0), tmp = V(0, 0, 0);
+let capY = 1430, capX = 480, capW = 800; const eye = V(0, 0, 0), look = V(0, 0, 0), focus = V(0, 0, 0), right = V(0, 0, 0), up = V(0, 0, 0), tmp = V(0, 0, 0);
 const curve = new THREE.CubicBezierCurve3(V(0, 0, 0), V(0, 0, 0), V(0, 0, 0), V(0, 0, 0));
 function camPose(t) {
   let i = 0; while (i < KEYS.length - 2 && t >= KEYS[i + 1][0]) i++;
@@ -501,7 +501,7 @@ function camPose(t) {
   curve.v0.copy(A.eye); curve.v3.copy(B.eye);
   curve.v1.copy(A.eye).addScaledVector(d, 0.33).add(side); curve.v2.copy(A.eye).addScaledVector(d, 0.67).add(side);
   if (d.lengthSq() < 1e-8) eye.copy(A.eye); else curve.getPoint(p, eye);
-  look.copy(A.look).lerp(B.look, p); focus.copy(A.focus).lerp(B.focus, p); capY = lerp(A.capY ?? 236, B.capY ?? 236, p);
+  look.copy(A.look).lerp(B.look, p); focus.copy(A.focus).lerp(B.focus, p); const C0 = p < 0.5 ? A : B; capY = C0.capY ?? 236; capX = C0.capX ?? 480; capW = C0.capW ?? 800;   // snap at mid-move: a sliding caption crosses the screen UI
 }
 function shoot(t, k, n) {
   camPose(t);
@@ -536,8 +536,8 @@ function drawCaption(t) {
   camPose(t); if (t > 64.9) cur = null;
   if (cur) {
     const k = seg(t, cur.mulai - 0.05, cur.mulai + 0.1), out = 1 - seg(t, cur.end - 0.1, cur.end);
-    cg.font = JK(700, 46); const lines = wrap(cg, cur.teks, 800), lh = 60, w = Math.max(...lines.map((l) => cg.measureText(l).width)) + 64, h = lines.length * lh + 30;
-    const cx = 480, cy = capY + (capY > 900 ? -h / 2 : h / 2) + 8 * (1 - easeOut(k));
+    cg.font = JK(700, 46); const lines = wrap(cg, cur.teks, capW), lh = 60, w = Math.max(...lines.map((l) => cg.measureText(l).width)) + 64, h = lines.length * lh + 30;
+    const cx = capX, cy = capY + (capY > 900 ? -h / 2 : h / 2) + 8 * (1 - easeOut(k));
     cg.globalAlpha = Math.min(k, out); fillRR(cg, cx - w / 2, cy - h / 2, w, h, 26, 'rgba(10,31,23,.86)', 'rgba(212,175,106,.45)', 2);
     cg.fillStyle = C.ivory; cg.textAlign = 'center'; cg.textBaseline = 'middle';
     lines.forEach((l, i) => cg.fillText(l, cx, cy - h / 2 + 15 + lh * (i + 0.5)));

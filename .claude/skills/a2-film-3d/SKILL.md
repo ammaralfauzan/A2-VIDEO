@@ -10,6 +10,8 @@ description: (A2) Jalur 3D untuk video A2/H2C. Make cinematic 3D films and reels
 > - **Persetujuan Bos dua kali sebelum render panjang:** (1) `PLAN.md` tampil di chat; (2) 3 still dikirim (SendUserFile). Lalu pratinjau dan final.
 > - **Tempat kerja:** `film3d/<slug>/` (salin `kit/`); jangan commit `node_modules`. Keluaran `out/<slug>-9x16.mp4` + satu frame sampul. Jangan menyentuh video lain atau `main`.
 > - **Render:** tanpa GPU (room cloud) lambat; pakai `--n=4` untuk pratinjau dan beri tahu Bos bila final sebaiknya dijalankan di Mac lokal (`npm run final`).
+> - **Render di room cloud (pelajaran akun-keluarga-h2c, 25 Nov 2026):** Chrome perlu `--use-angle=swiftshader --enable-unsafe-swiftshader` (tanpa GPU) dan `--no-sandbox` bila root. Pratinjau dirender **per potongan 5 dtk** (`--from --to`, 3 proses paralel), lalu digabung `ffmpeg -f concat` + `sound/mix.wav`: container cloud bisa restart dan MP4 yang belum selesai tidak bisa dipakai. Sekitar 6 menit per detik video pada n=4 (3 proses).
+> - **Subtitle per pose kamera, bukan satu posisi:** tiap pose diberi `capY` (dan `capX`/`capW` bila ada benda di samping, mis. angka emas) ke pita kosong yang terlihat di pose itu; saat kamera berpindah, posisi subtitle **meloncat di tengah gerak**, jangan di-lerp (subtitle yang meluncur melintasi UI layar). Cek still di setiap pose dan di tengah transisi sebelum render.
 > - Desain adalah pilihan bawaan, bukan larangan: 3D yang bagus boleh. Detail: vault Obsidian-SB `referensi/3d-animator-reels` dan `referensi/aturan-desain`.
 
 
