@@ -3,3 +3,4 @@ stills/
 out/
 frames/
 sound/*.unlevelled.wav
+*.bak-*
