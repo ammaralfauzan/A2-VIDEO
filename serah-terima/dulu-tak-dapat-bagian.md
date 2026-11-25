@@ -10,3 +10,10 @@
 - Belum diperiksa / risiko: riwayat Jabir di luar Bukhari-Muslim dan BELUM dipastikan ada di Rumaysho (sunnah.com dan rumaysho.com sudah diizinkan di jaringan, tetapi tertahan pemeriksa robot situs); nomor dari pencarian Tirmidzi 2092, Ibnu Majah 2720, Abu Dawud belum pasti; derajat hadits Tirmidzi (hasan gharib vs hasan shahih antar cetakan) dan nomor hadits, cek kitab asli; perlu telaah TAMS sebelum rilis; suara Tams belum ditetapkan Brand Kit (usul Kang Nandar seperti video #9); pelafalan "Sa'd bin Rabi'"; Brand Kit video memakai sudut bulat penuh, sedangkan ISIAN meminta geser sudut daun untuk transisi (dipakai hanya pada transisi kartu)
 - Caption dan jam posting usulan: (RILIS)
 - Catatan untuk room berikutnya: setelah Bos setuju, tambah baris #12 ke `docs/daftar-konten.md` berstatus "konsep disetujui". Tanpa Gigi, tanpa ajakan, tanpa makhluk bernyawa (juga di B-roll).
+
+## Telaah sanad riwayat Jabir (25 Nov 2026, dari pencarian; kitab asli belum dibuka)
+- Takhrij: Tirmidzi 2092 (Tirmidzi: "hasan shahih", hanya lewat Abdullah bin Muhammad bin 'Aqil), Ibnu Majah 2720, Abu Dawud 2891-2892 (satu jalur keliru menyebut "Tsabit bin Qais"; yang terjaga Sa'd bin Rabi', kata Al-Albani), Ahmad.
+- Titik lemah: Abdullah bin Muhammad bin 'Aqil, perawi diperselisihkan. Menghasankan: Tirmidzi, Al-Albani (Shahih Tirmidzi: hasan), Ibnu Hajar diam di Fathul Bari. Melemahkan: Musthafa Al-'Adawi, Zubair Ali Zai (Ibnu Majah: dha'if).
+- Ibnu Hajar: ayat 4:11 turun untuk dua kisah, dua putri Sa'd dan sakitnya Jabir (HR Bukhari 4577, Muslim 1616, sahih).
+- Kesimpulan kerja: hasan menurut banyak ulama, bukan sahih setingkat Bukhari-Muslim; belum dipastikan dibahas Rumaysho. Menunggu keputusan Bos.
+- Sumber pencarian (tidak dicetak di konten): dorar.net/hadith/sharh/41049, almanhaj.or.id/2021-pembagian-harta-waris.html, islamweb.net/ar/article/205507, shamela.ws/book/7695/53, hadits.tazkia.ac.id/hadits/bab/6:967
