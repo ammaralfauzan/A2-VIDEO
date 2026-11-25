@@ -31,6 +31,8 @@ import {AkunKeluargaH2C} from './AkunKeluargaH2C';
 import {TOTAL_FRAMES as AKH_TOTAL_FRAMES} from './data/timeline-akun-keluarga-h2c';
 import {WasiatMaksimalSepertiga} from './WasiatMaksimalSepertiga';
 import {TOTAL_FRAMES as WMS_TOTAL_FRAMES} from './data/timeline-wasiat-maksimal-sepertiga';
+import {PenghalangWaris} from './PenghalangWaris';
+import {TOTAL_FRAMES as PW_TOTAL_FRAMES} from './data/timeline-penghalang-waris';
 import {BrandSample as TamsBrandSample} from './brands/tams-consulting/BrandSample';
 import {BrandSample as H2cUmrohBrandSample} from './brands/h2c-umroh/BrandSample';
 
@@ -50,6 +52,7 @@ const PManualTemplateOtomatis = withProbe(ManualTemplateOtomatis);
 const PDaftarDanMasukH2C = withProbe(DaftarDanMasukH2C);
 const PAkunKeluargaH2C = withProbe(AkunKeluargaH2C);
 const PWasiatMaksimalSepertiga = withProbe(WasiatMaksimalSepertiga);
+const PPenghalangWaris = withProbe(PenghalangWaris);
 
 for (const weight of ['400', '500', '600']) {
   loadFont({family: 'Geist', url: staticFile(`fonts/geist-sans-latin-${weight}-normal.woff2`), weight});
@@ -116,5 +119,7 @@ export const Root: React.FC = () => (
     <Composition id="AkunKeluargaH2C" component={PAkunKeluargaH2C} durationInFrames={AKH_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} defaultProps={{safeGuide: false}} />
     {/* "Kenapa Wasiat Dibatasi Sepertiga?" (Tams Consulting): batang harta + batas sepertiga, 9:16, tanpa ajakan. */}
     <Composition id="WasiatMaksimalSepertiga" component={PWasiatMaksimalSepertiga} durationInFrames={WMS_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} defaultProps={{safeGuide: false}} />
+    {/* "Hubungan Darah Belum Tentu Cukup" (Tams Consulting): diagram keluarga, kunci + dua gembok penghalang waris, 9:16. */}
+    <Composition id="PenghalangWaris" component={PPenghalangWaris} durationInFrames={PW_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} defaultProps={{safeGuide: false}} />
   </>
 );

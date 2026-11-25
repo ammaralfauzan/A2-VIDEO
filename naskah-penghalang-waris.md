@@ -4,7 +4,7 @@ Format: Reels 9:16 (1080x1920) · Target: 45 dtk · Jalur: 2D · Brand: Tams Con
 Pola: diagram kotak keluarga (bidang rata arang/oranye, sudut bulat penuh) dengan satu kunci "HUBUNGAN DARAH" dan gembok yang menahan satu kotak per penghalang. Tanpa makhluk bernyawa (tanpa orang, tangan, siluet, ikon manusia). Tanpa angka, tanpa pecahan bagian, tanpa ajakan jualan.
 Suara: Kang Nandar (usul, sama dengan #9 dan #13; Brand Kit belum menetapkan), Eleven v3 dengan tag audio.
 
-**STATUS: KONSEP diajukan 25 Nov 2026, menunggu persetujuan Bos.**
+**STATUS: disetujui Bos, dibangun 25 Nov 2026 (BANGUN, 56,2 dtk; suara Jefri).**
 
 ## Sumber (aturan Bos: utamakan Bukhari-Muslim, tampilkan sumber)
 - Beda agama: hadits Usamah bin Zaid, "Muslim tidak mewarisi orang kafir dan orang kafir tidak mewarisi muslim" (HR. Bukhari 6764, Muslim 1614). Pendapat jumhur ulama.
