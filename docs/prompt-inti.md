@@ -2,7 +2,7 @@
 
 Siklus tak berujung: IDE → KONSEP → (Bos buat MP3) → BANGUN → (REVISI) → RILIS → IDE lagi. Setiap room ide/konsep wajib mengecek docs/daftar-konten.md.
 
-Cara pakai: salin **BLOK INTI** + **satu BLOK TAHAP** + isi di bagian "ISIAN" di akhir. Lampirkan MP3 bila tahapnya BANGUN.
+Cara pakai: salin **BLOK INTI** + **satu BLOK TAHAP** + isi di bagian "ISIAN" di akhir. Lampirkan MP3 bila tahapnya BANGUN atau BANGUN 3D.
 
 ## BLOK INTI
 ```
@@ -47,6 +47,14 @@ TAHAP: KONSEP. Sebelum menulis, cek docs/daftar-konten.md; bila ide terlalu miri
 TAHAP: BANGUN. Konsep dan naskah sudah disetujui (lihat serah-terima/<slug>.md dan naskah-<slug>.md); jangan diubah. MP3 suara terlampir: simpan ke public/audio/vo-<slug>.mp3 (jangan menimpa VO lain). Timing: konektor ElevenLabs creative_transcribe_audio bila ada, jika tidak ffmpeg silencedetect (-35dB d=0.25; -30dB d=0.12 untuk koma), simpan src/data/vo-timing-<slug>.json. Suara tidak boleh dipercepat. Bangun komposisi baru (src/<Nama>.tsx, src/scenes/<slug>/, src/data/timeline-<slug>.ts), daftarkan di src/Root.tsx DIBUNGKUS withProbe, tambah SETS di scripts/render-stills.mjs, skrip stills:/render: di package.json, bagian README. Lalu ikuti skill a2-render-rilis: tsc bersih; frame kunci tiap adegan (termasuk tengah transisi) dilihat satu per satu; `node scripts/check-collisions.mjs <Id> --every=15` bersih; render penuh; verifikasi ffprobe, volumedetect, deteksi frame meloncat; `node scripts/cek-regresi.mjs` video lain identik; commit, push; kirim MP4 ke Bos dengan SendUserFile. Jangan memposting. B-ROLL: Bos melampirkan klip B1.mp4, B2.mp4, dan seterusnya (dari prompt B-roll di room KONSEP) bersama MP3. Bangun SEKALI dengan semuanya: sisipkan klip di titik yang ditandai di naskah-<slug>.md memakai pola src/tips-umroh/Broll.tsx (potong ke adegan yang bersih, buang suara klip, layar penuh dengan masuk whip-zoom, geser agar bagian penting tidak tertutup kartu). Bila ada klip yang belum dilampirkan, bangun tanpa klip itu dan sebutkan di laporan. Di akhir jawaban tulis SATU kode blok `ISIAN UNTUK RILIS` berisi baris `slug:`, `brand:`, `format:`, `durasi:` agar Bos bisa menempelkannya di halaman Putaran Video A2 pada Room 5 RILIS.
 ```
 
+## BLOK TAHAP 2B: BANGUN 3D (isian `jalur: 3D`, room Opus)
+```
+TAHAP: BANGUN 3D. Konsep dan naskah sudah disetujui (serah-terima/<slug>.md, naskah-<slug>.md); jangan diubah. Pakai skill a2-film-3d (.claude/skills/a2-film-3d/SKILL.md) dan brands/<kode>/BRAND.md. MP3 terlampir: simpan ke public/audio/vo-<slug>.mp3, ukur durasi dan waktu kata (ffmpeg silencedetect; Whisper bila ada), simpan src/data/vo-timing-<slug>.json. Suara tidak boleh dipercepat; jangan memanggil ElevenLabs.
+Kerjakan film di film3d/<slug>/ (salin kit/ dari skill; jangan commit node_modules). BERHENTI DUA KALI untuk persetujuan Bos: (1) PLAN.md (ide, tabel shot, tampilan, ajakan akhir) tampil di chat; (2) 3 still dikirim dengan SendUserFile. Baru pratinjau (n=4) lalu render final; sebut perkiraan waktu. Tanpa GPU render lambat: bila terlalu lama, beri tahu Bos agar final dijalankan di Mac lokal (npm run final di film3d/<slug>/).
+Tampilan: ikuti Brand Kit brand di ISIAN (A2: palet, Geist, logo resmi). Layar generik berlabel "Simulasi", tanpa merek pihak ketiga dan klaim angka; area aman 9:16 (x 60-900, y 220-1500). Aturan desain adalah pilihan bawaan; 3D yang bagus boleh.
+Selesai: ffprobe (durasi, jumlah frame), volumedetect (sekitar -14 LUFS), cek frame meloncat, lihat frame kunci satu per satu; simpan out/<slug>-9x16.mp4 dan satu frame untuk sampul; perbarui serah-terima; commit, push; kirim MP4 dengan SendUserFile. Jangan memposting. Tulis SATU kode blok ISIAN UNTUK RILIS (slug, brand, format, durasi).
+```
+
 ## BLOK TAHAP 3: REVISI
 ```
 TAHAP: REVISI. Daftar revisi Bos ada di ISIAN (satu daftar, kerjakan semuanya sekaligus, satu kali render). Ubah yang sudah ada sebelum menambah yang baru. Bila Bos melampirkan klip B-roll pengganti atau tambahan (B1, B2, dan seterusnya), sisipkan di titik yang ditandai di naskah-<slug>.md memakai pola src/tips-umroh/Broll.tsx: potong ke adegan yang bersih, buang suara klip, layar penuh dengan masuk whip-zoom, geser agar bagian penting tidak tertutup kartu. Ulangi pemeriksaan skill a2-render-rilis pada bagian yang berubah (frame kunci dilihat, pemeriksa tabrakan, regresi video lain). Tulis pelajaran yang mungkin terulang ke skill di .claude/skills/. Render ulang, kirim MP4, perbarui serah-terima.
@@ -67,6 +75,7 @@ Setelah itu simpan hasilnya juga di serah-terima/<slug>.md sebagai arsip, dan pe
 slug: <huruf-kecil-tanda-hubung>
 brand: A2 Automation
 format: <mis. Reels 9:16>
+jalur: <2D (Remotion, tampilan aplikasi/penjelasan) atau 3D (benda/ruangan)>
 durasi: <mis. 35 dtk>
 ide atau daftar revisi: 
 ```

@@ -10,6 +10,8 @@ Satu video = lima room pendek (IDE → KONSEP → BANGUN → REVISI bila perlu �
 | 3 | **REVISI** (bila perlu) | Sonnet (kecil) / Opus (tata letak, animasi) | Satu daftar revisi dari Bos, selesaikan, render ulang | MP4 baru, **skill diperbarui bila ada pelajaran** | ulangi sampai Bos puas |
 | 4 | **RILIS** | Sonnet | Caption, jam posting, catat ke vault | caption di serah-terima, catatan Obsidian | Bos posting |
 
+**Jalur 3D (2026-11-25):** isian `jalur: 3D` memakai BLOK TAHAP 2B (BANGUN 3D, skill `a2-film-3d`) sebagai pengganti BANGUN. Bedanya: Bos menyetujui PLAN dan 3 still sebelum render; render final bisa dijalankan di Mac lokal. Tahap lain sama.
+
 ## Aturan tampil dan serah-terima (diperbarui 2026-11-19)
 - **Tampil di chat, bukan tautan.** Naskah, prompt suara, blok isian, caption, prompt sampul: semuanya tertulis di chat; yang perlu disalin ada dalam kode blok siap salin. Berkas repo hanya arsip.
 - **Tampilkan dulu, baru minta setuju.** Room KONSEP menampilkan naskah dan prompt suara lebih dulu, baru bertanya persetujuan.
