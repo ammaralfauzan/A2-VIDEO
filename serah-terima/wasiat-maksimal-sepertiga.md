@@ -1,7 +1,7 @@
 # Serah-terima: wasiat-maksimal-sepertiga
 
 - Judul / brand / format / durasi target: Kenapa Wasiat Dibatasi Sepertiga? / Tams Consulting (`tams-consulting`) / 9:16, jalur 2D / target 50 dtk; hasil 61,7 dtk (suara Bos 59,7 dtk, tidak dipercepat)
-- Tahap terakhir selesai: REVISI 1 (25 Nov 2026, room R4), MENUNGGU Bos menonton
+- Tahap terakhir selesai: REVISI 1 (25 Nov 2026, room R4), DISETUJUI Bos; lanjut RILIS (room R5)
 - Keputusan Bos (disetujui, jangan diubah): Brand Kit Tams (20 Nov 2026); edukasi murni tanpa selling; tanpa makhluk bernyawa; tanpa nominal/persentase; konsep, naskah, dan suara (MP3 Jefri 25 Nov 2026) disetujui
 - File penting: `naskah-wasiat-maksimal-sepertiga.md`, `public/audio/vo-wasiat-maksimal-sepertiga.mp3`, `src/data/vo-timing-wasiat-maksimal-sepertiga.json`, komposisi `WasiatMaksimalSepertiga`, `out/wasiat-maksimal-sepertiga-9x16.mp4`
 - Status render: ada (revisi 1), 61,7 dtk, 1080x1920 30 fps, 25 Nov 2026
