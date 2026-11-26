@@ -21,4 +21,5 @@
 - 25 Nov 2026 revisi Bos: caption kinetik baru (Jakarta 800 + Caveat Brush, pil lime, kata muncul satu-satu dengan blur halus), boleh di belakang kartu/angka/ponsel lewat masker siluet tapi tetap terbaca; posisi dihitung dari proyeksi kamera agar tidak menutup layar. Bayangan ganda (ghosting) diganti blur gerak adaptif. Caption ajakan akhir dihapus (layar sudah memuat teksnya).
 - 26 Nov 2026: **final n=8 dirender di cloud** (Mac tidak diperlukan), 14 potongan 5 dtk, digabung dengan `sound/mix.wav`. Cek: 70,0 dtk, 2100 frame, 30 fps, 1080x1920, -14,0 LUFS, 11 frame kunci diperiksa. 18,4 MB (CRF 22). Sampul diambil ulang dari 67,5 dtk.
 - Risiko: waktu langkah tiga ±0,5 dtk; 70 dtk vs target 55; fitur keluarga masih tersembunyi di situs (jangan posting sebelum live); suara/caption menyebut WhatsApp, layar menulis "Pesan"; belum didengar di speaker ponsel; n=8 mungkin sedikit grain.
-- Status: **menunggu Bos** menilai final dan memberi lampu hijau rilis.
+- 26 Nov 2026: **Bos menyetujui final, lanjut RILIS.** Sampul diunggah ke Google Drive (folder H2c-Umroh/akun-keluarga-h2c); MP4 18,4 MB melebihi batas unggah 10 MB dari cloud, diunggah manual oleh Bos.
+- Status: siap room RILIS (caption, jam posting, catatan vault).
