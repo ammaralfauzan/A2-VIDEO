@@ -1,12 +1,12 @@
 # Naskah Video 1: "Umroh 10 Juta" (promo paket Hajar Aswad)
 
-Format: Reels 9:16 (1080x1920), target ±66 dtk · Brand: H2C Umroh (kit `h2c-umroh`, tanpa maskot) · Jalur: 3D (skill `a2-film-3d`; persetujuan PLAN dan 3 still sebelum render)
+Format: Reels 9:16 (1080x1920), target ±66 dtk · Brand: H2C Umroh (kit `h2c-umroh`, tanpa maskot) · Jalur: 2D motion Remotion (revisi Bos 27 Nov; bukan 3D), gaya kartu/bidang rata kit `h2c-umroh`, skill `a2-explainer-kinetik` dan `a2-motion-video`
 Suara: usulan Jefri (Suara Penjelasan Lembut) seperti video #11/#24; Eleven v3 dengan tag audio. Tanpa musik. Pasangan: Video 2 "Cara checkout paket Hajar Aswad" (konsep terpisah, setelah situs siap).
 
-**STATUS: konsep dan naskah disetujui Bos (27 Nov 2026). Berikutnya: MP3 suara dari Bos, lalu BANGUN 3D (layar menunggu sesi situs).**
+**STATUS: konsep dan naskah disetujui Bos (27 Nov 2026). Berikutnya: MP3 suara dari Bos, lalu BANGUN (Remotion 2D; layar menunggu sesi situs).**
 
 ## Konsep
-Satu meja zamrud. Di tengah, batu hitam berbingkai perak (Hajar Aswad sebagai benda, tanpa orang, tanpa tangan) bersinar pelan. Alur sederhana: pilih paket, DP, kode kupon unik, pemenang diumumkan. Empat kartu tingkat (Silver, Gold, Platinum, Diamond) berdiri berurutan di meja; tiap kartu menyala saat disebut dan memperlihatkan dua angka: DP dan harga paket pemenang. Gerak dari kartu, cahaya, kamera; tanpa makhluk bernyawa. Hook memakai kata "cium Hajar Aswad" sebagai impian; visual hanya benda. Ajakan tombol emas `umroh.h2c.or.id`.
+Latar zamrud rata (2D). Di tengah, batu hitam berbingkai perak (Hajar Aswad sebagai benda, tanpa orang, tanpa tangan) bersinar pelan. Alur sederhana: pilih paket, DP, kode kupon unik, pemenang diumumkan. Empat kartu tingkat (Silver, Gold, Platinum, Diamond) berdiri berurutan di meja; tiap kartu menyala saat disebut dan memperlihatkan dua angka: DP dan harga paket pemenang. Gerak dari kartu, cahaya, kamera; tanpa makhluk bernyawa. Hook memakai kata "cium Hajar Aswad" sebagai impian; visual hanya benda. Ajakan tombol emas `umroh.h2c.or.id`.
 
 ## Fakta (dicek ke repo h2c-umroh, cabang `H2C-Umroh`, commit f9058a4, 26 Nov 2026)
 - Tingkat dan harga paket pemenang: Silver DP Rp500.000 → Rp20.000.000; Gold DP Rp1.000.000 → Rp15.000.000; Platinum DP Rp2.500.000 → Rp12.500.000; Diamond DP Rp5.000.000 → Rp10.000.000.
@@ -15,16 +15,16 @@ Satu meja zamrud. Di tengah, batu hitam berbingkai perak (Hajar Aswad sebagai be
 - Dari Bos (27 Nov): kode unik diberikan setelah DP dicek, data kode dipegang admin, fitur undian di situs tetap tersembunyi, undian offline. Situs sedang disiapkan di sesi terpisah (paket "Hajar Aswad" x2, tingkat, kode unik); isi layar video mengikuti hasilnya.
 
 ## Tabel naskah
-| Waktu | Suara | Visual (3D) |
+| Waktu | Suara | Visual (2D) |
 | --- | --- | --- |
 | 0-6 hook | Kamu mau umroh sepuluh juta? Apa, sepuluh juta?! Iya, sepuluh juta. Bisa! | Batu hitam berbingkai perak di meja zamrud sudah bergerak di frame pertama (cahaya emas menyapu bingkai); angka "10 JUTA" emas besar naik dari bawah, berdenyut sekali pada "Bisa!"; kamera maju pelan |
-| 6-12 | Kamu berkesempatan umroh sepuluh juta, hanya dengan menabung baru di H2C, minimal lima ratus ribu rupiah! | Kamera ke monitor: layar H2C (replika berlabel "contoh"), chip "mulai Rp500.000" menyala emas |
+| 6-12 | Kamu berkesempatan umroh sepuluh juta, hanya dengan menabung baru di H2C, minimal lima ratus ribu rupiah! | Layar H2C (replika) masuk: layar H2C (replika berlabel "contoh"), chip "mulai Rp500.000" menyala emas |
 | 12-19 | Ada empat pemenang undian. Syaratnya cuma satu: menabung di platform umroh H2C. | Empat kartu tingkat berdiri di meja; satu kartu emas kecil berputar di atas tiap kartu (pemenang); kupon berkode unik (contoh `UND-XXXXXXXX`) meluncur dari layar |
 | 19-29 | Ikut undiannya gratis. Tabungan semua jamaah tidak ada yang dikurangi. Pemenang murni mendapat hadiah, tanpa memotong tabungan jamaah yang lain. Dan ini halal. | Cap "GRATIS" menekan kartu; angka tabungan di kartu tetap utuh (tidak berkurang) sementara kartu hadiah emas muncul terpisah di samping; centang limau |
-| 29-48 | Ada empat undian, sesuai tabunganmu. Menabung lima ratus ribu, masuk undian Silver. Kalau menang, umroh cukup dua puluh juta. Menabung satu juta, masuk undian Gold. Kalau menang, umroh cukup lima belas juta. Menabung dua setengah juta, masuk undian Platinum. Kalau menang, umroh cukup dua belas setengah juta. Menabung lima juta, masuk undian Diamond. Kalau menang, umroh cukup sepuluh juta! | Kamera menyusur kartu satu per satu; tiap kartu menyala dengan dua baris: "Tabung Rp..." lalu "Menang: umroh Rp..." tepat pada kata yang disebut; Diamond terakhir, bingkai emas penuh dan angka 10 JUTA berdenyut |
+| 29-48 | Ada empat undian, sesuai tabunganmu. Menabung lima ratus ribu, masuk undian Silver. Kalau menang, umroh cukup dua puluh juta. Menabung satu juta, masuk undian Gold. Kalau menang, umroh cukup lima belas juta. Menabung dua setengah juta, masuk undian Platinum. Kalau menang, umroh cukup dua belas setengah juta. Menabung lima juta, masuk undian Diamond. Kalau menang, umroh cukup sepuluh juta! | Kartu bergeser berurutan satu per satu; tiap kartu menyala dengan dua baris: "Tabung Rp..." lalu "Menang: umroh Rp..." tepat pada kata yang disebut; Diamond terakhir, bingkai emas penuh dan angka 10 JUTA berdenyut |
 | 48-52 | Berlaku bagi yang belum mengambil paket umroh dua ribu dua puluh tujuh. | Kartu syarat kecil muncul di depan batu; satu kupon per akun per tingkat (teks layar) |
 | 52-58 | Penasaran caranya? Tunggu video kami selanjutnya. Kami tunjukkan langkahnya satu per satu. | Layar monitor menampilkan tombol putar besar dan lima titik langkah yang menyala berurutan (isyarat Video 2), tulisan "Segera: cara ikutnya"; kartu empat tingkat mundur ke latar |
-| 58-66 ajakan | Tunggu apalagi? Segera ambil paket promo sesuai pilihan dan kemampuan antum. Kunjungi umroh titik H dua C titik or titik id. | Kamera menjauh ke meja utuh; logo bulat asli + tombol emas `umroh.h2c.or.id` mengisi bingkai |
+| 58-66 ajakan | Tunggu apalagi? Segera ambil paket promo sesuai pilihan dan kemampuan antum. Kunjungi umroh titik H dua C titik or titik id. | Semua menyusut ke tengah; logo bulat asli + tombol emas `umroh.h2c.or.id` mengisi bingkai |
 
 Waktu perkiraan; adegan mengikuti MP3 asli (suara tidak dipercepat). Angka kupon dan nama di layar berlabel "contoh". Tanpa janji tanggal pengundian (jadwal belum ada). Durasi ±66 dtk (revisi Bos 27 Nov: panjang tidak dipersoalkan).
 
