@@ -3,7 +3,7 @@
 Format: Reels 9:16 (1080x1920), target 55 dtk · Brand: H2C Umroh (kit `h2c-umroh`, tanpa maskot) · Jalur: layar web asli (replika dari repo h2c-umroh) + kursor bergerak seperti tangan manusia, langkah bernomor besar (pola #23 `daftar-dan-masuk-h2c`, skill `a2-mockup-desktop-kursor` dan `a2-explainer-kinetik`). Bukan 3D semu (pelajaran akun-keluarga-h2c).
 Suara: usulan Jefri (Suara Penjelasan Lembut) seperti Video 1; Eleven v3 dengan tag audio. Tanpa musik. Pasangan Video 1 `naskah-umroh-10-juta.md`.
 
-**STATUS: konsep menunggu persetujuan Bos (27 Nov 2026).**
+**STATUS: konsep dan naskah disetujui Bos (27 Nov 2026). Berikutnya: MP3 suara dari Bos, lalu BANGUN (layar menunggu sesi situs).**
 
 ## Konsep
 Panduan untuk bapak-ibu: lima langkah dari masuk akun sampai kode kupon. Layar akun pelanggan H2C (latar zamrud, kartu paket, panel Checkout seperti situs) ditampilkan penuh; kursor bergerak pelan, angka langkah emas besar di atas layar, kolom yang diisi disorot. Kupon muncul di akhir sebagai kartu berkode unik. Tanpa orang, tangan, atau wajah; hanya layar, kursor, kartu. Ajakan tombol emas `umroh.h2c.or.id`.
