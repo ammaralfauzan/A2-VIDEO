@@ -14,7 +14,7 @@ export const Layar: React.FC<{f: number}> = ({f}) => {
   const chip = pop(f, P.chip500);
   const glow = inP(f, P.chip500 + 8, 20);
   return (
-    <div style={{position: 'absolute', left: 320, top: 290, width: 440, height: 760, opacity: v, transform: `translateY(${(1 - enter) * 140}px) scale(${0.94 + 0.06 * enter})`}}>
+    <div style={{position: 'absolute', left: 320, top: 258, width: 440, height: 760, opacity: v, transformOrigin: '220px 0px', transform: `translateY(${(1 - enter) * 140}px) scale(${1.3 * (0.94 + 0.06 * enter)})`}}>
       <div style={{position: 'absolute', inset: 0, borderRadius: 64, background: U.bg2, border: `3px solid ${U.goldLine}`, boxShadow: '0 60px 120px -40px rgba(0,0,0,.75)', overflow: 'hidden'}}>
         <div style={{position: 'absolute', left: 160, top: 18, width: 120, height: 30, borderRadius: 999, background: U.bg}} />
         {/* kepala situs */}

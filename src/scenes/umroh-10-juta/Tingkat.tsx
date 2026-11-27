@@ -27,9 +27,9 @@ export const Tingkat: React.FC<{f: number}> = ({f}) => {
             style={{
               position: 'absolute',
               left: 180 + i * 185,
-              top: 300,
+              top: 250,
               width: 165,
-              height: 120,
+              height: 140,
               borderRadius: 26,
               boxSizing: 'border-box',
               background: on > 0.5 ? U.surface2 : U.surface,
@@ -45,12 +45,12 @@ export const Tingkat: React.FC<{f: number}> = ({f}) => {
             }}
           >
             <div style={{fontFamily: UF.text, fontWeight: 700, fontSize: 21, color: TIER_COLOR[i], letterSpacing: 0.5}}>{t.name.toUpperCase()}</div>
-            <div style={{fontFamily: UF.display, fontSize: 34, color: U.ivory, lineHeight: 1}}>{t.dpShort}</div>
+            <div style={{fontFamily: UF.display, fontSize: 40, color: U.ivory, lineHeight: 1}}>{t.dpShort}</div>
           </div>
         );
       })}
       {/* kartu besar */}
-      <div style={{position: 'absolute', left: 180, top: 470, width: 720, height: 570, opacity: cardIn, transform: `translateY(${(1 - cardIn) * 60}px)`}}>
+      <div style={{position: 'absolute', left: 180, top: 430, width: 720, height: 830, opacity: cardIn, transform: `translateY(${(1 - cardIn) * 60}px)`}}>
         <Kartu f={f} active={active} />
       </div>
     </div>
@@ -94,9 +94,9 @@ const Pembuka: React.FC<{f: number}> = ({f}) => {
   const out = 1 - inP(f, P.tierOn[0], 8);
   return (
     <div style={{position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', opacity: p * out}}>
-      <div style={{fontFamily: UF.script, fontSize: 84, color: U.goldLight, lineHeight: 1}}>Empat</div>
-      <div style={{...big, fontSize: 150}}>Undian</div>
-      <div style={{fontFamily: UF.text, fontWeight: 600, fontSize: 32, color: U.ivory2, marginTop: 20}}>sesuai tabunganmu</div>
+      <div style={{fontFamily: UF.script, fontSize: 100, color: U.goldLight, lineHeight: 1}}>Empat</div>
+      <div style={{...big, fontSize: 180}}>Undian</div>
+      <div style={{fontFamily: UF.text, fontWeight: 600, fontSize: 38, color: U.ivory2, marginTop: 26}}>sesuai tabunganmu</div>
     </div>
   );
 };
@@ -107,17 +107,17 @@ const Isi: React.FC<{f: number; i: number}> = ({f, i}) => {
   const w = inP(f, P.tierWin[i], 10);
   const pulse = i === 3 ? 1 + 0.08 * interpolate(f, [P.diamondPulse, P.diamondPulse + 6, P.diamondPulse + 16, P.diamondPulse + 22, P.diamondPulse + 30], [0, 1, 0, 0.6, 0], clamp) : 1;
   return (
-    <div style={{position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: 40}}>
-      <div style={{fontFamily: UF.text, fontWeight: 700, fontSize: 24, color: U.sage, letterSpacing: 3}}>UNDIAN</div>
-      <div style={{...big, fontSize: 124, marginTop: 4}}>{t.name}</div>
-      <div style={{display: 'flex', alignItems: 'baseline', gap: 16, marginTop: 34, opacity: dp, transform: `translateY(${(1 - dp) * 16}px)`}}>
-        <span style={{fontFamily: UF.text, fontWeight: 700, fontSize: 32, color: U.sage}}>Tabung</span>
-        <span style={{fontFamily: UF.display, fontSize: 64, color: U.ivory, lineHeight: 1}}>{t.dp}</span>
+    <div style={{position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+      <div style={{fontFamily: UF.text, fontWeight: 700, fontSize: 28, color: U.sage, letterSpacing: 3}}>UNDIAN</div>
+      <div style={{...big, fontSize: 150, marginTop: 6}}>{t.name}</div>
+      <div style={{display: 'flex', alignItems: 'baseline', gap: 16, marginTop: 56, opacity: dp, transform: `translateY(${(1 - dp) * 16}px)`}}>
+        <span style={{fontFamily: UF.text, fontWeight: 700, fontSize: 36, color: U.sage}}>Tabung</span>
+        <span style={{fontFamily: UF.display, fontSize: 76, color: U.ivory, lineHeight: 1}}>{t.dp}</span>
       </div>
-      <div style={{width: 520, height: 3, borderRadius: 2, background: `linear-gradient(90deg, ${U.gold}, ${U.leaf})`, marginTop: 30, opacity: 0.6 * dp, transform: `scaleX(${dp})`}} />
-      <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: 26, opacity: w, transform: `translateY(${(1 - w) * 16}px)`}}>
-        <span style={{fontFamily: UF.text, fontWeight: 700, fontSize: 30, color: U.goldLight}}>Menang: umroh cukup</span>
-        <span style={{fontFamily: UF.display, fontSize: 92, color: U.goldLight, lineHeight: 1.1, transform: `scale(${pulse})`, display: 'inline-block'}}>{t.win}</span>
+      <div style={{width: 520, height: 3, borderRadius: 2, background: `linear-gradient(90deg, ${U.gold}, ${U.leaf})`, marginTop: 50, opacity: 0.6 * dp, transform: `scaleX(${dp})`}} />
+      <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: 46, opacity: w, transform: `translateY(${(1 - w) * 16}px)`}}>
+        <span style={{fontFamily: UF.text, fontWeight: 700, fontSize: 36, color: U.goldLight}}>Menang: umroh cukup</span>
+        <span style={{fontFamily: UF.display, fontSize: 104, color: U.goldLight, lineHeight: 1.15, transform: `scale(${pulse})`, display: 'inline-block'}}>{t.win}</span>
       </div>
     </div>
   );

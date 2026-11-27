@@ -20,8 +20,6 @@ export const Umroh10Juta: React.FC<{safeGuide?: boolean}> = ({safeGuide = false}
     <AbsoluteFill style={{background: U.bg, fontFamily: UF.text, overflow: 'hidden'}}>
       <div style={{position: 'absolute', left: -300, top: -240, width: 1000, height: 1000, borderRadius: '50%', background: 'radial-gradient(circle, rgba(27,78,56,.85) 0%, rgba(10,31,23,0) 70%)'}} />
       <div style={{position: 'absolute', right: -280, bottom: 140, width: 660, height: 660, borderRadius: '50%', border: `2px solid ${U.goldLine}`, opacity: 0.4, transform: `rotate(${f * 0.05}deg)`}} />
-      {/* meja: bidang zamrud sedikit lebih terang di bawah panggung */}
-      <div style={{position: 'absolute', left: -100, right: -100, top: 1060, height: 900, background: `linear-gradient(180deg, ${U.bg2} 0%, ${U.bg} 70%)`, borderTop: `2px solid ${U.goldSoft}`}} />
       <Hook f={f} />
       <Layar f={f} />
       <Undian f={f} />

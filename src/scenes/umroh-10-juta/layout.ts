@@ -1,8 +1,8 @@
 import {eg, sg, wf} from '../../data/timeline-umroh-10-juta';
 
 // Semua fase adegan dihitung dari timing suara (grafis muncul ±4 frame sebelum kata pemicunya).
-// Zona: panggung visual x 180-900, y 260-1060; teks besar (caption) y 1110-1310. Area aman 9:16 x 60-900, y 220-1500.
-export const CAPTION_BOX = {x: 180, y: 1110, w: 720, h: 200};
+// Zona: panggung visual x 180-900, y 240-1270; teks besar (caption) y 1310-1500. Area aman 9:16 x 60-900, y 220-1500.
+export const CAPTION_BOX = {x: 180, y: 1310, w: 720, h: 190};
 
 export const TIERS = [
   {name: 'Silver', dp: 'Rp500.000', dpShort: '500 rb', win: 'Rp20.000.000', seg: 13},

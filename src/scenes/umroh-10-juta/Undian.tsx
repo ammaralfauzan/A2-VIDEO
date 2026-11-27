@@ -31,8 +31,8 @@ export const Undian: React.FC<{f: number}> = ({f}) => {
   const st = pop(f, P.stamp);
   if (rowV <= 0.001 && (cIn <= 0.001 || cOut <= 0.001)) return null;
   // kupon: masuk dari kanan di bawah kartu (y 860), lalu ke tengah (y 520) dan membesar
-  const cy = interpolate(cMid, [0, 1], [858, 470]);
-  const cs = interpolate(cMid, [0, 1], [0.92, 1.08]);
+  const cy = interpolate(cMid, [0, 1], [1000, 560]);
+  const cs = interpolate(cMid, [0, 1], [0.95, 1.16]);
   return (
     <>
       {rowV > 0.001 ? (
@@ -41,15 +41,15 @@ export const Undian: React.FC<{f: number}> = ({f}) => {
             const p = interpolate(f, [P.row[0] + i * 5, P.row[0] + i * 5 + 14], [0, 1], {...clamp, easing: ease});
             const cp = pop(f, P.coins + i * 4);
             return (
-              <div key={t.name} style={{position: 'absolute', left: i * 185, top: 470, width: 165, opacity: p, transform: `translateY(${(1 - p) * 60}px)`}}>
-                <div style={{position: 'absolute', left: 50, top: -84, opacity: Math.min(1, cp), transform: `scale(${cp}) translateY(${Math.sin((f + i * 11) / 14) * 4}px)`}}>
-                  <Koin f={f + i * 7} />
+              <div key={t.name} style={{position: 'absolute', left: i * 185, top: 500, width: 165, opacity: p, transform: `translateY(${(1 - p) * 60}px)`}}>
+                <div style={{position: 'absolute', left: 42.5, top: -104, opacity: Math.min(1, cp), transform: `scale(${cp}) translateY(${Math.sin((f + i * 11) / 14) * 4}px)`}}>
+                  <Koin f={f + i * 7} size={80} />
                 </div>
-                <div style={{...CARD, borderRadius: 28, border: `3px solid ${TIER_COLOR[i]}`, height: 270, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 18}}>
+                <div style={{...CARD, borderRadius: 28, border: `3px solid ${TIER_COLOR[i]}`, height: 380, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 26}}>
                   <div style={{fontFamily: UF.text, fontWeight: 700, fontSize: 25, color: TIER_COLOR[i], letterSpacing: 0.5}}>{t.name.toUpperCase()}</div>
                   <div style={{width: 60, height: 3, borderRadius: 2, background: U.goldLine}} />
-                  <div style={{fontFamily: UF.display, fontSize: 52, color: U.ivory, lineHeight: 1}}>1</div>
-                  <div style={{fontFamily: UF.text, fontWeight: 600, fontSize: 20, color: U.sage}}>pemenang</div>
+                  <div style={{fontFamily: UF.display, fontSize: 76, color: U.ivory, lineHeight: 1}}>1</div>
+                  <div style={{fontFamily: UF.text, fontWeight: 600, fontSize: 22, color: U.sage}}>pemenang</div>
                 </div>
               </div>
             );
