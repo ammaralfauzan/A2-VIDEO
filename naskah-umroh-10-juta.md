@@ -59,6 +59,6 @@ Suara: Jefri (Suara Penjelasan Lembut), usulan · Eleven v3 · Nada: hangat, mey
 2. **"Menabung"**: Bos memutuskan memakai kata "menabung" (27 Nov). Di situs tabungan dimatikan dan yang berjalan DP/cicilan; layar Video 2 memakai "Bayar DP". Risiko kata ini ke izin gateway ditanggung Bos.
 3. **"Halal" dan "gratis"**: "halal" klaim agama, konfirmasi DPS/ustadz sebelum rilis; "gratis" hanya untuk ikut undian (DP tetap jadi cicilan), bukan umrohnya.
 4. **Perumpamaan "cium Hajar Aswad"**: dipakai sebagai impian; tidak ada klaim akan dapat mencium (antrean di Masjidil Haram tidak dijanjikan). Mau diberi penafian singkat di caption?
-4. **Jadwal undian dan batas kupon belum ada**: naskah tidak menyebut tanggal.
-5. **Layar video**: menunggu sesi situs (paket Hajar Aswad, tingkat, kode unik). Sebelum jadi, layar dibuat replika berlabel "contoh".
-6. Suara dan kunci ElevenLabs lewat Bos (MP3 diberikan Bos), seperti video sebelumnya.
+5. **Jadwal undian dan batas kupon belum ada**: naskah tidak menyebut tanggal.
+6. **Layar video**: menunggu sesi situs (paket Hajar Aswad, tingkat, kode unik). Sebelum jadi, layar dibuat replika berlabel "contoh".
+7. Suara dan kunci ElevenLabs lewat Bos (MP3 diberikan Bos), seperti video sebelumnya.
