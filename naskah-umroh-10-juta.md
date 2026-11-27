@@ -3,7 +3,7 @@
 Format: Reels 9:16 (1080x1920), target 55 dtk · Brand: H2C Umroh (kit `h2c-umroh`, tanpa maskot) · Jalur: 3D (skill `a2-film-3d`; persetujuan PLAN dan 3 still sebelum render)
 Suara: usulan Jefri (Suara Penjelasan Lembut) seperti video #11/#24; Eleven v3 dengan tag audio. Tanpa musik. Pasangan: Video 2 "Cara checkout paket Hajar Aswad" (konsep terpisah, setelah situs siap).
 
-**STATUS: konsep menunggu persetujuan Bos (27 Nov 2026).**
+**STATUS: konsep dan naskah disetujui Bos (27 Nov 2026). Berikutnya: MP3 suara dari Bos, lalu BANGUN 3D (layar menunggu sesi situs).**
 
 ## Konsep
 Satu meja zamrud. Di tengah, batu hitam berbingkai perak (Hajar Aswad sebagai benda, tanpa orang, tanpa tangan) bersinar pelan. Alur sederhana: pilih paket, DP, kode kupon unik, pemenang diumumkan. Empat kartu tingkat (Silver, Gold, Platinum, Diamond) berdiri berurutan di meja; tiap kartu menyala saat disebut dan memperlihatkan dua angka: DP dan harga paket pemenang. Gerak dari kartu, cahaya, kamera; tanpa makhluk bernyawa. Hook memakai kata "cium Hajar Aswad" sebagai impian; visual hanya benda. Ajakan tombol emas `umroh.h2c.or.id`.
