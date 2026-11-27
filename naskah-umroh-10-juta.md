@@ -24,7 +24,7 @@ Satu meja zamrud. Di tengah, batu hitam berbingkai perak (Hajar Aswad sebagai be
 | 29-48 | Ada empat undian, sesuai tabunganmu. Menabung lima ratus ribu, masuk undian Silver. Kalau menang, umroh cukup dua puluh juta. Menabung satu juta, masuk undian Gold. Kalau menang, umroh cukup lima belas juta. Menabung dua setengah juta, masuk undian Platinum. Kalau menang, umroh cukup dua belas setengah juta. Menabung lima juta, masuk undian Diamond. Kalau menang, umroh cukup sepuluh juta! | Kamera menyusur kartu satu per satu; tiap kartu menyala dengan dua baris: "Tabung Rp..." lalu "Menang: umroh Rp..." tepat pada kata yang disebut; Diamond terakhir, bingkai emas penuh dan angka 10 JUTA berdenyut |
 | 48-52 | Berlaku bagi yang belum mengambil paket umroh dua ribu dua puluh tujuh. | Kartu syarat kecil muncul di depan batu; satu kupon per akun per tingkat (teks layar) |
 | 52-58 | Penasaran caranya? Tunggu video kami selanjutnya. Kami tunjukkan langkahnya satu per satu. | Layar monitor menampilkan tombol putar besar dan lima titik langkah yang menyala berurutan (isyarat Video 2), tulisan "Segera: cara ikutnya"; kartu empat tingkat mundur ke latar |
-| 58-66 ajakan | Tunggu apalagi? Pilih tingkatmu sekarang. Kunjungi umroh titik H dua C titik or titik id. | Kamera menjauh ke meja utuh; logo bulat asli + tombol emas `umroh.h2c.or.id` mengisi bingkai |
+| 58-66 ajakan | Tunggu apalagi? Segera ambil paket promo sesuai pilihan dan kemampuan antum. Kunjungi umroh titik H dua C titik or titik id. | Kamera menjauh ke meja utuh; logo bulat asli + tombol emas `umroh.h2c.or.id` mengisi bingkai |
 
 Waktu perkiraan; adegan mengikuti MP3 asli (suara tidak dipercepat). Angka kupon dan nama di layar berlabel "contoh". Tanpa janji tanggal pengundian (jadwal belum ada). Durasi ±66 dtk (revisi Bos 27 Nov: panjang tidak dipersoalkan).
 
@@ -54,7 +54,9 @@ Suara: Jefri (Suara Penjelasan Lembut), usulan · Eleven v3 · Nada: hangat, mey
 
 [curious] Penasaran caranya? Tunggu video kami selanjutnya. Kami tunjukkan langkahnya satu per satu.
 
-[excited] Tunggu apalagi? Pilih tingkatmu sekarang. Kunjungi umroh titik H dua C titik or titik id.
+[excited] Tunggu apalagi? segera ambil paket promo sesuai pilihan dan kemampuan antum.
+
+[excited] Kunjungi umroh titik H dua C titik or titik id.
 ```
 
 ## Risiko / asumsi (butuh keputusan Bos)
