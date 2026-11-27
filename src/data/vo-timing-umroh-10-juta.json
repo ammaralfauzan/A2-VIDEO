@@ -1,0 +1,168 @@
+{
+ "audio": "public/audio/vo-umroh-10-juta.mp3",
+ "durasi": 73.09,
+ "suara": "Jefri - Suara Penjelasan Lembut (ElevenLabs v4, s50 sim75), MP3 dari Bos 27 Nov 2026, tidak dipercepat",
+ "metode": "ffmpeg silencedetect -35 dB/0,25 dtk, lalu -30 dB/0,1 dtk dan -25 dB/0,05 dtk untuk hook, Diamond, penutup; 32 potongan dipetakan ke naskah final dari urutan dan laju suku kata. Belum didengar manusia.",
+ "potongan": [
+  {
+   "mulai": 0.0,
+   "selesai": 1.59,
+   "teks": "Kamu mau umroh sepuluh juta?"
+  },
+  {
+   "mulai": 1.81,
+   "selesai": 3.23,
+   "teks": "Apa, sepuluh juta?!"
+  },
+  {
+   "mulai": 3.9,
+   "selesai": 5.27,
+   "teks": "Iya, sepuluh juta."
+  },
+  {
+   "mulai": 5.43,
+   "selesai": 5.95,
+   "teks": "Bisa!"
+  },
+  {
+   "mulai": 6.27,
+   "selesai": 12.38,
+   "teks": "Kamu berkesempatan umroh sepuluh juta, hanya dengan menabung baru di H dua C, minimal lima ratus ribu rupiah!"
+  },
+  {
+   "mulai": 12.7,
+   "selesai": 14.03,
+   "teks": "Ada empat pemenang undian."
+  },
+  {
+   "mulai": 14.3,
+   "selesai": 15.51,
+   "teks": "Syaratnya cuma satu:"
+  },
+  {
+   "mulai": 15.82,
+   "selesai": 17.98,
+   "teks": "menabung di platform umroh H dua C."
+  },
+  {
+   "mulai": 18.3,
+   "selesai": 19.65,
+   "teks": "Ikut undiannya gratis."
+  },
+  {
+   "mulai": 19.96,
+   "selesai": 22.42,
+   "teks": "Tabungan semua jamaah tidak ada yang dikurangi."
+  },
+  {
+   "mulai": 22.7,
+   "selesai": 26.38,
+   "teks": "Pemenang murni mendapat hadiah, tanpa memotong tabungan jamaah yang lain."
+  },
+  {
+   "mulai": 26.7,
+   "selesai": 27.65,
+   "teks": "Dan ini halal."
+  },
+  {
+   "mulai": 27.98,
+   "selesai": 30.62,
+   "teks": "Ada empat undian, sesuai tabunganmu."
+  },
+  {
+   "mulai": 31.05,
+   "selesai": 33.89,
+   "teks": "Menabung lima ratus ribu, masuk undian Silver."
+  },
+  {
+   "mulai": 34.37,
+   "selesai": 35.0,
+   "teks": "Kalau menang,"
+  },
+  {
+   "mulai": 35.26,
+   "selesai": 37.0,
+   "teks": "umroh cukup dua puluh juta."
+  },
+  {
+   "mulai": 37.42,
+   "selesai": 40.09,
+   "teks": "Menabung satu juta, masuk undian Gold."
+  },
+  {
+   "mulai": 40.48,
+   "selesai": 41.09,
+   "teks": "Kalau menang,"
+  },
+  {
+   "mulai": 41.38,
+   "selesai": 43.1,
+   "teks": "umroh cukup lima belas juta."
+  },
+  {
+   "mulai": 43.53,
+   "selesai": 46.78,
+   "teks": "Menabung dua setengah juta, masuk undian Platinum."
+  },
+  {
+   "mulai": 47.14,
+   "selesai": 47.78,
+   "teks": "Kalau menang,"
+  },
+  {
+   "mulai": 48.06,
+   "selesai": 50.01,
+   "teks": "umroh cukup dua belas setengah juta."
+  },
+  {
+   "mulai": 50.4,
+   "selesai": 52.98,
+   "teks": "Menabung lima juta, masuk undian Diamond."
+  },
+  {
+   "mulai": 53.24,
+   "selesai": 53.84,
+   "teks": "Kalau menang,"
+  },
+  {
+   "mulai": 53.99,
+   "selesai": 55.52,
+   "teks": "umroh cukup sepuluh juta!"
+  },
+  {
+   "mulai": 55.81,
+   "selesai": 59.27,
+   "teks": "Berlaku bagi yang belum mengambil paket umroh dua ribu dua puluh tujuh."
+  },
+  {
+   "mulai": 59.56,
+   "selesai": 60.46,
+   "teks": "Penasaran caranya?"
+  },
+  {
+   "mulai": 60.9,
+   "selesai": 62.18,
+   "teks": "Tunggu video kami selanjutnya."
+  },
+  {
+   "mulai": 62.45,
+   "selesai": 64.53,
+   "teks": "Kami tunjukkan langkahnya satu per satu."
+  },
+  {
+   "mulai": 64.81,
+   "selesai": 65.68,
+   "teks": "Tunggu apalagi?"
+  },
+  {
+   "mulai": 65.9,
+   "selesai": 69.07,
+   "teks": "Segera ambil paket promo sesuai pilihan dan kemampuan antum."
+  },
+  {
+   "mulai": 69.29,
+   "selesai": 72.87,
+   "teks": "Kunjungi umroh titik H dua C titik or titik id."
+  }
+ ]
+}

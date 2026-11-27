@@ -35,6 +35,8 @@ import {PenghalangWaris} from './PenghalangWaris';
 import {TOTAL_FRAMES as PW_TOTAL_FRAMES} from './data/timeline-penghalang-waris';
 import {DuluTakDapatBagian} from './DuluTakDapatBagian';
 import {TOTAL_FRAMES as DTB_TOTAL_FRAMES} from './data/timeline-dulu-tak-dapat-bagian';
+import {Umroh10Juta} from './Umroh10Juta';
+import {TOTAL_FRAMES as U10_TOTAL_FRAMES} from './data/timeline-umroh-10-juta';
 import {BrandSample as TamsBrandSample} from './brands/tams-consulting/BrandSample';
 import {BrandSample as H2cUmrohBrandSample} from './brands/h2c-umroh/BrandSample';
 
@@ -56,6 +58,7 @@ const PAkunKeluargaH2C = withProbe(AkunKeluargaH2C);
 const PWasiatMaksimalSepertiga = withProbe(WasiatMaksimalSepertiga);
 const PPenghalangWaris = withProbe(PenghalangWaris);
 const PDuluTakDapatBagian = withProbe(DuluTakDapatBagian);
+const PUmroh10Juta = withProbe(Umroh10Juta);
 
 for (const weight of ['400', '500', '600']) {
   loadFont({family: 'Geist', url: staticFile(`fonts/geist-sans-latin-${weight}-normal.woff2`), weight});
@@ -119,6 +122,8 @@ export const Root: React.FC = () => (
     <Composition id="ManualTemplateOtomatis" component={PManualTemplateOtomatis} durationInFrames={MTO_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} defaultProps={{safeGuide: false}} />
     {/* "Daftar dan Masuk Akun H2C": replika web umroh H2C + kursor manusiawi, brand H2C Umroh, 9:16. */}
     <Composition id="DaftarDanMasukH2C" component={PDaftarDanMasukH2C} durationInFrames={DMH_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} defaultProps={{safeGuide: false}} />
+ {/* "Umroh 10 Juta": promo paket Hajar Aswad, brand H2C Umroh, 2D motion, 9:16. */}
+    <Composition id="Umroh10Juta" component={PUmroh10Juta} durationInFrames={U10_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} defaultProps={{safeGuide: false}} />
     <Composition id="AkunKeluargaH2C" component={PAkunKeluargaH2C} durationInFrames={AKH_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} defaultProps={{safeGuide: false}} />
     {/* "Kenapa Wasiat Dibatasi Sepertiga?" (Tams Consulting): batang harta + batas sepertiga, 9:16, tanpa ajakan. */}
     <Composition id="WasiatMaksimalSepertiga" component={PWasiatMaksimalSepertiga} durationInFrames={WMS_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} defaultProps={{safeGuide: false}} />

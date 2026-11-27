@@ -140,6 +140,13 @@ SETS.ManualTemplateOtomatis = {
 };
 
 // Frame kunci "Daftar dan Masuk Akun H2C" dihitung dari timing suara (termasuk tengah transisi).
+SETS.Umroh10Juta = {
+  dir: 'out/stills/umroh-10-juta',
+  get stills() {
+    return JSON.parse(execSync('npx tsx scripts/umroh-10-juta-frames.ts', {encoding: 'utf8'}));
+  },
+};
+
 SETS.DaftarDanMasukH2C = {
   dir: 'out/stills/daftar-dan-masuk-h2c',
   get stills() {

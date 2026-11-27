@@ -26,6 +26,8 @@
     "stills:otomatisasi-resep": "node scripts/render-stills.mjs OtomatisasiSepertiResep",
     "stills:manual-template-otomatis": "node scripts/render-stills.mjs ManualTemplateOtomatis",
     "render:manual-template-otomatis": "remotion render ManualTemplateOtomatis out/manual-template-otomatis-9x16.mp4 --concurrency=4",
+    "stills:umroh-10-juta": "node scripts/render-stills.mjs Umroh10Juta",
+    "render:umroh-10-juta": "remotion render Umroh10Juta out/umroh-10-juta-9x16.mp4 --concurrency=4",
     "stills:daftar-dan-masuk-h2c": "node scripts/render-stills.mjs DaftarDanMasukH2C",
     "render:daftar-dan-masuk-h2c": "remotion render DaftarDanMasukH2C out/daftar-dan-masuk-h2c-9x16.mp4 --concurrency=4",
     "stills:tiga-hal-waris": "node scripts/render-stills.mjs TigaHalSebelumWaris",
