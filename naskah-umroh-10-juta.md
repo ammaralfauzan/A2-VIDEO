@@ -1,6 +1,6 @@
 # Naskah Video 1: "Umroh 10 Juta" (promo paket Hajar Aswad)
 
-Format: Reels 9:16 (1080x1920), target ±60 dtk · Brand: H2C Umroh (kit `h2c-umroh`, tanpa maskot) · Jalur: 3D (skill `a2-film-3d`; persetujuan PLAN dan 3 still sebelum render)
+Format: Reels 9:16 (1080x1920), target ±66 dtk · Brand: H2C Umroh (kit `h2c-umroh`, tanpa maskot) · Jalur: 3D (skill `a2-film-3d`; persetujuan PLAN dan 3 still sebelum render)
 Suara: usulan Jefri (Suara Penjelasan Lembut) seperti video #11/#24; Eleven v3 dengan tag audio. Tanpa musik. Pasangan: Video 2 "Cara checkout paket Hajar Aswad" (konsep terpisah, setelah situs siap).
 
 **STATUS: konsep dan naskah disetujui Bos (27 Nov 2026). Berikutnya: MP3 suara dari Bos, lalu BANGUN 3D (layar menunggu sesi situs).**
@@ -23,9 +23,10 @@ Satu meja zamrud. Di tengah, batu hitam berbingkai perak (Hajar Aswad sebagai be
 | 19-29 | Ikut undiannya gratis. Tabungan semua jamaah tidak ada yang dikurangi. Pemenang murni mendapat hadiah, tanpa memotong tabungan jamaah yang lain. Dan ini halal. | Cap "GRATIS" menekan kartu; angka tabungan di kartu tetap utuh (tidak berkurang) sementara kartu hadiah emas muncul terpisah di samping; centang limau |
 | 29-48 | Ada empat undian, sesuai tabunganmu. Menabung lima ratus ribu, masuk undian Silver. Kalau menang, umroh cukup dua puluh juta. Menabung satu juta, masuk undian Gold. Kalau menang, umroh cukup lima belas juta. Menabung dua setengah juta, masuk undian Platinum. Kalau menang, umroh cukup dua belas setengah juta. Menabung lima juta, masuk undian Diamond. Kalau menang, umroh cukup sepuluh juta! | Kamera menyusur kartu satu per satu; tiap kartu menyala dengan dua baris: "Tabung Rp..." lalu "Menang: umroh Rp..." tepat pada kata yang disebut; Diamond terakhir, bingkai emas penuh dan angka 10 JUTA berdenyut |
 | 48-52 | Berlaku bagi yang belum mengambil paket umroh dua ribu dua puluh tujuh. | Kartu syarat kecil muncul di depan batu; satu kupon per akun per tingkat (teks layar) |
-| 52-60 ajakan | Tunggu apalagi? Pilih tingkatmu sekarang. Kunjungi umroh titik H dua C titik or titik id. | Kamera menjauh ke meja utuh; logo bulat asli + tombol emas `umroh.h2c.or.id` mengisi bingkai |
+| 52-58 | Penasaran caranya? Tunggu video kami selanjutnya. Kami tunjukkan langkahnya satu per satu. | Layar monitor menampilkan tombol putar besar dan lima titik langkah yang menyala berurutan (isyarat Video 2), tulisan "Segera: cara ikutnya"; kartu empat tingkat mundur ke latar |
+| 58-66 ajakan | Tunggu apalagi? Pilih tingkatmu sekarang. Kunjungi umroh titik H dua C titik or titik id. | Kamera menjauh ke meja utuh; logo bulat asli + tombol emas `umroh.h2c.or.id` mengisi bingkai |
 
-Waktu perkiraan; adegan mengikuti MP3 asli (suara tidak dipercepat). Angka kupon dan nama di layar berlabel "contoh". Tanpa janji tanggal pengundian (jadwal belum ada). Durasi ±60 dtk (revisi Bos 27 Nov: panjang tidak dipersoalkan).
+Waktu perkiraan; adegan mengikuti MP3 asli (suara tidak dipercepat). Angka kupon dan nama di layar berlabel "contoh". Tanpa janji tanggal pengundian (jadwal belum ada). Durasi ±66 dtk (revisi Bos 27 Nov: panjang tidak dipersoalkan).
 
 ## Prompt suara ElevenLabs (siap salin)
 Suara: Jefri (Suara Penjelasan Lembut), usulan · Eleven v3 · Nada: hangat, meyakinkan, tidak berlebihan · Target ±55 dtk
@@ -51,13 +52,15 @@ Suara: Jefri (Suara Penjelasan Lembut), usulan · Eleven v3 · Nada: hangat, mey
 
 [warmly] Berlaku bagi yang belum mengambil paket umroh dua ribu dua puluh tujuh.
 
+[curious] Penasaran caranya? Tunggu video kami selanjutnya. Kami tunjukkan langkahnya satu per satu.
+
 [excited] Tunggu apalagi? Pilih tingkatmu sekarang. Kunjungi umroh titik H dua C titik or titik id.
 ```
 
 ## Risiko / asumsi (butuh keputusan Bos)
 1. **"Umroh 10 juta"**: hanya tingkat Diamond (pemenang membayar Rp10 jt). Hook jujur karena kata "bisa" + angka tiap tingkat disebut, tetapi tidak boleh diubah jadi "gratis" atau "tiket".
 2. **"Menabung"**: Bos memutuskan memakai kata "menabung" (27 Nov). Di situs tabungan dimatikan dan yang berjalan DP/cicilan; layar Video 2 memakai "Bayar DP". Risiko kata ini ke izin gateway ditanggung Bos.
-3. **"Halal" dan "gratis"**: "halal" klaim agama, konfirmasi DPS/ustadz sebelum rilis; "gratis" hanya untuk ikut undian (DP tetap jadi cicilan), bukan umrohnya.
+3. **"Halal" dan "gratis"**: "halal" sudah dikonsultasikan Bos dan dinyatakan aman (27 Nov, tanpa catatan tertulis di repo); "gratis" hanya untuk ikut undian (DP tetap jadi cicilan), bukan umrohnya.
 4. **Perumpamaan "cium Hajar Aswad"**: dipakai sebagai impian; tidak ada klaim akan dapat mencium (antrean di Masjidil Haram tidak dijanjikan). Mau diberi penafian singkat di caption?
 5. **Jadwal undian dan batas kupon belum ada**: naskah tidak menyebut tanggal.
 6. **Layar video**: menunggu sesi situs (paket Hajar Aswad, tingkat, kode unik). Sebelum jadi, layar dibuat replika berlabel "contoh".
