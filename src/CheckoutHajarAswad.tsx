@@ -2,9 +2,10 @@ import React from 'react';
 import {AbsoluteFill, Html5Audio, staticFile, useCurrentFrame} from 'remotion';
 import {U, UF} from './brands/h2c-umroh/theme';
 import {Pengumuman, Penutup, SemuaTingkat} from './scenes/checkout-hajar-aswad/Akhir';
-import {Langkah1, Langkah2, Langkah3, Langkah4, Langkah5, Pembuka} from './scenes/checkout-hajar-aswad/Langkah';
+import {Pembuka} from './scenes/checkout-hajar-aswad/Langkah';
+import {Langkah1, Langkah2, Langkah3, Langkah4, Langkah5} from './scenes/checkout-hajar-aswad/LangkahWeb';
 import {Sfx} from './scenes/checkout-hajar-aswad/Sfx';
-import {Jalur, Ketuk, Latar, Subtitle} from './scenes/checkout-hajar-aswad/Web';
+import {Jalur, Latar, Subtitle} from './scenes/checkout-hajar-aswad/Web';
 
 // "Cara Checkout Paket Hajar Aswad" (Video 2 promo, brand H2C Umroh, 9:16), full visual.
 // Layar = tangkapan web asli umroh.h2c.or.id tampilan mobile (langkah 1-2; checkout/pesanan butuh login: replika),
@@ -25,7 +26,6 @@ export const CheckoutHajarAswad: React.FC<{safeGuide?: boolean}> = ({safeGuide =
       <Pengumuman f={f} />
       <SemuaTingkat f={f} />
       <Penutup f={f} />
-      <Ketuk f={f} />
       <Subtitle f={f} />
       <Html5Audio src={staticFile('audio/vo-checkout-hajar-aswad.mp3')} />
       <Sfx />

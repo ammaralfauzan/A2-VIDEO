@@ -1,4 +1,4 @@
-import {e, s, TOTAL_FRAMES} from '../../data/timeline-checkout-hajar-aswad';
+import {e, s, sn, TOTAL_FRAMES} from '../../data/timeline-checkout-hajar-aswad';
 
 // Tata letak "Cara Checkout Paket Hajar Aswad": seluruh bingkai = tampilan mobile web umroh.h2c.or.id (replika).
 // Area aman 9:16: x 60-900, y 220-1500. Kolom isi x 150-900 (tengah 525).
@@ -35,7 +35,13 @@ export const P = {
   drawer: s('masuk') + 18,
   tapPaket: s('paket') + 3,
 
+  // langkah 1 versi web asli: beranda -> Masuk -> akun -> menu Paket
+  keMasuk: s('masuk'),
+  keAkun: sn('masuk', 4) + 8,
+  kePaket: s('paket'),
   step2: [s('dua') - 6, s('tiga') - 6] as [number, number],
+  pilihPaket: sn('dua', 1) - 3,
+  keDetail: s('tingkat') - 14,
   standar: s('standar') - 3,
   premium: s('premium') - 3,
   tapStandar: e('premium') + 4,
@@ -79,13 +85,3 @@ export const P = {
 // Langkah aktif (0 = pembuka, 1-5 = langkah, 6 = sesudah langkah).
 export const STEP_STARTS = [P.step1[0], P.step2[0], P.step3[0], P.step4[0], P.step5[0], P.umum[0]];
 export const stepAt = (f: number) => STEP_STARTS.reduce((acc, at, i) => (f >= at ? i + 1 : acc), 0);
-
-// Ketukan (titik emas, bukan tangan): [frame, x, y].
-export const TAPS: [number, number, number][] = [
-  [P.tapMasuk, ...winPt(195, 315, 40)],
-  [P.tapPlus, 806, 694],
-  [P.tapDp, 232, 853],
-  [P.tapWa, 700, 1022],
-  [P.tapCheckout, COL.cx + 220, 888],
-  [P.simpan, 800, 1040],
-];

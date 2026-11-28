@@ -127,7 +127,7 @@ Video 2 promo Hajar Aswad, full visual + subtitle penuh: layar = web asli umroh.
 
 - `npm run stills:checkout-hajar-aswad` · `npm run render:checkout-hajar-aswad` → `out/checkout-hajar-aswad-9x16.mp4`
 - Timing per kata dari transkrip ElevenLabs Scribe di `src/data/vo-timing-checkout-hajar-aswad.json` (`kata: [{w, s, e}]`); adegan mencari kata pemicu sendiri dan subtitle dibentuk dari kata asli (`src/data/timeline-checkout-hajar-aswad.ts`).
-- Layar langkah 1-2 = tangkapan web asli tampilan mobile (`public/brands/h2c-umroh/web/`, dibuat `node scripts/tangkap-web-mobile.mjs <folder> nama=url[@tinggi]`), harga/tanggal sementara dikaburkan. Langkah 3-5 masih replika (butuh login).
+- Layar langkah 1-5 = halaman asli umroh.h2c.or.id (HTML+CSS+font situs) dirender di iframe (`Situs.tsx`), dengan petunjuk animasi; mulai dari beranda. Halaman dirakit `python3 -I scripts/situs-h2c-halaman.py <folder-html-mentah>` ke `public/brands/h2c-umroh/situs/halaman/`. Demo pembayaran Silver (data contoh, tanpa transaksi nyata). `scripts/tangkap-web-mobile.mjs` = alat tangkap layar mobile untuk acuan.
 
 ## Video: "Satu Akun untuk Sekeluarga" (komposisi `AkunKeluargaH2C`, 9:16, brand H2C Umroh)
 - Naskah: `naskah-akun-keluarga-h2c.md`. Lanjutan #11: akun keluarga dalam empat langkah (tambah anggota, kirim ID dan sandi, anggota masuk dengan ID keluarga, belikan paket; maks. 4 anggota). Meja 3D semu di Remotion: monitor di meja zamrud dengan cahaya tirai emas, kamera mendekat ke layar tiap langkah dan pindah ke ponsel (fokus kabur di monitor) saat ID dikirim, angka langkah besar yang mengecil jadi lencana, empat kartu nama berdiri di meja (nama fiktif berlabel "contoh"), penutup logo asli + tombol emas `umroh.h2c.or.id`. Tanpa makhluk bernyawa, tanpa maskot

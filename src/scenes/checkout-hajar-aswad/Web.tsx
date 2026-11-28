@@ -4,7 +4,7 @@ import {BIG_GRADIENT, BTN, CARD, U, UF} from '../../brands/h2c-umroh/theme';
 import {clamp, ease} from '../../components/motion';
 import {inP, pop, win} from '../umroh-10-juta/anim';
 import {SUBS} from '../../data/timeline-checkout-hajar-aswad';
-import {COL, HEADER, LABEL, P, stepAt, TAPS, TIER_RIM, TIERS, TRACK} from './layout';
+import {COL, LABEL, P, stepAt, TIER_RIM, TIERS, TRACK} from './layout';
 
 // Bagian bersama: latar web, kepala situs mobile, jalur 5 langkah, lencana, kartu tiket, titik ketuk, label.
 
@@ -26,30 +26,6 @@ export const Latar: React.FC<{f: number}> = ({f}) => (
     <div style={{position: 'absolute', right: -300, bottom: 160, width: 680, height: 680, borderRadius: '50%', border: `2px solid ${U.goldLine}`, opacity: 0.35, transform: `rotate(${f * 0.05}deg)`}} />
   </>
 );
-
-// Kepala situs mobile: logo bulat + H2C / WISATA MANDIRI, tombol WhatsApp hijau, pil Masuk, menu.
-export const Kepala: React.FC<{f: number}> = ({f}) => {
-  const p = inP(f, 0, 12) * (1 - inP(f, P.outro, 10));
-  if (p <= 0.001) return null;
-  return (
-    <div style={{position: 'absolute', left: 60, width: 840, top: HEADER.y, height: HEADER.h, display: 'flex', alignItems: 'center', gap: 18, opacity: p, transform: `translateY(${(1 - p) * -30}px)`}}>
-      <Img src={staticFile('brands/h2c-umroh/logo.jpeg')} style={{width: 84, height: 84, borderRadius: '50%', border: `2px solid ${U.goldLine}`}} />
-      <div style={{display: 'flex', flexDirection: 'column', flex: 1, lineHeight: 1.05}}>
-        <span style={{fontFamily: UF.display, fontWeight: 700, fontSize: 40, color: U.ivory}}>H2C</span>
-        <span style={{fontFamily: UF.text, fontWeight: 700, fontSize: 17, letterSpacing: 2.5, color: U.sage}}>WISATA MANDIRI</span>
-      </div>
-      <div style={{width: 68, height: 68, borderRadius: '50%', background: '#25D366', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-        <IkonWa size={38} color="#FFFFFF" />
-      </div>
-      <div style={{height: 64, padding: '0 26px', borderRadius: 999, border: `2px solid ${U.goldLine}`, display: 'flex', alignItems: 'center', fontFamily: UF.text, fontWeight: 700, fontSize: 26, color: U.ivory}}>Masuk</div>
-      <div style={{width: 68, height: 68, borderRadius: 20, border: `2px solid ${U.goldLine}`, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 7}}>
-        {[0, 1, 2].map((k) => (
-          <span key={k} style={{width: 30, height: 3.5, borderRadius: 2, background: U.ivory}} />
-        ))}
-      </div>
-    </div>
-  );
-};
 
 export const IkonWa: React.FC<{size: number; color: string}> = ({size, color}) => (
   <svg width={size} height={size} viewBox="0 0 24 24">
@@ -158,22 +134,6 @@ export const Tiket: React.FC<{jenis: 'standar' | 'premium'; w: number; glow?: nu
         <span style={{flex: 1, borderTop: `2px dashed ${U.sage}`, opacity: 0.6}} />
         <span>KSA</span>
       </div>
-    </div>
-  );
-};
-
-// Titik ketuk emas (pengganti jari): muncul, menekan, riak.
-export const Ketuk: React.FC<{f: number}> = ({f}) => {
-  const t = TAPS.find(([at]) => f >= at - 10 && f <= at + 18);
-  if (!t) return null;
-  const [at, x, y] = t;
-  const show = inP(f, at - 10, 6) * (1 - inP(f, at + 10, 8));
-  const press = interpolate(f, [at - 3, at, at + 5], [0, 1, 0], clamp);
-  const ring = interpolate(f, [at, at + 18], [0, 1], clamp);
-  return (
-    <div style={{position: 'absolute', left: 0, top: 0, pointerEvents: 'none'}}>
-      {f >= at ? <div style={{position: 'absolute', left: x - 60, top: y - 60, width: 120, height: 120, borderRadius: '50%', border: `5px solid ${U.gold}`, transform: `scale(${0.3 + ring})`, opacity: 1 - ring}} /> : null}
-      <div style={{position: 'absolute', left: x - 26, top: y - 26, width: 52, height: 52, borderRadius: '50%', background: 'rgba(227,199,140,.9)', border: `4px solid ${U.ribbonInk}`, boxShadow: '0 8px 22px rgba(0,0,0,.45)', opacity: show, transform: `scale(${1 - 0.25 * press})`}} />
     </div>
   );
 };
