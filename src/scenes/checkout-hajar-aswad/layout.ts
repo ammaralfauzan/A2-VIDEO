@@ -1,11 +1,14 @@
-import {e, s, sn, TOTAL_FRAMES} from '../../data/timeline-checkout-hajar-aswad';
+import {e, s, TOTAL_FRAMES} from '../../data/timeline-checkout-hajar-aswad';
 
 // Tata letak "Cara Checkout Paket Hajar Aswad": seluruh bingkai = tampilan mobile web umroh.h2c.or.id (replika).
 // Area aman 9:16: x 60-900, y 220-1500. Kolom isi x 150-900 (tengah 525).
-// Zona: kepala situs y 236-336, jalur 5 langkah y 362-430, panggung y 460-1290, label 1-3 kata y 1330-1470.
+// Zona: jalur 5 langkah y 260-340, panggung y 380-1290 (jendela web asli y 380-1270), subtitle y 1330-1470.
+// Jendela HP berisi tangkapan web asli (lebar CSS 390, skala WIN.k). Koordinat tutupan/ketukan di jendela = px CSS halaman.
+export const WIN = {x: 205, y: 380, w: 640, h: 890, k: 640 / 390} as const;
+export const winPt = (cx: number, cy: number, top: number) => [WIN.x + cx * WIN.k, WIN.y + (cy - top) * WIN.k] as const;
 export const COL = {x: 150, w: 750, cx: 525} as const;
 export const HEADER = {y: 236, h: 100} as const;
-export const TRACK = {y: 396, x0: 225, gap: 150, r: 30} as const; // pusat titik langkah k: x0 + k*gap
+export const TRACK = {y: 300, x0: 225, gap: 150, r: 30} as const; // pusat titik langkah k: x0 + k*gap
 export const STAGE = {y: 460, h: 830} as const;
 export const LABEL = {x: 150, y: 1330, w: 750, h: 140} as const;
 
@@ -57,15 +60,17 @@ export const P = {
   pesanan: s('pesanan') - 3,
   simpan: s('simpan') - 2,
 
-  umum: [s('pemenang') - 6, s('ikuti') - 6] as [number, number],
+  umum: [s('pemenang') - 6, s('ingin') - 6] as [number, number],
   januari: s('januari') - 6,
   bebas: s('bebas') - 4,
-  promo: sn('bebas', 3) - 3,
+  promo: s('promo') - 3,
   reguler: s('reguler') - 3,
   bintang: s('bintang') - 3,
   berangkat: s('berangkat') - 3,
 
-  semua: [s('ikuti') - 6, s('kunjungi') - 6] as [number, number],
+  semua: [s('ingin') - 6, s('kunjungi') - 6] as [number, number],
+  ikuti: s('ikuti') - 4,
+  yuk: s('yuk') - 4,
   outro: s('kunjungi') - 6,
   btn: s('kunjungi') + 8,
   end: TOTAL_FRAMES,
@@ -77,39 +82,10 @@ export const stepAt = (f: number) => STEP_STARTS.reduce((acc, at, i) => (f >= at
 
 // Ketukan (titik emas, bukan tangan): [frame, x, y].
 export const TAPS: [number, number, number][] = [
-  [P.tapMasuk, COL.cx, 1000],
-  [P.tapPaket, 700, 760],
-  [P.tapStandar, 335, 900],
+  [P.tapMasuk, ...winPt(195, 315, 40)],
   [P.tapPlus, 806, 694],
   [P.tapDp, 232, 853],
   [P.tapWa, 700, 1022],
   [P.tapCheckout, COL.cx + 220, 888],
   [P.simpan, 800, 1040],
 ];
-
-// Label 1-3 kata di bawah panggung, mengikuti kata yang diucapkan.
-export const LABELS: [number, string][] = [
-  [P.ribbon, 'Harga spesial'],
-  [s('langkah') - 3, '5 langkah'],
-  [s('masuk') - 3, 'Masuk'],
-  [s('paket') - 3, 'Paket'],
-  [P.standar, 'Standar'],
-  [P.premium, 'Premium'],
-  [P.tierOn[0], 'Silver'],
-  [P.tierOn[1], 'Gold'],
-  [P.tierOn[2], 'Platinum'],
-  [P.tierOn[3], 'Diamond'],
-  [s('jamaah') - 3, 'Jamaah'],
-  [P.tapDp, 'Bayar DP'],
-  [P.tapWa, 'WhatsApp'],
-  [P.tapCheckout - 6, 'Checkout'],
-  [P.cicil, 'mulai Rp10.000'],
-  [P.kode, 'Kode kupon'],
-  [P.simpan, 'Simpan'],
-  [P.januari, '1 Januari 2027'],
-  [P.bebas, 'Bebas pilih'],
-  [P.berangkat, 'Berangkat 2027'],
-  [s('ikuti') - 3, 'Semua tingkat'],
-];
-// Label berhenti tampil di titik-titik ini (pergantian adegan).
-export const LABEL_CUTS = [P.step1[0], P.step2[0], P.step3[0], P.step4[0], P.step5[0], P.umum[0], P.semua[0], P.outro];

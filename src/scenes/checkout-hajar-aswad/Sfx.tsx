@@ -31,7 +31,8 @@ export const sfxEvents = (): Ev[] => {
   TAPS.forEach(([at]) => ev.push({f: at, src: 'tick', v: 0.9}));
   P.tierOn.forEach((at, i) => ev.push({f: at + 2, src: `umroh/ting-${i + 1}`, v: 0.5}));
   [0, 1, 2].forEach((k) => ev.push({f: P.cicil + 4 + k * 12, src: 'tick', v: 0.5}));
-  [0, 1, 2, 3].forEach((i) => ev.push({f: P.semua[0] + 6 + Math.round((i * (P.semua[1] - P.semua[0] - 30)) / 4), src: `umroh/ting-${i + 1}`, v: 0.45}));
+  [0, 1, 2, 3].forEach((i) => ev.push({f: P.semua[0] + 6 + Math.round((i * (P.ikuti - 12 - P.semua[0])) / 4), src: `umroh/ting-${i + 1}`, v: 0.45}));
+  ev.push({f: P.ikuti, src: 'umroh/sset', v: 0.45});
   return ev.sort((a, b) => a.f - b.f);
 };
 

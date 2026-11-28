@@ -52,26 +52,27 @@ export const Pengumuman: React.FC<{f: number}> = ({f}) => {
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
-              gap: 14,
+              gap: 10,
+              padding: '32px 24px',
               ...rise(cards(k), 60),
             }}
           >
             {k === 0 ? (
               <>
-                <Img src={staticFile('brands/h2c-umroh/paket/hajar-aswad-standar.webp')} style={{width: 130, height: 130, borderRadius: 22}} />
+                <Img src={staticFile('brands/h2c-umroh/paket/hajar-aswad-standar.webp')} style={{width: 120, height: 120, borderRadius: 22}} />
                 <span style={{fontFamily: UF.display, fontWeight: 700, fontSize: 52, color: U.goldLight}}>Promo</span>
               </>
             ) : (
               <>
-                <span style={{...big, fontSize: 120}}>9D</span>
+                <span style={{...big, fontSize: 92, lineHeight: 1}}>9D</span>
                 <div style={{display: 'flex', gap: 8}}>
                   {stars.map((st, j) => (
-                    <span key={j} style={{fontSize: 52, color: U.gold, transform: `scale(${st})`, display: 'inline-block', opacity: st > 0 ? 1 : 0.2}}>
+                    <span key={j} style={{fontSize: 44, lineHeight: 1, color: U.gold, transform: `scale(${st})`, display: 'inline-block', opacity: st > 0 ? 1 : 0.2}}>
                       ★
                     </span>
                   ))}
                 </div>
-                <span style={{fontFamily: UF.display, fontWeight: 700, fontSize: 44, color: U.ivory}}>Reguler</span>
+                <span style={{fontFamily: UF.display, fontWeight: 700, fontSize: 42, lineHeight: 1.1, color: U.ivory}}>Reguler</span>
               </>
             )}
           </div>
@@ -89,21 +90,30 @@ export const Pengumuman: React.FC<{f: number}> = ({f}) => {
   );
 };
 
-// "Ikuti semua tingkatnya": empat lencana berjajar, menyala berurutan dengan kilau.
+// "Ingin berkesempatan besar...? Ikuti saja semua paketnya.": empat lencana menyala berurutan,
+// lalu dua paket Hajar Aswad masuk di atasnya saat "Ikuti saja semua paketnya".
 export const SemuaTingkat: React.FC<{f: number}> = ({f}) => {
   const v = win(f, P.semua, 12, 10);
   if (v <= 0.001) return null;
-  const len = P.semua[1] - P.semua[0];
+  const glowEnd = P.ikuti - 6;
+  const pk = (k: number) => inP(f, P.ikuti + k * 6, 14);
   return (
     <div style={{position: 'absolute', inset: 0, opacity: v}}>
-      <div style={{position: 'absolute', left: COL.x, width: COL.w, top: 620, display: 'grid', gridTemplateColumns: '1fr 1fr', rowGap: 40, justifyItems: 'center'}}>
+      <div style={{position: 'absolute', left: COL.x, width: COL.w, top: 470, display: 'flex', justifyContent: 'center', gap: 40}}>
+        {[0, 1].map((k) => (
+          <div key={k} style={{...rise(pk(k), 60)}}>
+            <Img src={staticFile(`brands/h2c-umroh/paket/hajar-aswad-${k ? 'premium' : 'standar'}.webp`)} style={{width: 300, height: 300, borderRadius: 36, border: `3px solid ${U.gold}`, boxShadow: '0 40px 90px -30px rgba(0,0,0,.7)'}} />
+          </div>
+        ))}
+      </div>
+      <div style={{position: 'absolute', left: COL.x, width: COL.w, top: 900, display: 'flex', justifyContent: 'space-between'}}>
         {[0, 1, 2, 3].map((i) => {
-          const at = P.semua[0] + 6 + Math.round((i * (len - 30)) / 4);
+          const at = P.semua[0] + 6 + Math.round((i * (glowEnd - P.semua[0] - 6)) / 4);
           const d = pop(f, at);
           const glow = inP(f, at + 4, 10);
           return (
-            <div key={i} style={{width: 300, height: 300, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: `radial-gradient(circle, ${TIER_RIM[i]}55 0%, rgba(0,0,0,0) 65%)`, opacity: d > 0 ? 0.35 + 0.65 * glow : 0, transform: `scale(${d})`}}>
-              <Lencana i={i} size={230} />
+            <div key={i} style={{width: 180, height: 180, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: `radial-gradient(circle, ${TIER_RIM[i]}55 0%, rgba(0,0,0,0) 65%)`, opacity: d > 0 ? 0.35 + 0.65 * glow : 0, transform: `scale(${d})`}}>
+              <Lencana i={i} size={150} />
             </div>
           );
         })}
@@ -118,7 +128,7 @@ export const Penutup: React.FC<{f: number}> = ({f}) => {
   if (p <= 0.001) return null;
   const b = pop(f, P.btn);
   return (
-    <div style={{position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 60, paddingLeft: 60, paddingRight: 180, boxSizing: 'border-box'}}>
+    <div style={{position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 60}}>
       <Img src={staticFile('brands/h2c-umroh/logo.jpeg')} style={{width: 300, height: 300, borderRadius: '50%', border: `4px solid ${U.gold}`, opacity: p, transform: `scale(${0.85 + 0.15 * p})`, boxShadow: '0 40px 90px -30px rgba(0,0,0,.7)'}} />
       <div style={{transform: `scale(${b})`, opacity: b > 0 ? 1 : 0}}>
         <Tombol text="umroh.h2c.or.id" w={640} h={120} fs={50} />

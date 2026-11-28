@@ -3,7 +3,8 @@ import {Img, interpolate, staticFile} from 'remotion';
 import {BIG_GRADIENT, BTN, CARD, U, UF} from '../../brands/h2c-umroh/theme';
 import {clamp, ease} from '../../components/motion';
 import {inP, pop, win} from '../umroh-10-juta/anim';
-import {COL, HEADER, LABEL, LABEL_CUTS, LABELS, P, stepAt, TAPS, TIER_RIM, TIERS, TRACK} from './layout';
+import {SUBS} from '../../data/timeline-checkout-hajar-aswad';
+import {COL, HEADER, LABEL, P, stepAt, TAPS, TIER_RIM, TIERS, TRACK} from './layout';
 
 // Bagian bersama: latar web, kepala situs mobile, jalur 5 langkah, lencana, kartu tiket, titik ketuk, label.
 
@@ -114,7 +115,7 @@ export const AngkaBesar: React.FC<{f: number; k: number; at: number}> = ({f, k, 
   const y = 760 + (TRACK.y - 760) * fly;
   const sc = (0.6 + 0.4 * a) * (1 - 0.82 * fly);
   return (
-    <div style={{position: 'absolute', left: x - 200, top: y - 200, width: 400, height: 400, display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: a * (1 - fly * 0.6), transform: `scale(${sc})`, pointerEvents: 'none'}}>
+    <div style={{position: 'absolute', left: x - 200, top: y - 200, width: 400, height: 400, display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: a * (1 - interpolate(fly, [0.4, 0.85], [0, 1], clamp)), transform: `scale(${sc})`, pointerEvents: 'none'}}>
       <span style={{...big, fontSize: 380, lineHeight: 1, filter: 'drop-shadow(0 20px 40px rgba(0,0,0,.5))'}}>{k + 1}</span>
     </div>
   );
@@ -177,22 +178,21 @@ export const Ketuk: React.FC<{f: number}> = ({f}) => {
   );
 };
 
-// Label 1-3 kata di bawah panggung.
-export const Label: React.FC<{f: number}> = ({f}) => {
-  let idx = -1;
-  LABELS.forEach(([at], i) => {
-    if (f >= at) idx = i;
-  });
-  if (idx < 0) return null;
-  const [at, text] = LABELS[idx];
-  const cut = LABEL_CUTS.find((c) => c > at) ?? Infinity;
-  const next = LABELS[idx + 1]?.[0] ?? Infinity;
-  const end = Math.min(cut, next + 6);
-  if (f >= end) return null;
-  const p = inP(f, at, 7) * (1 - inP(f, Math.min(cut, end) - 6, 6));
+// Subtitle penuh (Bos 28 Nov: visual diperbanyak, subtitle tetap ada): kata asli dari transkrip, muncul saat diucapkan.
+export const Subtitle: React.FC<{f: number}> = ({f}) => {
+  const c = SUBS.find((x) => f >= x.from && f < x.to);
+  if (!c) return null;
+  const out = interpolate(f, [c.to - 5, c.to], [1, 0], clamp);
   return (
-    <div style={{position: 'absolute', left: LABEL.x, top: LABEL.y, width: LABEL.w, height: LABEL.h, display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: p}}>
-      <div style={{padding: '18px 44px', borderRadius: 999, background: 'rgba(10,31,23,.7)', border: `2px solid ${U.goldLine}`, fontFamily: UF.text, fontWeight: 800, fontSize: 60, color: U.goldLight, whiteSpace: 'nowrap', transform: `translateY(${(1 - p) * 14}px)`}}>{text}</div>
+    <div style={{position: 'absolute', left: LABEL.x, top: LABEL.y, width: LABEL.w, height: LABEL.h, display: 'flex', flexWrap: 'wrap', alignContent: 'center', justifyContent: 'center', columnGap: 14, fontFamily: UF.text, fontWeight: 700, fontSize: 52, lineHeight: 1.2, textAlign: 'center', opacity: out}}>
+      {c.words.map((w, i) => {
+        const p = interpolate(f, [w.f - 3, w.f + 4], [0, 1], {...clamp, easing: ease});
+        return (
+          <span key={i} style={{color: w.bold ? U.goldLight : U.ivory, opacity: 0.25 + 0.75 * p, transform: `translateY(${(1 - p) * 8}px)`, display: 'inline-block', textShadow: '0 4px 18px rgba(0,0,0,.55)'}}>
+            {w.text}
+          </span>
+        );
+      })}
     </div>
   );
 };

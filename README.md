@@ -123,10 +123,11 @@ Skrip rilis memeriksa durasi klip, merender frame kunci dan video, lalu menormal
 
 ## Video: "Cara Checkout Paket Hajar Aswad" (komposisi `CheckoutHajarAswad`, 9:16, brand H2C Umroh)
 
-Video 2 promo Hajar Aswad, full visual: bingkai = tampilan mobile web umroh.h2c.or.id (replika), jalur lima langkah, titik ketuk emas (bukan tangan), gambar paket dan lencana tingkat asli dari repo h2c-umroh, teks layar 1-3 kata, data fiktif berlabel "contoh". Suara Jefri dari Bos (67 dtk), tanpa musik. Naskah: `naskah-checkout-hajar-aswad.md`; serah-terima: `serah-terima/checkout-hajar-aswad.md`.
+Video 2 promo Hajar Aswad, full visual + subtitle penuh: layar = web asli umroh.h2c.or.id tampilan mobile, jalur lima langkah, titik ketuk emas (bukan tangan), gambar paket dan lencana tingkat asli dari repo h2c-umroh, teks layar 1-3 kata, data fiktif berlabel "contoh". Suara Jefri dari Bos (67 dtk), tanpa musik. Naskah: `naskah-checkout-hajar-aswad.md`; serah-terima: `serah-terima/checkout-hajar-aswad.md`.
 
 - `npm run stills:checkout-hajar-aswad` · `npm run render:checkout-hajar-aswad` → `out/checkout-hajar-aswad-9x16.mp4`
-- Timing per kata di `src/data/vo-timing-checkout-hajar-aswad.json` (`kata: [{w, s, e}]`); adegan mencari kata pemicu sendiri (`src/data/timeline-checkout-hajar-aswad.ts`). Timing sementara dibuat `scripts/vo-kata-checkout-hajar-aswad.py`; ganti dengan transkrip Scribe bila ada.
+- Timing per kata dari transkrip ElevenLabs Scribe di `src/data/vo-timing-checkout-hajar-aswad.json` (`kata: [{w, s, e}]`); adegan mencari kata pemicu sendiri dan subtitle dibentuk dari kata asli (`src/data/timeline-checkout-hajar-aswad.ts`).
+- Layar langkah 1-2 = tangkapan web asli tampilan mobile (`public/brands/h2c-umroh/web/`, dibuat `node scripts/tangkap-web-mobile.mjs <folder> nama=url[@tinggi]`), harga/tanggal sementara dikaburkan. Langkah 3-5 masih replika (butuh login).
 
 ## Video: "Satu Akun untuk Sekeluarga" (komposisi `AkunKeluargaH2C`, 9:16, brand H2C Umroh)
 - Naskah: `naskah-akun-keluarga-h2c.md`. Lanjutan #11: akun keluarga dalam empat langkah (tambah anggota, kirim ID dan sandi, anggota masuk dengan ID keluarga, belikan paket; maks. 4 anggota). Meja 3D semu di Remotion: monitor di meja zamrud dengan cahaya tirai emas, kamera mendekat ke layar tiap langkah dan pindah ke ponsel (fokus kabur di monitor) saat ID dikirim, angka langkah besar yang mengecil jadi lencana, empat kartu nama berdiri di meja (nama fiktif berlabel "contoh"), penutup logo asli + tombol emas `umroh.h2c.or.id`. Tanpa makhluk bernyawa, tanpa maskot

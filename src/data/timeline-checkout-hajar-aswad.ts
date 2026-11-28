@@ -35,7 +35,7 @@ const ORDER = [
   ['platinum', 'platinum'],
   ['diamond', 'diamond'],
   ['tiga', 'tiga/3'],
-  ['jamaah', 'jamaah'],
+  ['jamaah', 'jemaah/jamaah'],
   ['bayar', 'bayar'],
   ['whatsapp', 'whatsapp/wa'],
   ['empat', 'empat/4'],
@@ -43,6 +43,7 @@ const ORDER = [
   ['sisanya', 'sisanya'],
   ['sepuluh', 'sepuluh/10/10000/10rb'],
   ['lima', 'lima/5'],
+  ['terbayar', 'terbayar'],
   ['dicek', 'dicek/dicheck'],
   ['kode', 'kode'],
   ['pesanan', 'pesanan'],
@@ -50,10 +51,13 @@ const ORDER = [
   ['pemenang', 'pemenang'],
   ['januari', 'januari'],
   ['bebas', 'bebas'],
+  ['promo', 'promo'],
   ['reguler', 'reguler'],
   ['bintang', 'bintang'],
-  ['berangkat', 'berangkat'],
+  ['berangkat', 'keberangkatan/berangkat'],
+  ['ingin', 'ingin'],
   ['ikuti', 'ikuti'],
+  ['yuk', 'yuk'],
   ['kunjungi', 'kunjungi'],
 ] as const;
 type Key = (typeof ORDER)[number][0];
@@ -78,3 +82,40 @@ export const sn = (k: Key, n: number) => Math.round(W[Math.min(W.length - 1, IDX
 export const AUDIO_END = T.durasi;
 // Suara + logo diam ±1,2 dtk.
 export const TOTAL_FRAMES = Math.ceil((AUDIO_END + 1.2) * FPS);
+
+// Subtitle: kata asli dari transkrip, dipotong di tanda baca atau tiap 6 kata. Kata kunci emas.
+const KUNCI = /^(hajar|aswad|lima|langkah|satu|dua|tiga|empat|paket|standar|premium|silver|gold|platinum|diamond|dp|bayar|whatsapp|checkout|sepuluh|ribu|kode|kupon|pesanan|simpan|januari|2027|1|reguler|sembilan|bintang|promo|promonya|semua|umroh)$/;
+export type Kata2 = {text: string; f: number; bold: boolean};
+export type Sub = {words: Kata2[]; from: number; to: number};
+export const SUBS: Sub[] = (() => {
+  const out: Kata2[][] = [];
+  let cur: Kata2[] = [];
+  W.forEach((k, i) => {
+    const t = /umroh\.h2c/.test(k.w) ? 'umroh.h2c.or.id' : k.w.replace(/[.,!?]+$/, '').replace(/^DP-nya$/, 'DP-nya');
+    cur.push({text: t, f: Math.round(k.s * FPS), bold: KUNCI.test(norm(k.w.replace(/-nya$/, '')))});
+    const end = /[.,!?]$/.test(k.w);
+    // potong di tanda baca; potong karena panjang (6 kata) hanya bila kata berikutnya bukan akhir kalimat (boleh 7)
+    const nextEnds = i + 1 < W.length && /[.,!?]$/.test(W[i + 1].w);
+    if (end || (cur.length >= 6 && !nextEnds) || cur.length >= 7 || i === W.length - 1) {
+      out.push(cur);
+      cur = [];
+    }
+  });
+  // potongan satu kata digabung ke potongan sebelumnya (atau berikutnya) agar tidak berkedip
+  const merged: Kata2[][] = [];
+  for (let i = 0; i < out.length; i++) {
+    const prev = merged[merged.length - 1];
+    const akhirKalimat = out[i].length === 1 && /[.!?]$/.test(W.find((k) => Math.round(k.s * FPS) === out[i][0].f)?.w ?? '');
+    if (akhirKalimat && prev && prev.length < 7) prev.push(...out[i]);
+    else if (out[i].length === 1 && i + 1 < out.length && out[i + 1].length < 6) out[i + 1] = [...out[i], ...out[i + 1]];
+    else merged.push(out[i]);
+  }
+  return merged.map((ws, j) => {
+    const from = ws[0].f - 3;
+    const last = W.findIndex((k) => Math.round(k.s * FPS) === ws[ws.length - 1].f);
+    const hold = Math.round(W[Math.max(0, last)].e * FPS) + 10;
+    const next = merged[j + 1];
+    const to = next ? Math.min(next[0].f - 4, hold + 20) : hold + 20;
+    return {words: ws, from, to: Math.max(to, from + 12)};
+  });
+})();

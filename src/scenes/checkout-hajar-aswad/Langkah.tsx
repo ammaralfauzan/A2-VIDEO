@@ -3,7 +3,7 @@ import {Img, interpolate, staticFile} from 'remotion';
 import {CARD, RIBBON, U, UF} from '../../brands/h2c-umroh/theme';
 import {clamp, ease} from '../../components/motion';
 import {inP, pop, rise} from '../umroh-10-juta/anim';
-import {COL, P, STAGE, TIER_RIM, TIERS} from './layout';
+import {COL, P, STAGE, TIER_RIM, TIERS, WIN} from './layout';
 import {AngkaBesar, big, Contoh, IkonWa, Lencana, Tiket, Tombol} from './Web';
 
 // Halaman di panggung: masuk dari kanan, keluar ke kiri (seperti pindah halaman di HP).
@@ -33,12 +33,12 @@ export const Pembuka: React.FC<{f: number}> = ({f}) => {
     <div style={{position: 'absolute', inset: 0, opacity: out, transform: `translateX(${-(1 - out) * 140}px)`}}>
       <Judul kecil="PROMO UMROH" skrip="Paket" besar="Hajar Aswad" y={STAGE.y + 10} p={t} />
       {[0, 1].map((k) => (
-        <div key={k} style={{position: 'absolute', left: COL.x + 15 + k * 375, top: 830, ...rise(c(k), 80), transform: `${rise(c(k), 80).transform} rotate(${(k ? 1.5 : -1.5) * c(k)}deg)`}}>
+        <div key={k} style={{position: 'absolute', left: COL.x + 15 + k * 375, top: 760, ...rise(c(k), 80), transform: `${rise(c(k), 80).transform} rotate(${(k ? 1.5 : -1.5) * c(k)}deg)`}}>
           <Tiket jenis={k ? 'premium' : 'standar'} w={345} />
         </div>
       ))}
       {rb > 0 ? (
-        <div style={{position: 'absolute', left: COL.cx - 190, top: 770, width: 380, padding: '14px 0', textAlign: 'center', ...RIBBON, fontFamily: UF.text, fontWeight: 800, fontSize: 36, transform: `${RIBBON.transform} scale(${rb})`}}>HARGA SPESIAL</div>
+        <div style={{position: 'absolute', left: COL.cx - 190, top: 700, width: 380, padding: '14px 0', textAlign: 'center', ...RIBBON, fontFamily: UF.text, fontWeight: 800, fontSize: 36, transform: `${RIBBON.transform} scale(${rb})`}}>HARGA SPESIAL</div>
       ) : null}
     </div>
   );
@@ -47,49 +47,25 @@ export const Pembuka: React.FC<{f: number}> = ({f}) => {
 // ---------- Langkah 1: masuk, buka Paket ----------
 export const Langkah1: React.FC<{f: number}> = ({f}) => {
   const r = P.step1;
-  const typed = (n: number, from: number) => Math.max(0, Math.min(n, Math.floor((f - from) / 2)));
-  const login = 1 - inP(f, P.drawer, 10);
-  const dr = inP(f, P.drawer, 12);
-  const tapM = interpolate(f, [P.tapMasuk - 3, P.tapMasuk, P.tapMasuk + 6], [0, 1, 0], clamp);
-  const pk = inP(f, P.tapPaket - 2, 6);
+  const typed = (n: number, from: number) => Math.max(0, Math.min(n, Math.floor((f - from) / 1.5)));
+  const ke = inP(f, P.drawer, 12);
   return (
     <Halaman f={f} r={r}>
       <AngkaBesar f={f} k={0} at={r[0]} />
-      {/* kartu masuk */}
-      <div style={{position: 'absolute', left: COL.x + 45, width: COL.w - 90, top: 520, padding: '50px 46px', ...CARD, boxSizing: 'border-box', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 30, opacity: inP(f, r[0] + 16, 10) * login, transform: `translateX(${-(1 - login) * 120}px)`}}>
-        <div style={{width: 120, height: 120, borderRadius: '50%', background: U.surface2, border: `3px solid ${U.gold}`, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-          <svg width={60} height={60} viewBox="0 0 24 24" fill="none" stroke={U.goldLight} strokeWidth={2} strokeLinecap="round">
-            <rect x="5" y="11" width="14" height="10" rx="2.5" />
-            <path d="M8 11V8a4 4 0 0 1 8 0v3" />
-          </svg>
-        </div>
-        {[0, 1].map((k) => (
-          <div key={k} style={{width: '100%', height: 96, borderRadius: 24, background: U.bg2, border: `2px solid ${f >= P.type1 + k * 14 && f < P.type1 + k * 14 + 22 ? U.gold : U.line}`, display: 'flex', alignItems: 'center', padding: '0 30px', gap: 18, boxSizing: 'border-box'}}>
-            <span style={{fontSize: 34, color: U.sage}}>{k ? '🔒︎' : '@'}</span>
-            <span style={{fontFamily: UF.text, fontWeight: 800, fontSize: 40, letterSpacing: 8, color: U.ivory}}>{'•'.repeat(typed(k ? 8 : 10, P.type1 + k * 14))}</span>
-          </div>
-        ))}
-        <Tombol text="Masuk" w={560} press={tapM} />
+      <div style={{position: 'absolute', inset: 0, opacity: inP(f, r[0] + 14, 10)}}>
+        {/* halaman Masuk asli (umroh.h2c.or.id/akun/masuk, mobile) */}
+        <WebLayar src="masuk.png" top={40} opacity={1 - ke}>
+          {[0, 1].map((k) => (
+            <div key={k} style={{position: 'absolute', left: 78, top: k ? 245 : 166, fontFamily: UF.text, fontWeight: 800, fontSize: 16, letterSpacing: 4, color: '#1f2d27'}}>
+              {'•'.repeat(typed(k ? 9 : 12, P.type1 + k * 18))}
+            </div>
+          ))}
+          <Sorot f={f} at={P.type1} until={P.type1 + 16} box={[35, 156, 320, 40]} />
+          <Sorot f={f} at={P.type1 + 18} until={P.tapMasuk - 4} box={[35, 236, 320, 40]} />
+        </WebLayar>
+        {/* menu Paket: halaman Paket asli */}
+        {ke > 0.001 ? <WebLayar src="paket-atas.png" top={0} opacity={ke} dx={(1 - ke) * 120} /> : null}
       </div>
-      {/* menu samping dengan ikon Paket */}
-      {dr > 0.001 ? (
-        <div style={{position: 'absolute', left: COL.x + 45, width: COL.w - 90, top: 540, padding: '28px 30px', ...CARD, boxSizing: 'border-box', display: 'flex', flexDirection: 'column', gap: 16, opacity: dr, transform: `translateX(${(1 - dr) * 200}px)`}}>
-          {[
-            ['beranda', 'Beranda'],
-            ['paket', 'Paket'],
-            ['pesanan', 'Pesanan'],
-            ['akun', 'Akun'],
-          ].map(([id, t]) => {
-            const on = id === 'paket' ? pk : 0;
-            return (
-              <div key={id} style={{height: 104, borderRadius: 26, display: 'flex', alignItems: 'center', gap: 26, padding: '0 28px', background: on > 0.05 ? U.surface2 : 'transparent', border: `2px solid ${on > 0.05 ? U.gold : 'transparent'}`, transform: `scale(${1 + 0.04 * on})`}}>
-                <Ikon id={id} size={56} color={on > 0.05 ? U.goldLight : U.sage} />
-                <span style={{fontFamily: UF.text, fontWeight: 700, fontSize: 40, color: on > 0.05 ? U.goldLight : U.ivory2}}>{t}</span>
-              </div>
-            );
-          })}
-        </div>
-      ) : null}
     </Halaman>
   );
 };
@@ -131,92 +107,91 @@ export const Ikon: React.FC<{id: string; size: number; color: string}> = ({id, s
 // ---------- Langkah 2: pilih paket, lalu tingkat DP ----------
 export const Langkah2: React.FC<{f: number}> = ({f}) => {
   const r = P.step2;
-  const list = 1 - inP(f, P.detail, 12);
-  const det = inP(f, P.detail, 12);
+  // daftar paket asli, digulir ke Hajar Aswad Standar lalu Premium
+  const top = interpolate(f, [P.premium - 4, P.premium + 12], [0, 658], {...clamp, easing: ease});
+  const det = inP(f, P.tingkat - 2, 12);
   const gS = inP(f, P.standar, 8) * (1 - inP(f, P.premium, 8));
-  const gP = inP(f, P.premium, 8) * (1 - inP(f, P.tapStandar - 2, 6));
-  const pick = inP(f, P.tapStandar, 6);
+  const gP = inP(f, P.premium + 8, 8);
   return (
     <Halaman f={f} r={r}>
       <AngkaBesar f={f} k={1} at={r[0]} />
-      {list > 0.001 ? (
-        <div style={{position: 'absolute', inset: 0, opacity: list * inP(f, r[0] + 14, 10), transform: `translateX(${-(1 - list) * 120}px)`}}>
-          {[0, 1].map((k) => (
-            <div key={k} style={{position: 'absolute', left: COL.x + 15 + k * 375, top: 600}}>
-              <Tiket jenis={k ? 'premium' : 'standar'} w={345} glow={k ? gP : gS + pick * 0.6} picked={k ? 0 : pick} />
-            </div>
-          ))}
-        </div>
-      ) : null}
-      {det > 0.001 ? <Detail f={f} p={det} /> : null}
+      <div style={{position: 'absolute', inset: 0, opacity: inP(f, r[0] + 14, 10)}}>
+        <WebLayar src="paket-hajar-aswad.png" top={top} opacity={1 - det} masks={[[95, 130, 170, 24], [40, 162, 165, 48], [95, 788, 170, 24], [40, 820, 165, 48]]}>
+          <Bingkai box={[18, 36, 354, 630]} p={gS} />
+          <Bingkai box={[18, 694, 354, 630]} p={gP} />
+        </WebLayar>
+        {det > 0.001 ? (
+          <WebLayar src="detail-standar.png" top={70} opacity={det} dx={(1 - det) * 120} masks={[[226, 165, 64, 22], [178, 184, 102, 22], [58, 269, 106, 26]]}>
+            <Bingkai box={[37, 331, 316, 108]} p={inP(f, P.tingkat, 8)} />
+          </WebLayar>
+        ) : null}
+        {det > 0.001 ? <TingkatDp f={f} /> : null}
+      </div>
     </Halaman>
   );
 };
 
-// Halaman "Detail Paket" mobile: kartu tiket (gambar kiri), kotak putus-putus "Kupon Hajar Aswad", empat tingkat DP.
-const Detail: React.FC<{f: number; p: number}> = ({f, p}) => {
+// Empat tingkat DP jatuh satu per satu tepat saat disebut (lencana asli), di bawah kotak "Kupon Hajar Aswad".
+const TingkatDp: React.FC<{f: number}> = ({f}) => {
   const active = P.tierOn.reduce((acc, at, i) => (f >= at ? i : acc), -1);
-  const box = inP(f, P.tingkat, 10);
   return (
-    <div style={{position: 'absolute', inset: 0, opacity: p, transform: `translateX(${(1 - p) * 160}px)`}}>
-      <div style={{position: 'absolute', left: COL.x, width: COL.w, top: STAGE.y + 6, display: 'flex', alignItems: 'center', gap: 22}}>
-        <div style={{width: 64, height: 64, borderRadius: '50%', border: `2px solid ${U.goldLine}`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: U.ivory, fontSize: 34}}>‹</div>
-        <span style={{fontFamily: UF.display, fontWeight: 700, fontSize: 48, color: U.ivory}}>Detail Paket</span>
-      </div>
-      <div style={{position: 'absolute', left: COL.x, width: COL.w, top: 560, height: 250, ...CARD, borderRadius: 34, boxSizing: 'border-box', padding: 22, display: 'flex', gap: 28, alignItems: 'center'}}>
-        <PaketGambar />
-        <div style={{display: 'flex', flexDirection: 'column', gap: 8}}>
-          <span style={{fontFamily: UF.text, fontWeight: 700, fontSize: 20, letterSpacing: 2.5, color: U.sage}}>HAJAR ASWAD</span>
-          <span style={{fontFamily: UF.display, fontWeight: 700, fontSize: 58, color: U.goldLight, lineHeight: 1}}>Standar</span>
-          <span style={{alignSelf: 'flex-start', marginTop: 8, padding: '6px 18px', borderRadius: 999, background: U.gold, color: U.bg, fontFamily: UF.text, fontWeight: 800, fontSize: 24}}>12 hari</span>
-        </div>
-      </div>
-      {/* kotak putus-putus kupon + empat tingkat DP */}
-      <div style={{position: 'absolute', left: COL.x, width: COL.w, top: 850, height: 420, borderRadius: 30, border: `3px dashed ${U.gold}`, boxSizing: 'border-box', padding: '26px 24px', opacity: box, transform: `translateY(${(1 - box) * 40}px)`}}>
-        <div style={{fontFamily: UF.text, fontWeight: 800, fontSize: 30, color: U.goldLight, textAlign: 'center', marginBottom: 20}}>Kupon Hajar Aswad</div>
-        <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18}}>
-          {TIERS.map((t, i) => {
-            const d = pop(f, P.tierOn[i]);
-            const on = active === i ? 1 : 0;
-            return (
-              <div
-                key={t.id}
-                style={{
-                  height: 140,
-                  borderRadius: 26,
-                  boxSizing: 'border-box',
-                  background: on ? U.surface2 : U.surface,
-                  border: `3px solid ${on ? TIER_RIM[i] : U.goldLine}`,
-                  boxShadow: on ? `0 0 0 10px ${U.goldSoft}` : 'none',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 16,
-                  padding: '0 18px',
-                  opacity: f >= P.tierOn[i] ? 1 : 0,
-                  transform: `translateY(${(1 - Math.min(1, d)) * -60}px) scale(${d || 0})`,
-                }}
-              >
-                <Lencana i={i} size={100} />
-                <div style={{display: 'flex', flexDirection: 'column'}}>
-                  <span style={{fontFamily: UF.text, fontWeight: 800, fontSize: 32, color: TIER_RIM[i]}}>{t.name}</span>
-                  <span style={{fontFamily: UF.display, fontWeight: 700, fontSize: 34, color: U.ivory}}>{t.dp}</span>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
+    <div style={{position: 'absolute', left: WIN.x + 24, width: WIN.w - 48, top: 1010, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16}}>
+      {TIERS.map((t, i) => {
+        const d = pop(f, P.tierOn[i]);
+        const on = active === i ? 1 : 0;
+        return (
+          <div
+            key={t.id}
+            style={{
+              height: 116,
+              borderRadius: 24,
+              boxSizing: 'border-box',
+              background: on ? U.surface2 : U.surface,
+              border: `3px solid ${on ? TIER_RIM[i] : U.goldLine}`,
+              boxShadow: `0 20px 40px -20px rgba(0,0,0,.7)${on ? `, 0 0 0 8px ${U.goldSoft}` : ''}`,
+              display: 'flex',
+              alignItems: 'center',
+              gap: 14,
+              padding: '0 16px',
+              opacity: f >= P.tierOn[i] ? 1 : 0,
+              transform: `translateY(${(1 - Math.min(1, d)) * -50}px) scale(${d || 0})`,
+            }}
+          >
+            <Lencana i={i} size={84} />
+            <div style={{display: 'flex', flexDirection: 'column'}}>
+              <span style={{fontFamily: UF.text, fontWeight: 800, fontSize: 30, color: TIER_RIM[i]}}>{t.name}</span>
+              <span style={{fontFamily: UF.display, fontWeight: 700, fontSize: 30, color: U.ivory}}>{t.dp}</span>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 };
 
-const PaketGambar: React.FC = () => (
-  <div style={{width: 206, height: 206, borderRadius: 24, overflow: 'hidden', flexShrink: 0}}>
-    <TiketImg />
+// Jendela HP berisi tangkapan web asli. top = posisi gulir (px CSS). masks = [x, y, w, h] px CSS yang dikaburkan
+// (harga/tanggal sementara di situs live tidak ditampilkan). children memakai koordinat px CSS halaman.
+export const WebLayar: React.FC<{src: string; top: number; opacity?: number; dx?: number; masks?: [number, number, number, number][]; children?: React.ReactNode}> = ({src, top, opacity = 1, dx = 0, masks = [], children}) => (
+  <div style={{position: 'absolute', left: WIN.x, top: WIN.y, width: WIN.w, height: WIN.h, borderRadius: 44, overflow: 'hidden', border: `3px solid ${U.goldLine}`, boxShadow: '0 50px 110px -40px rgba(0,0,0,.8)', background: U.bg, opacity, transform: `translateX(${dx}px)`}}>
+    <div style={{position: 'absolute', left: 0, top: 0, width: 390, transformOrigin: '0 0', transform: `scale(${WIN.k}) translateY(${-top}px)`}}>
+      <Img src={staticFile(`brands/h2c-umroh/web/${src}`)} style={{width: 390, display: 'block'}} />
+      {masks.map(([x, y, w, h], i) => (
+        <div key={i} style={{position: 'absolute', left: x, top: y, width: w, height: h, borderRadius: 8, backdropFilter: 'blur(7px)', WebkitBackdropFilter: 'blur(7px)', background: 'rgba(18,59,42,.55)'}} />
+      ))}
+      {children}
+    </div>
   </div>
 );
-// gambar paket asli (repo h2c-umroh, public/img/hajar-aswad-standar.webp)
-const TiketImg: React.FC = () => <Img src={staticFile('brands/h2c-umroh/paket/hajar-aswad-standar.webp')} style={{width: '100%', height: '100%'}} />;
+
+// Bingkai emas di sekitar bagian halaman (px CSS).
+const Bingkai: React.FC<{box: [number, number, number, number]; p: number}> = ({box: [x, y, w, h], p}) =>
+  p > 0.001 ? <div style={{position: 'absolute', left: x - 4, top: y - 4, width: w + 8, height: h + 8, borderRadius: 26, border: `3px solid ${U.gold}`, boxShadow: `0 0 0 ${8 * p}px rgba(212,175,106,${0.22 * p})`, opacity: p}} /> : null;
+
+// Sorotan kolom isian saat diketik (px CSS).
+const Sorot: React.FC<{f: number; at: number; until: number; box: [number, number, number, number]}> = ({f, at, until, box}) => {
+  const p = inP(f, at, 5) * (1 - inP(f, until, 5));
+  return <Bingkai box={box} p={p} />;
+};
 
 // ---------- Langkah 3: jumlah jamaah, Bayar DP, WhatsApp ----------
 export const Langkah3: React.FC<{f: number}> = ({f}) => {

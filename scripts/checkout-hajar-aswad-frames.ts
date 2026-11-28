@@ -1,8 +1,7 @@
 // Frame kunci "Cara Checkout Paket Hajar Aswad" dihitung dari timing suara (termasuk tengah transisi).
 import {TOTAL_FRAMES} from '../src/data/timeline-checkout-hajar-aswad';
-import {LABELS, P, TAPS} from '../src/scenes/checkout-hajar-aswad/layout';
+import {P, TAPS} from '../src/scenes/checkout-hajar-aswad/layout';
 
-for (let i = 1; i < LABELS.length; i++) if (LABELS[i][0] <= LABELS[i - 1][0]) throw new Error(`Label ${i} tidak berurutan`);
 for (let i = 1; i < TAPS.length; i++) if (TAPS[i][0] <= TAPS[i - 1][0]) throw new Error(`Ketukan ${i} tidak berurutan`);
 
 const frames: [string, number][] = [
@@ -14,11 +13,11 @@ const frames: [string, number][] = [
   ['02a-langkah1-tengah', P.step1[0] + 18],
   ['02b-ketik', P.type1 + 26],
   ['02c-ketuk-masuk', P.tapMasuk],
-  ['02d-menu-paket', P.tapPaket + 6],
+  ['02d-menu-paket', P.drawer + 20],
   ['03-langkah2-tengah', P.step2[0] + 6],
   ['03a-standar', P.standar + 10],
   ['03b-premium', P.premium + 10],
-  ['03c-ke-detail-tengah', P.detail + 6],
+  ['03c-ke-detail-tengah', P.tingkat + 4],
   ['03d-detail', P.tingkat + 12],
   ['03e-silver', P.tierOn[0] + 8],
   ['03f-diamond', P.tierOn[3] + 10],
@@ -37,7 +36,8 @@ const frames: [string, number][] = [
   ['07a-januari', P.januari + 20],
   ['07b-pilihan', P.bintang + 14],
   ['07c-berangkat', P.berangkat + 20],
-  ['08-semua-tingkat', P.semua[1] - 8],
+  ['08-semua-tingkat', P.ikuti - 4],
+  ['08a-semua-paket', P.semua[1] - 8],
   ['09-penutup-tengah', P.outro + 7],
   ['09a-tombol', P.btn + 20],
   ['09b-akhir', TOTAL_FRAMES - 4],

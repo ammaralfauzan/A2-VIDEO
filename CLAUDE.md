@@ -14,6 +14,7 @@
 
 ## Aturan video 2D: full visual (Bos, 2026-11-28)
 - Perbanyak visual dibanding tulisan; bila bisa **full visual**. Teks layar maksimal 1-3 kata per adegan (label, angka, nama tingkat); penjelasan dibawa suara, ikon, gambar, dan gerak.
+- **Subtitle tetap dipakai** walau full visual (Bos, 2026-11-28): subtitle penuh dari transkrip suara di zona caption; batas 1-3 kata berlaku untuk teks di dalam visual, bukan subtitle.
 - Aset ilustrasi (lambang paket, ikon tingkat, logo) **diambil dari web/repo brand**, bukan digambar ulang. Foto orang dan makhluk bernyawa tetap dilarang (aturan di atas).
 - Berlaku untuk semua video 2D, termasuk `umroh-10-juta` dan `checkout-hajar-aswad`.
-- Tampilan situs yang ditampilkan di video 2D: pakai versi **mobile** web dan gaya visual persis web (cek web live bila ada perubahan desain; Bos 2026-11-28).
+- Tampilan situs yang ditampilkan di video 2D: pakai versi **mobile** web dan gaya visual persis web (cek web live bila ada perubahan desain; Bos 2026-11-28). Untuk alur/cara (checkout, daftar), tampilkan **tangkapan web asli** tampilan mobile (`scripts/tangkap-web-mobile.mjs`), bukan replika; data sementara/salah di situs ditutup blur. Halaman yang butuh login: minta Bos masuk di panel browser, jangan mengetik sandi.

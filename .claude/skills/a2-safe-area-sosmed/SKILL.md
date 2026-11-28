@@ -17,7 +17,7 @@ Area aman gabungan TikTok + Reels + Shorts, sudah dipakai di semua video 9:16 re
 Konstanta: `SAFE` di `src/components/Vertical.tsx`.
 
 ## Aturan
-1. **Teks dan elemen penting** semuanya di dalam x 60–900, y 220–1500. Teks ditengahkan di **x 540** dengan lebar maksimal **720** (x 180–900) supaya terlihat seimbang dan sisi kanan berhenti di batas aman. Bos pernah menilai versi yang digeser ke x 480 "kurang ke tengah".
+1. **Teks dan elemen penting** semuanya di dalam x 60–900, y 220–1500. Teks ditengahkan di **x 540** dengan lebar maksimal **720** (x 180–900) supaya terlihat seimbang dan sisi kanan berhenti di batas aman. Bos pernah menilai versi yang digeser ke x 480 "kurang ke tengah". Penutup (logo + tombol) juga di tengah x 540: jangan memakai padding kiri/kanan asimetris untuk "menghindari tombol kanan" (Bos 28 Nov 2026: "logonya kenapa ke kiri?").
 2. **Latar penuh (video, foto, gradasi) boleh keluar area aman**; hanya teks dan objek informasi yang dibatasi.
 3. **Video bicara (talking head):** jaga wajah (kira-kira y 460–860) tetap bersih; kartu penjelas di bawahnya, dasar kartu di y 1480. Daftarkan wajah sebagai area terlindungi di `scripts/collision-config.json`.
 4. **B-roll layar penuh:** geser klip agar bagian penting (wajah, makanan, logo) berada di atas kartu (y < 1000). Pangkas ikon UI rekaman layar dan kursor sebelum dipakai.

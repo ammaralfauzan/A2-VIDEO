@@ -35,3 +35,4 @@ Render frame kunci (`node scripts/render-stills.mjs <Id>`), lihat satu per satu 
 - Angka/judul besar di atas layar: redupkan isi layar **sebelum** angka muncul (±9 frame lebih awal) dan tahan redup sampai angka selesai pindah ke lencana; ganti halaman di balik angka.
 - Isi layar benda yang keluar bingkai (ponsel) dipadamkan sebelum benda keluar, bukan sesudahnya.
 - Kursor jangan diam di atas teks tombol saat klik: klik di sisi kanan tombol, lalu geser menjauh.
+- **Jarak dalam bingkai (Bos, 28 Nov 2026):** teks/angka besar di dalam kartu tidak boleh mepet tepi bingkai; beri padding dalam minimal 24 px dan `lineHeight` 1 untuk huruf besar (Anton). Pemeriksa tabrakan TIDAK mendeteksi teks yang menyentuh tepi kartu, jadi cek di frame kunci (kasus: "9D" di kartu Reguler, `checkout-hajar-aswad`).
