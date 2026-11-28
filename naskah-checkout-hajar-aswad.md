@@ -3,34 +3,41 @@
 Format: Reels 9:16 (1080x1920), target 55 dtk · Brand: H2C Umroh (kit `h2c-umroh`, tanpa maskot) · Jalur: layar web asli (replika dari repo h2c-umroh) + kursor bergerak seperti tangan manusia, langkah bernomor besar (pola #23 `daftar-dan-masuk-h2c`, skill `a2-mockup-desktop-kursor` dan `a2-explainer-kinetik`). Bukan 3D semu (pelajaran akun-keluarga-h2c).
 Suara: usulan Jefri (Suara Penjelasan Lembut) seperti Video 1; Eleven v3 dengan tag audio. Tanpa musik. Pasangan Video 1 `naskah-umroh-10-juta.md`.
 
-**STATUS: konsep dan naskah disetujui Bos (27 Nov 2026). Berikutnya: MP3 suara dari Bos, lalu BANGUN (layar menunggu sesi situs).**
+**STATUS: konsep dan naskah disetujui Bos (27 Nov 2026). Alur visual direvisi full visual (28 Nov 2026, menunggu persetujuan). Situs sudah siap (PR #3 merged). Berikutnya: MP3 suara dari Bos, lalu BANGUN.**
 
 ## Konsep
 Panduan untuk bapak-ibu: lima langkah dari masuk akun sampai kode kupon. Layar akun pelanggan H2C (latar zamrud, kartu paket, panel Checkout seperti situs) ditampilkan penuh; kursor bergerak pelan, angka langkah emas besar di atas layar, kolom yang diisi disorot. Kupon muncul di akhir sebagai kartu berkode unik. Tanpa orang, tangan, atau wajah; hanya layar, kursor, kartu. Ajakan tombol emas `umroh.h2c.or.id`.
 
-## Fakta layar (dari tangkapan situs Bos 27 Nov dan repo h2c-umroh)
-- Halaman paket: kartu paket (nama, durasi, harga, DP, sisa kursi), panel "Checkout": Jumlah jamaah (- / +), Pembayaran (Bayar DP atau Bayar Lunas), Nomor WhatsApp, ringkasan (Harga, Dibayar sekarang, Sisa pelunasan), tombol emas "Checkout & bayar".
-- Teks situs: setelah DP, sisa biaya dicicil dengan nominal bebas (minimum Rp10.000) dari halaman pesanan sampai lunas.
-- Menu samping: Beranda, Paket, Pesanan.
-- **Belum ada di situs (sedang disiapkan di sesi cloud `h2c-hajar-aswad`):** paket bernama Hajar Aswad, pilihan DP bertingkat Silver/Gold/Platinum/Diamond, kartu kode kupon unik di halaman pesanan. Sampai jadi, ketiganya dibuat replika berlabel "contoh".
+## Fakta layar (dibaca dari repo h2c-umroh, cabang `H2C-Umroh`, commit 030e4b2, 28 Nov 2026; PR #3 "Paket berkupon Hajar Aswad" sudah merged)
+- Situs sudah punya: paket Hajar Aswad (dua gambar paket), pilihan DP bertingkat dengan lencana tingkat, kartu kupon dengan kode otomatis, admin kupon (`/admin/kupon`). Label asli di checkout: "Checkout", "Jumlah jamaah", "Pembayaran" (Bayar DP / Bayar Lunas), "Nominal DP / jamaah" (chip Rp + lencana + nama tingkat), catatan "DP berlencana dapat kode kupon setelah terbayar penuh", "Nomor WhatsApp", tombol emas "Checkout & bayar".
+- Kartu kupon di halaman Pesanan: judul "Kupon Silver" (sesuai tingkat) + lencana kecil, kode `UND-XXXXXXXX`, catatan "Simpan kode kupon ini". Sebelum DP terbayar: "Kode kupon ... muncul di sini setelah DP terbayar penuh".
+- Cicilan: setelah DP, sisa dicicil nominal bebas (minimum Rp10.000) dari halaman Pesanan (teks situs).
+- Pembayaran online belum aktif bila gateway mati: situs mengarahkan ke WhatsApp admin; layar bayar di video dibuat generik tanpa merek.
+- Checkout web Wakaf (H2C-Wakaf) berbeda: 3 langkah Data, Bayar, Selesai untuk donasi (chip nominal, minimal Rp10.000). Tidak dipakai di video ini; hanya pola "3 titik langkah" yang bisa jadi inspirasi.
 
-## Tabel naskah
-| Waktu | Suara | Visual |
+## Aset visual (ambil dari repo h2c-umroh, jangan digambar ulang; BANGUN yang mengekstrak)
+| Aset | Sumber | Catatan |
 | --- | --- | --- |
-| 0-5 hook | Mau ikut promo Hajar Aswad? Checkout-nya cuma lima langkah. | Layar akun H2C sudah bergerak di frame pertama: kartu paket Hajar Aswad masuk, lima titik langkah menyala berurutan di atas layar |
-| 5-11 | Langkah satu: masuk ke akun H2C Anda, lalu buka menu Paket. | Angka "1" emas. Kursor menekan Masuk (data fiktif), lalu menu Paket di sisi kiri ikut menyala |
-| 11-19 | Langkah dua: pilih paket Hajar Aswad, lalu pilih tingkat DP-nya: Silver, Gold, Platinum, atau Diamond. | Angka "2". Kursor membuka kartu paket Hajar Aswad; empat chip tingkat (DP 500 rb / 1 jt / 2,5 jt / 5 jt) tampil; kursor memilih satu, chip menyala |
-| 19-27 | Langkah tiga: isi jumlah jamaah, pilih bayar DP, lalu cek nomor WhatsApp Anda. | Angka "3". Tombol + menekan jumlah jamaah; kartu Bayar DP terpilih; kolom WhatsApp (nomor fiktif) disorot emas |
-| 27-37 | Langkah empat: tekan Checkout dan bayar. Sisanya bisa dicicil dengan nominal bebas, mulai sepuluh ribu rupiah. | Angka "4". Ringkasan Dibayar sekarang dan Sisa pelunasan disorot; kursor menekan "Checkout & bayar"; layar bayar generik tanpa merek lewat dengan centang "terbayar"; kartu Sisa pelunasan menyala dengan teks cicilan |
-| 37-47 | Langkah lima: setelah DP terbayar dan dicek, kode kupon unik muncul di halaman pesanan. Simpan kodenya ya. | Angka "5". Menu Pesanan menyala; kartu kupon berkode unik (contoh `UND-XXXXXXXX`, label "contoh") jatuh pelan ke halaman dan berkilau; chip tingkat sama dengan yang dipilih |
-| 47-55 ajakan | Yuk, ikut promonya. Kunjungi umroh titik H dua C titik or titik id. | Layar mengecil ke tengah; logo bulat asli + tombol emas `umroh.h2c.or.id` mengisi bingkai |
+| Gambar paket Hajar Aswad Standar (Ka'bah emas di kotak oranye) | `public/img/hajar-aswad-standar.webp` | tanpa makhluk bernyawa |
+| Gambar paket Hajar Aswad Premium (batu hitam berbingkai perak di lencana ungu) | `public/img/hajar-aswad-premium.webp` | tanpa makhluk bernyawa |
+| Lencana tingkat Silver, Gold (mahkota), Platinum (bintang), Diamond (berlian) | `components/IkonTingkat.tsx` (SVG, warna: biru, emas, hijau limau, ungu) | render ke SVG/PNG; ukuran kecil dan besar |
+| Lencana "Promo Undian" bergerigi | `components/UndianSeal.tsx` | opsional; undian publik tetap tersembunyi, jangan menonjolkan kata undian |
+| Logo bulat H2C | `public/logo.jpeg` | logo resmi saja |
+| Panel Checkout, chip DP, kartu kupon | tata letak dari `PaketCheckout.tsx` dan `KuponUndian.tsx` | dibuat ulang sebagai replika berlabel "contoh" |
+JANGAN dipakai: `public/img/pembimbing-*.webp` (foto orang; aturan tanpa makhluk bernyawa).
 
-Waktu perkiraan; adegan mengikuti MP3 asli (suara tidak dipercepat). Layar dan kursor: kursor tidak melompat, berhenti sejenak sebelum klik; isi layar fiktif berlabel "contoh".
+## Tabel alur (FULL VISUAL: teks layar maksimal 1-3 kata per adegan, selebihnya ikon, gambar, gerak)
+| Waktu | Suara (tetap, disetujui) | Visual (2D, layar replika + kursor) | Teks layar |
+| --- | --- | --- | --- |
+| 0-5 hook | Mau ikut promo Hajar Aswad? Checkout-nya cuma lima langkah. | Dua gambar paket (Ka'bah emas dan batu hitam berbingkai perak) masuk dari kiri-kanan dan bertemu; lima titik langkah menyala berurutan di bawahnya | - (hanya angka 5) |
+| 5-11 | Langkah satu: masuk ke akun H2C Anda, lalu buka menu Paket. | Angka "1". Ikon kunci dan layar masuk (kolom diisi titik-titik, fiktif); kursor menekan tombol; menu samping: ikon tas "Paket" menyala | "Masuk", "Paket" |
+| 11-19 | Langkah dua: pilih paket Hajar Aswad, lalu pilih tingkat DP-nya: Silver, Gold, Platinum, atau Diamond. | Angka "2". Dua gambar paket berdampingan, kursor memilih satu (membesar, bingkai emas); di bawahnya empat lencana tingkat muncul satu per satu tepat pada nama yang disebut (biru, emas, hijau, ungu), tiap lencana dengan angka DP kecil | nama tingkat saja, angka DP |
+| 19-27 | Langkah tiga: isi jumlah jamaah, pilih bayar DP, lalu cek nomor WhatsApp Anda. | Angka "3". Tombol +/- jumlah jamaah berubah; kartu "Bayar DP" terpilih (radio terisi); ikon ponsel dengan nomor fiktif tersorot emas | "Jamaah", "DP", "WhatsApp" |
+| 27-37 | Langkah empat: tekan Checkout dan bayar. Sisanya bisa dicicil dengan nominal bebas, mulai sepuluh ribu rupiah. | Angka "4". Tombol emas "Checkout & bayar" ditekan; layar bayar generik tanpa merek dengan centang limau; bilah sisa pelunasan terisi sedikit demi sedikit (animasi cicilan) dan angka "10.000" muncul | "Checkout", "10.000" |
+| 37-47 | Langkah lima: setelah DP terbayar dan dicek, kode kupon unik muncul di halaman pesanan. Simpan kodenya ya. | Angka "5". Ikon menu Pesanan menyala; kartu kupon berlencana tingkat terpilih (kode contoh `UND-XXXXXXXX`, label "contoh") jatuh pelan dan berkilau; ikon simpan/bintang kecil | "Kupon", kode contoh |
+| 47-55 ajakan | Yuk, ikut promonya. Kunjungi umroh titik H dua C titik or titik id. | Semua kartu menyusut ke tengah; logo bulat asli + tombol emas `umroh.h2c.or.id` mengisi bingkai | `umroh.h2c.or.id` |
 
-Jumlah kata teks suara ≈ 100 ≈ 44 dtk + jeda antar langkah ≈ 55 dtk.
-
-## Beda dari konten lama
-- Video 1 menjelaskan promo dan tingkat (3D meja); Video 2 menunjukkan cara checkout di layar. Topik berdekatan dengan #23 (daftar dan masuk) tapi isi beda: paket, DP, kupon. Hook beda.
+Waktu perkiraan; adegan mengikuti MP3 asli (suara tidak dipercepat). Kursor tidak melompat, berhenti sejenak sebelum klik. Data fiktif berlabel "contoh".
 
 ## Prompt suara ElevenLabs (siap salin)
 Suara: Jefri (Suara Penjelasan Lembut), usulan · Eleven v3 · Nada: sabar, hangat, jelas · Target ±55 dtk
@@ -52,7 +59,7 @@ Suara: Jefri (Suara Penjelasan Lembut), usulan · Eleven v3 · Nada: sabar, hang
 ```
 
 ## Risiko / asumsi
-1. Paket Hajar Aswad, pilihan tingkat, dan kartu kupon belum ada di situs; urutan dan nama tombol final mengikuti hasil sesi situs. Cocokkan ulang sebelum BANGUN; jangan diposting sebelum situsnya hidup.
+1. Situs sudah memuat paket, tingkat, dan kupon (commit 030e4b2), tetapi belum saya lihat di situs live; cocokkan layar replika dengan situs saat BANGUN dan pastikan produksi sudah ter-deploy sebelum posting.
 2. "Dicek": siapa yang mengecek (admin manual atau otomatis) ikut keputusan sesi situs; naskah memakai kata Bos "dicek" tanpa janji waktu.
 3. Layar bayar dibuat generik tanpa merek (metode bayar belum dipastikan); tanpa nama bank atau gateway.
 4. Tangkapan Bos memuat nama dan nomor WhatsApp asli: JANGAN dipakai di video; gunakan data fiktif berlabel "contoh".

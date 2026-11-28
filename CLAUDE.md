@@ -11,3 +11,8 @@
 
 ## Aturan tetap konten (Bos, 2026-11-25)
 - **Tanpa makhluk bernyawa** di semua konten buatan (3D, animasi, ilustrasi, B-roll AI): tidak ada manusia, hewan, wajah, tangan, siluet, atau bagian tubuh. Tumbuhan, benda, mesin, dan layar boleh. Berlaku untuk semua room dan semua tahap; suara narasi tidak termasuk (bukan gambar).
+
+## Aturan video 2D: full visual (Bos, 2026-11-28)
+- Perbanyak visual dibanding tulisan; bila bisa **full visual**. Teks layar maksimal 1-3 kata per adegan (label, angka, nama tingkat); penjelasan dibawa suara, ikon, gambar, dan gerak.
+- Aset ilustrasi (lambang paket, ikon tingkat, logo) **diambil dari web/repo brand**, bukan digambar ulang. Foto orang dan makhluk bernyawa tetap dilarang (aturan di atas).
+- Berlaku untuk semua video 2D, termasuk `umroh-10-juta` dan `checkout-hajar-aswad`.
