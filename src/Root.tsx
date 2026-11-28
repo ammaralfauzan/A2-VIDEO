@@ -36,6 +36,8 @@ import {TOTAL_FRAMES as PW_TOTAL_FRAMES} from './data/timeline-penghalang-waris'
 import {DuluTakDapatBagian} from './DuluTakDapatBagian';
 import {TOTAL_FRAMES as DTB_TOTAL_FRAMES} from './data/timeline-dulu-tak-dapat-bagian';
 import {Umroh10Juta} from './Umroh10Juta';
+import {CheckoutHajarAswad} from './CheckoutHajarAswad';
+import {TOTAL_FRAMES as CHA_TOTAL_FRAMES} from './data/timeline-checkout-hajar-aswad';
 import {TOTAL_FRAMES as U10_TOTAL_FRAMES} from './data/timeline-umroh-10-juta';
 import {BrandSample as TamsBrandSample} from './brands/tams-consulting/BrandSample';
 import {BrandSample as H2cUmrohBrandSample} from './brands/h2c-umroh/BrandSample';
@@ -59,6 +61,7 @@ const PWasiatMaksimalSepertiga = withProbe(WasiatMaksimalSepertiga);
 const PPenghalangWaris = withProbe(PenghalangWaris);
 const PDuluTakDapatBagian = withProbe(DuluTakDapatBagian);
 const PUmroh10Juta = withProbe(Umroh10Juta);
+const PCheckoutHajarAswad = withProbe(CheckoutHajarAswad);
 
 for (const weight of ['400', '500', '600']) {
   loadFont({family: 'Geist', url: staticFile(`fonts/geist-sans-latin-${weight}-normal.woff2`), weight});
@@ -124,6 +127,8 @@ export const Root: React.FC = () => (
     <Composition id="DaftarDanMasukH2C" component={PDaftarDanMasukH2C} durationInFrames={DMH_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} defaultProps={{safeGuide: false}} />
  {/* "Umroh 10 Juta": promo paket Hajar Aswad, brand H2C Umroh, 2D motion, 9:16. */}
     <Composition id="Umroh10Juta" component={PUmroh10Juta} durationInFrames={U10_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} defaultProps={{safeGuide: false}} />
+    {/* "Cara Checkout Paket Hajar Aswad": Video 2 promo, brand H2C Umroh, full visual mobile web, 9:16. */}
+    <Composition id="CheckoutHajarAswad" component={PCheckoutHajarAswad} durationInFrames={CHA_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} defaultProps={{safeGuide: false}} />
     <Composition id="AkunKeluargaH2C" component={PAkunKeluargaH2C} durationInFrames={AKH_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} defaultProps={{safeGuide: false}} />
     {/* "Kenapa Wasiat Dibatasi Sepertiga?" (Tams Consulting): batang harta + batas sepertiga, 9:16, tanpa ajakan. */}
     <Composition id="WasiatMaksimalSepertiga" component={PWasiatMaksimalSepertiga} durationInFrames={WMS_TOTAL_FRAMES} fps={FPS} width={V_WIDTH} height={V_HEIGHT} defaultProps={{safeGuide: false}} />

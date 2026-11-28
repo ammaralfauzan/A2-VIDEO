@@ -3,7 +3,8 @@
 // Teks layar per potongan: *kata* = kata kunci (emas). | = pindah ke potongan teks berikutnya (maks. 6 kata).
 // Awalan # = potongan tidak ditulis sebagai teks (angka langkah besar yang "mengucapkannya").
 // "WhatsApp" di suara ditulis "pesan" di layar (tanpa merek pihak ketiga). Nama, ID, sandi: fiktif, berlabel "contoh".
-import voTiming from './vo-timing-akun-keluarga-h2c.json';
+// Versi 2D memakai timing MP3 lama (commit 1af6d99); vo-timing-akun-keluarga-h2c.json kini milik jalur 3D (MP3 V3).
+import voTiming from './vo-timing-akun-keluarga-h2c-2d.json';
 
 export const FPS = 30;
 

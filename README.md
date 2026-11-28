@@ -121,6 +121,13 @@ Skrip rilis memeriksa durasi klip, merender frame kunci dan video, lalu menormal
 - Kode: `src/DaftarDanMasukH2C.tsx`, adegan di `src/scenes/daftar-dan-masuk-h2c/` (`Layar`, `Kursor`, `Judul`, `Caption`, `Penutup`, `Sfx`, `layout`), timeline di `src/data/timeline-daftar-dan-masuk-h2c.ts`
 - Frame kunci: `out/stills/daftar-dan-masuk-h2c/` (`scripts/daftar-dan-masuk-h2c-frames.ts`). Perintah: `npm run stills:daftar-dan-masuk-h2c`, `npm run render:daftar-dan-masuk-h2c`
 
+## Video: "Cara Checkout Paket Hajar Aswad" (komposisi `CheckoutHajarAswad`, 9:16, brand H2C Umroh)
+
+Video 2 promo Hajar Aswad, full visual: bingkai = tampilan mobile web umroh.h2c.or.id (replika), jalur lima langkah, titik ketuk emas (bukan tangan), gambar paket dan lencana tingkat asli dari repo h2c-umroh, teks layar 1-3 kata, data fiktif berlabel "contoh". Suara Jefri dari Bos (67 dtk), tanpa musik. Naskah: `naskah-checkout-hajar-aswad.md`; serah-terima: `serah-terima/checkout-hajar-aswad.md`.
+
+- `npm run stills:checkout-hajar-aswad` · `npm run render:checkout-hajar-aswad` → `out/checkout-hajar-aswad-9x16.mp4`
+- Timing per kata di `src/data/vo-timing-checkout-hajar-aswad.json` (`kata: [{w, s, e}]`); adegan mencari kata pemicu sendiri (`src/data/timeline-checkout-hajar-aswad.ts`). Timing sementara dibuat `scripts/vo-kata-checkout-hajar-aswad.py`; ganti dengan transkrip Scribe bila ada.
+
 ## Video: "Satu Akun untuk Sekeluarga" (komposisi `AkunKeluargaH2C`, 9:16, brand H2C Umroh)
 - Naskah: `naskah-akun-keluarga-h2c.md`. Lanjutan #11: akun keluarga dalam empat langkah (tambah anggota, kirim ID dan sandi, anggota masuk dengan ID keluarga, belikan paket; maks. 4 anggota). Meja 3D semu di Remotion: monitor di meja zamrud dengan cahaya tirai emas, kamera mendekat ke layar tiap langkah dan pindah ke ponsel (fokus kabur di monitor) saat ID dikirim, angka langkah besar yang mengecil jadi lencana, empat kartu nama berdiri di meja (nama fiktif berlabel "contoh"), penutup logo asli + tombol emas `umroh.h2c.or.id`. Tanpa makhluk bernyawa, tanpa maskot
 - Hasil: `out/akun-keluarga-h2c-9x16.mp4` (1080x1920, 30 fps, 62,5 detik: suara 61,57 dtk + logo diam ±0,9 dtk)

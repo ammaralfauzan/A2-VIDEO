@@ -147,6 +147,14 @@ SETS.Umroh10Juta = {
   },
 };
 
+// Frame kunci "Cara Checkout Paket Hajar Aswad" (H2C Umroh) dihitung dari timing suara (termasuk tengah transisi).
+SETS.CheckoutHajarAswad = {
+  dir: 'out/stills/checkout-hajar-aswad',
+  get stills() {
+    return JSON.parse(execSync('npx tsx scripts/checkout-hajar-aswad-frames.ts', {encoding: 'utf8'}));
+  },
+};
+
 SETS.DaftarDanMasukH2C = {
   dir: 'out/stills/daftar-dan-masuk-h2c',
   get stills() {
