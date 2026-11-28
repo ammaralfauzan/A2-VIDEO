@@ -16,3 +16,4 @@
 - Perbanyak visual dibanding tulisan; bila bisa **full visual**. Teks layar maksimal 1-3 kata per adegan (label, angka, nama tingkat); penjelasan dibawa suara, ikon, gambar, dan gerak.
 - Aset ilustrasi (lambang paket, ikon tingkat, logo) **diambil dari web/repo brand**, bukan digambar ulang. Foto orang dan makhluk bernyawa tetap dilarang (aturan di atas).
 - Berlaku untuk semua video 2D, termasuk `umroh-10-juta` dan `checkout-hajar-aswad`.
+- Tampilan situs yang ditampilkan di video 2D: pakai versi **mobile** web dan gaya visual persis web (cek web live bila ada perubahan desain; Bos 2026-11-28).
