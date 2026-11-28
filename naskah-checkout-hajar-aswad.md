@@ -30,7 +30,7 @@ Seluruh bingkai 9:16 diisi **tampilan mobile web umroh.h2c.or.id** (lebar 375 di
 | --- | --- | --- |
 | Gambar paket Hajar Aswad Standar (Ka'bah emas di kotak oranye) | `public/img/hajar-aswad-standar.webp` | tanpa makhluk bernyawa |
 | Gambar paket Hajar Aswad Premium (batu hitam berbingkai perak di lencana ungu) | `public/img/hajar-aswad-premium.webp` | tanpa makhluk bernyawa |
-| Lencana tingkat Silver, Gold (mahkota), Platinum (bintang), Diamond (berlian) | `components/IkonTingkat.tsx` (SVG, warna: biru, emas, hijau limau, ungu) | render ke SVG/PNG; ukuran kecil dan besar |
+| Lencana tingkat Silver (biru, permata), Gold (emas, mahkota), Platinum (hijau limau, bintang), Diamond (ungu, berlian) | **sudah diekstrak ke `public/brands/h2c-umroh/lencana/{silver,gold,platinum,diamond}.svg`** (dirender dari `components/IkonTingkat.tsx`, 512 px, vektor) | siap dipakai; dicek tampil benar |
 | Lencana "Promo Undian" bergerigi | `components/UndianSeal.tsx` | opsional; undian publik tetap tersembunyi, jangan menonjolkan kata undian |
 | Logo bulat H2C | `public/logo.jpeg` | logo resmi saja |
 | Panel Checkout, chip DP, kartu kupon | tata letak dari `PaketCheckout.tsx` dan `KuponUndian.tsx` | dibuat ulang sebagai replika berlabel "contoh" |
